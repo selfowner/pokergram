@@ -9,15 +9,36 @@ import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ch.qos.logback.core.util.Loader.getResourceBySelfClassLoader;
 import static org.pokedgram.DeckUtils.initializeDeck;
 import static org.pokedgram.DeckUtils.shuffleDeck;
-//import static org.pokedgram.*;
 
 
 public class MyBot extends TelegramLongPollingBot {
+
+    URL cfgPath = getResourceBySelfClassLoader("config.tg"); // added to .gitignore. 1 line - token, 2nd - roomId, 3rd - room invite link
+    URL stickerPath = getResourceBySelfClassLoader("stickerpack.list");
+    Path path, path1;
+    List<String> cfg, stickerpack;
+    {
+        try {
+            path = Paths.get(cfgPath.toURI());
+            path1 = Paths.get(stickerPath.toURI());
+            cfg = Files.readAllLines(path, StandardCharsets.UTF_8);
+            stickerpack = Files.readAllLines(path1, StandardCharsets.UTF_8);
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }}
 
 
     SendMessage message = new SendMessage();
@@ -25,15 +46,18 @@ public class MyBot extends TelegramLongPollingBot {
     int buttonId = -1;
     //init
     ArrayList[] playersQueue;
-    String playingRoomId = "-1"; // input groupid with read grants for bot
-    String playingRoomLink = ""; //input t.me
+
+    String playingRoomId = cfg.get(1);
+    String playingRoomLink = cfg.get(2);
+
+
     int registeredPlayers = 0;
     int extractNumber;
     int maxPlayers;
     int bigBlindId = -1;
     int smallBlindId = -1;
     int smallBlindSize, bigBlindSize;
-    int moveCount = 0;
+    //int moveCount = 0;
     String userName, userId;
 
     //nextlines
@@ -46,27 +70,60 @@ public class MyBot extends TelegramLongPollingBot {
     String commandRegEx = "^(.*) ([0-9]*)(.*)$";
     String argRegEx = "^([a-zA-Z ]*)(.*)$";
     // "   clearstate - discard current state. *BROKEN" + doubleNextLine +
-    String commands = new StringBuilder().append("COMMANDS ").append(doubleNextLine).append("   about - about this bot  (alias command \"rules\")").append(nextLine).append("   commands - this list").append(nextLine).append("   poker <number> - start game registration with <number> of players").append(nextLine).append("   reg/unreg - register to the game, or forfeit").append(nextLine).append("   invite <userId> - invite tg user to join game (success only if user communicated with bot in personal messages earlier)").append(nextLine).append("   queue - get registered members list").append(doubleNextLine).append("To be able to play with bot you need to write him any personal message (https://t.me/pokedgram_bot), then input commands in chat ").append(playingRoomLink).append(" (without '/' before command)").append(doubleNextLine).append("At this moment, GUI (buttons etc.) not implemented. To set up in 1 step input command about.").append("").toString();
+    String commands = "COMMANDS " + doubleNextLine +
+            "   about - about this bot  (alias command \"rules\")" + nextLine +
+            "   commands - this list" + nextLine +
+            "   poker <number> - start game registration with <number> of players" + nextLine +
+            "   reg/unreg - register to the game, or forfeit" + nextLine +
+            "   invite <userId> - invite tg user to join game (success only if user communicated with bot in personal messages earlier)" + nextLine +
+            "   queue - get registered members list" + doubleNextLine +
+            "To be able to play with bot you need to write him any personal message (https://t.me/pokedgram_bot), then input commands in chat " + playingRoomLink +
+            " (without '/' before command)" + doubleNextLine +
+            "At this moment, GUI (buttons etc.) not implemented. To set up in 1 step input command about." +
+            " ";
 
-    String rulesText = new StringBuilder()
-            .append("I'm NL holdem dealer bot. ").append(doubleNextLine)
-            .append("To be able to play with bot you need to write him any personal message (https://t.me/pokedgram_bot), then input commands in chat ").append(playingRoomLink).append(" (without '/' before command)").append(doubleNextLine)
-            .append("To start game: ").append(nextLine)
-            .append("1. type command \"poker [2-9]\" e.g. \"poker 3\" directly into playing room chat group, where arg = number of sits(=players) in the game. accepted values are >=2 && <=9 ").append(nextLine).append("2. type command \"reg\" to register to the game. (Also you can send invite to telegram user via \"invite\" command; Also player can unregister by using \"unreg\" command)").append(tripleNextLine).append("When registered users will take all the sits, game starts.").append(tripleNextLine).append("Game scenario:").append(nextLine).append("1. Dealer unpacks and shuffles deck, then deals 1 card to each player (Cards revealed). Deal order determined by players registration order. ").append(nextLine).append("2. The player with highest card starts on button, the players after him start on blinds. (value order on roll phase currently is 2<3<4<5<6<7<8<9<10<J<Q<K<A>2; if more than 1 player got same highest value, dealer shuffles deck and deal repeats. )").append(nextLine).append("3. The game starts, and all the rules match TEXAS NL HOLDEM : ").append(nextLine).append("Cards are dealt in private message from bot. Player on his turn have to choose one of options (fold,check|call,bet|raise|reraise). Player types his decision on his turn in playing room. Additionally, there is an option to schedule decision @ bot pm.").append(doubleNextLine).append("useless links:").append(nextLine).append("https://automaticpoker.com/how-to-play-poker/texas-holdem-basic-rules/").append(nextLine).append("https://automaticpoker.com/poker-basics/burn-and-turn-rules/").append(nextLine).append("https://automaticpoker.com/poker-basics/texas-holdem-order-of-play/").append(tripleNextLine).append("READYCHECK").append(doubleNextLine).append("pregame:").append(nextLine).append("+- create nl holdem game by type: +STP, -MTP, -cash").append(nextLine).append("+- game registration mechanics: +reg, +unreg, +invite, +-queue, +-clearstate").append(nextLine).append("+- card deal mechanics: +draw, +-preflop, +-turn, +-river, -showdown, +-burnwhendealing").append(doubleNextLine).append("game:").append(nextLine).append("+- game state mechanics: +countBlindSize, +countBlindId, -substractfromplayerbalance, -addtopot +-removeBankrupt, +-finishGame ").append(nextLine).append(nextLine).append("+- player hand ranking: -pairs -2pairs -triple -fullhouse -quad -street +flash -streetflash +-highestkicker").append(nextLine).append("- player turn phases mechanics: -check -call +-bet -raise -reraise -allin -pmMoveScheduler -afk").append(nextLine).append("- clearing phase mechanics: -calculateCombinations -splitPotReward").append(nextLine).append("misc:").append(nextLine).append("+- gui: +mudMode, +-msgEdit, -commands, -inlineCommands, -markupMessages").append(nextLine).append("-stats: -processUsersStat, -provideUserStat, -processTournamentStat, -provideTournamentStat").append(tripleNextLine).append("TL;DR: currently unplayable after cards dealt").toString();
+    String rulesText = "I'm NL holdem dealer bot. " + doubleNextLine +
+            "To be able to play with bot you need to write him any personal message (https://t.me/pokedgram_bot), then input commands in chat " + playingRoomLink + " (without '/' before command)" + doubleNextLine +
+            "To start game: " + nextLine +
+            "1. type command \"poker [2-9]\" e.g. \"poker 3\" directly into playing room chat group, where arg = number of sits(=players) in the game. accepted values are >=2 && <=9 " + nextLine +
+            "2. type command \"reg\" to register to the game. (Also you can send invite to telegram user via \"invite\" command; Also player can unregister by using \"unreg\" command)" + tripleNextLine +
+            "When registered users will take all the sits, game starts." + tripleNextLine + "Game scenario:" + nextLine +
+            "1. Dealer unpacks and shuffles deck, then deals 1 card to each player (Cards revealed). Deal order determined by players registration order. " + nextLine +
+            "2. The player with highest card starts on button, the players after him start on blinds. (value order on roll phase currently is 2<3<4<5<6<7<8<9<10<J<Q<K<A>2; if more than 1 player got same highest value, dealer shuffles deck and deal repeats. )" + nextLine +
+            "3. The game starts, and all the rules match TEXAS NL HOLDEM : " + nextLine +
+            "Cards are dealt in private message from bot. Player on his turn have to choose one of options (fold,check|call,bet|raise|reraise). Player types his decision on his turn in playing room. Additionally, there is an option to schedule decision @ bot pm." +
+            doubleNextLine + "useless links:" + nextLine +
+            "https://automaticpoker.com/how-to-play-poker/texas-holdem-basic-rules/" + nextLine +
+            "https://automaticpoker.com/poker-basics/burn-and-turn-rules/" + nextLine +
+            "https://automaticpoker.com/poker-basics/texas-holdem-order-of-play/" + tripleNextLine +
+            "READYCHECK" + doubleNextLine +
+            "pregame:" + nextLine +
+            "+- create nl holdem game by type: +STP, -MTP, -cash" + nextLine +
+            "+- game registration mechanics: +reg, +unreg, +invite, +-queue, +-clearstate" + nextLine +
+            "+- card deal mechanics: +draw, +-preflop, +-turn, +-river, -showdown, +-burnwhendealing" + doubleNextLine +
+            "game:" + nextLine +
+            "+- game state mechanics: +countBlindSize, +countBlindId, -substractfromplayerbalance, -addtopot +-removeBankrupt, +-finishGame " + nextLine + nextLine +
+            "+- player hand ranking: -pairs -2pairs -triple -fullhouse -quad -street +flash -streetflash +-highestkicker" + nextLine +
+            "- player turn phases mechanics: -check -call +-bet -raise -reraise -allin -pmMoveScheduler -afk" + nextLine +
+            "- clearing phase mechanics: -calculateCombinations -splitPotReward" + nextLine +
+            "misc:" + nextLine +
+            "+- gui: +mudMode, +-msgEdit, -commands, -inlineCommands, -markupMessages" + nextLine +
+            "-stats: -processUsersStat, -provideUserStat, -processTournamentStat, -provideTournamentStat" + tripleNextLine +
+            "TL;DR: currently unplayable after cards dealt";
 
 
     boolean tradePreflopDone = false;
     boolean tradeFlopDone = false;
     boolean tradeTurnDone = false;
     boolean tradeRiverDone = false;
-    boolean isTradePreflopDone = false;
-    boolean isTradeFlopDone = false;
-    boolean isTradeRiverDone = false;
+//    boolean isTradePreflopDone = false;
+//    boolean isTradeFlopDone = false;
+//    boolean isTradeRiverDone = false;
 
     boolean registrationStarted = false;
     boolean preGameStarted = false;
     boolean gameStarted = false;
-    boolean tradeDone = false;
+//    boolean tradeDone = false;
 
     //debug flags
     boolean rollVisibility = true;
@@ -90,7 +147,7 @@ public class MyBot extends TelegramLongPollingBot {
             execute(message);
             System.out.println("onRegister ok: " + message.toString());
             sendSticker();
-        } catch (TelegramApiException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("onRegister exception: " + message);
         }
@@ -99,14 +156,16 @@ public class MyBot extends TelegramLongPollingBot {
     @Override
     public String getBotUsername() {
 
-        return "pokedgram_bot";
+        return cfg.get(3);
     }
 
     @Override
     public String getBotToken() {
 
-        return TOKEN;
+        return cfg.get(0);
+
     }
+    
 
     public void sendToPlayingRoom(SendMessage message, String text) {
         try {
@@ -114,12 +173,6 @@ public class MyBot extends TelegramLongPollingBot {
             message.setChatId(playingRoomId);
             message.setText(text);
             execute(message);
-//            try {
-//                //message.setChatId(currentId);
-//                //System.out.println("ok: " + message);
-//            } catch (NullPointerException e) {
-//                System.out.println("exception: " + message);
-//            }
             Thread.sleep(2000);
         } catch (TelegramApiException | InterruptedException e) {
             e.printStackTrace();
@@ -132,7 +185,7 @@ public class MyBot extends TelegramLongPollingBot {
             message.setChatId(playingRoomId);
             SendSticker sendSticker = new SendSticker();
             sendSticker.setChatId(playingRoomId);
-            sendSticker.setSticker(new InputFile("CAACAgQAAxkBAAFd2mlhviypD-1Yb7wlJ2bs6B9vAxM-eAACcwgAAptKUFJYF3zNEsOuSyME"));
+            sendSticker.setSticker(new InputFile(stickerpack.get(0)));
             execute(sendSticker);
             try {
                 message.setChatId(currentId);
@@ -222,8 +275,6 @@ public class MyBot extends TelegramLongPollingBot {
 
                 boolean tournamentReady = false;
                 while (!tournamentReady && gameStarted) {
-                    int introTextId = sendToPlayingRoomAndGetMessageId(message, ",`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:,`: . ,`: . ,`: . ,`:");
-
                     boolean dealReady = false;
                     boolean tradeReady = false;
                     boolean clearingReady = false;
@@ -255,7 +306,7 @@ public class MyBot extends TelegramLongPollingBot {
                         clearingReady = false;
                         tableReady = false;
                         while (!tableReady) {
-                            List<List<String>> deck = initializeDeck();
+                            List<?> deck = initializeDeck();
 
                             deck = shuffleDeck(deck);
                             Integer dealMessageId = sendToPlayingRoomAndGetMessageId(message, "*Dealer shuffling deck*");
@@ -265,9 +316,9 @@ public class MyBot extends TelegramLongPollingBot {
                             currentPlayerHandText = "";
                             allHandsText = "";
                             int currentPot = 0;
-                            boolean isSidePotExist = false;
+                            //boolean isSidePotExist = false;
 
-                            String tableCards = new String();
+                            String tableCards; // = new String();
 
 
                             if (players.length == 2) {
@@ -300,11 +351,11 @@ public class MyBot extends TelegramLongPollingBot {
 
 
                                     if (dealVisibility) {
-                                        editMessage(new StringBuilder().append("*Dealer shuffling deck*").append(" dealnumber: ").append(dealNumber).toString(), dealMessageId);
-                                        editMessage(new StringBuilder().append("*Dealer shuffling deck*").append(" dealnumber: ").append(dealNumber).append(doubleNextLine).append(allHandsText).toString(), dealMessageId);
+                                        editMessage("*Dealer shuffling deck*" + " dealnumber: " + dealNumber, dealMessageId);
+                                        editMessage("*Dealer shuffling deck*" + " dealnumber: " + dealNumber + doubleNextLine + allHandsText, dealMessageId);
                                         //editMessage("*Dealer shuffling deck*" + " dealnumber: " + dealNumber + doubleNextLine + allHandsText + doubleNextLine + "Deck info: " + deck, dealMessageId);
                                     }
-                                    editMessage(new StringBuilder().append(roundAnnounceString).append(tripleNextLine).append("current move @ player order: ").append(nextLine).append(players[0].get(1)).toString(), dealMessageId);
+                                    editMessage(roundAnnounceString + tripleNextLine + "current move @ player order: " + nextLine + players[0].get(1), dealMessageId);
 
 
                                     // TODO() broken logic, check tradeready goes here
@@ -313,7 +364,7 @@ public class MyBot extends TelegramLongPollingBot {
                                     //if (update.hasMessage() && update.getMessage().hasText() && phaseBets) {
                                     if (String.valueOf(update.getMessage().getFrom().getId()).equals(players[moveCount].get(0))) {
                                         System.out.println("movecount: " + moveCount);
-                                        sendToPlayingRoom(message, new StringBuilder().append("userId ").append(update.getMessage().getFrom().getId()).append(" matched ").append(players[moveCount % players.length].get(0)).toString());
+                                        sendToPlayingRoom(message, "userId " + update.getMessage().getFrom().getId() + " matched " + players[moveCount % players.length].get(0));
 
                                         String extractCommand, arg;
                                         //int extractNumber = 0;
@@ -449,13 +500,13 @@ public class MyBot extends TelegramLongPollingBot {
                                             return;
                                         }
 
-                                        tradeDone = false;
-                                        preflopPhase = false;
-                                        flopPhase = false;
-                                        riverPhase = false;
-                                        showdown = false;
-                                        tableReady = true;
-                                        tradeReady = false;
+//                                        tradeDone = false;
+//                                        preflopPhase = false;
+//                                        flopPhase = false;
+//                                        riverPhase = false;
+//                                        showdown = false;
+//                                        tableReady = true;
+//                                        tradeReady = false;
 
                                         dealNumber++;
                                         try {
@@ -482,10 +533,12 @@ public class MyBot extends TelegramLongPollingBot {
             //message.setChatId(playingRoomId);
             //message = update.getMessage().getText(); String msgmessage = update.getMessage().getText().toString();
             //String messageSourceId = message.getChatId();
-            userName = new StringBuilder().append(update.getMessage().getFrom().getFirstName()).append(" ").append(update.getMessage().getFrom().getLastName()).append(" ").append("(" + update.getMessage().getFrom().getUserName() + ")").toString();
-//            if (userName.length() < 2) {
-//                userName = PlayerUtils.getUniqueName();
-//            }
+            userName = new StringBuilder()
+                    .append(update.getMessage().getFrom().getFirstName())
+                    .append(" ")
+                    .append(update.getMessage().getFrom().getLastName())
+                    .append(" ")
+                    .append("(" + update.getMessage().getFrom().getUserName() + ")").toString();
             userId = String.valueOf(update.getMessage().getFrom().getId());
             String extractCommand, arg;
 
@@ -507,7 +560,7 @@ public class MyBot extends TelegramLongPollingBot {
             int tryCount = 0;
             int rollWinnerPlayerId;
 
-            List<List<String>> deck = (List<List<String>>) initializeDeck();
+            List<?> deck = initializeDeck();
 
             deck = shuffleDeck(deck);
             tryCount++;
@@ -523,7 +576,7 @@ public class MyBot extends TelegramLongPollingBot {
                 for (int i = 0; i < cardsCount; i++) {
                     hand.append(playerCards[y][i].get(0));
                 }
-                currentPlayerHandText = new StringBuilder().append(playersQueue[y].get(1).toString()).append(": ").append(hand).append(nextLine).toString();
+                currentPlayerHandText = playersQueue[y].get(1).toString() + ": " + hand + nextLine;
 
                 sendToPlayer(message, playersQueue[y].get(0).toString(), "pregame roll number " + tryCount + nextLine + "Your cards: " + currentPlayerHandText);
                 allHandsText += currentPlayerHandText;
@@ -531,7 +584,6 @@ public class MyBot extends TelegramLongPollingBot {
 
 
             if (rollVisibility) {
-                //editMessage("*Dealer shuffling deck*" + doubleNextLine + "Deck info: " + deck, rollMessageId);
                 editMessage("*Dealer shuffling deck*" + doubleNextLine + allHandsText, rollMessageId);
             }
 
@@ -539,12 +591,32 @@ public class MyBot extends TelegramLongPollingBot {
 
 
             if (rollWinnerPlayerId == -1) {
-                //sendToPlayingRoom(message, "We've equal highest, redraw (trycount " + tryCount + ")");
-                editMessage(new StringBuilder().append("*Dealer shuffling deck*").append(doubleNextLine).append(allHandsText).append(doubleNextLine).append("We've equal highest, redraw (trycount ").append(tryCount).append(")").append(doubleNextLine).append("Deck info: ").append(deck).toString(), rollMessageId);
+                editMessage(
+                        "*Dealer shuffling deck*" +
+                                doubleNextLine +
+                                allHandsText +
+                                doubleNextLine +
+                                "We've equal highest, redraw (trycount " +
+                                tryCount + ")" +
+                                doubleNextLine +
+                                "Deck info: " +
+                                deck,
+                        rollMessageId
+                );
                 gameStarted = false;
             } else {
-                //sendToPlayingRoom(message, playersQueue[rollWinnerPlayerId].get(1).toString() + " starting on the button");
-                editMessage(new StringBuilder().append("*Dealer shuffling deck*").append(doubleNextLine).append(allHandsText).append(doubleNextLine).append(playersQueue[rollWinnerPlayerId].get(1).toString()).append(" starting on the button").append(tripleNextLine).append("Deck info: ").append(deck).toString(), rollMessageId);
+                editMessage(
+                        "*Dealer shuffling deck*" +
+                                doubleNextLine +
+                                allHandsText +
+                                doubleNextLine +
+                                playersQueue[rollWinnerPlayerId].get(1).toString() +
+                                " starting on the button" +
+                                tripleNextLine +
+                                "Deck info: " +
+                                deck,
+                        rollMessageId
+                );
                 buttonId = rollWinnerPlayerId;
                 gameStarted = true;
                 return;
@@ -615,9 +687,10 @@ public class MyBot extends TelegramLongPollingBot {
                                         }
 
                                     }
-                                } else sendBack(message, userId, "Register failed: checkForUnreg - " + checkForUnreg + ", checkForUnreg - " + checkForUnreg);
+                                } else
+                                    sendBack(message, userId, "Register failed: checkForUnreg - " + checkForUnreg + ", checkForUnreg - " + checkForUnreg);
                             } else sendBack(message, userId, "Register failed or limits");
-                        } else  sendBack(message, userId, "Registration is not open");
+                        } else sendBack(message, userId, "Registration is not open");
 
                     case "invite":
                         if (registrationStarted) {
@@ -652,7 +725,8 @@ public class MyBot extends TelegramLongPollingBot {
                                             }
                                         }
                                     }
-                                } else sendToPlayer(message, userId, "Invite failed: checkReg - " + checkAlreadyReg + ", checkLimits - " + PlayerUtils.checkUserLimit(maxPlayers, registeredPlayers));
+                                } else
+                                    sendToPlayer(message, userId, "Invite failed: checkReg - " + checkAlreadyReg + ", checkLimits - " + PlayerUtils.checkUserLimit(maxPlayers, registeredPlayers));
                             } else sendToPlayer(message, userId, "userId " + extractNumber + "do not match format.");
                         } else sendBack(message, userId, "Registration is not open");
 
@@ -723,7 +797,6 @@ public class MyBot extends TelegramLongPollingBot {
             }
         }
         System.out.println("passed 2 switches");
-
 
 
     }

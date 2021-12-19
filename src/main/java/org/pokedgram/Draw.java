@@ -51,6 +51,7 @@ public class Draw {
         System.out.println("checkFlash OK \n");
     }
 
+
     static void initializePlayers(int playersQuantity, int playerCardsCount, int playersStartingToken, List deck) {
 
         Map<Integer, String> playersName = new HashMap<>();
@@ -101,57 +102,5 @@ public class Draw {
 //
 //            }
 //        }
-
-        //int maxValue = Collections.max(numbers);
-       // List<Integer> maxValues = numbers.stream().filter(number -> number == max).collect(Collectors.toList());
-
-
-//
-//        if (winnerCount == 1 && winnerId > -1) {
-//            return winnerId;
-//        } else {
-//            return -1;
-//        }
-
-
-//    static ArrayList[] rollButton(int playersQuantity, ArrayList[][] playersArray) {
-//        ArrayList[] table = new ArrayList[playersQuantity];
-//
-//        return table;
-//    }
-
-
-
-
-
-
-//public class Start { //legacy class
-//    static int dealOrder = 0;
-//    static int playersQuantity = 9;
-//    static int playerCardsCount = 2;
-//    static int playerStartingToken = 20000;
-//    public static String Start() {
-//
-//        ArrayList[][] playersArray;
-//        ArrayList[] tableArray;
-//
-//        //List deck = initializeDeck();
-//        //deck = shuffleDeck(deck);
-//        //initializePlayers(playersQuantity, playerCardsCount, playerStartingToken, deck);
-//
-//        //roll button
-//        dealOrder = 1; //
-//
-////        if (dealOrder == 0) {
-////            playersArray = Draw.dealCards(playersQuantity, 1, shuffleDeck(deck));
-////        } else {
-////            playersArray = dealCards(playersQuantity, playerCardsCount, deck);
-////        }
-//
-//
-////        tableArray = drawTable(playersQuantity, deck);
-////        checkFlash(playersQuantity, playersArray, tableArray);
-//        // System.out.println(table);
-//        return "zxc";
-//    }
-//}
+//int maxValue = Collections.max(numbers);
+// List<Integer> maxValues = numbers.stream().filter(number -> number == max).collect(Collectors.toList());

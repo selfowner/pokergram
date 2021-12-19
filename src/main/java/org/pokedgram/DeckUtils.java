@@ -7,7 +7,7 @@ import static org.pokedgram.Draw.*;
 
 public class DeckUtils {
     private static int burn =1;
-    public static List initializeDeck() {
+    public static List<?> initializeDeck() {
 
         List<String> deck52 = new ArrayList<String>();
 
@@ -27,7 +27,7 @@ public class DeckUtils {
         }
 
         //System.out.println("\n" + deck52 + "\ninitializeDeck done" + "\n");
-
+        // TODO() уточнить про тип данных
         return deck52;
     }
 

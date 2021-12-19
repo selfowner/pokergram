@@ -45,7 +45,7 @@ public class PlayerUtils extends MyBot {
                 playersQueue[registeredPlayers].add(11, -1); // placeOnTableFinished, -1 = ingame
 
             }
-
+// TODO() уточнить про тип данных
         }
 
 
@@ -268,7 +268,161 @@ public class PlayerUtils extends MyBot {
 
     public static String getUniqueName() {
 
-        ArrayList<String> names = new ArrayList<>(List.of("Aleksandr", "Aleksej", "Andrej", "Artem", "Viktor", "Daniil", "Dmitrij", "Egor", "Ilya", "Kirill", "Maksim", "Mark", "Mihail", "Roman", "Stepan", "Timofej", "Jaroslav", "Bendzhamin", "Dzhejdan", "Dzhejkob", "Dzhejms", "Dzhek", "Itan", "Liam", "Logan", "Lukas", "Mejson", "Mjetju", "Noi", "Oliver", "Ouen", "Rajan", "Jelija", "Aleksandr", "Viljam", "Dzhejdan", "Dzhejkob", "Dzhekson", "Diego", "Dilan", "Djevid", "Djeniel", "Itan", "Liam", "Luis", "Majkl", "Noi", "Sebastjan", "Jedrian", "Jelija", "Amir", "Arsenij", "Artem", "Artur", "Damir", "Danil", "Egor", "Kamil", "Karim", "Kirill", "Maksim", "Marat", "Radmir", "Renat", "Roman", "Rustam", "Samir", "Timur", "Aleksandra", "Alisa", "Anastasija", "Anna", "Arina", "Valerija", "Varvara", "Veronika", "Viktorija", "Darja", "Eva", "Ekaterina", "Elizaveta", "Kira", "Margarita", "Marija", "Polina", "Sofija", "Taisija", "Uljana", "Abigejl", "Ava", "Amelija", "Arija", "Grejs", "Zoi", "Izabella", "Lili", "Medison", "Mija", "Nora", "Obri", "Odri", "Olivija", "Skarlet", "Sofija", "Harper", "Hloja", "Sharlotta", "Jevelin", "Jemili", "Jemma", "Abigejl", "Ava", "Amelija", "Anna", "Viktorija", "Grejs", "Izabella", "Medison", "Mija", "Natali", "Olivija", "Penelopa", "Sofija", "Harper", "Hloja", "Sharlotta", "Jevelin", "Jeveri", "Jelizabet", "Jella", "Jemili", "Jemma", "Azalija", "Alisa", "Alfija", "Amelija", "Amina", "Arina", "Asija", "Valerija", "Viktorija", "Gulnaz", "Darina", "Zarina", "Marijam", "Milana", "Samira", "Sofija", "Polina", "Ralina", "Regina", "Jelvira", "Jasmina"));
+        List<String> strings = new ArrayList<>();
+        strings.add("Aleksandr");
+        strings.add("Aleksej");
+        strings.add("Andrej");
+        strings.add("Artem");
+        strings.add("Viktor");
+        strings.add("Daniil");
+        strings.add("Dmitrij");
+        strings.add("Egor");
+        strings.add("Ilya");
+        strings.add("Kirill");
+        strings.add("Maksim");
+        strings.add("Mark");
+        strings.add("Mihail");
+        strings.add("Roman");
+        strings.add("Stepan");
+        strings.add("Timofej");
+        strings.add("Jaroslav");
+        strings.add("Bendzhamin");
+        strings.add("Dzhejdan");
+        strings.add("Dzhejkob");
+        strings.add("Dzhejms");
+        strings.add("Dzhek");
+        strings.add("Itan");
+        strings.add("Liam");
+        strings.add("Logan");
+        strings.add("Lukas");
+        strings.add("Mejson");
+        strings.add("Mjetju");
+        strings.add("Noi");
+        strings.add("Oliver");
+        strings.add("Ouen");
+        strings.add("Rajan");
+        strings.add("Jelija");
+        strings.add("Aleksandr");
+        strings.add("Viljam");
+        strings.add("Dzhejdan");
+        strings.add("Dzhejkob");
+        strings.add("Dzhekson");
+        strings.add("Diego");
+        strings.add("Dilan");
+        strings.add("Djevid");
+        strings.add("Djeniel");
+        strings.add("Itan");
+        strings.add("Liam");
+        strings.add("Luis");
+        strings.add("Majkl");
+        strings.add("Noi");
+        strings.add("Sebastjan");
+        strings.add("Jedrian");
+        strings.add("Jelija");
+        strings.add("Amir");
+        strings.add("Arsenij");
+        strings.add("Artem");
+        strings.add("Artur");
+        strings.add("Damir");
+        strings.add("Danil");
+        strings.add("Egor");
+        strings.add("Kamil");
+        strings.add("Karim");
+        strings.add("Kirill");
+        strings.add("Maksim");
+        strings.add("Marat");
+        strings.add("Radmir");
+        strings.add("Renat");
+        strings.add("Roman");
+        strings.add("Rustam");
+        strings.add("Samir");
+        strings.add("Timur");
+        strings.add("Aleksandra");
+        strings.add("Alisa");
+        strings.add("Anastasija");
+        strings.add("Anna");
+        strings.add("Arina");
+        strings.add("Valerija");
+        strings.add("Varvara");
+        strings.add("Veronika");
+        strings.add("Viktorija");
+        strings.add("Darja");
+        strings.add("Eva");
+        strings.add("Ekaterina");
+        strings.add("Elizaveta");
+        strings.add("Kira");
+        strings.add("Margarita");
+        strings.add("Marija");
+        strings.add("Polina");
+        strings.add("Sofija");
+        strings.add("Taisija");
+        strings.add("Uljana");
+        strings.add("Abigejl");
+        strings.add("Ava");
+        strings.add("Amelija");
+        strings.add("Arija");
+        strings.add("Grejs");
+        strings.add("Zoi");
+        strings.add("Izabella");
+        strings.add("Lili");
+        strings.add("Medison");
+        strings.add("Mija");
+        strings.add("Nora");
+        strings.add("Obri");
+        strings.add("Odri");
+        strings.add("Olivija");
+        strings.add("Skarlet");
+        strings.add("Sofija");
+        strings.add("Harper");
+        strings.add("Hloja");
+        strings.add("Sharlotta");
+        strings.add("Jevelin");
+        strings.add("Jemili");
+        strings.add("Jemma");
+        strings.add("Abigejl");
+        strings.add("Ava");
+        strings.add("Amelija");
+        strings.add("Anna");
+        strings.add("Viktorija");
+        strings.add("Grejs");
+        strings.add("Izabella");
+        strings.add("Medison");
+        strings.add("Mija");
+        strings.add("Natali");
+        strings.add("Olivija");
+        strings.add("Penelopa");
+        strings.add("Sofija");
+        strings.add("Harper");
+        strings.add("Hloja");
+        strings.add("Sharlotta");
+        strings.add("Jevelin");
+        strings.add("Jeveri");
+        strings.add("Jelizabet");
+        strings.add("Jella");
+        strings.add("Jemili");
+        strings.add("Jemma");
+        strings.add("Azalija");
+        strings.add("Alisa");
+        strings.add("Alfija");
+        strings.add("Amelija");
+        strings.add("Amina");
+        strings.add("Arina");
+        strings.add("Asija");
+        strings.add("Valerija");
+        strings.add("Viktorija");
+        strings.add("Gulnaz");
+        strings.add("Darina");
+        strings.add("Zarina");
+        strings.add("Marijam");
+        strings.add("Milana");
+        strings.add("Samira");
+        strings.add("Sofija");
+        strings.add("Polina");
+        strings.add("Ralina");
+        strings.add("Regina");
+        strings.add("Jelvira");
+        strings.add("Jasmina");
+        ArrayList<String> names = new ArrayList<>(strings);
         int randomNumb = DeckUtils.anyRandomIntRange(0, names.size() - 1);
 
         String name = names.get(randomNumb);
@@ -277,43 +431,3 @@ public class PlayerUtils extends MyBot {
         return name;
     }
 }
-
-/*    initArray(playersQueue, maxPlayers);
-    public void initArray (ArrayList[] playersQueue, int maxPlayers) {
-        */
-
-
-//    public void sendInlineKeyBoardMessage(Update update) {
-//        long chatId = -632153045;
-//        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup(); //Создаем объект разметки клавиатуры
-//        InlineKeyboardButton inlineKeyboardButton1 = new InlineKeyboardButton(); //Создаем кнопку
-//        InlineKeyboardButton inlineKeyboardButton2 = new InlineKeyboardButton(); //Создаем кнопку
-//        InlineKeyboardButton inlineKeyboardButton3 = new InlineKeyboardButton(); //Создаем кнопку
-//
-//        inlineKeyboardButton1.setText("fold"); //Текст самой кнопки
-//        inlineKeyboardButton1.setCallbackData("1"); //Отклик на нажатие кнопки
-//        inlineKeyboardButton2.setText("check"); //Текст самой кнопки
-//        inlineKeyboardButton2.setCallbackData("2"); //Отклик на нажатие кнопки
-//        inlineKeyboardButton3.setText("raise"); //Текст самой кнопки
-//        inlineKeyboardButton3.setCallbackData("3"); //Отклик на нажатие кнопки
-//
-//        List<InlineKeyboardButton> keyboardButtonsRow1 = new ArrayList<>();
-//        List<InlineKeyboardButton> keyboardButtonsRow2 = new ArrayList<>();
-//        List<InlineKeyboardButton> keyboardButtonsRow3 = new ArrayList<>();
-//
-//        keyboardButtonsRow1.add(inlineKeyboardButton1);
-//        keyboardButtonsRow2.add(inlineKeyboardButton2);
-//        keyboardButtonsRow3.add(inlineKeyboardButton3);
-//
-//        List<List<InlineKeyboardButton>> rowList = new ArrayList<>(); //Создаём ряд
-//        rowList.add(keyboardButtonsRow1);
-//        rowList.add(keyboardButtonsRow2);
-//        rowList.add(keyboardButtonsRow3);
-//
-//        inlineKeyboardMarkup.setKeyboard(rowList);
-//
-//        //new SendMessage(update.message().chat().id(), getAqi()).replyMarkup(simpleKeyboard());
-//        //sendToPlayingRoom(SendMessage()chatId,"123 " + inlineKeyboardButton3.getCallbackData()));
-//        //.setText("zxc").setReplyMarkup(inlineKeyboardMarkup);
-//
-//    }
