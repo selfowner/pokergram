@@ -264,7 +264,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
                             Integer dealMessageId = sendToPlayingRoomAndGetMessageId(message, "*Dealer shuffling deck*");
                             ArrayList[][] playerCards = new ArrayList[playersCount][cardsCount];
 
-                            playerCards = Draw.dealCards(players.length, cardsCount, deck);
+                            playerCards = DeckUtils.dealCards(players.length, cardsCount, deck);
                             text = "";
                             currentPlayerHandText = "";
                             allHandsText = "";
@@ -280,9 +280,8 @@ public class PokedgramBot extends TelegramLongPollingBot {
 
 
                                 //boolean phaseBets = true;
-                                preflopPhase = true;
 
-                                while (preflopPhase) {
+
                                     for (int y = 0; y < players.length; y++) {
                                         if (y < 2) {
                                             players[y].set(3, String.valueOf(Integer.parseInt(players[y].get(3).toString()) - smallBlindSize * (y + 1))); //current chips at player
@@ -302,7 +301,6 @@ public class PokedgramBot extends TelegramLongPollingBot {
                                         allHandsText = allHandsText + currentPlayerHandText;
                                     }
 
-
                                     if (dealVisibility) {
                                         editMessage("*Dealer shuffling deck*" + " dealnumber: " + dealNumber, dealMessageId);
                                         editMessage("*Dealer shuffling deck*" + " dealnumber: " + dealNumber + doubleNextLine + allHandsText, dealMessageId);
@@ -310,77 +308,90 @@ public class PokedgramBot extends TelegramLongPollingBot {
                                     }
                                     editMessage(roundAnnounceString + tripleNextLine + "current move @ player order: " + nextLine + players[0].get(1), dealMessageId);
 
+                                preflopPhase = true;
+                                while (preflopPhase) {
 
                                     // TODO() broken logic, check tradeready goes here
                                     int moveCount = 0;
-                                    // while (moveCount <= moveCount*2 ||moveCount <3) { //userId =
-                                    //if (update.hasMessage() && update.getMessage().hasText() && phaseBets) {
-                                    if (String.valueOf(update.getMessage().getFrom().getId()).equals(players[moveCount].get(0).toString())) {
-                                        System.out.println("movecount: " + moveCount);
-                                        sendToPlayingRoom(message, "userId " + update.getMessage().getFrom().getId() + " matched " + players[moveCount % players.length].get(0));
-
-                                        String extractCommand;//, arg;
-                                        //int extractNumber = 0;
-                                        extractCommand = update.getMessage().getText().replaceAll(commandRegExp, "$1");
-                                        extractNumber = Integer.parseInt(update.getMessage().getText().replaceAll(argRegExp, "$2"));
-                                        //phaseBets = false;
-
-                                        switch (extractCommand.toLowerCase()) {
-                                            case "check" -> {
-                                                sendToPlayingRoom(message, "preflopPhase && phaseBets case check" + extractNumber);
-                                                moveCount++;
-                                                break;
-                                            }
-                                            case "call" -> {
-                                                sendToPlayingRoom(message, "preflopPhase && phaseBets case call" + extractNumber);
-                                                moveCount++;
-                                                    break;
-                                            }
-                                            case "bet", "raise" -> {
-                                                sendToPlayingRoom(message, "preflopPhase && phaseBetscase bet" + extractNumber);
-                                                moveCount++;
-                                                    break;
-                                            }
-                                            case "allin" -> {
-                                                sendToPlayingRoom(message, "preflopPhase && phaseBets case allin" + extractNumber);
-                                                moveCount++;
-                                                    break;
-                                            }
-                                            case "fold", "pass" -> {
-                                                sendToPlayingRoom(message, "preflopPhase && phaseBets case fold" + extractNumber);
-                                                moveCount++;
-                                                    break;
-                                            }
-
-                                            default -> {
-                                                System.out.println("checkBetsEqual = " + PlayerUtils.checkBetsEqual(players));
-                                                sendToPlayingRoom(message, "msgid " + update.getMessage().getMessageId() + nextLine + "userId: " + userId + nextLine + "getmessageuserid: " + update.getMessage().getFrom().getId() + nextLine + "players[smallBlindId].get(0) = " + players[smallBlindId].get(0));
-                                            }
-                                        }
-
-                                        sendToPlayingRoom(message, "userId " + update.getMessage().getFrom().getId() + " not matched " + players[smallBlindId].get(0));
-                                    } else {
-                                        sendToPlayingRoom(message, "expecting move from player" + players[smallBlindId].get(0) + " (" + players[smallBlindId].get(1) + ")" + nextLine);
-                                        try {
-                                            Thread.sleep(2000);
-                                        } catch (InterruptedException e) {
-                                            e.printStackTrace();
-                                        }
-                                        if (moveCount >= players.length && PlayerUtils.checkBetsEqual(players)) {
-                                        tradePreflopDone = true;
-                                        tradeFlopDone = true;
-                                        tradeTurnDone = true;
-                                        tradeRiverDone = true;
-
-                                        flopPhase = true;
-                                            //currentPot = ;
+                                    while (moveCount >= players.length && PlayerUtils.checkBetsEqual(players)) { //userId =
+                                        //if (update.hasMessage() && update.getMessage().hasText() && phaseBets) {
+                                        if (String.valueOf(update.getMessage().getFrom().getId()).equals(players[moveCount].get(0).toString())) {
                                             System.out.println("movecount: " + moveCount);
-                                            break;
-                                    }
+                                            sendToPlayingRoom(message, "userId " + update.getMessage().getFrom().getId() + " matched " + players[moveCount % players.length].get(0));
+
+                                            String extractCommand;//, arg;
+                                            //int extractNumber = 0;
+                                            extractCommand = update.getMessage().getText().replaceAll(commandRegExp, "$1");
+
+                                            {
+                                                try {
+                                                    extractNumber = Integer.parseInt(update.getMessage().getText().replaceAll(argRegExp, "$2"));
+
+                                                } catch (NumberFormatException e) {
+                                                    extractNumber = smallBlindSize;
+                                                }
+                                            }
+                                            //phaseBets = false;
+
+                                            switch (extractCommand.toLowerCase()) {
+                                                case "check", "/check" -> {
+                                                    sendToPlayingRoom(message, "preflopPhase && phaseBets case check" + extractNumber);
+                                                    moveCount++;
+                                                    return;
+                                                }
+                                                case "call", "/call" -> {
+                                                    sendToPlayingRoom(message, "preflopPhase && phaseBets case call" + extractNumber);
+                                                    moveCount++;
+                                                    return;
+                                                }
+                                                case "bet", "raise", "/bet", "/raise" -> {
+                                                    sendToPlayingRoom(message, "preflopPhase && phaseBetscase bet" + extractNumber);
+                                                    moveCount++;
+                                                    return;
+                                                }
+                                                case "allin", "all-in", "/allin", "/all-in" -> {
+                                                    sendToPlayingRoom(message, "preflopPhase && phaseBets case allin" + extractNumber);
+                                                    moveCount++;
+                                                    return;
+                                                }
+                                                case "fold", "pass", "/fold", "/pass" -> {
+                                                    sendToPlayingRoom(message, "preflopPhase && phaseBets case fold" + extractNumber);
+                                                    moveCount++;
+                                                    return;
+                                                }
+
+                                                default -> {
+                                                    System.out.println("checkBetsEqual = " + PlayerUtils.checkBetsEqual(players));
+                                                    sendToPlayingRoom(message, "msgid " + update.getMessage().getMessageId() + nextLine + "userId: " + userId + nextLine + "getmessageuserid: " + update.getMessage().getFrom().getId() + nextLine + "players[smallBlindId].get(0) = " + players[smallBlindId].get(0));
+                                                }
+                                            }
+
+
+                                            sendToPlayingRoom(message, "userId " + update.getMessage().getFrom().getId() + " not matched " + players[smallBlindId].get(0));
+                                            return;
+                                        } else {
+                                            sendToPlayingRoom(message, "expecting move from player" + players[smallBlindId].get(0) + " (" + players[smallBlindId].get(1) + ")" + nextLine);
+                                            try {
+                                                Thread.sleep(2000);
+                                            } catch (InterruptedException e) {
+                                                e.printStackTrace();
+                                            }
+                                            //if (moveCount >= players.length && PlayerUtils.checkBetsEqual(players)) {
+                                                tradePreflopDone = true;
+                                                tradeFlopDone = true;
+                                                tradeTurnDone = true;
+                                                tradeRiverDone = true;
+
+                                                //currentPot = ;
+                                                System.out.println("moveCount >= players.length && PlayerUtils.checkBetsEqual(players) \nmovecount: " + moveCount);
+                                                break;
+
+
+                                        }
 
                                     }
-
-
+                                    preflopPhase = false;
+                                    flopPhase = true;
 
                                     while (flopPhase) {
 
@@ -405,57 +416,48 @@ public class PokedgramBot extends TelegramLongPollingBot {
                                                 showdown = true;
                                                 while (showdown) {
                                                     System.out.println("im in showdown");
+                                                    while (!clearingReady) { //distribute chips
+                                                        System.out.println("while (!clearingReady)");
+                                                        // countCombinations
+                                                        // if 0 tokens, remove player from game, stat his place
+                                                        // if 1 player left, finish game
+                                                        //find min stack
+                                                        //if minstack > 0 minimum 2 times, set Tradeready false
+                                                        //reinit players, cleanup playerhands, go to tradeready
+                                                        players = PlayerUtils.checkLastChips(players, bigBlindSize); //playersCount;
+                                                        ArrayList[] playersOld = players;
+                                                        //players = new ArrayList[playersOld.length];
+                                                        players = PlayerUtils.shiftPlayerOrder(playersOld, 1);
+
+                                                        // add reward;
+
+                                                        if (players.length == 1) {
+                                                            //finish game and count prize
+                                                            //break;
+                                                            System.out.println("1 player left, game over");
+                                                            return;
+                                                        }
+
+                                                        clearingReady = true;
+                                                        showdown = false;
+                                                    }
                                                     try {
                                                         Thread.sleep(2000);
                                                     } catch (InterruptedException e) {
                                                         e.printStackTrace();
                                                     }
                                                     //clearingReady = true;
-
-
-
-                                                }clearingReady = true;
-                                                break;
-
-                                            }clearingReady = true;
-                                            break;
-
-                                        }clearingReady = true;
-
-
-
-                                        while (clearingReady) { //distribute chips
-                                            System.out.println("zcx");
-                                            // countCombinations
-                                            // if 0 tokens, remove player from game, stat his place
-                                            // if 1 player left, finish game
-                                            //find min stack
-                                            //if minstack > 0 minimum 2 times, set Tradeready false
-                                            //reinit players, cleanup playerhands, go to tradeready
-                                            players = PlayerUtils.checkLastChips(players, bigBlindSize); //playersCount;
-                                            ArrayList[] playersOld = players;
-                                            //players = new ArrayList[playersOld.length];
-                                            players = PlayerUtils.shiftPlayerOrder(playersOld, 1);
-
-                                            // add reward;
-                                            clearingReady = true;
-
-                                            if (players.length == 1) {
-                                                //finish game and count prize
-                                                //break;
-                                                System.out.println("1 player left, game over");
+                                                }
                                             }
-
-                                            return;
                                         }
 
-//                                        tradeDone = false;
-//                                        preflopPhase = false;
-//                                        flopPhase = false;
-//                                        riverPhase = false;
-//                                        showdown = false;
-//                                        tableReady = true;
-//                                        tradeReady = false;
+                                        //tradeDone = false;
+                                        preflopPhase = false;
+                                        flopPhase = false;
+                                        riverPhase = false;
+                                        showdown = false;
+                                        tableReady = true;
+                                        tradeReady = false;
 
                                         dealNumber++;
                                         try {
@@ -469,7 +471,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
                                     }
                                     break;
                                 }
-                                //r;
+                                break;
                             } else {
                                 System.out.println("else players.lenght != 2");
                                 break;
@@ -514,7 +516,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
             tryCount++;
             Integer rollMessageId = sendToPlayingRoomAndGetMessageId(message, "*Dealer shuffling deck*");
             int cardsCount = 1;
-            ArrayList[][] playerCards = Draw.dealCards(maxPlayers, cardsCount, deck);
+            ArrayList[][] playerCards = DeckUtils.dealCards(maxPlayers, cardsCount, deck);
             text = "";
             currentPlayerHandText = "";
             allHandsText = "";
@@ -696,7 +698,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
                         } else {
                             sendBack(message, userId, "Registration is not open");
                         }
-                        return;
+                        break;
 
                     case "/poker","poker":
                         playersQueue = null;
@@ -723,7 +725,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
                 }
             }
         }
-        System.out.println("passed 2 switches");
+        System.out.println("passed 2 switches till\nonUpdateRecieved end");
 
 
     }
