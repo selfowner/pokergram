@@ -2,21 +2,17 @@ package org.pokedgram;
 
 import java.util.*;
 
-import static org.pokedgram.Draw.*;
-
 
 public class DeckUtils {
-    private static int burn =1;
+    //private static int burn = 1;
+
     public static List<?> initializeDeck() {
 
-        List<String> deck52 = new ArrayList<String>();
+        List<String> deck52 = new ArrayList< >();
 
         String[] cardSuits = new String[]{"♣", "♦", "♥", "♠"};
         String[] cardRanks = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
-        Integer[] cardRanksValue = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 0};
-
-
-        ArrayList<String> deckRanks = new ArrayList<>(13);
+/*        Integer[] cardRanksValue = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 0};ArrayList<String> deckRanks = new ArrayList<>(13);*/
 
 
         for (int i = 0; i < cardSuits.length; i++) {
@@ -32,10 +28,9 @@ public class DeckUtils {
     }
 
 
-    public static List shuffleDeck(List currentDeck) {
+    public static List<?> shuffleDeck(List<?> currentDeck) {
         Collections.shuffle(currentDeck);
-        List shuffledDeck = currentDeck;
-        return shuffledDeck;
+        return currentDeck;
     }
 
     public static int cardValue(String card) {
@@ -56,32 +51,28 @@ public class DeckUtils {
 
 
     // TODO() check if card burning shifts order correctly
-    static String phaseFlop(int playersQuantity, int playersCardsCount, List deck) {
-        String flop = deck.get((playersQuantity * playersCardsCount + 3)).toString() +
+    static String phaseFlop(int playersQuantity, int playersCardsCount, List<?> deck) {
+        return deck.get((playersQuantity * playersCardsCount + 3)).toString() +
                 deck.get((playersQuantity * playersCardsCount + 3 + 1)).toString() +
                 deck.get((playersQuantity * playersCardsCount + 3 + 2)).toString();
-        return flop;
     }
 
-    static String phaseTurn(int playersQuantity, int playersCardsCount, List deck) {
-        String turn = deck.get((playersQuantity * playersCardsCount + 3 + 2 + 1 + 1)).toString();
-        return turn;
+    static String phaseTurn(int playersQuantity, int playersCardsCount, List<?> deck) {
+        return deck.get((playersQuantity * playersCardsCount + 3 + 2 + 1 + 1)).toString();
     }
 
-    static String phaseRiver(int playersQuantity, int playersCardsCount, List deck) {
-        String river = deck.get((playersQuantity * playersCardsCount + 3 + 2 + 1 + 1 + 1 + 1)).toString();
-        return river;
+    static String phaseRiver(int playersQuantity, int playersCardsCount, List<?> deck) {
+        return deck.get((playersQuantity * playersCardsCount + 3 + 2 + 1 + 1 + 1 + 1)).toString();
     }
 
 
     public static int anyRandomIntRange(int low, int high) {
         Random random = new Random();
-        int randomInt = random.nextInt(high) + low + 1;
-        return randomInt;
+        return random.nextInt(high) + low + 1;
     }
 
 
-    static int rankRoll(int playersQuantity, ArrayList[][] cards) { //get highest card, if highest quantity > 1, return -1
+    static int rankRoll(int playersQuantity, ArrayList<?>[][] cards) { //get highest card, if highest quantity > 1, return -1
         int handHighest = -1;
         int winnerCount = 0;
         int winnerId = -1;
@@ -89,7 +80,7 @@ public class DeckUtils {
             //     for (int i = 0; i < playersCardsCount; i++) {
             if (handHighest < Integer.parseInt(cards[y][0].get(3).toString())) {
                 handHighest = Integer.parseInt(cards[y][0].get(3).toString());
-                winnerCount=1;
+                winnerCount = 1;
                 winnerId = y;
                 //      }
             } else if (handHighest == Integer.parseInt(cards[y][0].get(3).toString())) {
@@ -102,7 +93,7 @@ public class DeckUtils {
         } else {
             return -1;
         }
-}
+    }
 }
 
 

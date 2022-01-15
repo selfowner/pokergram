@@ -74,7 +74,7 @@ public class PlayerUtils extends MyBot {
         return allinCount;
     }
 
-    public static ArrayList[] checkLastChips(ArrayList[] players, int bigBlindSize) {
+    public static ArrayList<String>[] checkLastChips(ArrayList[] players, int bigBlindSize) {
         for (int i = 0; i < players.length; i++) {
             if (Integer.parseInt(players[i].get(3).toString()) < bigBlindSize) {
                 players[i].set(10, 1);
@@ -131,7 +131,7 @@ public class PlayerUtils extends MyBot {
         return false;
     }
 
-    public static ArrayList[] shiftPlayerOrder(ArrayList[] playersList, int offset) {
+    public static ArrayList<String>[] shiftPlayerOrder(ArrayList[] playersList, int offset) {
         //System.out.println("shiftPlayerOrder started. playerslist size: " + playersList.length + ". offset: " + offset);
         //      try {
         ArrayList[] newPlayersList = new ArrayList[playersList.length];
