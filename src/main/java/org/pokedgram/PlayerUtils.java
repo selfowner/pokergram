@@ -1,10 +1,9 @@
 package org.pokedgram;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerUtils extends MyBot {
+public class PlayerUtils extends PokedgramBot {
 
     public static ArrayList[] addPlayerToQueue(String userId, String userName, ArrayList[] playersQueue, String messageSourceId, int registeredPlayers, int chips, boolean ifFull, int unregid) {
         //check if somebody unregistered

@@ -15,7 +15,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
+            <version>1.2.10</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -32,19 +32,16 @@
     </properties>
 
 
-
-
-
     <dependencyManagement>
-    <dependencies>
-    <dependency>
-        <groupId>org.telegram</groupId>
-        <artifactId>telegrambots</artifactId>
-        <version>5.5.0</version>
-    </dependency>
+        <dependencies>
+            <dependency>
+                <groupId>org.telegram</groupId>
+                <artifactId>telegrambots</artifactId>
+                <version>5.6.0</version>
+            </dependency>
 
 
-</dependencies>
+        </dependencies>
     </dependencyManagement>
 
 </project>
