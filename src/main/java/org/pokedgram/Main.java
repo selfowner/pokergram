@@ -7,14 +7,12 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class Main {
 
+    public void main(String[] args) throws TelegramApiException {
+        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
+        botsApi.registerBot(new PokedgramBot());
 
-    public static void main(String[] args) {
-
-        try {
-            TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botsApi.registerBot(new PokedgramBot());
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
+        /*TODO() start bots by request
+        botsApi.registerBot(new PokedgramCashierBot());
+        botsApi.registerBot(new AssCinema());*/
     }
 }

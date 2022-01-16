@@ -4,15 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerUtils extends PokedgramBot {
-
+    //TODO() create type "Player"
     public static ArrayList[] addPlayerToQueue(String userId, String userName, ArrayList[] playersQueue, String messageSourceId, int registeredPlayers, int chips, boolean ifFull, int unregid) {
         //check if somebody unregistered
         int updateId = PlayerUtils.checkUserRegExistAndActive(userId, playersQueue, registeredPlayers);
 
         if (updateId > -1) {
-            //boolean checkForUpdate = true;
-            //int queueId = ;
-
             playersQueue[updateId].set(0, userId); // string userId
             playersQueue[updateId].set(1, userName); // string user firstname + lastname
             playersQueue[updateId].set(2, messageSourceId); //chatid
@@ -27,9 +24,7 @@ public class PlayerUtils extends PokedgramBot {
             playersQueue[updateId].set(11, -1); // placeOnTableFinished, -1 = ingame
         } else {
             if (!ifFull) {
-                playersQueue[registeredPlayers] = new ArrayList(12) {
-                };
-
+                playersQueue[registeredPlayers] = new ArrayList(12) {};
                 playersQueue[registeredPlayers].add(0, userId); // string userId
                 playersQueue[registeredPlayers].add(1, userName); // string user firstname + lastname
                 playersQueue[registeredPlayers].add(2, messageSourceId); //chatid
@@ -42,13 +37,9 @@ public class PlayerUtils extends PokedgramBot {
                 playersQueue[registeredPlayers].add(9, 0); // currentRoundBet
                 playersQueue[registeredPlayers].add(10, 0); // isAutoAllinOnBlind
                 playersQueue[registeredPlayers].add(11, -1); // placeOnTableFinished, -1 = ingame
-
             }
-// TODO() уточнить про тип данных
         }
 
-
-        //  ListIterator<String> listIterator = playersQueue[9].listIterator();
         return playersQueue;
     }
 

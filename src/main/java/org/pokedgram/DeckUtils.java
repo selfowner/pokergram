@@ -5,7 +5,7 @@ import java.util.*;
 import static org.pokedgram.PlayerUtils.getUniqueName;
 
 
-public class DeckUtils  {
+public class DeckUtils {
     //private static int burn = 1;
     static ArrayList[][] dealCards(int playersQuantity, int playersCardsCount, List deck) {
 
@@ -16,7 +16,8 @@ public class DeckUtils  {
         //deal cards to players
         for (int i = 0; i < playersCardsCount; i++) { // deal card loop
             for (int y = 0; y < playersQuantity; y++) { //select player to deal card
-                playersHand[y][i] = new ArrayList() {};
+                playersHand[y][i] = new ArrayList() {
+                };
                 playersHand[y][i].add(0, deck.get((y + (i * playersQuantity)))); // 0 string
                 playersHand[y][i].add(1, playersHand[y][i].get(0).toString().replaceAll("[0-9JQKA]", "")); // 1 suit
                 playersHand[y][i].add(2, playersHand[y][i].get(0).toString().replaceAll("[♠♣♦♥]", "")); // 2 rank
@@ -46,7 +47,7 @@ public class DeckUtils  {
         System.out.println("checkFlash OK \n");
     }
 
-    //legacy
+    //TODO() decide drop this legacy
     static void initializePlayers(int playersQuantity, int playerCardsCount, int playersStartingToken, List deck) {
 
         Map<Integer, String> playersName = new HashMap<>();
@@ -64,16 +65,19 @@ public class DeckUtils  {
 
     }
 
-    public static List<?> initializeDeck()  {
+    public static List<?> initializeDeck() {
 
         List deck52 = new ArrayList(52);
         String[] cardSuits = new String[]{"♣", "♦", "♥", "♠"};
-        String[] cardRanks = new String[]{"A","2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+        String[] cardRanks = new String[]{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         Integer[] cardRanksValue = new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
-        for (int i = 0; i < cardSuits.length; i++) {
-            for (int y = 0; y < cardRanks.length; y++) {
+        for (Integer i = 0; i < cardSuits.length; i++) {
+            for (Integer y = 0; y < cardRanks.length; y++) {
+                //TODO() check index fix
+                //deck52.add(Integer.getInteger(i.toString()) + Integer.getInteger(y.toString()), cardRanks[y].toString() + cardSuits[i].toString());
                 deck52.add(i + y, cardRanks[y].toString() + cardSuits[i].toString());
+
                 //deck52.add(100+i + y, cardRanksValue[y].toString());
                 //System.out.println(deck52.get(i+y) + ", value " + cardRanksValue[y]);
             }
@@ -96,7 +100,7 @@ public class DeckUtils  {
     public static int cardValue(String card) {
         int cardValue;
         if (Objects.equals(card, "A")) {
-            cardValue = 14;
+            cardValue = 14; // or 1? for str
         } else if (Objects.equals(card, "K")) {
             cardValue = 13;
         } else if (Objects.equals(card, "Q")) {
@@ -157,8 +161,6 @@ public class DeckUtils  {
 }
 
 
-
-
 //    public static int maxValue(int array[]) {
 //        List<Integer> list = new ArrayList<Integer>();
 //        for (int i = 0; i < array.length; i++) {
@@ -185,7 +187,6 @@ public class DeckUtils  {
 //        }
 //int maxValue = Collections.max(numbers);
 // List<Integer> maxValues = numbers.stream().filter(number -> number == max).collect(Collectors.toList());
-
 
 
 //List<String> deckSuits = new ArrayList<>(4);
