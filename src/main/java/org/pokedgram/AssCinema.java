@@ -29,7 +29,6 @@ public class AssCinema extends TimedSendLongPollingBot {
     Path path, path1;
     List<String> cfg, stickerpack;
     SendMessage message = new SendMessage();
-    String playingRoomId = cfg.get(1);
 
     {
         try {
@@ -41,7 +40,11 @@ public class AssCinema extends TimedSendLongPollingBot {
             e.printStackTrace();
         }
     }
+    String playingRoomId = cfg.get(1);
     //String playingRoomLink = cfg.get(2);
+
+
+
 
     @Override
     public void onRegister() {
@@ -154,11 +157,11 @@ public class AssCinema extends TimedSendLongPollingBot {
 
 
     public void aniGif() {
-        String[] n = new String[108];//{};
+        String[] n = new String[ 108 ];//{};
         //frames
         //TODO() refactor frame storing
         {
-            n[ 0 ]   = "```"+
+            n[ 0 ]   = "```" +
                        "                  .                                                                                 \n" +
                        "                                                                                                    \n" +
                        "                                                                                                    \n" +
@@ -225,7 +228,7 @@ public class AssCinema extends TimedSendLongPollingBot {
             n[ 35 ]  = "```\n    .                .........,t881,.                               .:G@L;,,.........               \n      .. .............,,,,::;iL@@1.                                .,:18@Li;::,,,,,...............  \n    ....,,,,::;;ii1tfLLCGG008888t,.             .......            .,,:f888000GGCLfft1ii;;::,,,,,,..\n.,;i1tffLCGG008888800GGCLLffti:,.              .,iCf:,.         , .  .,:;ii1ttfLCCGG00088000GCCLfft1\nG088000GGCLLft11i;;::,,,,,,.                  .,iGLGL:,.        .     .......,,,,,,:::;ii1tffLCCGG0G\n1i1i;::,,,,..............                    .,iGt;iCf:,.              .  .. ..............,,,,,,,..\n...........   .                      .      .,iGt::,;Cf:,.                                 .....   .\n                                     .     .,iGt:,..,;Cf:,                                          \n                              .   ..   ....,iGt:.   .,;Cf,..                                        \n                                .......,,::1Gt:.   . .,;Cf;:,,....... ...  .                        \n                          ..,:;ii11ttttfffff1,..      .,;ttffftttt11ii;;:,,.               .        \n                          .:fGLtt11i;;::,,.... .        ....,,::;ii1ttfGCi,.    .                   \n.....                      .,iffi,,.....                ..      ...,:1ft;..                         \nGfi:,,..                    .,:iffi,,...                      ...,;tLt;,.                       .   \nG@8Li:,,..   .                ..,iffi,,,.                    .,,;tf1:,..                           .\n;1G@8L1:,,.. .                  ..,iff1;..                   ,itf1:,.                           .,1G\n,,;1G@8C1:,,..                    ..,;fL:..                .,tC1:,..                         ..:f8@G\n..,,:1C@@C1:,,..           .        .,1G;,.                .,fC:,.                         ..;f8@Ci,\n  ..,,:1C@@C1:,,..        .,        .:LL,,.                .,iGi,.                       ..;f8@Ci,. \n    ..,,:1C8@G1:,,..                .;Gt,.          .       ,:Gt,.                     ..;L8@Li..   \n      ..,,:iC8@Gt;,,...           ..,1G;,..   .,;1t1i:..   .,,fC:..                  .,;L8@L;,.  .  \n        ..,,:iL8@0t;:,.          . .,LC:,..,;1fLLt11fLft;:,..,10;,..               ..;C88Li,..      \n          ..,,:iL@0i:,.            ,:Gt:;1tLLti:.....,;1fLf1i:;Gt,..               .;0@Gi:,..       \n            ..,:L@C;,.            .,10LLLf1;,.          .:itfLfGC:.               .;tC@C;:,.        \n             ,:iG@f:,.            ..iL1;,.                  .:iff,.             .,:::1@0i:,.        \n            .,:1881:,                ,                         ..               ...,:i0@t:,,   .    \n            .,;L@G;,                 .                         ..                 .,,:L@L;,.        \n           .,:;G@1.                                                               ..,:1@G:.         \n```";
             n[ 36 ]  = "```\n    .          ............,,,18@t,.                                 .;0@L;,,,,............         \n     ...........,,,,,::;;i11tC@@f..                 ..              .,:t8@Cft1i;;:::,,,,,,,.........\n   .,,,::;;i11tfLCCG0008888880Ct,.             .,:ti,,.             .,,:tGG00888800GGCLLft11i;;:::,,\ni1fLCGG008888800GGCLLft11iii:...              .,:L00t:,.        ,     .,,::::;ii1ttfLCCG000888800GGC\n00GGCLLft11i;;::,,,,....,,.                   ,:LCit01,,.       .     ............,,,,,,::;;ii1ttfff\n::;,,,..............   .                    .,:LC;::1G1,.              .   .      .............,... \n.......   .                          .     .,:LC;:,,:1G1,.                                         .\n                                     .    .,:LC;,.  .,1G1,.                                       . \n                                ....    ..,:LC;,.    .,1G1,..     . .                               \n                            . .....,,,::;;iLC;,.      .,1Gti;::,,,........  ..                      \n                         .,;ii1tttffffffftt1;,..      ..,i1ttffffffttt11i;::.              .        \n                         .:L0Lt1ii;::,,...  .  .        ..  ..,,,:;;i11fGG1,.   .                   \n                          .,iffi:,,....                 .        ...,;tLt;,.                        \n;,,,..                     .,:iff1:,....                      ....,;tLt;,.                          \n@Gt;:,,.     .               ..,iff1:,,.                      .,,;tLt:,..                           \nL8@0fi:,,.   .                 ..,;tf1;,.                   . :itL1:,.                            .:\n:if0@0fi:,,..                    ..,;tCi,.                  .,fL1:,..                          .,iC8\n,,:;f0@8Li:,,.             .       .,:Cf:.                  .;Gt,,.                         ..,1G@8f\n .,,:;f0@8Li:,,.          .,       .,i0i,.                 ..,LC:,.                        .,1G@0t:.\n   ..,:;tG@8Li:,,.                 .,fG:,.          ..      .,10;,.                    ...,1G@0t:.. \n     ..,:;tG@8L1:,,...            ..:Gf,,.     .,:i;,.      .,;Gt,.                    .:t0@0t:...  \n       .,,,;tG@8C1::,.           ..,i01,,...,:itLLfLLf1;,....,:LC:,.                  ,f0@0t:...    \n         .,,,;tG@01:,.            .,fG;,,:itfLft;:,,:ifLLf1;,,,t0;,.                .:G@0t;,..      \n           .,,:t@0i:,.            ,:CL1tfLLti:.       .,:1fLLf11Gt,.               .;f0@L;:,.       \n            .:;C@L;:.            .,i0GLfi:,.              .,;1fL0L:.              .:;:t@0i:,.       \n           .,:i8@t:,.             .,i;,.                      .,i;..             ...,:i0@t:,.  .    \n           .,:t@0i,.                ..                          ..                 .,:;C@L;,.  .    \n           .,;L@f..                                             .                  .,,:t@G,.        \n```";
             n[ 37 ]  = "```\n    . .    ..............,,::10@f,.            .                      .;0@L;:,,,,,,.............    \n     .....,,,,,:::;ii1ttfLCC0@@C,..             .,:,,..              .,:f@@0GCLftt1ii;;::,,,,,,,....\n..,:;;i1ttfLCCG008888888000GLt1,               ,:t0Gi:,.             .,,:1fLCCG0088888800GCCLftt1ii;\nLG0888888000GCCLft11i;;::::.  .               ,:t0fCG;,.        ,  .  ...,,,,,,::;;ii1ttfLCCG0008880\nLLft11i;;:::,,,,..........                   .,10t;;LG;,.       .        .............,,,,,,,::;;;;:\n,,,.............                            .:1Gt:,,:LC;,.             .   .           ..........   \n.                                    .     .,1Gt:,..,:LC;,.                                        .\n                                     .   ..,10t:,   .,:LC;,.                                        \n                             .......  ...,,10t:.     .,:LC;,..    . ..    .                         \n                           ....,,,::;;ii11fGt:,       .,:LCt11i;;::,,,,....  ..                     \n                        .:11tfffffffffttt1i;,.         ..:;i1tttfffffffftt1i;,             .        \n                        .;C0L1ii;:,,....   .   .        .     ....,::;iitC0f:.  .                   \n                        ..:iff1:,,..  .                  .        ..,,;tLt;,.                       \n. ...                     .,:ifL1:,,...                          ..,;fLt;,,.                     .  \nt;:,,..                     ..,ifL1:,,..                       ,,,;tLt;,..                          \n@@Gt;,,..   ..                ..,;fL1;:..                     .:ifLt:,..                            \n1C8@Gt;:,,.                     ..,;fCt,..                   .:LLt:,..                           .,1\n,:1C8@Gt;:,,.             .       .,,fG;,                    ,t0i,,.                          ..;f8@\n.,,:1L8@0t;:,,.           ,.       ,:CL:,.                  .,;Gt,.                         ..;L8@Ci\n ..,,:iL8@0f;:,,.                 .,i0t,..          .. .     .:CC:,                       ..;L8@Ci,.\n   ..,,:iL8@0fi:,,.   .           .,t0;,.       ..,,.        .,t0;,.                    .,;L@@Ci,.  \n      .,,:iL8@0Li,,,.            ..:CC:,.. ...,;1fLfti:,... ..,i0t,..                  .1C@@Li,.    \n       ..,,:iL0@01;,.            .,;0t:,..,;1fLLf1;itLLLti:,..,:CC:,.                .,L@8Ci,..     \n          .,,:t@81:,.            .,t0i:;1fLLf1;,..  ..:itLLLti::t0;,.               .:f8@C;:,.      \n           .,;L@G;:,.            ,:CGfLCLt;,.            .:itLLLL8t:.              .:iif@0i:,.      \n           .:iG@L;,.             .:LCti:.                   .,:1fGt,.             .,,,:18@1:,...    \n          .,:1881,.                ,,                           .:.                 .,:;C@L;,. .    \n          .,;f@C,.                 ..                            .                  .,,:f@C,.       \n```";
-            n[ 38 ]  = "```"+
+            n[ 38 ]  = "```" +
                        "    . ..............,,,,::;it0@L,.             ........               ..i8@Li;;::,,,,,,,,,..........\n" +
                        "    ..,,,,::;;ii1ttfLCCG00888@G:..             .,;Lf;,..              .,;f888800GGCLfft11i;;:::,,,,,\n" +
                        ",:itffLCGG00888888800GCCLLft;:.               .,iGG0L;,.              .,,:ii1ttfLCCG0088888800GGCLff\n" +
@@ -255,7 +258,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "         .,:18@f,.              ..it;,.                       ..:if;..             . .,:iG@f;,. .   \n" +
                        "         .,:t@0:.                 .,                              ,                  .,:;L@C,.      \n" +
                        "```";
-            n[ 39 ]  = "```"+
+            n[ 39 ]  = "```" +
                        "     .........,,,,,::;;i1tfL0@G:..             .,:11:,.                .,i8@Cft1ii;;::,,,,,,,,......\n" +
                        "  ..,::;;i11tffLCGG008888888GC;..             .,;L80f:,.               .,;f0008888800GGCLLft11i;;:::\n" +
                        "1fCGG00888888800GGCLftt11i;,..               .,:L0tf0t:,.              .,,:::;;ii1tffLCGG00888888000\n" +
@@ -285,7 +288,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "        .,:iG@L:.              .:f8Cf1;,.                    .,;tLC8t,.             ...,:i0@f:,..   \n" +
                        "        .,:188i..               .,i,..                          ..:i,.                .,:;C@L,.     \n" +
                        "```";
-            n[ 40 ]  = "```"+
+            n[ 40 ]  = "```" +
                        "    .....,,,,:::;;i1ttfLCGG8@0;..             .,:t801:,.                .,t@@0GCLfft1ii;;:::,,,,,,,,\n" +
                        "..,;i11tffLCGG008888888000GLt;.               ,:t0LC01:,.               .,;tLCCG00888888000GCCLft11i\n" +
                        "G0888888800GGCLfft1ii;;;:,...                ,:10LiiL01:,.              .,,,,,,:::;;i11tffLCGG008888\n" +
@@ -315,7 +318,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "        .:;C@G;,              .:t8CCCCf1:,.                .,;1fCCCG81:.             ...,:18@t:,.   \n" +
                        "     . .,:10@t..              .,1GL1;,.                        .,;tLGi,.               .,:;C@L,.    \n" +
                        "```";
-            n[ 41 ]  = "```"+
+            n[ 41 ]  = "```" +
                        " ..,:;;ii1ttfLCGG0888@@@880G1,.              .,;L0ii0L;,.                 .:f0088@@88800GCLLft11i;;:\n" +
                        "tLCG00888@888800GCCLft11i:,.                .,;L8t::10L;,.                .,:;;ii1ttfLLCGG0088888880\n" +
                        "00GCCLftt1ii;;::,,,,,...                   .,;L8t:,,:10C;,.      .        ......,,,,,,,,:::;;ii1ttt1\n" +
@@ -345,7 +348,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "      .,;f@@t,.              .:L0i::;1LCGLti:...     ....:itLCCL1;::i0L:,.             .,,::f@8t:,  \n" +
                        "    ...:;C@G:.               ,:GCitCGCf1:,..              ..,:ifCGCtiCG;,              . .,:10@t,.  \n" +
                        "```";
-            n[ 42 ]  = "```"+
+            n[ 42 ]  = "```" +
                        ".,:i1ttfLCGG0888@@@@800GCLti,.              .,:t8t::10f:,.                 .,1fLCG0088@@@8800GCCLftt\n" +
                        "G088@@88800GGCLfft1i;::,..                 .,:t8L:,,:f8f:,. .               ..,,,:;;i11tffLCCG008888\n" +
                        "Lftt11i;;:::,,,,......                    .,:f8L;,...:f8f;,.     .            .......,,,,,,,::::;;:,\n" +
@@ -375,7 +378,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "     .,:t8@L:..             .,18t:,.,:;tLGGLti:........,;tLGGLti:,.,,18t:,              .,::;f@81:. \n" +
                        "    ..,;f@8;..              .,f0i,,:tCGCfi:,..           .,:ifCGCt;,,;GL:.              ...,:t8@1.. \n" +
                        "```";
-            n[ 43 ]  = "```"+
+            n[ 43 ]  = "```" +
                        ";itLCCG0088@@@@880GCLfti;:..                ,:10L:,,,t8t:,.                   .:;1tfLCG088@@@@8800GG\n" +
                        "8888800GCCLft1ii;:,,..                    .,:10Gi,..,:L8t:,...                   ..,,::;ii11tffLCCCC\n" +
                        "1ii;;:::,,,......                         ,:10Gi,.   ,;L8t:,.    .                .......,,,,,,,,,..\n" +
@@ -405,7 +408,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "    .,:10@G;..             .,i0C;,   ..:itCGGCti:,..,,;tLGGCfi:,.  ..:f81:.              .,:;;C@01:.\n" +
                        "    .,;t8@t..              .,18t,. ..;fCGCfi:,...     ..,:itCGGf;,. .,i8f,.              ..,,;f@8i..\n" +
                        "```";
-            n[ 44 ]  = "```"+
+            n[ 44 ]  = "```" +
                        "fCG088@@@@@800GCLt1i:,.                    .:iGG;,...:L81:,.                      .,;i1fLCG0088@@@@8\n" +
                        "00GCCLfft1i;::,...                        .:iG81:.   ,;G81:,..                       ..,,,:;;ii1ttt1\n" +
                        ":::,,,,.....                             .:iG8t:.    .,iG8t:,.   .                     ......,,,..  \n" +
@@ -435,7 +438,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "   ..,iC@81,.              ,;C8i,.     .,:ifCGGCti::;1LGGCf1;,.    . .;C8i,.              .,:;iG@Gi:\n" +
                        "   .,:10@L,.               ,;0C:.    .,;fG0Gf1:,......,:itCGGLi,.    .,t81,.              .,,:;L@8;.\n" +
                        "```";
-            n[ 45 ]  = "```"+
+            n[ 45 ]  = "```" +
                        "08@@@@880GCLft1;:,.                       .:;C81,.   .:C01:,.                          .:;1tfLCG0888\n" +
                        "LLft11i;::,..                            .:;C@f:,    .,i001:,.                            ..,,::;;::\n" +
                        ",,.......                               .,iC@f;,.     .,1081:,.  ,.                         .....   \n" +
@@ -465,7 +468,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "  ..,;L@@t:.              .:f@t:.        .,:ifC00CftLG0GL1;,..        ,i0G;,.               ,:i10@Ci\n" +
                        "   .:iG@0:..              .:C0;,       .,;fG0Gf1:,,,,:itC00L1,.       .:L8i,.              .,,:;C@0;\n" +
                        "```";
-            n[ 46 ]  = "```"+
+            n[ 46 ]  = "```" +
                        "@8800GCLf1i;,...                       . .,;f8f:.     .;00i:,.                             .,;i1tfLL\n" +
                        "1i;;:,...                               .,;f@C;,.     .,1801:,.                               ......\n" +
                        "....                                   .,;L@Ci,.       .:t801:,. ,.                         .       \n" +
@@ -495,7 +498,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        " ..,:t8@C:.              .:1@C;,           .,:ifG0000GLt;:..          .,18C;,.               .:it8@C\n" +
                        "  .,iL@8i..              .:f@1,.         .,;fG0GL1;;itC00C1:.          ,:G0;,               .,::i0@G\n" +
                        "```";
-            n[ 47 ]  = "```"+
+            n[ 47 ]  = "```" +
                        "GCLft1i:,.                              .,;t8C;,       ,i8Gi:,.                                 .:;;\n" +
                        ":,..                                   .,;t80i:.       .:t8Gi:,.                                    \n" +
                        "                                      .,;f801:.         .:t80i:,.,,                                 \n" +
@@ -525,7 +528,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "..,:i0@0i,.             .,i00i,.             .,:itCGL1;:..             .:t@L;,.               .:iL@@\n" +
                        " .,;f8@f...             .,1@L:.            .,;fG00LLC00Ct:.             ,;0G;,               .,::18@\n" +
                        "```";
-            n[ 48 ]  = "```"+
+            n[ 48 ]  = "```" +
                        "ti;:,.                                ..,:100i,.       .,18Gi:,.                                    \n" +
                        ".                                     .,:t08t:.         .:f@Gi:,.                                   \n" +
                        "                                     .,:t88f;..          .;L@Gi:,,,                                 \n" +
@@ -555,7 +558,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ",,:;C@8t,.             .,;G8t:.                 .:ii;:.                 .:f@f;,.               .,;L@\n" +
                        ".,:10@G:..             .,i8G;,               .,;fG000Ct:..              .,i8G;,                ,,:i8\n" +
                        "```";
-            n[ 49 ]  = "```"+
+            n[ 49 ]  = "```" +
                        ".  .                                  .,:1G81:.         .,t@Ci:,.                                   \n" +
                        "                                     .,:10@f;,.          ,:L@Gi:,.                                  \n" +
                        "                                     ,:10@L;,.           .,;L@Gi:,:                                 \n" +
@@ -585,7 +588,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ",,;f@@C:.              ,;L@f:.                     .                     ,;C@f:,                ..,L\n" +
                        ",:iC@8i..              ,;G8i,.                  .:1fi,.                  .:1@C:,                 ..;\n" +
                        "```";
-            n[ 50 ]  = "```"+
+            n[ 50 ]  = "```" +
                        "   .          .                      .:iC@L;,.            .:L@Ci:,.                                 \n" +
                        "                                    .:iC@Gi:.             .,;G@Ci:,.                                \n" +
                        "                              .   ..:iC@G1:.               .,iG@Ci;,..                              \n" +
@@ -619,7 +622,7 @@ public class AssCinema extends TimedSendLongPollingBot {
             n[ 52 ]  = "```\n              .                    .:;L80i:.                .;C@Ci:,.                               \n                                  .,;L@8t:.                 .,i0@C1:,..                             \n                             ....,,iL@8f;.                   .,10@G1:,,.....                        \n                ............,,,,,:;L@8f;,                     .:10@Ci:,,,,,,............            \n.    ..........,,,,,,,,:::;;ii1ttLG@8f;,.                      ,:10@GLft1ii;:;:,,,,,,,,,,...........\n,,.,,,,,::::;;ii11tfLLCGG000000000CLt;,.                       .,:1LCG00000000GGCLLft11i;;::::,,,,,,\nii1tffLLCGG000000000GCCLfft1ii;;::,::.            . .            .,:,,:;;ii1ttfLCCGG00000000GGCLLft1\n000000GGCLLft11i;;::,,,,........ ....           .:t;..             ............,,,,::;;ii1tffLCCGG0G\n80Lt1i;::,,,,,.......       .     .            .;1:1; .                           .........,,,,::::;\nfG80fi;::,,...                                .:i...i;.                                    ..,,::;1L\n:itG80fi::,,.                                .;1.   .i;.                                   .,,:itG80\n.,:;tG80fi::,..  .                 ...,,:::::;i.     .i;::::,,,....                ..     .,:;tG80fi\n  .,:;tC80fi::,..                  .i1;::,,,..         ..,,,::;1i.                     ..,:;fG8Gf;:,\n    .,:;1C80fi::,..                 .,::.                 . .:;,.                    ..,:ifG8Gt;:,. \n      .,:;1C80Li::,..                 .,;:..              ,:;,.                    ..,:if08Gt;:,.   \n        .,,;1C80Li::,..                 .,;;.           .;;,.      ..            ..,:if08Gt;:,.     \n          .,,;1L88L1;:,...                :i..          .i;.                  ...,:if08Gt;:,.       \n            ..,:1L88L1;::,               .i: .    .     .:1.                 .,::iL08C1;:,.         \n              ..,:iL08L11:....           .1....,:;;;:,.  .1,                 ,i1L08C1;:,.           \n                ..,:iL080t,,..        ...;1,:;;:,...,:;;:,1;.             ..,iG88C1;:,.             \n                  ..,:1C@81:,.          .;1;:.         .::1;.             .,i0@Gt;:,.               \n                    .,;f@0t:..                                            .,iG@Ci:,.                \n                    .,;C@C;:..            .                               .,:f@01:,.                \n......              .:10@f;,.             .                                .:188t:,.                \nL1i:,,,.            ,:f@81:,.                                              .,iG@L;,.                \n@@0fi;,. ..        .,;C@Gi,.                                                ,:L@Gi:..               \nC8@8t,.            .,i0@f:.                                               . .,1881:.                \nt8@C,.             .,180i,.                                                  ,;C@f:.                \n```";
             n[ 53 ]  = "```\n                                  .,;f88t:.                  ,;G@Ci:,.                              \n                                ..,;f8@L;,.                  .,10@C1:,..                            \n                       .  ......,:;L@@L;,.                    .:t0@Gi:,,.......                     \n          ............,,,,,,,,::;if88L;,                       .:t0@Ci;:,,,,,,,,,.............      \n........,,,,,,,,,,:::;;ii1ttfLCCG0@@Li:.                        ,;t0@0GCCLftt11i;;:::,,,,,,,,,,.....\n,,,,:::;;ii1ttfLLCGG000888000GGCLft1;,.                          .:ittLCCGG00088000GGCCLftt1ii;;::,,\ntfLCGG000888000GGCLLft11i;;::,,,,..,,            .:...            .,,..,,,::;;ii1tffLCCGG00088000GCL\nGGGCCLftt1ii;:::,,,............   ..           ..1f1..              .    ...........,,,,::;;ii1tffLL\nf1i;::,,,,........                            ..11,i1..                              .........,,,,,,\n88Cti;:,,...                                 ..1i...i1.                                      ..,,,,:\n1L08Gt;:,,..                                ..11.. ..i1..                                    .,::ifG\n,:if08Gt;:,,..   .                ..,,:::;;;;ii.    ..;i;;;;:::,,,..                .      .,:;1C88C\n..,:if08Gt;:,,..                  .:t1;::,,,..          .,,,::;1t;.                      .,:;1C88C1;\n  ..,:if08Gt;:,,...                 .:;,...               . .,;;..                     .,:;1C88L1;:,\n    ..,:ifG8Gti:,,..                 .,;;:.               .:i;,.                     .,:;1C88Li::,. \n       .,:;tG8Gfi:,,..                 ..:i:            .:i;,      ..              .,:;tC80Li:,..   \n         .,:;tG80fi::,...               ..1i..          .;t..                  ...,:;tG80Li:,..     \n           .,:;tG80fi:::,               .,t,..         ...t,.                 .,,:;tG80Li:,..       \n             .,:;tG80fii:.              .;t....,:;i;:,.  .t;..                ,;itG80fi:,..         \n               .,:;tC80C1,,...        ...1i,:;ii;,.,:ii;:,i1..              .,;C080fi:,..           \n                 .,:;tG@01:,.           .fti;:.       .,;i1f,.             .,iG@0fi:,,.             \n                   .,;t88f;,.           .,.               .,.              .,10@Li:,..              \n                   .,;L@Gi:,.                                              .,;L@01:,.               \n.                  .,iG@C;,.              .                                 .:t@8t:,.               \n;:,,,,.            .:t8@f;,.                                                .,i0@L;,.               \n@0Li;:.  .        .,;L@01:.                                                 .,;C@Gi:,.              \n8@@L;.            .,iG@C;,                                                   .:t@81:..              \nG@8i..            .,i08t:.                                                   .,;G@t:.               \n```";
             n[ 54 ]  = "```\n                                 .,;f88f:.                    ,;G@Ci:,..                            \n                              ...,;f8@C;,.                   ..:10@Ci:,...   .                      \n                   ..........,,,:;f8@Ci,.                      .:t0@Ci:,,,,..........               \n      ...........,,,,,,,,,:::;;i1L8@Ci,.                        ,;t0@Cti;;:::,,,,,,,,,,.............\n.....,,,,,,,:::;;;i11tffLCCG0008888Ci:.                         .,;t0888000GGCLfft11i;;::::,,,,,,,,,\n,::;i11tffLCCGG008888800GGCLLftt1;;:,.                            .,;;i1tffLCCG0008888000GGCLfft1i;;\nG000888800GGCLLft11ii;:::,,,,,.......          ..,1:..             .,.....,,,,,::;;ii1tffLCGG0008800\nfftt11i;;::,,,,...........  .     .           ..,ftf:..                      ............,,,,::;;iii\n::::,,,,......              .     .           .,f;.;f:..                .                 ........,,\nGfi;:,,...                                   .,f;...:f:.                                       ...,,\nG88L1;:,,..                              ....:f;..  .:f:...                                   .,,,:;\n;1C88L1;:,,.                      ,:::;;iiiii1;..   ..:1iiii;;;:::,.                .       ..,:;tG8\n,:;1C88C1;:,,.                    ,tti:::,,..           ..,,,::ift:.                      ..,:if0@0f\n .,:;1C88C1;:,,. .                 .,i;,. .               ....;i:.                      ..,:if080fi:\n   .,,;1L88C1;:,,..                 ..:i;,.               .,;i:..                     ..,:iL08Gt;:,.\n     .,,;1L88C1;:,,.                  ..:i1,.            .ii:..     .               .,,:iL08Gt;:,.  \n       ..,:iL08Gt;:,,...                .,f:.           .:f,..                    .,,:iL88Gt;:,..   \n         ..,:iL08Gt;:,,,                .;t..           ..ti..                  ,,,;1L88Gt;:,.      \n           ..,:if08Gtii:.              ..t1.. ..,;i;,.   .it.. .               .;;1L88Ct;:,.        \n              .,:if080C1,...          ...f:.,;i1i;:;i1i;,.,f,.               ..:fC88C1;:,..         \n                .,:if0@01:,.           .;C11i;,..    .,;i11Ci..             .,;L@8Ct;:,.            \n                 .,:;t8@C;,.            ,i:..            .:i:               .,18@Ci:,,.             \n                  .,;L@8t;,.                                                .,;C@G1:,.              \n                  .,iC@Gi:,.              .                                 .,:f@8t:,.              \n,......           .:10@L;,.                                                  .:10@L;,..             \nGfi;:,   .        ,:f@8t:,.                                                  .,;G@Gi:,.             \n@@G1,             ,;C@Gi,.                                                    .:f@81:.              \n@@L,..           .,;G@f:,                                                     .,i0@t:.              \n```";
-            n[ 55 ]  = "```"+
+            n[ 55 ]  = "```" +
                        "             .                  .,;t0@L;,.                     ,;G@Ci:,..                           \n" +
                        "                            ...,,;t0@Gi,.                    . .:188Ci:,,... ..                     \n" +
                        "              ...........,,,,,::;t8@G1,.                        .:t0@Ci::,,,,,,,...........         \n" +
@@ -649,7 +652,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "@0t:.            ,;L@01:.                                                      ,:L@01:.             \n" +
                        "@8;.             ,;C@C;,.                                                      .,18@t:.             \n" +
                        "```";
-            n[ 56 ]  = "```"+
+            n[ 56 ]  = "```" +
                        "             .                ..,;t0@Ci,.                       ,i0@Ci:,...                         \n" +
                        "                   .   .......,:;t0@01:.                        .:t0@Ci:,,,........   ..            \n" +
                        "        ...........,,,,,,,,,::;it0@01,.                         ..:f8@C1;:::,,,,,,,,,,..........    \n" +
@@ -679,7 +682,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "0t:,            .:f@8f:.                                                        ,;L@01:.            \n" +
                        "@f..            ,:L@Gi,.                                                        .,188t:.            \n" +
                        "```";
-            n[ 57 ]  = "```"+
+            n[ 57 ]  = "```" +
                        "       .     .               ..,:tG@Gi,.                        .,i0@C1:,,..                        \n" +
                        "                ...........,,,:;10@8t:.                          .:t8@Ci::,,,,..........            \n" +
                        "      .......,,,,,,,,,:::::;;i1f0@0t:.                           .,:f8@Gt1i;;:::,,,,,,,,,,,,........\n" +
@@ -709,7 +712,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "f:,.           .:t8@L;,                                                         .,;C@01:.           \n" +
                        "8:.            .:f@01,.                                                          .:t88t:.           \n" +
                        "```";
-            n[ 58 ]  = "```"+
+            n[ 58 ]  = "```" +
                        "       .     .           ....,,:1G@01,.                          .,18@C1:,,......                   \n" +
                        "            ..........,,,,,,,:;1G@8t:.                            .;f8@Ci;:,,,,,,,,...........      \n" +
                        "   .....,,,,,,,,,::::;;;i11tfLC0@8f:,.                            .,;L8@0Lftt1ii;;::::,,,,,,,,,,,...\n" +
@@ -739,7 +742,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ":.      .     .:10@C;,                                                           .,;G@01:.          \n" +
                        "t.            .:t@8t:.                                                            ,:f@8t:.          \n" +
                        "```";
-            n[ 59 ]  = "```"+
+            n[ 59 ]  = "```" +
                        "      .      ...........,,,,:;iC@@f:. .                            .:18@Ci;:,,,,,.......... ..      \n" +
                        "     ......,,,,,,,,,::::;;ii1tC@@L;,.                              .::f@@Gt1i;;::::,,,,,,,,,,,......\n" +
                        "...,,,::::;;;ii11tffLCGG00888@@8Ci,.                                .,;L8@@88800GCCLfft11ii;;:::,,,,\n" +
@@ -769,7 +772,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "        .   .,iG@01:.                                                              .,i0@G1:.        \n" +
                        "            .,i0@C;,.                                                              .,:L@81:.        \n" +
                        "```";
-            n[ 60 ]  = "```"+
+            n[ 60 ]  = "```" +
                        "      .. .........,,,,,,,,::;iL8@L:.                                :,18@Ci;::,,,,,,,,,,..........  \n" +
                        "......,,,,,,,,,:::;;;iii1ttfLG@@Ci,.                                ,,;L@@GLfft1ii;;;::::,,,,,,,,,,,\n" +
                        ",,,::;;iii1ttfLLCGG0088@@@@@800Ci,.              .....               .,;L008@@@@88800GGCLLftt1ii;;::\n" +
@@ -799,7 +802,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "       ..  .,iC@8f:.                 .                         .                    .:10@G1:.       \n" +
                        "           .,iG@Gi,.                                                                .,;C@01:.       \n" +
                        "```";
-            n[ 61 ]  = "```"+
+            n[ 61 ]  = "```" +
                        "      .......,,,,,,,,,::::;i1L8@C;,                                 :,,t8@C1i;:::,,,,,,,,,,,,.......\n" +
                        "....,,,,,::::;;;ii11tffLLCG00@@0i:.                                 ..,;L@@80GCCLftt11ii;;:::::,,,,,\n" +
                        "::;i11ttfLCCG00888@@@@@88000CLLi,..             .,1;..                ..;fLCG0088@@@@@88800GCCLftti;\n" +
@@ -829,7 +832,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "       .   ,;L@@L;,                                                                  .:18@G1:.      \n" +
                        "          .,;C@81:.                                                                  .,;C@01:.      \n" +
                        "```";
-            n[ 62 ]  = "```"+
+            n[ 62 ]  = "```" +
                        "  . ....,,,,,,,,:::::;;;ii1tL8@G;,.                                 :,.:t@@Ct11i;;:::::,,,,,,,,,,,,.\n" +
                        ".,,,,:::;;;ii11tffLCCGG0888@@@01:,              ..,...              . .,;C@@@88800GCCLfft11ii;;;::,,\n" +
                        "i1tfLCCG00888@@@@@8880GGCCLf1ti,.              ..10C:..                ..:11tLLCCG0088@@@@@@8800GCLf\n" +
@@ -859,7 +862,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "       .  ,;f8@Ci,.                ..                            ..                   .:t8@G1:.     \n" +
                        "          ,;L@8t:,                                               .                    .,iG@01:.     \n" +
                        "```";
-            n[ 63 ]  = "```"+
+            n[ 63 ]  = "```" +
                        ".....,,,,,,,::::;;;ii11tffLC8@0i,.              .. ....             ,: ,:f@@GCLft11ii;;;::::,,,,,,,,\n" +
                        ",,::;iii11tffLCCG00888@@@@@800t:,              ..:Lt,..                .,;L088@@@@88800GGCLLftt1ii;:\n" +
                        "LCG0088@@@@@@@8800GCCLftt11;;;..              ..:GG0L,..                 .,;;i11tffLCGG0088@@@@@@880\n" +
@@ -889,7 +892,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "       . .:t8@01:.               .i1:..                       ..,;1:..                 ,:f@@Ci:.    \n" +
                        "         ,:f@@L:,.                 .                              .                    .,i0@0i,.    \n" +
                        "```";
-            n[ 64 ]  = "```"+
+            n[ 64 ]  = "```" +
                        ".,,,,,:::::;;;ii11tffLCCG008@8t:.               .,1i,..             .: .,;L@@80GGCLfft11ii;;;::::,,,\n" +
                        ":;i1ttffLCCG00888@@@@@88800CCt:..             ..,f88t,..                .,;fCG0088@@@@@@8800GGCLLft1\n" +
                        "08@@@@@@@8800GCCLfft11ii;;:::.                .,f01t01...                  ,:::;;ii11tfLLCGG0088@@@8\n" +
@@ -919,7 +922,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "      ...:10@8t:.              ..f0Cfi:..                    ..:1fC81.                  ,;L@@Ci:.   \n" +
                        "        .:t8@C;,.               .,:...                          ..,:..                  .:10@Gi,.   \n" +
                        "```";
-            n[ 65 ]  = "```"+
+            n[ 65 ]  = "```" +
                        ",,,,:;;;;ii11tffLCCG00888@@@8f:,              ...180i,..             :  .,;C@@@@8800GGCLLftt1iii;:::\n" +
                        "1tfLCGG00888@@@@@@8800GCCLfti,.               ..10LC0i..                  .:1tfLCGG0088@@@@@@8880GCL\n" +
                        "@@@@8800GGCLLft11ii;;;::,,,,.  .             ..i0f::L0;...                  ,,,,,::;;;ii1ttfLLCGG000\n" +
@@ -949,7 +952,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "      ..:1G@@f;,              ..18CCCLti,..                ..,itLCLG8i..   .            .,;L@@Ci:.  \n" +
                        "       .:10@0i,.              ..iGf1:..                        ..:1LGi..                 ,:18@Gi,.  \n" +
                        "```";
-            n[ 66 ]  = "```"+
+            n[ 66 ]  = "```" +
                        ",::;i111tffLCCG00888@@@@@@80L;,.              ..:GCGG:..             ,.  .,;L08@@@@@@8880GGCLLftt1i;\n" +
                        "LC0088@@@@@@@8800GGCLLftt1i:,.               ..:GGi;GG:..                  .,;i1ttfLLCGG0888@@@@@@80\n" +
                        "000GGCLLftt11ii;;:::,:,,,....               ..:GG;,.;GG:..                   ....,,,,:::;;ii11ttfLLL\n" +
@@ -979,7 +982,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "      ,,iC@@C;,.              .:GCi1fCCLt;,..            ..,;tLCLti;CG:.                 .,;C@@Ci,. \n" +
                        "      .,iG@8t:.              ..i8GGCfi,..                    ..,ifCGG8i..                .,:t8@C;,. \n" +
                        "```";
-            n[ 67 ]  = "```"+
+            n[ 67 ]  = "```" +
                        ";i1tffLCCGG0888@@@@@@880GCL1:..              ..,f0;;0L,..                 ..:1LCG088@@@@@@8880GGCLft\n" +
                        "08@@@@@@88800GCCLfft1ii;:,.                 ..,L81,,i8L,..                   ..,:;ii1tffLCCG00888@@8\n" +
                        "LLLfft11ii;;::::,,,,,,...                  ..,L81,...i8L,..                      ....,,,,::::;;ii111\n" +
@@ -1009,7 +1012,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "     .:;L@@Gi:.              .,f0;,,:1fCCLt;,..        ..,;1LCCfi:,,;0L,.                 .:iG@@Li,.\n" +
                        "     .,;C@@f:,               .,GC:1LGCfi,..                ..,;tCGL1:LG,.                 .,:f@@C;,.\n" +
                        "```";
-            n[ 68 ]  = "```"+
+            n[ 68 ]  = "```" +
                        "CG088@@@@@@@880GCLf1;:..                    ..;0L,...t81,..   .                  ..,;1tLCG008@@@@@@8\n" +
                        "0000GCCLfft1ii;:,,.                       ...i0G;.. .,L81,..                          ..,:;ii1tffLLL\n" +
                        "::;;:::,,,,,....    ..                    .,i8G;..   .,L81,..                            .....,,,,,,\n" +
@@ -1039,7 +1042,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "    ,;t0@8f;,.              .;0C,.    ..;tLGGL1;......:1LGGLt;,..   .,f8i...                ,:t8@8f;\n" +
                        "    ,:t8@0i:.               .i81..  .,tCGCt;,..        ..,;tCGCt:.. ..;8t...                .,;G@@f;\n" +
                        "```";
-            n[ 69 ]  = "```"+
+            n[ 69 ]  = "```" +
                        "8@@@@@@8800GCLt1;,.                        ..:GG:.. ..L0i,..  .                       .,:itfLCG088@8\n" +
                        "LLLLfft1i;::,..                          ...;G8i..  ..:G8i,..                             ..,,:;ii11\n" +
                        ",,,,,,,.....        ..                   ..;G81,.     .:G81,..                                ......\n" +
@@ -1069,7 +1072,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "   ,:1G@@Ci:.              .,C8;..      .,;tCGGL1;,,:1fGGCfi,...     .,C8;..                 ,;f8@0t\n" +
                        "   .:10@8t:,.              .:0L,.     .:tC0Cf;,... .....;tLGGf;..    ..18i..                 .:i0@8f\n" +
                        "```";
-            n[ 70 ]  = "```"+
+            n[ 70 ]  = "```" +
                        "@@@880GCLfti:,..                          ..:L8i..   .,C0;,.. .                           ..:;1tLCGG\n" +
                        "1111i;::,..                              ..:L8f,.    ..;00i,..                                 ..,,,\n" +
                        ",......             .                   ..:C@f:.       .;08i,..                                     \n" +
@@ -1099,7 +1102,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "  ,:iC@@0t:.              .,f@t,.         .,;tC0GCttLG0Gfi,...       ..:0G:..                 ,;L@@0\n" +
                        "  .,iG@@L;,.              .,C0:.        .:tG0Gfi,.....:1C0GL;..      ...f8;..                .,:18@8\n" +
                        "```";
-            n[ 71 ]  = "```"+
+            n[ 71 ]  = "```" +
                        "0GGCLf1i:..                              ..,t8f,.     .:0G;,...                               ..,:ii\n" +
                        ":::,,.                                  ..,f@C:.      ..i80;,..                                     \n" +
                        ".                   .                  ..:f@C;..       ..180i,..                                    \n" +
@@ -1129,7 +1132,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        " .:;f8@8f;.              ..1@L:.            .,;tC00GGGL1:..            .i8C:..                .,iG@@\n" +
                        " .,;L@@Gi:,.             ..f8i..          .:tG0Gfi::;1C00Li.         . .,C0:.                 .,:t@@\n" +
                        "```";
-            n[ 72 ]  = "```"+
+            n[ 72 ]  = "```" +
                        "tti;:..                                  .,18C:.       .;8C;...                                     \n" +
                        ".                                      ..,t80;..       ..18G;...                                    \n" +
                        "                    .                 ..,t@0i,.         .,t@G;,..                                   \n" +
@@ -1159,7 +1162,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ".,;t0@@Ci,              ..;00;.               .,;tCGfi:...             ..1@L:.                 .,iG@\n" +
                        ".,:t8@81:,.             ..1@f,.             .:tG0GLfC00Ci,.             .:00:.                  ,:t@\n" +
                        "```";
-            n[ 73 ]  = "```"+
+            n[ 73 ]  = "```" +
                        ".                                      ..,i00;..        .i8C:,..                                    \n" +
                        "                                      ..,1081,.         .,t@C;...                                   \n" +
                        "                    .                 .,188t,.           .,f@G;,...                                 \n" +
@@ -1189,7 +1192,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ",;1G@@0t:.              .:G81,.                 .,;i:...                .,f@f,.                  .:C\n" +
                        ",:10@@L;,..             .;8G:.                .:tG080C1,.               ..;8C,.                  ..i\n" +
                        "```";
-            n[ 74 ]  = "```"+
+            n[ 74 ]  = "```" +
                        "                                       .,;G8i..         ..1@L:,..                                   \n" +
                        "                                      .,i0@f,.           .,L@C;...                                  \n" +
                        "                    .                .,i0@f:.             .:L@G;,..              .                  \n" +
@@ -1219,7 +1222,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ":1C@@@L:.              .:L@f,.                                           .,L@t,.                    \n" +
                        ":iC@@Gi:.              .:G8;..                  .,1f;,.                  ..i8C,.                    \n" +
                        "```";
-            n[ 75 ]  = "```"+
+            n[ 75 ]  = "```" +
                        "                                      ..;C@t,.            .t@L:,..                                  \n" +
                        "                                     ..;G@C:..            .,C@C;...                                 \n" +
                        "                    .              ..,;G@C;..             ..:C@C;,..              .                 \n" +
@@ -1249,7 +1252,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "iL8@@Gi,              .,f@C:.                                             .:G@t,.                   \n" +
                        ";f8@8f;,              .,C@1..                                             ..t@L,.                   \n" +
                        "```";
-            n[ 76 ]  = "```"+
+            n[ 76 ]  = "```" +
                        "                                     ..:L@L,.             ..f@L:,..                                 \n" +
                        "                           .        ..;C@G;..              .:C@C;,..                                \n" +
                        "                   .               ..;C@Gi..               ..;G@C;,..             .                 \n" +
@@ -1279,7 +1282,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "f0@@8t:.             .,1@0;..                                              .;0@1,.                  \n" +
                        "1G@@Ci,.             .,f@f,.                                               .,f@f,.                  \n" +
                        "```";
-            n[ 77 ]  = "```"+
+            n[ 77 ]  = "```" +
                        "                                   ..:f80i..                .,C@L;,..                               \n" +
                        "                   .       .      ..:f@8t,.                 ..;0@C;,..                              \n" +
                        "                   .          .....:L@8f,.                   ..i0@C;,...          .                 \n" +
@@ -1309,7 +1312,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "8@@Gi,.            ..;0@f,.                                                 ..1881,.                \n" +
                        "8@@L;,             ..i80;..                                                 ..,C@t,.                \n" +
                        "```";
-            n[ 78 ]  = "```"+
+            n[ 78 ]  = "```" +
                        "                                  ..:t881,.                  .,G@L;,..                              \n" +
                        "                   .       .     ..:f8@f:.                   ..i0@C;,..                             \n" +
                        "                   .        ......:f@@L:.                     ..10@C;,........    ..                \n" +
@@ -1339,7 +1342,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "@@0t:.             .;G@C:.                                      .            ..t@81,.               \n" +
                        "@@01:.             .;081..                                                  ...:G@t,.               \n" +
                        "```";
-            n[ 79 ]  = "```"+
+            n[ 79 ]  = "```" +
                        "                                  .,t0@t,.                    .:G@L;,..                             \n" +
                        "                   .       .  ....,t8@C:..                    ..i8@C;....                           \n" +
                        "                   .    .........:f8@C;.                       ..18@C;,.......... ..                \n" +
@@ -1369,7 +1372,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "@0t:.             .:C@G;..                                      .             .,f@81,.              \n" +
                        "@@L:.             .:G@f,.                                                   ....;0@t..              \n" +
                        "```";
-            n[ 80 ]  = "```"+
+            n[ 80 ]  = "```" +
                        "                                ..,10@L,.                      .:G@L;,...                           \n" +
                        "                  ..      ..  ...,t0@G;.                       ..i8@C;,....  ..                     \n" +
                        "                . .............,:t8@G;..                        .,t8@C;,...........,....            \n" +
@@ -1399,7 +1402,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "0f:,             .:L@8i..                                                      .,f@0i,.             \n" +
                        "@G;,             .:C@L,.                                                     . ..;0@1..             \n" +
                        "```";
-            n[ 81 ]  = "```"+
+            n[ 81 ]  = "```" +
                        "                           .   ..,10@C:.                        .;0@L;,...                          \n" +
                        "                  ..      ......,10@0i..                        ..18@C;,........                    \n" +
                        "          ..................,,,:t0@0i..                          .,t8@Ci:,,........,..........      \n" +
@@ -1429,7 +1432,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "f:..            .,f@8t,.                                                        .,L@0i,.            \n" +
                        "81,             .,L@G:..                                                     .  ..i8@1..            \n" +
                        "```";
-            n[ 82 ]  = "```"+
+            n[ 82 ]  = "```" +
                        "                           . ...,iG@0;.                         ..;0@C;,...                         \n" +
                        "                  .............,10@81,.                          .,t8@C;,.............              \n" +
                        "       ................,,,,::;it0@01..                           ..,t8@G1i;:,,,,...,............... \n" +
@@ -1459,7 +1462,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ":              .,t8@L,.                                                          .:C@0i,.           \n" +
                        "t.             .,f@0i..                                                      .   ..1881..           \n" +
                        "```";
-            n[ 83 ]  = "```"+
+            n[ 83 ]  = "```" +
                        "                          .....,iG@8i..                          ..;8@C;,........                   \n" +
                        "               ..............,:iG@8t,.                            .,t8@C;,.................         \n" +
                        " .   .............,,,,::;ii1tfL0@8t,..                            ..,f@@0Lft1i;;::,,,...............\n" +
@@ -1489,7 +1492,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "              .,18@C:.                                                            .:G@0i,.          \n" +
                        "              ..t@81..                                                       .    ..t@81..          \n" +
                        "```";
-            n[ 84 ]  = "```"+
+            n[ 84 ]  = "```" +
                        "                .   .  .......,;C@81.                              .i8@C;,.........        .        \n" +
                        "        ..................,,,:iC@8f,.                              .,t8@Ci:,,,..................... \n" +
                        "............,,,,::;;i11tfLLCG08@@L:..                             ...,f@@80GCLftt1ii;::,,,,.........\n" +
@@ -1520,7 +1523,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "             ..i8@f,.                                                              .,f@81..         \n" +
                        "```";
             n[ 85 ]  = "```\n              ...............,;C@@t,.                               .i8@C;,.............  ..        \n      ............,.,,,,,:;;itC@@L,..                               .,f@@C1i;::,,,,.................\n.......,,,,::;;i11tfLCCG0088@@@8C:..                                 .:L8@@@8800GCLLft1ii;;::,,,....\n,:i1tfLLCG00888@@@@8800GCCLft1;;,.                                    .,;;1tfLLCG0088@@@@88800GCLfti\n08@@88800GCCLft11i;::,,,..........                                     .........,,,::;ii1tfLLCG00880\niiii;::,,,.............        . .                                               .............,,,::,\n....... .   .                  .                                                                    \n                         .                                                                          \n                                                                                                    \n                                                                   .                                \n                                              .                                              .,     \n..                                                        .                                         \n......                                                                                              \nGt;,....    .                                                                                  .  ..\n0@8Li:,...                           .                                                         .....\n;tG@8L1:,...                         .                                  .                    ...,ifG\n.,:tG@8C1:,...                                                                             ..,:iC8@0\n ..,:tG@8C1:,....                                                                        ..,:1C8@0t;\n   ..,:1G@8C1:,...                                                                    ....:1C@@Gt;,.\n     ..,:1C@@G1:,,.                                              .                   .,,:1C@@Gt:,.. \n       ...:1C8@Gt1,...              .                                                .itG@@Gt:,..   \n    :.   ...:1C8@8t,,..                                                           ..,10@@Gt;,...    \n    1:     ..,:t0@8t,..       .                                                   ..18@0f;,... .    \n            ..,i0@0t:..      .                                                    .,10@01,...       \n            ..,t8@C;,.                  .                                         ..:L@@f:...       \n            ..:L@@L:..                                                             .,t@@L;,.        \n             .;G@81,.                                                              ..;0@Gi,.        \n            ..i0@C:.                                                                .,f@8i..        \n```";
-            n[ 86 ]  = "```"+
+            n[ 86 ]  = "```" +
                        "        ...............,,,::iL8@C,.                                  ..18@Ci::,,,.................. \n" +
                        "..........,,,,::;iii1tffLCG08@@0;..                                   .:L@@80GCLfft1ii;;::,,,,......\n" +
                        ".,:;ii1tfLLCGG088@@@@@@8880GCLf;..                                     .,tfCG0088@@@@@@8800GCLfft1;:\n" +
@@ -1551,7 +1554,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "           .:C@0i..                                                                   .:C@0i..      \n" +
                        "```";
             n[ 87 ]  = "```\n ..  .............,,,,::;;i1L8@G:.                                    ..1@@Cti;;::,,,,..............\n.....,,,,::;;i11tfLLCGG0888@@@01,.                                     .:L@@@@8800GCLLft11i;;::,,,..\n;i1fLLCG0088@@@@@@@880GGCLLt1i:..                                       .,iitfLCCG0088@@@@@@8800GCLt\n8@@@8880GGCLfft1i;;::,,,.......                                          .......,,,,::;ii1tfLCCG0080\niiii;::,,,............           .                                         ..     ............,,,,,,\n........... .                    .                                                                  \n                               .                                                                    \n                                                                                                    \n                                                                                                    \n                                              .                    .                                \n                                           .  .                                               .,    \n                                                          .                                         \n                                                                                                    \n..          .                                                                                       \n......                                                                                              \nGfi:,...                             .                                  ..                        ..\n0@8C1:,....                                                                                   ......\n;f0@8C1:,....                                                                                 ..,;tL\n.,;f0@8C1;,.....                                                                           ...,iL0@8\n ..,;tG@@Gt;,...                                                                         ...:iL8@8Li\n  ...,;tG@@Gt;:,.                  .                                                    .,:iL8@8Li:.\n     ..,;tG@@GLi....                                                                  ..,fG8@8Li:...\n ;1   ...,;tG@@0i:..          .                                                       .;L@@8L1:,..  \n ..      ..,iC@@G;..                                   .                             ..t@@0t;,...   \n          .,;G@8f;..                                                                 .,iG@8t:...    \n          .,18@01,.                     .                                            ..:L@@L;,.     \n          .,f@@C;..                                                                   .,t8@Gi,.     \n          .,L@81..                                                                    ..:G@0i.      \n```";
-            n[ 88 ]  = "```"+
+            n[ 88 ]  = "```" +
                        "... .........,,,,::;;i11tfLC8@0;.                                      ..t@@GLft11i;;::,,,,,........\n" +
                        "...,::;ii1ttfLLCG0088@@@@@@80G1,.                                       .:L08@@@@@@8800GCCLftt1ii;,,\n" +
                        "fLG0088@@@@@@@8800GCLfft1ii::,.                                           .::;i11tfLCCG008@@@@@@@88G\n" +
@@ -1581,7 +1584,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "         .,t8@0i...                                                                    .,t@@C;,.    \n" +
                        "         .,f@@f,.                                                                      ..;0@0;..    \n" +
                        "```";
-            n[ 89 ]  = "```"+
+            n[ 89 ]  = "```" +
                        ".......,,,,:::;ii11tfLLCG00@@8i..                                       .,f@@80GCCLftt1i;;:::,,,....\n" +
                        ",,;i1ttfLCCG0088@@@@@@@8800CL1,.                                         .:tLG0088@@@@@@8800GGCLft1;\n" +
                        "08@@@@@@@8800GCLLft11i;::,,...                                             ...,::;;i1ttfLCGG088@@@@8\n" +
@@ -1611,7 +1614,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "        .,10@81,. .                                                                     .,f@@C;..   \n" +
                        "        ..18@C:..                                                                       ..i0@G;..   \n" +
                        "```";
-            n[ 90 ]  = "```"+
+            n[ 90 ]  = "```" +
                        "....,,::;;;i1ttfLLCG0088@@@@8t..                                         .,L@@@@@800GGCLftt1ii;;:,,.\n" +
                        "i1tLCCG0088@@@@@@@8800GCCLf1;,.                                           .,i1fLCGG0088@@@@@@8880GCf\n" +
                        "@@@@@880GGCLftt1i;;::,,,.....                                               .....,,,::;ii1ttfLCGG000\n" +
@@ -1641,7 +1644,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "       ..iG@@f,.  .                                                                     ..:L@@C;..  \n" +
                        "       ..i0@0;..                                                 .                       ..18@G;.   \n" +
                        "```";
-            n[ 91 ]  = "```"+
+            n[ 91 ]  = "```" +
                        "..,:;ii11tfLLCG0088@@@@@@@80f,.                                           .,f08@@@@@@@880GGCLftt1i;:\n" +
                        "LCG088@@@@@@@@880GGCLfft1i;,..                                              .,;i1tffLCGG088@@@@@@@80\n" +
                        "000GGCLfft1ii;::,,,........                                                  ........,,,,::;ii1tffff\n" +
@@ -1671,7 +1674,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "       .;C@@C:..                                                                         ..:C@@L;.. \n" +
                        "       .;G@81..                                                  .                        .,t8@C:.  \n" +
                        "```";
-            n[ 92 ]  = "```"+
+            n[ 92 ]  = "```" +
                        "::i1tfLLCG0088@@@@@@@880GCf1,.                                             .,ifCG088@@@@@@@880GGCLt1\n" +
                        "08@@@@@@@8800GCCLft1i;;:,..  .                                                ..,::;i1ffLCCG0088@@@8\n" +
                        "LLLft11i;;::,,,........                                                      .    ........,,,::;;ii;\n" +
@@ -1701,7 +1704,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "      .:L@@G;..                                                                           ..;G@@L;..\n" +
                        "     ..:C@@f,.                                                   .                         .,f@@C:. \n" +
                        "```";
-            n[ 93 ]  = "```"+
+            n[ 93 ]  = "```" +
                        "1tLCGG088@@@@@@@@800CLf1;:,.                                                  .:;1fLCG08@@@@@@@@80GC\n" +
                        "@@@@8800GGCLfft1i;:,,...                                                          ...,;;i1ttfLCCG000\n" +
                        "iiii;::,,,,.......                                                                    .........,,,,,\n" +
@@ -1731,7 +1734,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "     .,f8@81,.                                                                             .,i0@8f:.\n" +
                        "     .,f@@C:..                                                   .                         ..,L@@L,.\n" +
                        "```";
-            n[ 94 ]  = "```"+
+            n[ 94 ]  = "```" +
                        "CG088@@@@@@@880GCfti;,.  .                                                        .,:itfCG088@@@@@@8\n" +
                        "0000GCCLft1i;;:,...                                                                   ...,,:;i1tffff\n" +
                        ",,,,,,........                                                                             .........\n" +
@@ -1761,7 +1764,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "    .,18@@f:.                                                                               .,18@8f:\n" +
                        "    .,18@0;..                                                    .                          ..:G@@f,\n" +
                        "```";
-            n[ 95 ]  = "```"+
+            n[ 95 ]  = "```" +
                        "@@@880GCLt1;:. ..        .                                                                 .,:itfLCC\n" +
                        "iiii;:,...                                                                             .       .....\n" +
                        "......                                                                                              \n" +
@@ -1791,7 +1794,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "  ..;C@@01,.     .                                                                            .:L@@0\n" +
                        "  ..:G@@L,..                                                     .                            ..i8@8\n" +
                        "```";
-            n[ 96 ]  = "```"+
+            n[ 96 ]  = "```" +
                        "GGGCfti;,.     ..        .                                                             .        .:;i\n" +
                        ",,,...                                                                                 .            \n" +
                        "                                                                              .                     \n" +
@@ -1821,7 +1824,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        " ..:f8@8f:.                                                                                    .;G@@\n" +
                        " ..,L@@G:..                                                      .                             .,t8@\n" +
                        "```";
-            n[ 97 ]  = "```"+
+            n[ 97 ]  = "```" +
                        "t1i:,.         .                                                                       .            \n" +
                        "                                                                                       .            \n" +
                        "                                                                              .                     \n" +
@@ -1851,7 +1854,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "..,10@@G;.                                                                                      .;G@\n" +
                        " .,18@81,.                                                                                      ..t@\n" +
                        "```";
-            n[ 98 ]  = "```"+
+            n[ 98 ]  = "```" +
                        ".              .                                                                       ..           \n" +
                        "                                                                                        .           \n" +
                        "                                                                              .                     \n" +
@@ -1881,7 +1884,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ".,iG@@81.                              .                                                         .,C\n" +
                        "..;0@@f:.                                                                                          ;\n" +
                        "```";
-            n[ 99 ]  = "```"+
+            n[ 99 ]  = "```" +
                        "               .                                                                        .           \n" +
                        "                                                                                                    \n" +
                        "                                                                              .                     \n" +
@@ -1911,7 +1914,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ",;C@@@L,.                              .                                                            \n" +
                        ".:C@@G;,.                                                                                           \n" +
                        "```";
-            n[ 100 ] = "```"+
+            n[ 100 ] = "```" +
                        "               .                                                                        ,           \n" +
                        "                                                                                                    \n" +
                        "                                                                              .                     \n" +
@@ -1941,7 +1944,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        ";L8@@G;.                               .                                                            \n" +
                        ",t8@8t,.                                                                                            \n" +
                        "```";
-            n[ 101 ] = "```"+
+            n[ 101 ] = "```" +
                        "              ..                                                                        ..          \n" +
                        "                                                                                                    \n" +
                        "                               .                                                                    \n" +
@@ -1971,7 +1974,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "f0@@81.                                .                                                            \n" +
                        "iG@@C;.                                                                                             \n" +
                        "```";
-            n[ 102 ] = "```"+
+            n[ 102 ] = "```" +
                        "              .                                                                         .,          \n" +
                        "                                                                                                    \n" +
                        "                               .                                                                    \n" +
@@ -2001,7 +2004,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "G@@@L,.                                .                                                            \n" +
                        "L@@81,.         .                                                                                   \n" +
                        "```";
-            n[ 103 ] = "```"+
+            n[ 103 ] = "```" +
                        "                            .                                                            ,          \n" +
                        "                                                                                                    \n" +
                        "                               .                                                                    \n" +
@@ -2031,7 +2034,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "@@@G;.                                 .                                                            \n" +
                        "8@@L:.          .                                                                                   \n" +
                        "```";
-            n[ 104 ] = "```"+
+            n[ 104 ] = "```" +
                        "                            .                                                            ..         \n" +
                        "                                                                                                    \n" +
                        "                              ..                                               .                    \n" +
@@ -2061,7 +2064,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "@0t,.                                  .                                                            \n" +
                        "@@f,.                                                                                               \n" +
                        "```";
-            n[ 105 ] = "```"+
+            n[ 105 ] = "```" +
                        "                            .                                                             .         \n" +
                        "                                                                                                    \n" +
                        "                              ..                                                                    \n" +
@@ -2091,7 +2094,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "0t,.                                  .. .                                                          \n" +
                        "@G:.           .                                                                                    \n" +
                        "```";
-            n[ 106 ] = "```"+
+            n[ 106 ] = "```" +
                        "                            .                                                             .         \n" +
                        "                                                                                                    \n" +
                        "                              .                                                                     \n" +
@@ -2121,7 +2124,7 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "t,.                                   ..                                                            \n" +
                        "@i.            .                                                                                    \n" +
                        "```";
-            n[ 107 ] = "```"+
+            n[ 107 ] = "```" +
                        "                                                                                                    \n" +
                        "                                                                                                    \n" +
                        "                              ,                                                                     \n" +
@@ -2152,1609 +2155,1608 @@ public class AssCinema extends TimedSendLongPollingBot {
                        "t.             .                                                                                    \n" +
                        "```";
         } // 1st mov stars ~100 frames
-        {
-            String[] width100pentagram = new String[31];
-            width100pentagram[0] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         .......,..........                                         \n" +
-                                   "                                  ...,,,,,,,,:,,,,::,,,,:,,,,,,...                                  \n" +
-                                   "                              .,,,:,,,,::,.,,:,,,,::,,,,:,..,:,,,,,,..                              \n" +
-                                   "                          ..,,,,.,:,,,,:;:,,.  .,:;:,.. ..,,::,,.,::,,,,..                          \n" +
-                                   "                       ..,:,,::.,,....,::;,,,::,,:i;,,,,,,,:;:,...,,,.,::,,,.                       \n" +
-                                   "                     .,,:,,.,,:::,..,::::,,,:,,,;;;:;,,:::,,::,,.. .,,::,.,,,,.                     \n" +
-                                   "                  .,,,,.,:,..,:;;::::,,.      ,:;:i;;:.      ,,:;:,,:;;:,,,::,,,.                   \n" +
-                                   "                .,,,:,.,,. .,:,;;;::,......,,::,.;11,,::,..    .,::;i;,,. .,,,.,,,,                 \n" +
-                                   "               ,,,,.,:::,,,:;:,;:;;:,,,:::;i;:,:i1111:,::;;::,,,::;;:;,:;,..,:,::,,,.               \n" +
-                                   "             .,,:,,,,.:::,,,. ,;:.;;::::::;;:,:ii,1:;1;::;;::::,,;;:;:..:::,:;;:,..,,,.             \n" +
-                                   "            .,,.,:,. ,,,:    .::.,;:.,,,,..  .;1i;Li;1i,  .,,::::;:.,:,  ..,:,:..,,:,,,.            \n" +
-                                   "           ,,,,.,,..,;:,   .,;:::i:        .;;i;iCG1,;ii:.       ,i:,::,    ,:::  .,..,,,           \n" +
-                                   "          ,,,,::::,,::...,,:;;i::.       ,:;;;,.LCGL; ,;;;:.      .;::;;;,.  .::,..,,,::,,          \n" +
-                                   "         ,,,.,,,:;;;::;::,,,:::     ..,;ii;;::;LGCCGLt;:;;ii;,.     .:;::::::,::::;;::,.,,,         \n" +
-                                   "        ,,::,,. ,,;;:;11;;;iii::;;:;;;ifLtt11tCG1LCtCCft1ttLfi;;:,,.  ,:;:,,,:;;;i;,:.:.,,:,        \n" +
-                                   "       .,,.,,  ,::,,;:,i111;;iii;:::,;t1ffii:tGf;CG;fGi:iifLtt;:;;;iiii;;i11i1i;::::, .,,:,,.       \n" +
-                                   "      .,,,,,,,,::, .::.:ii:;tfti::;1ff11;.  ;LGGC00CCGL:  .i11ti;,,,;i11iii11:,;, ,;:. .,.,,,       \n" +
-                                   "      ,,,,::;;::.   ::::;;ii1ifLtttt1:.    iCfL:i001;CLC;   .:;tLf11tLft1:ii:.::. .::,,,:,,,,,      \n" +
-                                   "     .,,..:.,,::   .;;;;: :ii: itt.       ;L1f,iGGGG;,LtL;      .,1ft1.;i1;;::::.   ,::;::,,,,      \n" +
-                                   "     .,,:,,  :::  .::;:;   i;;,,LL:      iCLCtC8L;:C8LiLfL;      .tf1 :;i; .;;;;,   ,:,,.:..,,.     \n" +
-                                   "     ,,,,,. .:;, ,::,,::   ,;:;,tt:     1008GGC:    ;GGC0G01     ,fL;,i:;   :::::,  ,::. ,,:,,,     \n" +
-                                   "     ,,,.:,,,,:::;,.,i:    .;;;tit;   .tLCGGG,        ;G00GC1.   :fit;:;,   .;;,,::.,::, ,,.,,,     \n" +
-                                   "     ,,:::;;;;;:;;;;;,      i1fLf1.  :LtLiLG1          tGCtLtf,  .ttLf1i     .;;,,;;:;::,,:.,,,     \n" +
-                                   "     ,,,.:,,::;:;;,,;;.    .iiff1t  ;CLf:;8C           .08;iffC; .ttLt1;      :;::;;:;;;;::::,,     \n" +
-                                   "     ,,,.,. ,::,.::,,;;.   :;;;tif:tGCC:iG0;.           t0C,:CCG1i1i1;;;    .;;,.,;:::,,,,,.,,,     \n" +
-                                   "     ,,,:,. .::,  ,:::::  .i:i.iLfLf1GCC8GCC0Cf1;,:itfCGCGG8tCGtLCft.i:;,   ::,,::. ,;:. ,:,,,,     \n" +
-                                   "     .,,.,,.:,:.   :;;;:. ii;, tCCLiLG0Gfi:;1fCG080GCfti;;tC0GGf;LCC,.;;;  .;:;:,  .:,:  ,,:,,.     \n" +
-                                   "     .,,,,::;::,   .::::;iii;,fCCCGL11LGCGLffffC08GCfftfLLGCG1itCCCCL::ii: ::;;;    :::,,:.,,,      \n" +
-                                   "      ,,,,,:,,,::. .:,.;1;:ttCGCLfCLCLLf;;i;;;:::;::::;;;i;itfLLCCCCGGfiii;;:,:,   ,::;;:::,,,      \n" +
-                                   "       ,,..,. .:;, ::,;11iiii11i,,,:;111i.                .ii1t1;:,:i1ft;:11,.::  :::,.,,,,,,       \n" +
-                                   "       .,,:,,. ,,:::;i1ii1i;;;;ii;;;:;ttLfi1;,       ,;i11Lftt;::::;iii;i111i,:;,,::. .:,.,,.       \n" +
-                                   "        ,,,,.:.::;i:;;:,,,:::,  .,,,:;ifftt1tLt;, .;tft11ttLfi;;::::,:ii;;;;i1;:;;,, .,,:,,.        \n" +
-                                   "         ,,,,,::;::::,,:,::;;i:,     .,;;;;;::tft1tft:,:;;;;:,.     .:::,,,::::;;;;:,:..,,,         \n" +
-                                   "          ,::,,,,..,;:.  .,;;;::;.      .:;;;, ;tL1: :;;;:.       ,:;i;;:,.. ,::,,::::,,:,          \n" +
-                                   "           ,,,.,:.  ,::,    ,::.:i,       .:iii:tC1:ii;:.       .;;,:::,   .,:;, .,,.,,:.           \n" +
-                                   "            .,,:,,,..:::,,.  ,:,.;;::::,,. .,i1;1f;i1:.  .,,,:,,;;..:,    .:,,. .,:,,,,.            \n" +
-                                   "             .,,,..,:;;:,:::..:;:;:,,:::;i;::;1;;1:1i:::;;::::::;;.::. ,,:::::.,,,,:,,              \n" +
-                                   "               .,,,::,,,..,;::;:;;:::,,,:;:::,:1111;:,:;i;:::,,::;;:;,:;:,,,:::,.,,,.               \n" +
-                                   "                 .,,,..,,. .,,;i:::,.     .,,:,,11:.,:,,...  ..,::;;;,,.  .,,.,::,.                 \n" +
-                                   "                   .,,,:,,,,:;;:,,:;:,,      .:;;i:;:.     .,,:::::;;:,.,,:,.,,,.                   \n" +
-                                   "                     .,,,,.,::,,.  .,,::::::::,;;;;:,::::,,:,:,,..,:::,,.,,:,,.                     \n" +
-                                   "                       ..,,:,,.,,,,,.::;:,..,,,,;i:,,,,,,,;::,...,,..,:,,,,.                        \n" +
-                                   "                          ..,,,,::,.,,:,,,....,:;;:,.  .,,:;,,,,::,,:,,,..                          \n" +
-                                   "                              ..,,,,,::,.,,:,,,,::,,,,:,,.,::,,,,,,,..                              \n" +
-                                   "                                   ...,,,,,:,,,,::,,,,:,,:,,,,...                                   \n" +
-                                   "                                           ..............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[1] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         .......,,.........                                         \n" +
-                                   "                                  ...,,,:,,,,::,,,,:,,,,,:,,,,,...                                  \n" +
-                                   "                              ..,,,:,,,,::..,,:,,,,::.,,::,.,,:,,,,,,.                              \n" +
-                                   "                          ..,,,,,.,:,,,,:;:,.  ..,:;:,.. ..,,::,,,,::,:,..                          \n" +
-                                   "                       .,,,,.,::,,,. ..,:;:,,::,,,;i:,,,,..,:;:,.,,:,.,,::,..                       \n" +
-                                   "                     .,,,:,,,,,;;,,.,::::,.,,,,,:;;;::,::::,::,:,. ..,,::,.,,,.                     \n" +
-                                   "                  .,,,,.,,,...,:i::::,,..     .,;::i;;,.     .,,;:,,,:;;,,,,::,,,                   \n" +
-                                   "                 ,,,,::,,,..,:,:;;;::,.....,,::,..i11:::,..    ..:::;i:,,..,:,.,,,,                 \n" +
-                                   "               .,,,.,,:;:,,:;:.:;:;;:,,,:::ii:::;i111i,,::;;:,,,::;;;;::::. .,,,::,,.               \n" +
-                                   "             .,,,:,,,.,,::,,. .::.,;;::::::;:,,:i;:1:i1::;;;;::,,,;;:;..:::,,:;;:,.,,,.             \n" +
-                                   "            ,,,..,,  .:,:.   .::,,;;..,,,..   ,i1;1fii1;, .,,,:::;;..::  .,,::::.,,,::,.            \n" +
-                                   "           ,,::,,:..,;:,.  .,;;::;;.        ,;iiiLGL::ii;,       .;;.,:,    .:,:. .:,.,:,           \n" +
-                                   "          ,,,.,:;;;:::,..,,:::;;,,       .:;;;:,LCCC1. :;;:.      .;:::;;,.  .:;:. .,.,,:,          \n" +
-                                   "         ,,,,.:.,:;;;:;i;:,,:::.   ..,:;iii;:::fGCCGLf1:;;;i;,.     ,:;;;:::,,,::::::::,,,,         \n" +
-                                   "        ,,,,:,  ,,:;:;;11i1i;ii;ii;;;;ifLff111LG1fCtLfff1ttLfi;:,,.   .:::,,,:;;;;i:::,..,,,        \n" +
-                                   "       .,,..,. ,;;,.;:.:11iiiii;:,,,:it1tfii;tCLiCG;tG;,iitLt1;:;;;i;;:;;;i;;;i;:::,, .,,:,,.       \n" +
-                                   "      .,,:,:::,,:,  ,:,:ii;:tfft;;;1Lf1i;.  iLGGLG8GCGC:  .i11t;:,,,;i1i;;i111;;:.,;:. .,,,,,       \n" +
-                                   "      ,,,.,:::::.   ::;:;.;1i;iftf1ii,.    ;LfL::G8t;CLL;   ,;ifLfi;itLtti:1i,,:, .::,..,,.,,,      \n" +
-                                   "     .,,,.,..,,:   .;;;;, .;i; :tf,       ;L1f,;GGGGi.LtL;      ,;1ftf;:iiii:,::.  .,::;::::,,      \n" +
-                                   "     .,,::,  ::,  .::,:;.  :i:; fL;      iGLGfC8C;,L8LiffL;       ift, ;ii,.:;;;,   .:,:::,.,,.     \n" +
-                                   "     ,,,.,, ,::,.,:,.:;,   .i:i,1ti     1G080GL:    ;GGCGCG1     .tC1 i:i,  :;:;:.  ,::, ,,,,,,     \n" +
-                                   "     ,,,,:::::;:;;,,:;,     ;;;tit;   .tLCCG0:        ;G000C1.   ,fit;;;:   .;:,,::..:;. .,,,,,     \n" +
-                                   "     ,,,,::;;;;:;;;;;,      i1fLf1   :LtLif0t          1CCfLff,   t1ff1i.    ,;:.,;;::,:..: ,,,     \n" +
-                                   "     ,,..:..,,::;:,.:i,    ,iiLfit  ;CLf:i8C           .08;;LtC; .tfLt1;      ,i;;;;:;;;;:::,,,     \n" +
-                                   "     ,,,,,. ,;:..,:,,:;.   ;:;;t1t,fGCG:iG8i.           f0C,,CCG11111;;:     :i,.:;::;:,:::,,,,     \n" +
-                                   "     ,,,,,, ,::,  .:;:;,  :;;; tLfLf1GGG8CCC0Cti;,;itfCCCGG01CCfLCt1.i:i.  .:;,,,:, ,;:. ,,.,,,     \n" +
-                                   "     .:,.,:::,:.   ,;;;:.:1i; :fLCL1LG0Ct;:;1fGG080GLfti;;fG0G0t;CGf.::i,  .;::::. .:::  ,,:,,.     \n" +
-                                   "     .,,::::::,,.  ,::,:iiii;iLCCCGLt1LCGCLffffG00GCfftfLCGGC1ifGCCCL;ii;  :;;;:   .:,,.,,.,,,      \n" +
-                                   "      ,,,.,,..,::. ,:,,11:itfCCCLLLLCLLf;ii;;;::;::::;;;;i;itffLCCCGGGti1;,;:::,   .::;::,,,,,      \n" +
-                                   "       ,,,,:. .;:,.;;i1111;;i11i::,::1i1i.                .;i1fti;:;1ff1:iii,,:,  ,:,,:::,:,,       \n" +
-                                   "       .,,:,,..:,;;:ii;:;ii;::::;;;;;;ttCt11;.       :;ii1Lttt;::,,;iii;i111:.:;.,;:, .,..,,.       \n" +
-                                   "        ,,,.,::;;;;:;;:,,,:::.   ..,:;ifft11fL1;  :iff1i1ttLfi;;;;;;;ii;iii11;;:;:,, .,::,,.        \n" +
-                                   "         ,,,,::::,:::,,,,:;;;;:,      ,;i;;;,ift11ffi,:;;;;;:,..    ,:::,,:;;;:;i;:,.:.,,:,         \n" +
-                                   "          ,,,,.,. .:;:.  .,:::,:;.      .:;;; .1ffi..;;;:,.       ,:;;;::,,..,::::;;:,.,,,          \n" +
-                                   "           ,:,,,:. .:,:.    ,:,.;;.       ,;ii:;Cf;;1i;,        .;;::;:.   .,::,..:,,::,,           \n" +
-                                   "            .,::,,,.::::,,.  ::.,i;:;::,,..,;1i;fi;1;.  ..,,,,,,;;.,:,    ,:,:. .,,.,,,.            \n" +
-                                   "             .,,,.,:::,,,:;:.,;:;;,,,::;;i;::1i:1:ii:,:;;:::::::i,,;:  .,,:::,.,,,:,,,              \n" +
-                                   "               .,,:,,,,. .,:,::;;;::,,,:;:::,,i111;::::i;:::,,,:;;:;:,:;:,,;;:,,.,,,.               \n" +
-                                   "                 .,,,.,:,..,,;i;:::.      .,:::11;.,::,,... ..,::;;;::,. .,,,::,,,.                 \n" +
-                                   "                   .,::,,,,:;;:,,,;::,. ..  .,;;i:;;,.     .,,:::::i:,...,:..,,,.                   \n" +
-                                   "                     .,,,.,:,,,.. ..:,:::::;:,::;;;:,::,,,:::,,,.,:;;,,,,,:,,,.                     \n" +
-                                   "                       ..,:,,,.,:,,,,:;:,..,,,,:i;,,,:,,,:;:,....,,.,:,,:,,.                        \n" +
-                                   "                          ..,,,::,,.,:,,,....,::;:,.. .,,:;:,,,,:,.,,,,,..                          \n" +
-                                   "                              ..,,,,::,,.,::,..::,.,,::,..::,,,,:,,,..                              \n" +
-                                   "                                   ...,,,,:,,,,::,,,,:,,,,,,,,...                                   \n" +
-                                   "                                           ..............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[2] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                          .......,,........                                         \n" +
-                                   "                                  ...,,,,:,,,,::,,,,:,,,,,:,,,....                                  \n" +
-                                   "                              ..,:,::,,,,::..,,,,,,,:,.,,::..,,:,,,,..                              \n" +
-                                   "                          .,,,:,,..,:,,,,:;:,.  ..,:;:,....,,,::,.,,::,,..                          \n" +
-                                   "                       .,,,,,.,::,,.  ..,:;:,,::,,:i;,:,,...,:;:,,,,:,.,,,,..                       \n" +
-                                   "                     .,:,,:,.,,:;;,,,:::,:,.,,,,,;;;::,,:::::::,,.  .,,,::,,:,.                     \n" +
-                                   "                  .,,:,,.,,.. .:;i:::,,..      .:;:;;;:.  ... ,,:;:,.,:;:,,.,,:,..                  \n" +
-                                   "                .,,,.,:::,..,::,;;;::,,....,,:::,.,i11:::,.     .,:::ii::..,,:,,:,.                 \n" +
-                                   "               .,:,,.,,:;:::::,,;::i:,,,,::;i;::;;i111i,,:::;:,,,::;;:;:::. .,,.,,:,.               \n" +
-                                   "             .,:,,:,,..,,:,..  ,:,.;;:::::::::,,:i:;1:1i::;i;;::,,:i;;:.,;:,,,::::.,:,.             \n" +
-                                   "            .:,,.,,. .:::,   .:::,;;,..,.,..  .:i1:tt;1i;..,,,:;::i:.::. .,::::::,,.,,:.            \n" +
-                                   "           ,,,:::::,,::,.  .,:i;:;;.        .:;i1LCCt,;i;;.       :i,.::.   .:,,, ,,:,,,,           \n" +
-                                   "          ,,,.,,,;i:;:,,,,,:,::;,.       .,:;;::LCCCt; ,;:;,       ;;,:::,.  .:;:. .,..,,,          \n" +
-                                   "         ,,:,,,. ::i;:;1ii;:;;;:....,,:;ii;;::,fGCCCftf;:i;ii:.     ,:;;;;:,,..::,,,,:,:,,,         \n" +
-                                   "        ,:,.,,  ,:,:;;:;1111;;ii1i;;;;1fffft11LG1tGtCftLt1tLfi;:,..   .::::,,:;::;;;;::,.,,,        \n" +
-                                   "       .,,,.:,.,:;, ::..;ii;i11;:.,,:it1tfii;tCLiC0;1G;,iitLt1;;;;;;:,,,:;;:,:;i:;;,,,.,.,,,.       \n" +
-                                   "      .,,,:::;:,:.  ,:,,i:;;;tLLtiitLL1i:.  iCCGLC8GCGC:  .it11;,,,:;iii;;i1111i;,,:;. .:,,,,       \n" +
-                                   "      ,,,.,,,:,:.   :;;:;..11i,1tfi;:,     iLtL::C8LiCCL;   ,;1ffti:;1ftti;i1;::: .::,. ,,.,,,      \n" +
-                                   "     .:,,,,. ,,:,  .:;;;,  ,ii, tL;       ;LtL:iCG0Gi.LtL;     .:itftLt;1i;1;,,:,  .:,::,:::,,      \n" +
-                                   "     .,,,,, .:;,  ,::,,:,  .i:i.iL1      iGCGLG8Ci,L8f;ffL;       ;t1; :i1;,::::,   .::;::,,,,.     \n" +
-                                   "     ,,,.,,,,::,,::,.:;,    ;:i,111     1C080Cf,    ;GGLGCGi      1Lf :;:;. :;;i;.  .:,,.,,.,,,     \n" +
-                                   "     ,,::::;:;;:;;:,;;.     ;;;t11i   .tfCLG0:       .iG008Gt.   .t1t;;:;.  .;::::, .:;. .,::,,     \n" +
-                                   "     ,,,.:,:;;;:;:::;,     .ittLL1   :LfLit0t          iGCCLff,   t1tLii,    :i:.,::::,, .,.,,,     \n" +
-                                   "     ,,,.:. ,,:,::,.:i,    :iiL11t  ;LCf:i8L           .G8i;LtL; .tfLt1i      ,;;:;;:;;;:,:,,,,     \n" +
-                                   "     ,,::,. ,;:. ,::::;.  .;:;;tt1.fGCG;1G0;.           f0L.:CCG11111;;:     ,;:,:;;:;::;:::,,,     \n" +
-                                   "     ,,,.,,.,,:.  .;;;;, .i:i,.Lftff1GG00CCC0Cti;,;1tfLCCGG0iLCfLCti.i:;    :;,.,:,.,::,.,,.,,,     \n" +
-                                   "     .,,,,:;;::.   ,:::::i1i, i1LCL1LC0Lt::;1L0G080CLfti;ifG0G0t;CGt,;:i.  ,:,,::. .:;:  ,:,,,.     \n" +
-                                   "     .,,:,:,,,,:.  ,:,,ii;i1ifLCCC0C11CC0CffffL080CLfttLLCCGC11LCCCCL1;i,  :;;;:.  ,:,, ,,,,,,      \n" +
-                                   "      ,,,.,, .,::  :::i1i;11tLCCLLffCLLf;ii;;:::;::::;;;;;;i1tffCLCGGCti1.,;:;;,   .:,:,,,.,,.      \n" +
-                                   "      .,,,,:. .::,,;i1111i;:i11i;::::i11;                 .;i1Lfi;i1fLf;;;;;,::,  ,:,:;::,:,,       \n" +
-                                   "       .:,,.:.,,,;;:i:,,:;;:,.,,:;;;;;ttCt1i:       .:iii1Lttt;:,,,:;1ii;11;..:: ,;:,.,,.,,,.       \n" +
-                                   "        ,,,.,:;;;;;::::,,:::;.    .,:;ifft1tLfi, .:tft1i1tfLfi;;;;iiii;i1111i:;::,:,  ,,,,:.        \n" +
-                                   "         ,,::,:,.,,::..,,:;;;;:,      ,;i;;::ttt1tft:,:;;;;;:,,.....::::::;ii;:;i:: .,,,:,,         \n" +
-                                   "          ,,,..,. .:::.   ,:::,;;       ,;:;, ;tL1:.:;;;:,.       ,:;::::,,..,:::;;,:,.,,,          \n" +
-                                   "           ,,,,:,, ,,::.   .::,,i: .     .;;i;:tCi:1i;:.        ,;::;;:..  .,;:,,:::::,,,           \n" +
-                                   "            .:,,.,,::;:::,. .::.;;::;::,,..;1i;t1:1i,   .,,,,,.:;:,::,    :,:,. .,..,,,.            \n" +
-                                   "             .,:,,:::,..,:;,.:;;;:,,,:;;i;:,i1:1;;i:,,:;:::::::;:.,:,  .,,:,: .,,:,,:,              \n" +
-                                   "               .,:,,.,,. .:::;;;;;:,,,:::::,,i111i;:::;i;::,,,:;;::;,,;::,:;:,,.,,:,.               \n" +
-                                   "                 .,:,,:,,.,::i;:::,.     ..,:;11i,.,::,,......,::;;;,:,...:,::,,:,.                 \n" +
-                                   "                   .,:,,.,:;::...:;::, ...  .:;;;:;:.     ...,::::i;,....,,.,,:,.                   \n" +
-                                   "                     .,:,,:,,,,.  .,,:::::::,,:;;;:,:,,,,,:,:::,,,;;,,,.,:,,:,.                     \n" +
-                                   "                       ..,,,,.,:,,,,:;:,...,,,,;i:,,:,,,:;:,.. .,,,::,.,,,,.                        \n" +
-                                   "                          ..,,::,,.,::,,,....,:;:,..  .,:;:,,,,:,.,,,:,,..                          \n" +
-                                   "                              ..,,,,:,,,,::,,.::,,.,:,,..::,,,,:,,,,..                              \n" +
-                                   "                                   ...,,,:,,,,,:,,,,::,,,,:,,,...                                   \n" +
-                                   "                                          ...............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[3] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         .........,,.......                                         \n" +
-                                   "                                  ...,,,,,:,,,,::,,,,:,,,,,,,,,...                                  \n" +
-                                   "                              ..,,:,::,.,,:,.,,,,,,,,:,.,,::,,,,:,,,..                              \n" +
-                                   "                          ..,,,:,,.,,,,,,,:;:,.  ..,:;:,...,,,,::..,,:,,..                          \n" +
-                                   "                       .,,:,,.,,::,,.  ..,:;:::::,,;i;,:,,...,:;:,,,::,,:,,,.                       \n" +
-                                   "                     .,,,.,:,,,.:;:,,:::::,..,,,,:;;;::,:;::::;:,,. .,,.,::,,,.                     \n" +
-                                   "                  .,,,:,..,.  .,:i;::,,...     .,;::;;;,  .....,:::,..,:::,.,,,,..                  \n" +
-                                   "                .,,,,.::::,.,::::;;;::,,....,:::,,.:111::,.     ..:::;i;::.,,::,,,,                 \n" +
-                                   "               .,,:,.,,.::::::,.:;:;i:,,,,::;i;;;;;i111;,:::::,,,::;;;;:,:,  ,,..,,,.               \n" +
-                                   "             .,,,.,,.. ,,::.   ,:: :;;:;::::::,,,:i:ii:1;,:;i;;:,,,;i:;.,:;,..,,,:,,,,.             \n" +
-                                   "            .,:,,,,...::,,    ,;:,:;:.......   .:1i;fi;1i:..,::;;:;;,:;, .,:::::;:,.,,,.            \n" +
-                                   "           ,:,,,:;;,,::,   .,:;i;:;,        .,;;1LLfC::iii,     . ,i,.::.  ..,:,:.,,,:,,,           \n" +
-                                   "          ,,,..:.:;;;:,,:::,,,:;:.       .,:;;:;LCCCf1. ;:;:.      :;,,::,    :::. .,,.,,,          \n" +
-                                   "         ,,,:,,. ,,;;;;i11ii;;;;:,,,,::i1i;;;:,fGGCCL1f1:iiii:.     ,::;;;:,...::,,..,,,,:,         \n" +
-                                   "        ,,,.,,  ,::,;;,:;111i:ii1;;;;:1fffftiifGttGfCt1Lf1tff1i:,.    .:;::,::::::;;;:::,,,,        \n" +
-                                   "       .,,,,::,,::, ,:,.;;i;;tti:.,,;1f11fii;tCCiL0iiC;.;i1Lf1;;i;;:,...,:;:,,:;:;;:,:,,.,,,.       \n" +
-                                   "      .,,,,::;::,.  ,:::;:,i;itLf11tfL1;:.  iCCGLL8GLGC:  .;t1i:,,:;iiii::i1ii1i;:,::, .,::,,       \n" +
-                                   "      ,,,.,, ,,:,   ,;;;;. :11::1f1:,.     ;LtL,,L8CiCCL;   ,i1ft1;,:i1t1iii11i;:  :;:  ,,.,,,      \n" +
-                                   "     .,,::,. ,::,  .:::;:  .;;; iL1       ;LtL;iCG0G1.ftC;    .,;1fttfC111:i1:,:,  ,:,,.,,,,,,      \n" +
-                                   "     .,,.,, .:;,  ,:,.::,   ;:;,:Lt.     i0GGLG8Ci,f8f;ftL;       ,f11,.ii1;:,::,   ,::;;::,,,.     \n" +
-                                   "     ,,,.,::,,:,,;:.,;;,    :;;,i1t.    1CG00Cf,    ;0GfCCCi      ifL,.i:i: :;;;;.   :,,:,,.,,,     \n" +
-                                   "     ,,::::;;;;:;;;:;:.     :;;111i   .tfCfCG:       .iG808Gt.    1ft;;:;,  .;:;::. .;;, .:,:,,     \n" +
-                                   "     ,,..:..::;;;:,:;:     .itfLfi   ,Lffi10t          iGL0Lff,   t11L1i:    :i:.,::,::. .,,,,,     \n" +
-                                   "     ,,,,,. ,::,,:,.:i:    ;;1Li11  ;LCt:i8L           .G81;LtL; .1LLt1i.     :;:,:;:;::..:.,,,     \n" +
-                                   "     ,,,,:. ,::. .:;;:;.  :;;:;ffi.fGCGit08;.           L0L.:LLG111t1;;:     .;;:;;;:;;;;::::,,     \n" +
-                                   "     ,,, ,::,::   .;;;;, ;i:; ;fftffiGG00LLG0C1i:,;1tfLCCGGG:LCLLCt;,;;:    ,;:.,::,,:,,::,.,,,     \n" +
-                                   "     .,,::::;::.   ,:,,;i1i; :t1LCCtLCGfi,:;tC0G80GCft1ii1L00G0t;CG1::;;   ,:,,::,  :;:. ,,.,:.     \n" +
-                                   "     .,,,.,..,,:,  :,,;1;:11tCLCCC0L11CG0LfftfC08GCfftffLGC0L11LCCCCL1;;.  :;:::.  ,,:. .,::,,      \n" +
-                                   "      ,,,.,,  :;: .;;111iii1tfCCLCffCLffii;;;;:;:::::;;;;;ii11tLCCCCCCf1: ,:;;;,   ,:,,.:..,,,      \n" +
-                                   "      .,,:,,. ,::,:;iiiiii::i11ii;:::i1t;                 .:;1Lf1i1fLf1;i,;;:::.  .::;;::,,,,       \n" +
-                                   "       .,,..,,:,;i;;;:..:;:,  .,::;;;;1fC11i,       ,;iii1L1tfi:,..:itt;;1;:.,:, ,;:,,::,,,,.       \n" +
-                                   "        ,,,,::::;;::::::,;:;;.    .,:;1fft1fC1i. ,itf1iitffffi;;;;i1ii:i111;::;:,::, .:,.,,,        \n" +
-                                   "         ,,,,.,. .:::  .,:;;;::,     .:ii;i,ittt1ffi,,:;;;;i;:,,,,,,;;;;;i11i;:;;:, .,,:,,,         \n" +
-                                   "          ,,,.,:. .:::    .::,,;:      .:;:; .1Lfi.,;;;;:,.       .;;:,:,:,,,,:;;;,.:.,,,,          \n" +
-                                   "           ,,,:,,,.:,:,..  .::.:i,...    ,iii:;Cf;i1;:,         ,;:;;;:,.  .,;:,,:;:,,,:.           \n" +
-                                   "            .,,,.,:;::,::,. ,;:,;;:;;:::,.:i1;1f:i1,   ..,,,...:i:,::,   .::::. ,,.,,:,.            \n" +
-                                   "             .,,,,:,,...,;:,,;;i:,,,:;;i;:,;1:ii;i:,,::;::::;:;;,.::.  ..::,. ..:,.,,,              \n" +
-                                   "               .,,,..,,  ,:,;;;:;:,,,,:::::,;111i:;::;i;::,,,,:i::;:.,::::;:.,,.,::,.               \n" +
-                                   "                 .,,,::,,,::;;;:::..     .,:;11i:.,:::,,.....,::;;;:::,..,::::.,,,.                 \n" +
-                                   "                   .,,,,.::::,..,:::,.....  ,;;;:;;,.     ..,,,::;i:.  .,,..,::,.                   \n" +
-                                   "                     .,,,:,,.,,...,,:;:,::;:,::;;;:,,,,,,:,::::,,:;:.,.,:,,:,,.                     \n" +
-                                   "                       ..,,:,,::,,,:;:,....,:,;i;,,,:,,:;:,..  .,,:::,,,,:,..                       \n" +
-                                   "                          ..,,:,,.,::,,,,...,:;:,..  .,:;:,,,,:,,.,,:,,,.                           \n" +
-                                   "                              ..,,,:,,,,::,,.,:,,,,,:,..,:,,,,::,,,...                              \n" +
-                                   "                                   ..,,,,,,,,,:,,,,::,,,,:,,,,...                                   \n" +
-                                   "                                           ..............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[4] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         ..........,.......                                         \n" +
-                                   "                                  ...,,,,,,:,,,,:,,,,,:,,:,,,,,...                                  \n" +
-                                   "                              ..,,,,,:,,.,,:,.,,,,,,,,:,.,,:,.,,,:,,,.                              \n" +
-                                   "                          ..,,,,:,..,,,,,,,:;:,.  ..,:;:,...,,,,::.,,,,,..                          \n" +
-                                   "                       .,,,:,,.,,:::,.  ..,:;,:::,,:;i:,:,....,:;:,,,::,,:,..                       \n" +
-                                   "                     .,,,,.::,,..:;:,:;;:,,,..,,,::;;;:,,:;:,,:;::...,,,.,::,,.                     \n" +
-                                   "                  .,,,::,,,,  ..,;i;::,...     ..:;:;;;:.  ....,::;,...,,::,.,,,,                   \n" +
-                                   "                 ,,,,.,,:;:,,:;:,;:;:::,,,.,,::::,.,;i11:,.      .,:::;;:::,,,:,,,,                 \n" +
-                                   "               .,,,:,,,.,::::,,.,;:,i;:,,,,::;i;:;;;1111;,::::,,,,:;:;;;:,,  .:,.,,,.               \n" +
-                                   "             .,,,..,.  .,,:.   .::..;;:;::::::,,,.:;;1;;1::;i;;:,,,,;;:,,:;:. .,,,::,,.             \n" +
-                                   "            ,,,:,::,.,:;:,.   ,;;::i:.  ....    ,;1:itii1i,.,::;;::;:,;: .:::,,::;:.,,,.            \n" +
-                                   "           ,,,.,::;;,::,.  .,::;i:;,         ,::iLL1Ct,;i;;.    ...;;.::,  .,,:::,,,,,::,           \n" +
-                                   "          ,::,.,..:;;;::;;;::::::.       .,:;;;;LCCLft; ,;:;,      ,i,.::,    ,::, .,,,,:,          \n" +
-                                   "         ,,,,:,  ,,:;;;;i111i;iii;::::;i1i;;;:,fCGGCC1tt;;iii;.     ,::::;;,.  ,;:. .,..,,,         \n" +
-                                   "        ,,,..:..,;:,:;,.:;11i;;ii;::::1ffLft1ifGttGfCf;fL11ff1i:,.   .,:i;;:::::::;::,::,,,,        \n" +
-                                   "       .,,:::::,::. .::.;;:i:1ft;,,,;tft1fi;;tCCiL01iC; :1iLf1;;i;:,.   ,:;:,.,;;;i;::::..,,.       \n" +
-                                   "      .,,..:,:::,   .;;:;; :1iifLfttffi;:.  ;CLGLf0GLGG:  .;t1i::,:;ii;;:,;i;;;i;:,:,:..,,:,,       \n" +
-                                   "      ,,,,,, .,,:   ,;;;;. .ii;.itf,..     ;L1L,,f8GtCGL;   :i1t1i:,,;i1i;i1111i;. :;:  ,,,,,,      \n" +
-                                   "     .,,,:,  ,::,  ,::,::   :;;.,Lf.      ;CtL;iCG0Gt.LfL;    .,itft1tCf1t;:1i;:,  ,:,, .,.,,,      \n" +
-                                   "     .,,.,:.,:;, .::,.::,   :;::.ff,     i000CG8C1,f@L:ftL;       .ttti ;iiii,,:,   ,,::,:::,,.     \n" +
-                                   "     ,,,,::;::;,:;:,,;;.    :;i,;1t,    1LG08Ct,    :0GtLLCi      ;ffi :;ii,:;;;:.   :::;:,.,,,     \n" +
-                                   "     ,,,,:,:;i;:;;;;;,      ;i;1t1;   .ffCtC0:       .1C0000t.    ;ffi:;:;. .;:;;:. .::,..,.,,,     \n" +
-                                   "     ,,,.,. ,:::;:.,;;.    ,1tfffi   ,fLfi10t          :0L0Cff,   11iL1;;    :;:,::,.::, .,:,,,     \n" +
-                                   "     ,,::,. ,;:..::,:;:   .i;tL;ti  iLCf:i8f           .G8f;LtL;  1fLtti.    .;:,.:;:::, .,.,,,     \n" +
-                                   "     ,,,.:..,::   :;;:;. .;:i,iLL:.fGCG1f00;,           LGL ;LLG111ti;i:      :;;;;;:;i;:,:,,,,     \n" +
-                                   "     ,,,.::;::,   .::;::,1;;, 1tt1ftiG0G0CLG8C1i::i1ttLCCG0C,LCCLCt::;;,    ,;;,,;;,,:,:;::,,,,     \n" +
-                                   "     .,,:::,:,:,   ,:,:iiii:.tttCGCtLGGti,:;t00G80CLftt1i1C8GG0t;GG1;,i:   ,:,.,:,. :;:..:..,:.     \n" +
-                                   "     .,,,.,. ,,:,  ::;i1:ittfLfCCGGC11GGGLfffL080CLLftffLGC0fttCCGCCLi;:   ;:,::.  ,::, .:,:,,      \n" +
-                                   "      ,,,,:,  :;: ,;11111i;i1fCLLLffLLffii;;;::;::::;;;;;iiiiitLCCCLLCti. ,;;;;.   :,,. ,.,,:,      \n" +
-                                   "       ,,:,,..:,:::;;;;;;;,,:;iii;::,i1t;.                .:;1Lt11fLLti1: i::;:   .::;:,:.,,,       \n" +
-                                   "       .:,..:;:;;i:;;,.,:;:,   .,::;i;tLL11;.      .:;iiitf1tf1:,,,;1fi:i;;:.::. ,::,:::,:,,.       \n" +
-                                   "        ,,,:::,,:::::,:::;;i:,.    .:i1fft1LL1; .:1ft1iitffffi::;;iii;;111;:.:;:,:;,..:..,,.        \n" +
-                                   "         ,,,..,. .:;,  .,:;::::,     .;i;i::ttt1tLt;,,:;;;ii;::::::;i;;i111i;;:;:,. .,:,,,,         \n" +
-                                   "          ,,,,,,. ,::,    ,::.,i,      ,;:;, ;fL1:.:;;;:,..       ,;:,,:::;:::;;;:.,,.,,,,          \n" +
-                                   "           ,::,,,,::::,,.  ,:,.;;,,...  .;;i;,fLi;1i:,.         ,;;i;::,.  .,::,;;::,.,,,           \n" +
-                                   "            .,,..:;::,,:::. :;:;;::;;:::,:i1;if;;1:.   ...... ,;i::;;.   .,:;:..,,,,:,,.            \n" +
-                                   "             .,,::,,,. .:;:,::;;,,,,:;i;:,:1;i1;;:,,,:::::::::;:.,:,    .:,,. .,:..,,,              \n" +
-                                   "               .,,,.,:...:,:;i::;:,,,,,,::,;111i;;;:;i;:::,,,:;;,;;,.,:::::,.,,,::,,.               \n" +
-                                   "                 .,,::,,,:::;::::,.      .,:1ii;..,:::,.....,:::;;;,:::,,:;::,.,,,.                 \n" +
-                                   "                   .,,,.,::,,. .,:::,.,,.. .:;;;:;,.     ....,::;i;,.  .,,.,:,,,.                   \n" +
-                                   "                     .,,:,,.,,,...::;:,,:;;,,:;;;::,,,,.:,::::,,:;:.,,,::.,,,,.                     \n" +
-                                   "                       ..,:,,::,,,:;:,.. .,:,:i;,,,:::,;:,..  .,:::,,.,,:,,.                        \n" +
-                                   "                          ..,,,:,,::,,,,,..,:;:,..  .,:;:,,,,,,,.,,:,,,,..                          \n" +
-                                   "                              ..,,,,,,,::,,.,:,,,,,:,..,:,,,,::,,,,,..                              \n" +
-                                   "                                   ..,,,,,,,,:,,,,::,,,,:,,,,,...                                   \n" +
-                                   "                                           ..............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[5] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         .......,..........                                         \n" +
-                                   "                                  ...,,,,,,,::,,,,:,,,,,:,,,,,,...                                  \n" +
-                                   "                              .,,,,,,,,:,.,,,:,.,,,,,,,::,.,::,,,,,,..                              \n" +
-                                   "                          ..,,,,,,:,.,,,....,;::,. ...,:;:,.,,,,,,:,,,,,..                          \n" +
-                                   "                       .,,:,,:,.,,,:::.....,:;:::;:,,;;;:::.  ..,:;,.,,::,,,.                       \n" +
-                                   "                     .,::,..,,....:;;,:;;::,,.....,:;;;:,,:;:,,,;:::.,,:,.,,,,.                     \n" +
-                                   "                  .,,,,,:::::..,,,;;;:,..       ..::::;::. .,,,,,:::,  ..,,:,,,,..                  \n" +
-                                   "                .,,::,.,,.;;::;;:,;;;;;::,,,,,,;;::..;;;1i,.     .,::,,,:::;,.,,,,,                 \n" +
-                                   "               .,,,,:,.. ,,::..  ,:,.;;:,,,,::;i;;;;:;i1ii:::,,,...,;:;i;;,:.,,:,,,,.               \n" +
-                                   "             .,::,,,,..,::,:    ,::,::;:::::,::,,...:;i1;1;,:;;;;:,,:;;:,:::,  ,,.,,,,.             \n" +
-                                   "            .,,.,::;:,:;:..  .,:;;:;;,.   ...    .:1;;ti;11;,:;:;;:,:;;;, ,;:,..,,,:,,,.            \n" +
-                                   "           ,:,,.,,.;;;:,..,,:,:,:;:,          ,,;LLiiLf,;i;i.  ..,,:i:.;:  .,:::::;:..,,,           \n" +
-                                   "          ,,,::,. .:;;;:;;11i;;;;;........,::;;;LLLL1Lf: ,;:;.      ;;.,:,   ..::,,.,,:,,,          \n" +
-                                   "         ,,,.,,..,:::;;,:;;111;i11i;;;;1t1ii;::fLCCGft1tt;i1ii,     .;:,,::.   .:;,  ,,.,:,         \n" +
-                                   "        ,,:,,::,,;:. ::.,:;;i;11;:.,,:1ftfft1;tGLtGLG1;1LL1tL1i:,    .,:;;;;:,,.:::,..,.,,,,        \n" +
-                                   "       .,,.,:,;::,   ,:::i, i;ifft;;ifLt11i;;fCGtLGfiL; .i1tLt;ii;:.    ,;;;:,,;;;;;;::::,,,.       \n" +
-                                   "      .,,,.,, ,,:.   :;;:;  ,1i;1fft11i,.   ;LLGLtC0fCG:   :tti,::;;;:,. .:;:,,:;:;::,;:,.,,,       \n" +
-                                   "      ,,,,:. .:,:.  ,:::;.  .;i: tLi       ;L1L,.i00LLGC:   ,11t;,,,:ii1;::;;ii;i;.,::, ,,:,,,      \n" +
-                                   "     .,,..:..:;:. .,:,.::.   ;:; iC;      iGfCt1CG0GL.ffL;   .,;tff1:;tft1ii11i1i, .::, .,.,,,      \n" +
-                                   "     .:,,,:;:,:,.:::.,;:.   .i:;.iti     iG08G08Lt,t8L,ftL;      .;tftC1;1i;ii;::  .:,,..,,,,,.     \n" +
-                                   "     ,,,,:,:;;;:;;;:;;,     ,;;:;11:    1LCC8C1.    :0C1fLCi      .11t: :;i1;:,::   .::;::::,,,     \n" +
-                                   "     ,,,.:. ::;;;:,:;:     .;iitft;   .ffL1f0i       .tGGGGGt.    ,fLf.:;;;..;;;;,   ,:,:::.,,,     \n" +
-                                   "     ,,::,. ,::,::,,;i,    ;1fftf;   ,fLf;18t          :8L88Lf,   :fiff;;:   ;;;;:,  :;:..:,,,,     \n" +
-                                   "     ,,,,:..:;:  ,:;;;:  .;;;tfif,  iCCf:18t            C0GtLtf;  1ffft1:    ,i:.,:::::. .,,:,,     \n" +
-                                   "     ,,,.::;,:,   ,;:;;.,i:;,.fff..tCCGLL00;,           CGC ;LtG1i1f1ii;      :;:,:;;;;: ,, ,,,     \n" +
-                                   "     ,,:::,:;::.   ::,:i1ii, it11iLfiGGCCLLG8L1;:;1tttLLGC0f LCCGLt,:;;,    .:;::i;::;;;:,:,,,,     \n" +
-                                   "     .,,.,, .,,:. .::;1i;11;tC1fLCGfLGL1;,:iC0G80GLfttt11f08CGGt1GC1;,i    ,::,,::,.,:,:::,,,,.     \n" +
-                                   "     .,,,,,. ,;:. ,i1i11iiittitCCCGCtfG0CLLfLG00CLLftfffCC0CttfCCGLLLi;   ,:,.,:,  .:;,..:.,,,      \n" +
-                                   "      ,,,,,, ,::,.;;;ii;;,:;itCCLfffLLff;;;;;;;:::::;;;;;iiiiitfLCLLLCt   ,i:::.  ,,,,  ,::,,,      \n" +
-                                   "      .,,,.::;::;;:;:,,:;,. .,:;i;;;,i1t,                  .:111tffti1t, .;:i;:   .:,, ,,.,,,       \n" +
-                                   "       .,,,::,:;;;:;:,,:;;;,    .,:ii;tLt1i,.      ,:;iii1t1fLt;:;1ff;:;.:i:::,  .,::;,:,,,:.       \n" +
-                                   "        ,,,,.,. ,::,..,:;;;;::.    .:11Lt1CL1i..:1ft1ii1tfftfi:,,,:;11;1;;:..::.,:;,,::,,:,.        \n" +
-                                   "         ,:,.,,. ,;:.   .::,,:;.     ,iii;:111ftLt:,,::;;;11i;;;;i11ii111;;;:;;:::, .:..,,,         \n" +
-                                   "          ,:,:,,.:,::..   ,:,.;:      .;:;, ;fL1:,:;;;::,,.. .   .;::;;i11;;:;;;:. .,::,,,          \n" +
-                                   "           ,,,..:;:::::,.  :;.:i:,:..  .i;1;,Lfii1i:,.         .,:;:::,,,...,::;;.,,.,,:.           \n" +
-                                   "            .,,,:,,...,:;, ,;;;:,:;;:;:,;1i;1t:;i,    ....   .:i;;;;,.   .,:;:,:;::,,:,.            \n" +
-                                   "             .,,,,.,,  ,:::,:;;:,,:;;;;:,;1i1i;:..,,:::,,::;:;:,,::,   .:,:,. .:,.,:,,.             \n" +
-                                   "               .,,,,:,,.::;;i;:;,.....,:::111i;:;;;;i:::,,,,:i;.:;, ..,::,. ..,:.,,,.               \n" +
-                                   "                 .,,,..:;:,,,,,::,.     ..i1;;:.,::;:,,,,,,:::;;;;,:;;,:;;.,,.,::,.                 \n" +
-                                   "                   .,,,,,,,..  ,:::,,,,,. .::;::;,.      ....,:;;;,,...:::::,,,,.                   \n" +
-                                   "                     .,,,,.,:,,.::;:,,,:;::,:;;;::,,,.,,,::;;:,;;,....,,.,,:,,.                     \n" +
-                                   "                       ..,,:,,,.,;,,..  .,::;;:,,:::,:;:.....,:;:,,,.,:,,:,..                       \n" +
-                                   "                          ..,,,,,:,,,,,,,,:;:,... .,:;:,.,.,,,,.,:,,:,,,.                           \n" +
-                                   "                              ..,,,,,,:,,.,::,,,,:,,.,:,,..,:,,,,,,,..                              \n" +
-                                   "                                   ...,,,,,:,,,,,:,,,,:,,:,,,,...                                   \n" +
-                                   "                                          ...............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[6] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         .......,..........                                         \n" +
-                                   "                                  ...,,,,,,,,:,,,,,:,,,,::,,,,,...                                  \n" +
-                                   "                              ..,,:,,,,::,.,,,:,.,,,,,,,::..,,:,,,,,,.                              \n" +
-                                   "                          ..,:,,,,::,,,,.....,;::.. ...,:;:,,,,,.,,:,,,,..                          \n" +
-                                   "                       .,,,,,::,,,,,;:,,,...,:;::;:,,:;;;,:,. ...,::,.,,::,,.                       \n" +
-                                   "                     .,,::,.,,.....;;:,::::,,,....,:;;;;,,:;;,,,,:::,,,:,..:,,.                     \n" +
-                                   "                  .,,,,.,::;:,,,,,:;;;,,.        .,::,;;:,  ,,,,,::::. ..,,,:,,,,                   \n" +
-                                   "                .,:,::,,,.,;:::::,:;;;;;::,,,,,:;;:,.,i;;1;.      .,::,.,,,::,.,,,,                 \n" +
-                                   "               .,,,.,,.  .,,:..  .::.,i;::,,,,:;i;;i::;i1i1::,,.....:;:ii;:::,,,:,,,.               \n" +
-                                   "             .,,:,,::,.,::,,.   ,;;::;;:::::,,:,,.. ,:;11i1:,:;;;::,,:;;:,:::  ,,..,,,.             \n" +
-                                   "            ,,,..:,:;:,;:.   ..:;;;;i:.    ..     .;i:iti;1i::;;;i:,,;;;: ,:;,. .,,,::,.            \n" +
-                                   "           ,,:,,,, :;;:,,,:;;:::,:;,          .,;LL1itC;:ii;;  ..,::i;,::. .,,:,:::;,.,,,           \n" +
-                                   "          ,:,.:,  .:;;;;;i;11iiiii:,,,..,,,::;;;LCLfifL1. ;:;:      ,i.,::   .,:;,:,,,,,,,          \n" +
-                                   "         ,,,,,:,.:;:,;;,,;;;11i;i1i;;;;ttti;;::LLLCGL1t1ti;1ii;      ;:.,::.   .::: .,,,,,,         \n" +
-                                   "        ,,,:::;;,::. ,:,,:;,;;;fi:..,:1f1fLttitCLfGLGi:itCt1L11;,    .,:::;;:,. ,::, .,..,,,        \n" +
-                                   "       .,,..:.,::,   ,;;:i: ,i:1Lf1i1tLt11i::fGGfL0fiL: .:11Lt;ii:,.   .,;;;;,::;;:;:,,:::,,.       \n" +
-                                   "      .,,,,,. .,,,   :;;;:   i1i;tffii;,.   ;LfGL1L8tLG:   ,tti,::i;:,.   ,;;,.:;;;;;::;:.,,,       \n" +
-                                   "      ,,,,:, .:::.  ,:,,;,   :ii iLt       ;L1L:.;G0CC0C:   ,111:,,,;iii:,,::;;;;:,.:,:.,,,,,,      \n" +
-                                   "     .,,,.:,,,;:  .::,.::.   ;:;.:L1      iGLGftCG00L,fLf;   .:itfti:;it1iii11ii1: .:;, .:,,,,      \n" +
-                                   "     .,,:::;:::,,;;:,:;:.    i:;.i1i     iC08GG8Lt:18L,ftL;      ,ifftLfi11;i1ii;. .:,,  ,..,,.     \n" +
-                                   "     ,,,.:..;;;;;;;;;;.     ,;;:;11:    1LCf0G1.    ,0GitfCi       1111 .ii1i;,::   ,:,:,,:,,,,     \n" +
-                                   "     ,,,.,. ,::;;:.,;:.    .iiitft:   .fff1t0i       ,fGCGGGt.    ,ffL..i;i;:::::,   ,::;::,,,,     \n" +
-                                   "     ,,::,  :::.,:::;;,   ,i1Lf1L:   ,fLf;18t.         :8C08CL,   ,f1ffi;;,  ;;;i:.  :;,,,:.,,,     \n" +
-                                   "     ,,,.:,,,;,  .;i;;:  :;;itftf.  iGGL:t@t            C0GLLtf;  iLtff1;.   ,i;,,:,,::, .:::,,     \n" +
-                                   "     ,,,,::;::,   ,;::::ii;; ,Ltt .tLCGCC00;:          .GGG ;LtC1;tf1ii;.    .:;,.:;;;:. ,,.,,,     \n" +
-                                   "     ,,:,:,.:,:,  .:::;i1i; ,t1t;;LfiGGLLfLG8fi;:i1tttfLGC01 LCGGLt,:;;,     ,;;;;;;;;;;.,,.,,,     \n" +
-                                   "     .:,.,,  ,,:. .;ii1i;111LL1fLCCfLGLt:,:100G80Cfttttt1L00LGGttCCt;:i    .:;,,:;:.,:,:;:::,,.     \n" +
-                                   "     .,,,,,. :;:  ;iii1iiii1ti1CLCCCtLGGCLffC00GCLLffftLGC0LffLCCGLLL1:   ,:,.,:,. .:;,,,:.,,,      \n" +
-                                   "      ,,,,,,,:,:,,;;;;;:,.,:;tCCLfffffLf;;;;;;;::::;;;:;;iiiiittLCLfCC1   :;,::,  .:::. ,:,,:,      \n" +
-                                   "       ,,,.:::;;;;;;,.,;;,   .,:i;;;,itt,                  .,iiifftiiti  .;;;;,   :,,. ,,,,,,       \n" +
-                                   "       .,,:,:.,:;::::::;;;;,.    ,:ii;fL1t;..     .:;;;;;111fLti;1fL1:i. ;;:;;,   ,::,.:..,,.       \n" +
-                                   "        ,,,..,. ,:;, .,:;:::::.    ,;1tL1fCt1; ,;tt1i;i1tfftL1:,.,:it;i;,;:.,:, ,::,;;:,:,,,        \n" +
-                                   "         ,,,,:,. :::.   .::,.:;      ;ii1:;tiftffi,,,:;;;i1t1;;;ii1i;i11;;;,:;;,::,.,:.,,:,         \n" +
-                                   "          ,:,,,,,::;:,.   ::,,i,      :;:; .tLf;,:;;;;::,,.......:i;iii11;i;;;;;,. .,:,,,,          \n" +
-                                   "           ,:,.,;:,,,,,,. .;:,;;:::..  ;iii:iL1i11;,.          .,;:,:::::,..,:;;, ,,.,:,.           \n" +
-                                   "            .,:,,,,. .,;:, :;;:,,:;;;;::i1;it;;i:     ....   ,:i:;;:,.   .,:;,:;:,:.,,,.            \n" +
-                                   "             .,,,..,,. :,:::;;::,::;;;:,;1i1i;:...,,::,,::;::;:,:::.   ,,,::,.,:,,::,,              \n" +
-                                   "               .,,::,,,:::;i;:;:......,::111i;::;;;i;:,,,,,:;i,.::. ..,:,,. .,:,.,,,.               \n" +
-                                   "                 .,,,.,::,,..,:::,      .;1;;;,.,:;:,,,,,,,:;;;;;:,:;:,;;..,,,::,,.                 \n" +
-                                   "                   .,,::,,,,. .:,::::,,,. ,:;;:;:,.     .  .,,;;;:,,,.,::::,.,,,.                   \n" +
-                                   "                     .,,:,,::,,:;::,.,,;;:,:;;;;:,,,..,,,:;;:,:;:....,,..,:,,,.                     \n" +
-                                   "                       ..,:,,,.,:,,,.. .,::;;;,,,::::;:,.....:;;,,,.,::,:,,.                        \n" +
-                                   "                          ..,,,,:,,.,:,,,:;:,... .,:;:,....,,,,,::,,,,,,..                          \n" +
-                                   "                              ..,,,,,:,,..::,,,,:,,.,::,,,,:,,,,,,,,..                              \n" +
-                                   "                                   ...,,,,:,,,,,:,,,,::,,,,,,,,..                                   \n" +
-                                   "                                          ...............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[7] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         ........,.........                                         \n" +
-                                   "                                  ...,,,,:,,,,:,,,,::,,,,,,,,,....                                  \n" +
-                                   "                             ...,:,:,,,,::,.,,,:,.,,,,.,,:,.,,::,,,,..                              \n" +
-                                   "                          .,,,:,,.,:::,,......,;::.  ..,,:;,,,,,..,,:,,,..                          \n" +
-                                   "                       ..,,,,,::,,,.,;:,,,...,:;,:;:,,:;:;,:,  ..,,::..,,,,..                       \n" +
-                                   "                     .,:,::,,,,. ..:;;:,:::,,,,....,:;;;:,,:;:,..,:::,,,:,,,:,.                     \n" +
-                                   "                  .,,:,..:,:;:,::::;;;:,.        .,,:::;::  .,,,::;,:,  ,,,.,,:,..                  \n" +
-                                   "                .,,,,::,,. :::,:,,,;;:;;;:,,,,,,:;;:,.:i:;i:      .,:;,...,,::..:,.                 \n" +
-                                   "               .,:,..,,  .,,:,    ::, :i::,,,,::;;:i;::;i11i:,,.....,;:;i;::;:,,,,:,.               \n" +
-                                   "             .,:,:::::,:;;:,.   .;;::;::,::::,::,..  ,:i11i1:::;;;::::;;;::,:, ,:,.,,,.             \n" +
-                                   "            .:,,.,,.;;::,. . ..,::;;;:,     ..    .,;;:11ii1i::;;;;,.:;;:..:;:. .,,,,,,.            \n" +
-                                   "           ,,,:,,. .;;;:,,:iii;;,:;,          ..:LL1iiff,;iii, ..,::;i::;. .:,,,,,:::,,,,           \n" +
-                                   "          ,,,.,,. .::;;;;i;;111ii1i:::,,,,,::;;;LCLL;1Lf: .;:;.     .i:.:,. ..,:;::;:,,,,,          \n" +
-                                   "         ,,:,,::,:;:,:;: :;;;1iiiii;;:;tfti;;::fCLCGL1f1t1:11ii.     :;.,::.   .:::..,:,,,,         \n" +
-                                   "        ,:,,:,:;::,. .::,;;,.i:1t;,..:tL1tLftitCLfGLG1.11CL1Lt1i,    .:::::;:,. .::, .,..,:,        \n" +
-                                   "       .,,..:..:,:   .;;;;:  ;i;fLf11tLf1i;::fGGLL0LiC: .,11ff;ii:,    .,;;:i::::::::..,,:,:.       \n" +
-                                   "      .,,::,. .,,,   ,::;;   ,11:itfi;;,    ;ftGLtt8tfG;   ,tti,;;i;,.    :;;,.,;;;i;;:::,,,,       \n" +
-                                   "      ,,,.,, ,::,.  ,:,.::   ,;i,,Lf.      iL1L: :C0GC0C:   .11i:,,:;i;;,. ,:;;:;::,:,:::,.,,,      \n" +
-                                   "     .,,,,:::,;, .,:,.,::.   :;::.ft      ;GC0LfCC0GC:fLf;   .:ift1;,;i1i;;;;1;;i;  :;: .:::,,      \n" +
-                                   "     .,,,:,,;;:,,;i:,;;,.    i:;.;11.    iCG0GG8Lt:18C,ftLi     .;tft1fLt11ii1i11, .::,  ,,.,,.     \n" +
-                                   "     ,,,.,, :;;;;::;;;.     :i;:;11:    tLCt0Gi.    ,0GitfCi       ;t1f: ;iiii;::   ,,,,.,,,,,,     \n" +
-                                   "     ,,,,,. ,::;;:.,;;.    :iiitL1:   .tLf1101       ,fGLCCGt     .ttf: :;;i;:,::.   ,::::::,,,     \n" +
-                                   "     ,,,,:..:;: .::;;;,   :itLt1L:   ,fLf;18t.         :8CG8GL,   .ftfti;;:. ;;:;:.  ,:,:::.,,,     \n" +
-                                   "     ,,,.:::,;,  .:;:;: ,;;;;tfft   iGCL:t@1            C0GCLff;  ;L1ff1i,   ,i;;::..:;: .:,,,,     \n" +
-                                   "     ,,,::,:::,   .::,;i1;i, ;t1t .tLL0GC0Gi:          .GCG ;LtL1;tftiii.    .;:,.:;;::. .,,,,,     \n" +
-                                   "     ,,,.,, ,,,,  .::;iiii;.if1f;;CfiGCLLfLG8fi;:i1tttfLGC0; LCCGLt::;i,     .;;;::;;i;: ,,.,,,     \n" +
-                                   "     .,,.,,  :::  :11111i11tLt1tCGCLCGft:,:f0GG8GLfttttttC80fGCftCCt;:;    .:;:,:i:,,::;::::,,.     \n" +
-                                   "     .,,:,,..:;: .;;;ii;;;;i1;1CLCCCfLGGLLffG00GLLLfttfLCG0ffLCCCGLLL1,   ,::.,::. .::,:::.,,,      \n" +
-                                   "      ,,,.,:::::,::;::::, .,:fCCLfffffLt;;;;;;:::::;;:;;;ii;iittCCfLCCi   ::.::,  .:::. ,,.,,.      \n" +
-                                   "       ,,,,::,;;i;;;,.:;;:   .,:;i:;,it1.                   ,;;ift1;1t:  .;;:;,  .:,,. .,,:,,       \n" +
-                                   "       .,,:,,..,:::,:::;:;;:.    ,;ii;ff1t:,      ,:;;;;;111LLt11fLf;i:  ;;;;;.   ::: .:.,,,.       \n" +
-                                   "        ,:,.,,  ,;:. ..:;::,::.    ,i1fL1LL11,.:1tt1i;i1fLttL1,..,:f1:i.:;:,::. .:::;:::,,:.        \n" +
-                                   "         ,,,,:,.,:::.   .::,.;:     .ii1i:i11ftLt;,,,:;;;ittt;;;;iiii11;;;: :;:,;;,,::,,::,         \n" +
-                                   "          ,,,..:;::::,,  .::.:i.     .;:i. :LL1:,;;;;;::,,,,,,,,:i1ii111;;i;;;;:,. .:,.,,,          \n" +
-                                   "           ,,,,::,,.,,,:. ,;::i;:;,,. ,ii1;:Lti11;,..          .,;,,;;;i;,,,:;;;..,,,:,,,           \n" +
-                                   "            .,,,.,,. .:;:..:;;,.,;;;;::i1ii1i:;:.    ....   .,;;;;::,.   ..:::;:.:,.,,,.            \n" +
-                                   "             .,:,.,:,.,::::;;;::::;;::,:ii11i:....,::,,::::,;::,:;:.   ,,:;:,,:::::,:,              \n" +
-                                   "               .,:,,,,:;::;;:::,    ..,:11i;;::;i;i;::,,,,::i: ,:,   .:,,,  .,,..,:,.               \n" +
-                                   "                 .,,..::,,...,;:,.      :i;:i:.,:;;:,,,,,,:;;;:;;,,::,::, ,,,::,,,.                 \n" +
-                                   "                   .,:,,.,,,..,::;::,,:.  ,:;:::,.         .,:;;;,::,,:;:,:.,,:,.                   \n" +
-                                   "                     .,:,,,:,,,;::,..,:;:,,;i;;:,.,..,,,::::,:;;,.. .,,.,::,:,.                     \n" +
-                                   "                       ..,,,,.,::,,..  ,:,;:;,.,:;:,;:,...,,,:;,.,,,::,,,,,.                        \n" +
-                                   "                          ..,,:,,,..::,,,;:,,..  .::;,.....,,,:::,,,,:,,.                           \n" +
-                                   "                              ..,,,,:,,,.,:,,.,:,,.,:,,,.,::,,,::,,,..                              \n" +
-                                   "                                   ...,,,,,,,,,:,,,,::,,,,:,,,...                                   \n" +
-                                   "                                          ...............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[8] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         .........,.......                                          \n" +
-                                   "                                  ...,,,,,:,,,,:,,,,::,,,,,,,,,...                                  \n" +
-                                   "                              .,,,,,:,,.,::,.,,,:,.,,,,,,,:,.,,,:,,,..                              \n" +
-                                   "                          ..,,,:,..,,:::,......:;:,. ....,:;,,,:,..,,:,,..                          \n" +
-                                   "                       .,,:,,.,:,,,..:;:,:,,,,:;:,:;:,,;:;:,:. ..,,,:,.,:,,,.                       \n" +
-                                   "                     .,,,,::,::. ..,;;;,,:::,,,. ...:;;;;:,:;;,...,:::,,,:,,,,.                     \n" +
-                                   "                  .,,::,.,,.:;,,;:::;;;,,.        .,::::;:. .,,,,:;;,:...,,.,,,,.                   \n" +
-                                   "                .,,,,,:,.. .:::,,..:;::;;::,,,,::;;;:.,;;:;;,     .,:;:. ..,,:,,,,.                 \n" +
-                                   "               .,:,,,,,...,,,:.   ,::.,i;::,,,,::i;;i;:;;;i1i,,.    .:::;;:::;,.,:,,.               \n" +
-                                   "             .,,,,:,:;:,;;:,.   .:;;:i;:,,:::,,::... .,:i1iii::::;;:::;;;;::,:.,,:,,,,.             \n" +
-                                   "            .,:,.,:.,;::,. .,.,,:::;;:..     .      ,;:;11;i1;:;;;;:..:;:,.::;. .,,.,,,.            \n" +
-                                   "           ,:,,:,.  ;;;;:,::11ii;:;:.          .:LLi11iLi:iiii...,;::;;:;:  ::,,..,,:,,,,           \n" +
-                                   "          ,,,..:..,::;;;::i:;11i;11;;::::::::;;;LCLL:ifC1  ;:;:     .;;.::. .,,::::::,.,,,          \n" +
-                                   "         ,,:,,:;:,;:..:: ,:;,iii1;;:::;fft1i;::fCLLGCttt11;;tii:     ,;..,:.   .::,:.,,:,,,         \n" +
-                                   "        ,,,.,,.:::,   :;:;;: ,;:f1:,,:tLttLftifCLtGLCt iifCtffii:    .::,,::,.   :;:  ,,.,,,        \n" +
-                                   "       .,:,,,. ,,:.  .:;;;:  .ii1LLftttf1;;,,fGGCL0L1C; .,ittL;ii;,    ,:;;:;;:,,:::,..,.,,,.       \n" +
-                                   "      .:,,,:. ,:,,.  ,:,:;.   i1;:1f1::.    ;ftGft18ttC;   .1f1,;;;;,    .:;;:.,:;;i;:,,::,,,       \n" +
-                                   "      ,,,.,:.,;;,  .::,.,:   .;;; fL,      iC1L: :L0GC0C;   .11i,,,:;i;,.  ,:::::;;::::;:,.,,,      \n" +
-                                   "     .,,:,::;,:, .::,,,::.   ,;:;.tf,     ;GC0CLCC00C;fCL;   .;1t1;:,;i1i:::,i;:;;. :::,.:,:,,      \n" +
-                                   "     .,,,:,.;;;::;i;:;;,     i;;.:11,    iCGGGG0Lf;i0G,ftLi    .,ifL1itLt11i11ii1;  :::  ,,,,,.     \n" +
-                                   "     ,,,.,, ,;;;;:.:;;.     :i;:;t1:    tLC1C0i.    ,GG;tfCi       ;f1L1,;1i;iii;. .:,,. ,,.,,,     \n" +
-                                   "     ,,:::  ,:::::.,;;.   .;i11tL1,   .tLfii0t       ,fGfLCG1     .titi .i;11;,,:.  .::;,,:::,,     \n" +
-                                   "     ,,,.:,,:;,  :;i:i,  ,;;fL11f.   ,LCf;18t.         :0GG0GL,    tfft;;;;:.;;:;:   ,:,;;:.,,,     \n" +
-                                   "     ,,,,:;:::.   :;:;:,:;;;:tff1   iGGL;f@i            L0G0CfL;  :f1tLti;.  ,i;;;:  :;:,.:.,,,     \n" +
-                                   "     ,,:,:.,:,:.  .:,:i11;;  1111 ,tff00G0Gi:          .GCG,;LtL1:1Ltiii:    ,;;,.:::::, .:::,,     \n" +
-                                   "     ,,,.,, .,,:  ,ii1i;i1;:fLtf:;CL1GLtffLG0ti:;i1t1tfL0CG: LCC0Ct::;i,     .;;;,:;;;;, ,,.,,,     \n" +
-                                   "     .,,,:, .::, .i1ii11ii1tf1itGGCLCGf1,,:C0C00CLfttttftG8GtGCLtLCt;;;    .,;;:;i:::;;;.,,,,:.     \n" +
-                                   "     .,,,,,.,::, ,;;:;;,,::i1;1LLCCLfCGCLLfLG00CLLffttfCG0GffLCCCGLLL1.   ,::,.::,. ::,;;:,,,,      \n" +
-                                   "      ,,,.,:;::::;;::::;,  .,tCCLfLffLL1;;;;;;::::;;;:;;;ii;i11fCGfLCCi  .:,.,:,  .:;;,.:,.,,,      \n" +
-                                   "       ,,,::,,:;;;;:,,;;;:.  .,,;i:;,1fi.                   ,::1f1;i11.  .i:::,  .,,:. .:,,,,       \n" +
-                                   "       .,,,.,. ,:::.,:;;:;::,    .;iiiLtti,,     .::;;;:;ii1Ltt1fLLiii   ;;;;:   .:,, ,,.,,,.       \n" +
-                                   "        ,,,.,,  :;:   .,::,,::     ,i1LttCf1i.:;tt1i;i1tfL1tL1,..:1f:i, :;;:;:  .,:::.:,.,,.        \n" +
-                                   "         ,,,,,,,:,;:.   .:,.,i,     :ii1::11ftffi:,,::;;;1ttt;:;;iiii1i:;:,.::.,;;,:;:,::,,         \n" +
-                                   "          ,,,.,;:::::,,  .::.;;..    :;:;  1Cf;::;;;;;:::,,,::::;11;i11;:i;:;;;::...:..,,,          \n" +
-                                   "           ,,,,:,,..,,::  :;:;;:;;,,..ii1i:1fi11i:,.           .:;:;ii1i::,:;;;:  .,:,,:.           \n" +
-                                   "            .,:,.,,. ,;::.,:;:..:;;i;:;1i;11;::.     ...    .,;;;:::,...  .,::;,.:..,:,.            \n" +
-                                   "             .,,,,:,,.:,;:;;;;::::;::::ii11i:....,,::,,:::,::;;:;;,.  ..,:;;,:;:,:,,,,              \n" +
-                                   "               .,,,,.:;:,:;:::,.    ..,i1i;;;:;i;;;::,,,,::;;..::,   .:,,,. .,,,,,:,.               \n" +
-                                   "                 .,,,,:,,.. .:;:,....  ,:;:;;..:;;:,,,,,,:;;;::;:.,:::::...,,:,,,,.                 \n" +
-                                   "                   .,,:,.,:..,:,;::,,:,. .:;::;:,.        .,:;;;::::,,;:.:,.,,:,.                   \n" +
-                                   "                     .,,,,:,,,::,,...,;;:,:i;;::,...,,,,:::,,;;:..  ,:,,::,:,,.                     \n" +
-                                   "                       ..,,:,,::,,,.. .:,;:::,,:;:,;:,...,,,:;,.,,,,:,.,,:,..                       \n" +
-                                   "                          ..,,:,,..,:,,,;:,.... .::;,......,,:,:,,,,:,,,.                           \n" +
-                                   "                              ..,,,:,,,.,:,,.,::,.,:,,,.,::,,,,:,,,,..                              \n" +
-                                   "                                   ...,,,,,,,,:,,,,,:,,,,,,,,,...                                   \n" +
-                                   "                                           ..............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[9] = "```                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "                                         ..........,.......                                         \n" +
-                                   "                                  ...,,,:,::,,,,:,,,,::,,:,,,,,...                                  \n" +
-                                   "                              ..,,,,,:,..,::,.,,,:,,,:,..,,:,.,,,:,,,.                              \n" +
-                                   "                          ..,:,,:,.,:,:::,......:;:,. ....,::,,,:,.,:,,,..                          \n" +
-                                   "                       .,,,:,,.,,,....:;:::,,,,:;:,;;,,:;:;:::. ..,,,:,,,,,..                       \n" +
-                                   "                     .,,,,,:,::,....:;;:,,::,,,,. ..,:;;;;,,:;:,...,,;:,,,:,,,.                     \n" +
-                                   "                  .,,,:,,.,..;:,:;::;;;:,..       .,,:::;:,  .:,,,:;:::..,,..,,,,                   \n" +
-                                   "                 ,,,,.,,..  ,:;,,..,:;,:;;::,,,,::;;;,.,i:;::.  ....::;,  .,,,:,,,,                 \n" +
-                                   "               .:,:,,::,.,,:,,,   .::,.:i;;:,,,,:;i:;;:;;;;i1i,.     ,:::::,,::,.,,,.               \n" +
-                                   "             .,,,.,:,:;,:;:,.   .,;;;;i::,,:::,,:,.. ..,;i1iii::::::::;;;i:;:::,,::,,,.             \n" +
-                                   "            .,::,,,..;;;,.  ,;::::,;;:..            .,:;i11;11::;;;;,.,;;:.,::: .,,.,,,.            \n" +
-                                   "           ,,,.,,.  ,;;;;:;;:11ii;;;,           ,Lf;i1i1f:;iii:.,,:;:;;;;:  ,::,  .,,,::,           \n" +
-                                   "          ,:,,,:,.:;::;;:,i;:i11;itii;;;;;::;;;;LCCL;;tLL, .i:i.   ..:i,:;.  ,,,::,,::.,,,          \n" +
-                                   "         ,,,::,:;,::. ::,,:;:.i;1i::,,:fft1i;::fCLLGLftL11i:11i;     .i,.,:.  ..,;:::,,,:,,         \n" +
-                                   "        ,,,.,: ,::,   :;;:i:. ;:ifi;,:tLf1LLt1fCLtCCCf.;11CL1L11:.    ::,,,:,.   :::. ,:,,,,        \n" +
-                                   "       .,:,,,. ,,,,   :;:;:   :1itfLft1fi;:,,tCGCL0LtC; .,;t1Li;i;,    ,::;:;;:,.,::. .,..,,.       \n" +
-                                   "      .,,,,:..,::,.  ::,,;.   ;1i.1ft,,.    ;f1Cfti0ftC;   .if1,;;;:.    .:;;;,,:;;;;:..,,:,,       \n" +
-                                   "      ,,,.,::,:;,  .:,,.,:.   ;;; 1C;      iCtL; ,f80C0G:    11i,,:;;;:.   ,;::,:;;;::::::.,,,      \n" +
-                                   "     .,,:::,:::,.,;;,,:;:.   ,i,;.1f;     ;GG0GCGC00CitGL;   .;iti:,:iii;,,..;;:;;, ,:,:,:.,,,      \n" +
-                                   "     .,,.,, :;;;;:;;:;:.     i;;,:11,    iCGG0CGLf;i0G,ftfi    .:1fL1;1ttiiii1i;i;. ,;;. ,:,,,.     \n" +
-                                   "     ,,,,,, .:;;;: ::;.    .;i;:it1:    tLC1L0i     .GG;tfCi      .iLtLf;;1iii111:  :,,. ,,.,,,     \n" +
-                                   "     ,,,,:..:::.,:::;;.   ,;111fLi.   .tffii0t       ,LGffCC1     .1111  ;ii1i;::.  ,,,:..:,,,,     \n" +
-                                   "     ,,,.:::,;,  ,;;:i, .:iifL1ft    ,LCf;18t.         :0GC0Gf,    1fft:;;;;:;:,:,   ,:::::,,,,     \n" +
-                                   "     ,,,::::::,   ,:,:;;i;;:,fff1   iGGC;f@i            f0C8GfL;  ,fttLfi;,  :i:i;,  ,;,:::.,,,     \n" +
-                                   "     ,,,,:..:,,,  .:;;i1ii: ,ti1i ,tff0000Ci:          ,GL0:;Ltf1:1Lt11i;.   ,;;:,::,::: .:,,,,     \n" +
-                                   "     ,,,.,, .:,, .;111iii1iiLLtL;;LL1Gf1ttLG0ti:;11t1tfL0CG. fCC0Ct::;i:     .;;:.:;;;:. ,,,,,,     \n" +
-                                   "     .,,::, ,;;, .;;:i1;iiitt1:tGGCfCGft,,i00C80CfttttfffG8C1GCCtCCt;;;     .;;:;;;;;;;: ,,.,,.     \n" +
-                                   "     .,,,.:::,:,.:;;;;:..,,;ii1LLCCLfGGCLffCG0GLLLfttfLCG0CfLCLCLCLLL1.   .::,,:;:..,::;::::,,      \n" +
-                                   "      ,,,.::::;;;;;,,,:;,   .tCCLfLffLLi;;i;;:::;:;;::;;iii;i11LGCfLCCi  .:,.,:,.  ,;:,::,.,,,      \n" +
-                                   "       ,,:,:..:;;;;:,:;;;:.  .,,;i;;,1fi                    ,,:ft1:11;.  ,;,::,  .,::, .:,,,,       \n" +
-                                   "       .,,..,. ,::,.,:;;::::,    .;i;1L1f;:,     ,::;;;::;itfttfLLti1,   ;;;;:   ,,,. .,,:,,.       \n" +
-                                   "        ,,,,:, .:::    ,:,,,::    .:11L1LL11;,;1tt1i;i1tff1fL1,,:ifi:; .:i:;;,   :::..:..,,.        \n" +
-                                   "         ,,:,,::::;,..  .:,.,i      ;i1i,;11Ltft:,,,::;;;1tft:::;:i1ii,;;:.,::.,::,;::,:,,,         \n" +
-                                   "          ,,,.::,,,,,,,  .;:,i:..   .i,i, ,LL1::;;;;;;::::::;;;;iti;11i:;i,:;;:::,.,:,,,:,          \n" +
-                                   "           ,:,:,,.  ,:;,  ;;;;::;:,,.;iiii;fii1i;,..           ,;;;ii11:;::;;;;,  .:,.,,.           \n" +
-                                   "            .,,,.,,. :::,.:;;,.,;;;;::1i;11i::.      ..     .,:;;,:::,:.  .,:;:..,.,::,.            \n" +
-                                   "             .,,,,,,,:::;;i;;;,,::::::iii1i:.....,::,,::::,::i;;;;,   ..,:;:,;:,:,.,,,              \n" +
-                                   "               .,,,.,::,.:::::,     ..i1i:;;;:;;;i::,,,,::;i:.,::.   ,,,,,..,:,,,:,,.               \n" +
-                                   "                 ,,,,:,,,.  ,;::,.... .,:;;;,.,;;::,,,,,::;;::;;,.,,,;:, ..,,,.,,,.                 \n" +
-                                   "                   .,,,..:,,.:::;:,,::,. ,;;:;:,.         .,;;;;::;:,;:.,,.,,:,,.                   \n" +
-                                   "                     .,,:,,,,:;,,....:;:::;i;;:,....,,,::::,:;;,....:::,:,,,,,.                     \n" +
-                                   "                       ..,:,,,:,,,,...::::,:,.,;;,:;:,..,:::;:....,:,.,,:,,.                        \n" +
-                                   "                          ..,,,:,.,:,,,::,.... .,:;,......,::,,:..,:,,,,..                          \n" +
-                                   "                              ..,,,,,,,,:,,..::,.,:,,,.,::,.,,:,,,,,..                              \n" +
-                                   "                                   ...,,,,:,,:,,,,,:,,,,:,,,,,...                                   \n" +
-                                   "                                          ...............                                           \n" +
-                                   "                                                                                                    \n" +
-                                   "                                                                                                    \n" +
-                                   "```";
-            width100pentagram[10] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ........,,........                                         \n" +
-                                    "                                  ...,,,,:,:,,,,::,,,,::,,,,,,,...                                  \n" +
-                                    "                             ...,,,,,,:,,.,:,..,,,:,,,:,.,,:,,.,,,:,..                              \n" +
-                                    "                          ..,,:,::,.,,,:::,......:::,. ....,::,,::,.,,,,..                          \n" +
-                                    "                       .,,,::,.,,,.....::,::,,,,:;::;:,,::,;::,..,,,,,,,,,,..                       \n" +
-                                    "                     .,:,,.:,,::,...,;;;:,,,,,,,,....,;;;i::::;,....,::,.,,,:,.                     \n" +
-                                    "                  ..,,,:,,,,.,;:,;;::;;;:,.        .,::::;:. .,:,,,:;:::.,:,.,:,..                  \n" +
-                                    "                .,,:,.,:,.  .,::.. .::,,;;;::,,,:::;;;..:;:;,,. ...,::::. .,,,,,:,.                 \n" +
-                                    "               .,,,:,:;:,::::,,   .:;:.,;;;:,,,,,:;;;i;:;;:;i1;.     .:::::..,::.,:,.               \n" +
-                                    "             .,:,..:..;:,:,...  .,:;;;i::,,,::,,:,,.. ..,;11ii;::::::,:;;i;:;,;:,,:,:,.             \n" +
-                                    "            .:,:,,,. :;;:....;i;;;,:;,.              .,:;i1i;1i:;;;;;.,:;:,,:::..,:..,,.            \n" +
-                                    "           ,,,.,:. .,;;;;;;;::11iiii:,..        ,Lf:i11iti;i1ii,,,:;:::;;;. .::,  .,,,,:,           \n" +
-                                    "          ,,:,,::,:;:,:;: :;;;i1i;11ii;ii;;;;;;;LCCL;:1fCi  ;:;:   ..:i:,;,  ,,,,,.,::,,,,          \n" +
-                                    "         ,,,,:,,;::,. ,::,::; :i;t:,..:fftti;;:fCLLCfftft11:;tii,     ;:.::.  .,,:;:;:,.,,,         \n" +
-                                    "        ,:,..,. :,:   ,;;;i:  .i:fti;;1fL1fLt1fGLtCCCf,:1ifCtLt1;.    ,:,.,:,    ::::.,,,,:,        \n" +
-                                    "       .:,::,  ,,,,   :;,;:   .1iiffLtit1:,,.tCCGL0CtC; .,:ttf1;i;,    ,::::;;,, .::, .,..,,.       \n" +
-                                    "      .,,,.:,.:;:,   ,:,.:,   ,ii,;ff:..    iL1CftiGL1C;    ;Lt,;;;:.   .,:;:i;:::;:;:..,,:,,       \n" +
-                                    "      ,,,,::;,::.  ,:,.,::.   :;;,:C1      iCfCi ,100CGG:    i1i.,:;;:,    ,i::.,;;;;;:,,:,,,,      \n" +
-                                    "     .,,,,:.::::,,;;:,;;,.   .i:;.iti     ;GG0GGGC08CtfGL;   .;it;,,:iii:.. .:;;;;:.,:,:;:.,,,      \n" +
-                                    "     .,,.., ,;;;;::;;;:     .i;;,:i1:    iCGL0CGffii00,fffi    ,;tffi;it1;;;:ii,;;. .;:,.,::,,.     \n" +
-                                    "     ,,:,:. .::;;: ,;;,    .;i;:if1:    tLL1f81     .GG;1fCi      ,1LtLL1i1ii11i1i. ,::. ,,.,,,     \n" +
-                                    "     ,,,,:.,:;:.,:;;;i.  .:i1t1fLi.   .tffii0t       ,LGttLG1      ;1if, :iiiiii;,  ,,,, .,.,,,     \n" +
-                                    "     ,,,,:;:,;.  .;;:;,.:;;1fL1f1    ,LCf;t8t.         ;0GLGGf,    1fff,,;;iii:,:,   ,:;:,:::,,     \n" +
-                                    "     ,,:::.:;:,   ,:,:i1i;;..ftti   iGGCiL@;            t8C80fC;  .tf1Lfii:, :;:;;.  ,;,:;:.,,,     \n" +
-                                    "     ,,,.,. ,,,,  :ii1iiii, ;tit: ,fft0800G1:          ,GL0i;Ltf1,1Ct111;,   ,i;;::,.:::..:,,,,     \n" +
-                                    "     ,,,,,, .::, .i1i11ii1itLftL1iLCtGf;1tLG01i;i11t11fL0CG  fCLGCf;:;i;.    ,:;, :;;::. .,,,,,     \n" +
-                                    "     .,,,:,.::;. .;:,i;,;;;11i:1GGCfCGft,,t8GC0GLftttffLf08LiGCCtCCt;;;     .:;;;:;;;;;..:..,,.     \n" +
-                                    "     .,,..:;:::,,:;;;;:.  .:;i1LfCCffGGCLfLCG0CLLffttfLCG0LfCCLCLCLLL1.   .:;:,:;;,.::::.:,,,,      \n" +
-                                    "      ,,,,:,.:;;;;;,.:;i,    tCCLfLffCfi;;i;;:::;;;::;;;ii;;i11CGLfLCCi  ,::.,::.  ,:::;:,,,,.      \n" +
-                                    "      .,,,.,..,::;:::;;:;:,. .,.;i;;,tf;                    ..;ft:;11,.  ::.,:,  .,::,.,:.,,,       \n" +
-                                    "       .,,..:. ,;:. .,:;::::,    ,;i;tftt:,.    .,:;;;:,::;tt1tLffiii    ;;:;,   :,,. .,,:,,.       \n" +
-                                    "        ,,,:,,.::::    ,:,.,;,    .iitftCfit::ittti;;ittLftLfi::itf:i. .;i;;;.   ::: .,..,:.        \n" +
-                                    "         ,,,.,:::;::,.  .::.;;     ,iit::i1tftfi:,,,::;;ittft,,,,;t;i,.;::.::. .:::;,,:,,:,         \n" +
-                                    "          ,,,,:,,..,,,,  ,;,:i:,.   :;;;. 1Cti:;i;:;;;;;:;;;i;ii11;i1i:;i:.:;:,;;,,::,,:,,          \n" +
-                                    "           ,,,,.,,  ,::. ,:;;::;;::,:ii1i;11i1i;,,.          .,;iii111::;:;;;;;,. ,:..,,,           \n" +
-                                    "            .:,,,:,..:::,:;;:,,;;;;::i1:1ii;,.      ..      .,:;,::;;i:. ..:;;: .,,,:,,.            \n" +
-                                    "             .,:,,,,:::::ii;;:,,,::::i1i1i;.....,,::,,:::,,:;i;;;:.   ..,:;,:;.,:..,,,              \n" +
-                                    "               .,:,.::,..,,:::.     .;1i;:;i:;i;;;:,,,,,::i;,.:;:   .,,:::,,:::,,,:,.               \n" +
-                                    "                 .,:,,,,,. .::::,,,.....;:;:.,;;;::,,,,::;;;,:;:..,,::,.  .,:.,,:,.                 \n" +
-                                    "                   .,:,.,:,.:::::,,,:,...:;:::,,         .,:i;;::;;,:;..,,,,:,:,.                   \n" +
-                                    "                     .,:,:,,,:,,.. .,;::::i;;:,....,,,::::,:;;;....,::,:,.,,,,.                     \n" +
-                                    "                        .,,,,:,,,,,..,:::,::.,:;,:;:,.,,::,;:.....,:..,::,,.                        \n" +
-                                    "                          ..,,,,,,::,,::,,.....,:;:......,:::,:,.,::,,,,.                           \n" +
-                                    "                              ..,,,,,,,::,,.,:,.,:,,,..::,..,:,,,,,,..                              \n" +
-                                    "                                   ...,,,,,,::,,,,:,,,,:,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[11] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ..........,.......                                         \n" +
-                                    "                                  ...,,,,,,,:,,,,::,,,,,:,,,,,,...                                  \n" +
-                                    "                              .,,,,,,,::,,,::,.,,,,:,,,:,.,,:,,,,,,,..                              \n" +
-                                    "                          ..,,,,,::,.,,,:;:,......:::,......,::,,::,,,,,..                          \n" +
-                                    "                       ..,:,:,,,,,.....,;:,;:,,,,:;::;:,,:,,:::,..,.,,:,,,,..                       \n" +
-                                    "                     .,::,.,:,,;:,,,.:i;:,,,,,,,,. ...:;;i;:::;:,....,::,.,,:,.                     \n" +
-                                    "                  .,,,,,:,,,. :;::;::;;;;,,.       .,,:::;;, .,::,,,:::;,,,:,,,,.                   \n" +
-                                    "                .,,:,,,,,....,,:,.  ,::.:;;:::,,,:::;;:.,;;;: ....,,::::, .,,,,:,:,                 \n" +
-                                    "               .,,,,:,:;,:;::,,.   :;;,,:i;;:,,,,::;;;i:;i;,;i1:      ,::,,,.,,:,,,,.               \n" +
-                                    "             .,:,,.,, ,;:,,.  ...,::;;i;:,.,,::,,:,......,ii1i1;::,,,,,;;;i;:,:;,,,,,,.             \n" +
-                                    "            .,,,::.. :;;;,..,,i1ii;,;:.          .    .,:;i1;;1;:;;;;:,,;;:,;:::.,:,,,,.            \n" +
-                                    "           ,:,,,:,.,::;;;;;i;:;11ii1i:,,..      ,Lf::i1iit;ii1ii,::;;:,:;;, .:;:. ,,.,:,,           \n" +
-                                    "          ,,,:,:;:,;:,,::..;;:;i1iiiii;i1ii;;;;;LLCLi;itLL. ,i:i.  .,,i;:;:  .:,,...,:,,,,          \n" +
-                                    "         ,,,.,, ,;:,. .:;:;::. ;;11,. ,tLtt1;;:fCLLCftftL11;:11;;     :i.::.  .,,::,:;,.,:,         \n" +
-                                    "        ,,:,,,. ,,:.  .;;;;:   ;;iLt1i1tLttLf1fGL1LGCL:,1itCftfii,    .;,.,:,   .,:,:,,,:,,,        \n" +
-                                    "       .,,,,, .,:,,.  ::,;;    ;1i1tLf1i1,,. 1CLGf0CtC;  ,:1ttt:ii:    ,::,,::,.  :;:  :,,,,.       \n" +
-                                    "      .,,,.::,:;:.  .,:,.::    ii;,ff;..    iL1CftiCC1C:    :Lf,;;;:.   .,:;:;;::,;::, .,.,,,       \n" +
-                                    "      ,,:,:,::::. .:::,,:,.   ,;::.Lf      ;CfG1 ,iG8CGG;    iti.::;;:.    ,i;:.,;;;;;,.,:,,,,      \n" +
-                                    "     .,,,,:..;;:::;i::;:,    .i:;.;t1     ;CG0G00C08CffGC;   .;i1;,,:ii;,.  ,:;;::;:,:::::.,,,      \n" +
-                                    "     .,,.,, .;;;;;.:;;,     .i;;,:11:    iCGf0CCffiiG0,tff;    ,;tf1;;i1i:::.;i:;;, .;::,,,,,,.     \n" +
-                                    "     ,,,,:. ,:::::.:;;,    ,iii;1f1:    1LL1t8i     .CG:1fL1      :tLtfLt1iii1i;i;. ,::, .:,,,,     \n" +
-                                    "     ,,,.::,:;, .:;;;i.  ,;itt1fL:    .tftii0f       ,LGt1LGt.     :tifi.,ii;;1i1;. ,,,. ,,.,,,     \n" +
-                                    "     ,,,,::::;.  .::,;;:;;;1fLtL;    :LGf;t8t.         ;0CLGGf,    1t1f. ;ii11:::.  .:,:..:,,,,     \n" +
-                                    "     ,,,,: .:,:.  ,;:;11ii: .f1ti   iCGC1L@;            t8L80fC;   iftLf1i;:,:;,;:   ,:::::,,,,     \n" +
-                                    "     ,,,.,. .,,, ,i111;iii,,tf1f, .ff10800C1:          :CL0tiLtf1,iLfit1i;.  ,i;;;:. :;:,::.,,,     \n" +
-                                    "     ,,,,:. ,;:. .;;;i1iii1fLt1ftiLLf0t:itLG01i;i11111tL0CC  fGfGCLi:;i;,    ,:;,.:::::, .::,,,     \n" +
-                                    "     .,,,,,::::  ,;;:i:.,::i1i:iCGGfLCft,.L8CG0CfftttfLLL881iGCCtCCt;;;.     :;;:,;;;;;..,.,,,.     \n" +
-                                    "      ,,,,:::::::;::;::,   ,:itLfCCffGCCLLCC00LCLfftffLCG0LLCCLCfCLLL1.   .,;;::i;:,:;;..:.,,,      \n" +
-                                    "      ,,,::,.:;i;;;..;;;,    1CCLfLfLCfi;ii;::;;;;;::;;;;i;;1i1CGLfLCCi  ,::,,::,. .::::::,,,,      \n" +
-                                    "       ,,,.,. ,:::,::;;:;:,. ,,.;i;:,ff,                    ..ift,i1i,.  :,.,:,   ,:;:,::.,,,       \n" +
-                                    "       .,,,,:  :;:  .,::,,,:,    ,ii;f1f1::     .::;;::,,,;ti1fffti1:   .i:,;,  .,,:, .:,,,:.       \n" +
-                                    "        ,,,,,,::,;,.   ,:,.,;.    ,iiLtLL111:i1tt1i;i1tfLttLti;i1L;;:  .;;;;;.  ,:,, .,,,:,.        \n" +
-                                    "         ,:,.,;,,::,,.  .::.i,     ;i1i,:1tLtft;,,,:::;;1ttL1..,,1i;; ,;:::;:  .,:;, :,.,,,         \n" +
-                                    "          ,,,,,,. .,,:.  :;:;i:,.  .i:i, .LL1;;;i;:;;;;;;;iii;ii1ii1i;;;;..;;,,;;,:;:,:,:,          \n" +
-                                    "           ,,:..,, .:;:. :;;,,:i;::,i11iiit;ii;:,..        ..,:i1ii11;:;;;;;;;:,..,:.,,:.           \n" +
-                                    "            .,,,,:,.:,::,;;;:,:;;;;:;1;i1i;:.                ,;;,;ii1i....,;;;, .,:,,:,.            \n" +
-                                    "             .,,:,.:;:,:;i;;;,,,,,,:;1iiii,.....,::,,:::,,::ii;;::. .. ..:::;, ,,.,,:,              \n" +
-                                    "               .,,,,:,,...,::,.     :1;;:;i;:i;;;:,,,,,:;;i,.:;;,   .,,::;,,;:,:,,,,.               \n" +
-                                    "                 .,,,,.,,. ,::;:,,...  :;;;..:;;::,,,,,:;;;,,::, ..,:,,.  .:,,,,:,.                 \n" +
-                                    "                   .,,,,::,,;::,,,,::,. ,;::;:,.        ..,;;;;::;::;, .,,,:,,,,.                   \n" +
-                                    "                     .,,,,.,::.... .::,;:;;;;:,...,,,,:,,,,;;;:..,,:;,,:,.,:,,.                     \n" +
-                                    "                       ..,,,,:,..,,.,:::,,:..:;::;:,..,::,::......,,,,,:,:,.                        \n" +
-                                    "                          ..,,,,,::,,,:,,.....,:::......,:::,,,.,::,,,,,.                           \n" +
-                                    "                              ..,,,,,,,:,,.,:,,,,,,,..,::..,::,,,,,,..                              \n" +
-                                    "                                   ..,,,,,,,,,,,,::,,,,:,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[12] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         .......,..,.......                                         \n" +
-                                    "                                  ...,,,,,,,,:,,,,::,,,,,,,,,,,...                                  \n" +
-                                    "                              .,,,:,,,,:,,,,,:,.,,,,:,,,:,.,,:,,,:,,,.                              \n" +
-                                    "                          ..,,,,,,:,,.,,,:::.......:::,.....,,:,,,:,,,,,..                          \n" +
-                                    "                       .,,,,,:,,,:,...,.,;::;:,,,:;;,:;,.::.,:::,.,,.,,:,,,,.                       \n" +
-                                    "                     .,,:,..,,.:;,::,,;;;:,,.,,,,,. ..,:;;i::::;:. ...,:,.,:,,.                     \n" +
-                                    "                  .,,,,.,,,.. .:;:::,:;;;:,..       .,::::;:..,::,,,,,,:;,,:,,,,,.                  \n" +
-                                    "                .,:,:,,::,...,,::.  .::,.;;;:::,,:::;;;,.,;;:.  ..,,:;:,;. ,,..,:,,                 \n" +
-                                    "               .,,,.:,.::,;;:,,.   ,;;;:,;i;;:,,,,:;;:i;:i;::;;i.     .:::....,,,,,,.               \n" +
-                                    "             .,,:,,,,..:::,.   ::,:::;;;:,..,,:,,,,,......:ii111;,,,,,,:;:;;,,,::,.,,,.             \n" +
-                                    "            ,,,,,:,. ,;;;:,,,::111i;;;,          .      ,:;i1;i1::;;;;,,;;;::;,:,,,:,,,.            \n" +
-                                    "           ,,:,,::,,:::;;;:;i::;11;11;::,,...   ,Lf,,;ii;1iiii11;:;:i;,,:;: .,:;, ,,..,:,           \n" +
-                                    "          ,:,,:,,;:::..:;,.:;;::iiiii;;iti1i;i;;LLCLi;;1fC; .;;;;   ,,;i;;;.  :,,. .,,:,:,          \n" +
-                                    "         ,,,.,: .:::   :;;;;:, .i:t:. .1Cttti;:fCLLCtiftLt1;:;f;i.    ,i,,;,  .,,::,,::.,,,         \n" +
-                                    "        ,,,:,,. ,,,,  .;::;:   .i;fft111ff1fftLGL1LGCL;:i1ifLtL1i;     ;:.,:,   .,;::;:,,:,,        \n" +
-                                    "       .,,.,:..:::,.  ,:,,i.   ,1iittL1;i,.. 1LL0fGG1C;  ,:;f1f;ii:    ,:,,,::.   ,::, ::,,,.       \n" +
-                                    "      .,,,,:;::;:.  .:,,.,:.   ;ii.tLi      iC1CftifC1C:    ,fL::i;;.   .,:;:;;;:,:::, ,,..,,       \n" +
-                                    "      ,,,,:,,:::..,:;:,::,.   ,;:; tL,     ;Cf0t.,:L8CGC;    :t1.:::;,     ,;;;,,;;;;;, ,,,:,,      \n" +
-                                    "     .,,..:..;;;:;;i;:;:.    ,;:;.:11.    iCG0G00LG@CCfGC;    ii1:,,;i;,.   ,:::,:;::::,,:,,,,      \n" +
-                                    "     .,:,,, .:;;;; ,;;:     ,i;:,;1i:    1CGtGGCtt1iC8:tLf;    :ifti:;i1;:,. :i:;;:..:::;:,.,,.     \n" +
-                                    "     ,,,,:..:::,::::;;,   .:iii;tfi,    1LL1181     .CG:1tL1     .iff1tftiii;ii:;:  .:;: .:::,,     \n" +
-                                    "     ,,,.:;:,;,  ,;;:i. ,;i1ft1Lf,    .tLtiiGf       ,LG11LGt.     :f1ft::iiii1i1i, ,,,. ,,.,,,     \n" +
-                                    "     ,,:::.:;:,   ::,;i;;i;itLtL:    :LGLif81          i0CfCGf,    11if. :iiiii;;,  ,,,, .:.,,,     \n" +
-                                    "     ,,,.,. ,,:, .:iiiiiii, ,fi1i   iLGGtL@;            1@L88LCi   ;LtLti;i;;i:,::   ,:::,:,:,,     \n" +
-                                    "     ,,,.,. ,,,, ,i1i1iiii:;fftf, .fL1G080Ct;          :CL0LtLtL1.;Lfitti;:. ,i:;;,  ,;,:;:.,,,     \n" +
-                                    "     ,,:,:..:;:  .::,ii;iiitf1iff1LLf01,;fCGG1i;i1t111tCGCL  fGfGCL1;iii:.   ,;;:,;:,:::.,:,,,,     \n" +
-                                    "     .,,.,:;:::..:;;;i, .,,;1i:;LGGfLCLt,,G8CGGLftttffCLC80i1GCLtCC1;;i.     :;;,.;;;;:. ,,,,,.     \n" +
-                                    "     .,,,,:,,::;;;:.::;,   .,;tCfCCffGCCLCCC0GCCffttfLCC0GfCCLCCfCLLL1.    ,;;:;i;::;;: .,.,,,      \n" +
-                                    "      ,,:,,, ,;;;;;,,;;;:.   1CCLfLfCCtiiii;:;;;;;::;;;;;;;i1itCCffLCCi  .::,,:;:. .:::,,::,,.      \n" +
-                                    "      .,,,.,. ,::,.::;::;::. ,,.;ii::Lt.                     .tfi,11;,. .:,.,:,.  .:;,:;:.,,,       \n" +
-                                    "       .,,,:,.,::,   .::,.,:,    :iiif1Li;,    .,::;;:,.,,;1itLtti1i.   ,i,,:,  .,,:,..:,,,,.       \n" +
-                                    "        ,,:.,:;::;,..  ,:,.:;     ;i1LtCfit1;1tt1i;;i1tff1ffti1tft;i   .;;:;:   ,,,. .,,::,,        \n" +
-                                    "         ,,,,::.,,:,,.  ,;,:i,    .iit:,:tfftfi:,,,:::;;1ttLi. .;t;i  ::;;;;:  .::: .:..,,,         \n" +
-                                    "          ,,,,,,. .,::  .;;;;;::.  ;:i;, iCt1;ii;;:;;;;;iii1i;iiiiii;:;;: ,;:.,;::;,,:,,:.          \n" +
-                                    "           ,:,..:, ,;:,..:;:.,;;:;:;1ii1i1i;i;:,..      ...,,:;1i;11;:;i;:;;;:::,,::,,:,.           \n" +
-                                    "            .,:,:,,::,;::;;;::;;;;:;1i;1i;,.       .         ,;:;ii1i,,,.,:;;;. .,:,,,,.            \n" +
-                                    "             .,,,.,::,,,;;:;,...,,,;111;i:..,..,,::,:::,.,::i;;::,,,,   .,::: .,,,,:,,              \n" +
-                                    "               .,,,,,,....:::.     ,i:;::;i:;i;;::,,,,:;;i:,,;;:.   .,,:;;,::,::.,,,.               \n" +
-                                    "                 .,:,..,,..;,;;:,,,.  .:;;,.,;;:::,,,,::;;:.,::. ..::,,...,:,,,:,,.                 \n" +
-                                    "                   .,,,::,,::,,,.,:::,..:;:;::..        .,:;;;:::::;:. ..,,,.,,,.                   \n" +
-                                    "                     .,,:.,,:,... .:;,;::i;;:,...,,,,,,,,,:;;;,,,,:;:.:,.,::,,.                     \n" +
-                                    "                       ..,:,:,..,,.,:::,.:,.,;:,;:,.,,:;::;,.,...,:,,,:,:,,.                        \n" +
-                                    "                          ..,,,,,:,.,:,,,....,:::.......:::,,,.,,:,,,,,,..                          \n" +
-                                    "                              ..,,,,,,:,,.,::,,,,,,,.,:,,,,::,,,,,,,..                              \n" +
-                                    "                                   ...,,,,,,,,,,::,,,,:,,,,,,,,..                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[13] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ........,.........                                         \n" +
-                                    "                                  ...,,,,:,,,::,,,,:,,,,,,,,,,....                                  \n" +
-                                    "                              ..,,,:,,,,:,,,,,,,.,,,,,,,::,.,::,,,,,..                              \n" +
-                                    "                          .,,,:,,.,:,,.,.,:::......,:::,....,,:,,,,:,,,,..                          \n" +
-                                    "                       ..,,,,,:,,::....,.:;,:;:,,,:;;,;;,,:,.,:::,,:,.,:,,,..                       \n" +
-                                    "                     .,:,:,..,..::,;:,:i;;,...,,,,,....:;;;;:;::;, ...,,:,,,:,.                     \n" +
-                                    "                  .,,,,,,:,... ,:;,:,,;;;;:,.       ..,::::;, .,::,..,,,::,,:,:,..                  \n" +
-                                    "                .,,,,:,:::,,,,,,:,   :;:.,;;;::,,,:::;;;..:;;,   ,,,::;,::.,:,.,:,.                 \n" +
-                                    "               .,,,.,:..;::;:,,.   .:;;;::i;;:,,,,,:;;;i:;i;:;::;.    .,::. ..,,:,:,.               \n" +
-                                    "             .,:,:,,...:::,    .i;::,:;;:,,..,::,,,:,...,.,;;;111:,,...,;:;;,..,:,.,:,.             \n" +
-                                    "            .:,,.:,...;;;;::,:::111i;i:.         .       ,:;11;ii::;;;;:;;;;:;::;:,,:,,.            \n" +
-                                    "           ,,:,,:;:,;;:;;;,:i;;:i1i;11;;;,,,... ,Lf,,:;i;i1i1ii1i::;;;:.,;;,.,::: .:,.,,,           \n" +
-                                    "          ,,,.:,.:;::. ,;:.::i:,;iii;;:;t11i;i;;LLCLii;1tLf .,i:i,  ,::;;;;,  :::. .,,,:,,          \n" +
-                                    "         ,,,.,,. ,::.  ,;;;i:,  :;i1.  ;Lftt1;:fCLLCf;ftfLt;,,11;:    .i:,;,  .,,,,..,:,,,,         \n" +
-                                    "        ,,,,:, .,,,,   :;,;;    :iiLff11tL1tftLGC1fGCLi;;titLfffii.    :;.,:,  .,,;;,:;,.,:,        \n" +
-                                    "       .,,.,:,,;;:,   ,:,.;,    i1;11Lt;i:   iLf0fGG1C;  ,;;tttiii;    ,:,.,::.   ,:::.,,:,:.       \n" +
-                                    "      .,,:,::;,::   ,:,..,:.   :ii,;Ct.     iC1LttifC1C:    .tC;,i;;.   .:::::;:,..::, .:.,,,       \n" +
-                                    "      ,,,.:, :::..,;;::::,.   .;:; 1L:     ;Cf0L,,,f8CCC:    ,t1.,:::,    .:;;;::;;;;;, ,,,:,,      \n" +
-                                    "     .,,,.,..;;;;;::;;;,     ,i:;.,11,    iCGGG08CG@CCLGC;    iii:,:;i;.    ,;:: :;;;::..::,,,      \n" +
-                                    "     .,,::, ,::;;;..;::    .:i;:,;1i:    1LG1CGLtt1iC8;tLL;    :if1;:;ii;,.  ,;;;;:,.:::;:,.,,.     \n" +
-                                    "     ,,,.:,,:;:.,;;;;i.  .,;1i;iff;,    1ff1i81      L0:1tfi     ,1Lfi1ttii;,;i,:;.  :::,,:,:,,     \n" +
-                                    "     ,,,,::::;,  ,;:,i,.:iitff1Lt.    .fLfiiGf       .LG11fGt      :LtLfi;iii1i;i;. .::, .:,,,,     \n" +
-                                    "     ,,:,: .:::   ,;:;11ii;:1Ltf:    :LGLif01          i0LfCGf,    i1;f, .iii;11i;, ,,,. .,.,,,     \n" +
-                                    "     ,,,.,. ,,,, ,i111;iii. :f;t;   iLG0fL@:            i@L08LLi   :ftL1;;iii1;::,   ::;..:,:,,     \n" +
-                                    "     ,,,,:. :::. .;i;i1iiii1LftL: .fL1G080Cf:          ;CC0CfCtL1.,fLiff1i;,.,i:;;,  ,;,;::,,,,     \n" +
-                                    "     ,,,,:,::::  .;:,i:,;ii1t1ifL1LLf01.:fCGG1iii11111tCGCL  tGfCCLt;iii:,   ,;;;::,.:::,,:.,,,     \n" +
-                                    "     .,,.,:::::.,:;;;;,  .,:ii;:fGGfLCL1.;80CGCLft1tffCLG8G:1GCLfGC1:;i,     ;:;..;;;;:. ,::,,.     \n" +
-                                    "     .,,:,:..:;;;;, ::;,    .:tCfLCtLGLCLCLC0CCLffttfLCC0CLCCLCCfCLLL1.    .:;;;;:;;;;: ,,.,,,      \n" +
-                                    "      ,,,.,, ,;:;;::;;;;:.   1CCLfffCL1iii;;;;;;;;::;;;;;;;i1ifCCfLLCCi  .:::,:;:,.,::: ,:,,,.      \n" +
-                                    "       ,,,.:. ,::..,:;:::::. ,,.;ii,iC1.                     ,tL::1i:,. ,:,.,::.  .::,;::,:,,       \n" +
-                                    "       .:,:,,,:::,   .::,.,:,    ;1i1ttf;;,    .:::;:,....;iifL1ti1;    :;.,:,  .,:::,,:.,,:.       \n" +
-                                    "        ,:,.,::,;:,,.  ,:,.;:    .iifffL1ifiittt1i;;1ttft1Lt11ttLii:   .;;:;:  .:,,. .,,,,:.        \n" +
-                                    "         ,,,,:,..,,,,.  :;,;;..   ;;1i.,;fLttt;::,,:::;ittLL: .,1;i:  ,:i;;;,  .;:, .,..,:,         \n" +
-                                    "          ,,:,,,. .:::  ,;;;;:::. ,i;i:,.ff1i;ii;;:;;;i;i11t;;i;iii;::i:,.::, ,::;:.:,,,,,          \n" +
-                                    "           ,,,.,:..::::.,;;,.:;;;:;11;i1i1;;;:,..      ...,:;;11:i1i::;i::;;;:;;,:::,,,,,           \n" +
-                                    "            .,,:,,:;,:;:;;;;:;;;:::1i;1i;,.                 .;;;i111:::,::;;;:...,:.,,,.            \n" +
-                                    "              ,:,.,:,..,;;::.....,:111:;;,,,..,,::,,::,,.,:;;;:::::;    .,;:,..,,,:,:,              \n" +
-                                    "               .,:,,,,,. .::,,.   .:,:;:;i::i;;;:,,,,,:;;i,:;;;:.  ..,::;::;..:,.,:,.               \n" +
-                                    "                 .,:,.,:,.:::;::,,,   ,:;:..;;;::,,,,::;;;,.::,  .,:,,,,,,::,,:,:,.                 \n" +
-                                    "                   .,:,:,,::,....,::,..,;;;;:,.        .,:;;;;,,::;:, ...,:.,,:,.                   \n" +
-                                    "                     .,:,,,,,,... ,;,:;:;;;:,....,,,,,,,,:;;;:,::,;:.,:..,:,,,.                     \n" +
-                                    "                       ..,,,,..,:,,:::,.,,.,;;,;;:,.,:;::;,.,....::,,:,,,,,.                        \n" +
-                                    "                          ..,,:,:,,,,,,,....,:::.......:::,,,.,,:,,,,:,,.                           \n" +
-                                    "                              ..,,,,,::,.,::,,,,,,,.,::,,,,:,,,,:,,,..                              \n" +
-                                    "                                   ...,,,,,,,,,,:,,,,:,,,,,,,,...                                   \n" +
-                                    "                                          ...............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[14] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ........,.,.......                                         \n" +
-                                    "                                  ...,,,,,,,,,,:,,,,::,,,:,,,,,...                                  \n" +
-                                    "                              ..,,,,::,.,::,,,,,,,.,,,,,,,:,,.,:,,,,..                              \n" +
-                                    "                          ..,:,:,.,,:,,....,:::......,:::..,.,,,,,.,:,,,..                          \n" +
-                                    "                       .,,,:,.,:,,::,...:.,;:,;;:,,,:;::;:.,,..,:;,,:,,.,:,,.                       \n" +
-                                    "                     .,,,,:,,... ,;,:;:;;;;:....,,,,,...,;;;;:;;,::..,.,,:,,,,.                     \n" +
-                                    "                  .,:,:,,,:,....,:;,,.,;;;;:,..      ..,::;;;,.,,;:,....,:,,.:,,,                   \n" +
-                                    "                 ,,,,,:,,::,;::,,,.  .:;:..;;;:::,,,::;;;,.,;:.  .,,,:::::;,,:,,,,,                 \n" +
-                                    "               .,,:,,,, .:::,... .,.,;:;i;:;;;;:,,,,,:;;i::;;;;, .....,:::;. ,,..,:,.               \n" +
-                                    "             .,,,.:,...:::;,.  ..;1ii::;:,,,..,,:,,:,,...,,:;:,;i1i.    .::::. .,:,,,,.             \n" +
-                                    "            .,:,.,::,::;;;;::;;;::1i;11;,.       ..        .:i1ii1i::;:::;;;;:,,,:,.,:,.            \n" +
-                                    "           ,,,,:,.:::;,.:;:.,;;;;;11;i1iii:::,,.,Lf,..,,::;i;11;i1;;;;i:.,;;,,;::;,,:,,:,           \n" +
-                                    "          ,:,..,. :::.  :;;:;:;..,i:1::.;Lt1iiiiLCCL;iii11f1.::i;i:.,;::::;:  .::: .:..,,,          \n" +
-                                    "         ,,,,,,  ,,,,  .;::i;.   ,iit,.,1Lf1fi:fLLLLf:it1fLt,..i1;;  .,;i;;;.  :,,. .,,,:,,         \n" +
-                                    "        ,,,.,:.,::,,.  ,:,,i.    ;i1LfLtitt;11LGGttGGL1titfitLfLti;    .i:,;,  .,,::..::.,,,        \n" +
-                                    "       ,,:,,:;::;,.  .::,.,:    ,ii;t1Li;:   iLt0LC0tL;   :;iLtt;11,    :,.,:,   .:;::;:,,,,.       \n" +
-                                    "      .,,,,:..:::  .:;:,,::.   .i;i.fL:     ;CtCt11tLtC;     :Lf.i;i.   ,::,,::,.  :::,.::,,,       \n" +
-                                    "      ,,,.,, ,;:;:;;i;:;:.    ,;:;.:f1     ;CLG0;,,;0GLC:     1f:,;:;.   .,:;:;i;:,::;. ,,.,,,      \n" +
-                                    "     .,,:,, .:;;;;,.::i.     :i;:.,i1;    iGGCGG@CC8GGCGC;    ;1i,,:;i,     ,i:;.,;;;;: .,,:,,      \n" +
-                                    "     .,,.::,:::,:;::;;:   .:ii;::1ti:    iLC1t8L1tt1L8ttCLi    :1t;,:ii;,    ::;,,;::::,.,:,,,.     \n" +
-                                    "     ,,,.::;,;,  ,;;:i, ,;;1tiitLt:.    1ff1;8f     .f8:tffi    .;fL1;i1i::. ,i:;;:. ::,;;,.,,,     \n" +
-                                    "     ,,:::..;::   :::i1iiiitLftL;     .fCfi1Gf       .LGiifCt     .iLtfLtii;;i;,::   :::,.:,:,,     \n" +
-                                    "     ,,,.,. ,,,, :i1i1;iii. ;fit;    :LGLtL0i         .10f1CGL,    ;tif;.,iiiiiii;. ,,,, .,,,,,     \n" +
-                                    "     ,,,,,. :,:. .;i;iiiii,,1L1f:   ifC8CL@;            i@LC0Cf;   ;tif; ,iiii1iii, ,,,, .,.,,,     \n" +
-                                    "     ,,:,:.::;,  .::,;;:;iitLftLi..tCtCC00CL:          ;LC00GCtC1..iLtfLtii;;i;,::   ::;..:::,,     \n" +
-                                    "     ,,,.:;:,:: .:;;;i. .,:i1i;iffLLfG1 .fC0C1ii1111ii1GGCt. tGfCLfL1;i1i;:. ,i:;;:  ::,;:,.,,,     \n" +
-                                    "     .,,,:,.,::::;,,;::    .;i;:tGGfLCC1,L8GLGLff1tffCGL081,tCCLfGGt:;i;,   .::;::;:::::,::,,,.     \n" +
-                                    "     .,,,,,. :;;;;,,;;i,     ,1CLLLtCCLCGLL0GLLffttfLCC0GLCCLLGLtCLLC1,     ,i;:.,;;;;: .:,:,,      \n" +
-                                    "      ,,,.,, .:::,:;i::;:,.  1CCLLfLCfiiii;;;;;;;::;;;;;;;iii1LCLfLLCCi  .,:;:;;;:,;::..,..,,.      \n" +
-                                    "       ,,:::.::::   ,::,,::. ,,,ii;,Lf:                      iLt.iii,,. ,::,,::,.  :::..:,,,,       \n" +
-                                    "       .,,.,::,:;:.   ,:,.::    ,1iittL1i;.   .:;:::,.   .ii1L1ti1i.   .;,.,:,   .:;::;:,,,,.       \n" +
-                                    "        ,,,,:,..,:,,.  ,;,:i.   .i;fLfft1ft1ftt1i;;i1tttift1tffL1i:    ,i,,:,  .,,::,.:,.,,,        \n" +
-                                    "         ,,:,,,. .,:,  .;;;i;,.  ;;1i. ,fLt11;:::,,,::it1fL1..,t;i,  .,;;:;:   :,,. .,,:,:,         \n" +
-                                    "          ,,,.,:. :::. .:;:::;;,,;;ii;:,1t11iii;;::;;iii11f;,:;1;i,.,;:::;;,  ,;:, .,..,:,          \n" +
-                                    "           ,:,,,,:;,:;,:;;,.:i;;:i1i;1i;i;,,,..     ..,,::iii1i;1i;;;;i,.:;:,:;,::,,:,,,.           \n" +
-                                    "            .,:,.,:,.,:i;;;::::::i1iiii:.                  ,;11iii:::;:::;;i;:,,::,.,:,.            \n" +
-                                    "             .,,,,:,...,:::.    .ii;;,:;::,,.,,::,,::,..,,::;,:ii1:.    ,;::,..,,,,,,,              \n" +
-                                    "               .,:,..,, ,;:::,,...  ,;;;;::i;;:,,,,,:;;i;,;;;;:.......,::::  ,,,,:,,.               \n" +
-                                    "                 .,,,,:,:;:::::,,,.  .:;,.,;;;::,,,,::;;:..:;:   .,,,:::,::,::,,,,.                 \n" +
-                                    "                   .,:,.,,:,.. .,::,,.:;;;;:..        .,:;;;;,.,:;:,....,:,.,:,,.                   \n" +
-                                    "                     .,,,,:,,,,..::,;:,;;;;,,..,,,,,...,:;;i::;::;, .,.,,,,,,,.                     \n" +
-                                    "                       ..,:,,,,:,,::...,,.:;,:;:,.,:;;,;:,.,...,::,,:,,,:,,.                        \n" +
-                                    "                          ..,,,:,,,,,,,.,.,:;:,......:::,.,..,,:,,,,,,,,..                          \n" +
-                                    "                              ..,,,,:,.,,:,,,,::,.,,,,,,,::,.,:,,,,,..                              \n" +
-                                    "                                   ...,,,,,,,:,,,,,:,:,,,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[15] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ........,,........                                         \n" +
-                                    "                                  ...,,,,,,:,,,::,,,,:,,,,,,,,,...                                  \n" +
-                                    "                             ...,,,,,:,,.,:,,,,,,,..,,,,,,::,,,::,,,..                              \n" +
-                                    "                          ..,,:,:,,,,,,.....,:::......,:::..,.,,:,,,,:,,..                          \n" +
-                                    "                       .,,,:,..,:,,::,,.,,.,;::;:,,,,:;::;,.,...,::,,:,,,,,..                       \n" +
-                                    "                     .,:,,,:,,.. .::,;;:;;;:,....,,,,...,:;;i::;:,;,.,,.,,:,:,.                     \n" +
-                                    "                  ..,,:,,,::,....,::,. :;::::,..      ..,:;;;:,,,:;:,  ..,:,,,:,..                  \n" +
-                                    "                .,,,,.,:..;::;::,,,   :;;,.,;;;::,,,:::;;;..:;,   ,:,,,,,,::,,:,:,.                 \n" +
-                                    "               .,,,,,,.. ,::,.    ,:,:::;i::i:;:,,,,,:;;;;:;;;;:.  ..,,:;::: .:..,:,.               \n" +
-                                    "             .,,,.,:,..:;;;:....,,;11i:;;,.,...,:,,,:,,..,,:;;,:;;i;    .,;:,...,,,,:,.             \n" +
-                                    "            .:,:,,:;,:;:;;;;:;;;::;1i;1i:,.      ..         .;iiii1;::::::;;i:...,,.,,:.            \n" +
-                                    "           ,,,.,:..;::,.,;:..:i;;:;1i;1ii1;;;:,.,Lf. ...,,:;;i1i:11;:;;;,,;;:,;;,:::,:,:,           \n" +
-                                    "          ,,:.,,. ,:;,  ,;;;;::,  :;;;,.,Lfti;iiLCLL;ii;11tt::;;1;i:,:;:,,;;, ,::;,.:,.,,,          \n" +
-                                    "         ,,,,:,..,,,,.  :;,;;.    i;ti,,ifLtft;fLLLLt:;1ttLL: .,t;i.  ,:i;;;.  .:,, .,,,:,,         \n" +
-                                    "        ,:,.,;:,;:,,.  ,:,.;,    ,iiffLL11f;i1LGGt1GGLtf11L11tffL;i,   .;;,;:  .,,,,..,:,,:,        \n" +
-                                    "       .,,:,,,:::,   .::,.,:.   .ii;11f1;:.  iLt0CL0fL;   :iiff11i1;    ::.,:,   ,:;:,::,.,:.       \n" +
-                                    "      .,,,,:. :::..,:;::::,.   .;;i.1Li     ;CtCt11fLtC;     ,fL,:ii,   .:,.,::.   :::;,:,:,,       \n" +
-                                    "      ,,,.,, ,;;;;;:;;;;:.    ,;:;,,tt.    ;GLC81,,,GGfC:     iL;.;:;.   .,:;::;;:.,;;, ,,.,,,      \n" +
-                                    "     .:,:::..:;;;;, ::i,    .;i;:.:i1;    iGGLGG@CC8GGGGC;    :11,,:;;,     ,;;;::;;;;: .,.,,,      \n" +
-                                    "     .,,.,:::::.,:;;;;,  .,;ii;:;1ti:    iLC118LitttL0ftGLi    ;1t;,:;i:.    ::;..;;;::, ,::,,.     \n" +
-                                    "     ,,,,:,:::,  .;:,i:,;iitt1ifLi,     1ft1;8f      f8;tffi    ,iffiii1;,.  ,i;;;:..:;::::.,,,     \n" +
-                                    "     ,,,,:. :::. .;i;i1iiii1LftL,     .fCfi1Gf.      .LGiifLt     ,tL1fftii:,:;,:;.  ,:::::,,,,     \n" +
-                                    "     ,,..,. ,,,, :i111;iii. :f;1;    :LGCtC0;         .t8tiLGL,    :ftLi,;ii11;:;,  .:::..:,,,,     \n" +
-                                    "     ,,:,: .:::.  ,;:i1i;i;:tLtf:   1LL8GL@;            i@fL0Gf;   i1if: .iii;111i, ,,,. ,,.,,,     \n" +
-                                    "     ,,,,::::;,  ,;:,i,.:iitft1Lt..tLtCfG0LL:          ;fC000C1Ct. ;LtLL1iiii1i:;:  .::: .:,,,,     \n" +
-                                    "     ,,,.::,:::.,;;;;i.  .,;1iiitLCCfG1  LLGLt11111iii10GCt,.t0fLftLti1t1;;:.:i,;;.  ::::,,,,,,     \n" +
-                                    "     .,,,:, .:;;;;..;::     :i;;tCCfCLG1:G8CLCfft1tfLCGL00:,tLCLfGGf:;ii:.   :;;;:;,,:::::,.,,.     \n" +
-                                    "      ,,,.,..:;;;;::;;;:.    .1CLLCfCCLCCLC0CCLfttffLCC0CLGLLLGftCLLC1:.    ,;:: :;;;;:..:::,,      \n" +
-                                    "      ,,,.:, ,:;,.,:;::::,.  1CCLLfCCfi1i;;;;;;;:::;;;;;;;iiitCCfffLCCi   .:;:;;::;;::,.,,.,,.      \n" +
-                                    "       ,,:,::;:::   .::,.,:. ,,:ii::Lt.                     .1C;,ii;.,. ,:::,:;,, .::, .:.,,,       \n" +
-                                    "       .:,.,:,,:;:,.  ,:,.;:    ;1i11Lfii;.. .,:;:::.    ,;iftt1i1;    ,:,.,:,   .::,;,,,:,,.       \n" +
-                                    "        ,,,,:,  ,,,,.  :;,;;    :iiLft11tL1tftt1i;i1tttiifi1ffffii.    :;.::.  .,:::,::,.,:.        \n" +
-                                    "         ,,,..,. ,::.  ,;;;i:,  ,i;t,  :LL1ti;:::,,,:;1ttLf;..i1;;   .,i;,;:  .:,,. .,:,,:,         \n" +
-                                    "          ,,,.,:.,;::, ,::.,:;:,:iii;i::t11i;i;;;::;ii;i1ff.,:i;;: .:::;;;;,  :::. .,.,:,,          \n" +
-                                    "           ,,,:,:;:,;;:;;;,,i;::;11:11;;;,,..      ..,:;;;1i1i;i1;:;;i:..;;,.:::;.,:,,,,,           \n" +
-                                    "            .:,,.:,...;;;;::,:::i11ii;;.                 .,;i1;i1;::;;;:;;;;:::,;:,,:,,.            \n" +
-                                    "             .,:,:,,...,:;,.    ;;:;::;;;:,.,,::,,::,,.,,,,;;:i11;... ..::;;,..,:,.,:,              \n" +
-                                    "               .,:,.,:..;::;::,..  .:;;;:,;;;;,,,,,:;;;i::i;:;:,:. ...,,::, .,,,,,,,.               \n" +
-                                    "                 .,:,:,,::,,,,,,:,.  ,;:..;;;::,,,,::;;;,.,;:,   ,,,::;::;,,:,.,:,.                 \n" +
-                                    "                   .,:,,.:,... ,:;::,,;;;;:,.        .,:;;;;:.,,;:,....,::,,:,:,.                   \n" +
-                                    "                     .,:,:,,.,,.:;,::,:;;;:,,,,,,,,,...,;;;;:;;,;, ...,,:,,,,,.                     \n" +
-                                    "                        .,,,,,:,,::,...,.,;::;:,.,,:;,:;,.,,..,::,,:,..,,,,.                        \n" +
-                                    "                          ..,,:,,,,:,,.,,.:;:,......:::,....,,,,,,,:,:,,.                           \n" +
-                                    "                              ..,,,:,,,,::,,,::,..,,,,,,::,.,::,,,,,..                              \n" +
-                                    "                                   ...,,,,,,,,:,,,,::,,,,,,,,,...                                   \n" +
-                                    "                                          ...............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[16] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         .........,........                                         \n" +
-                                    "                                  ...,,,,,:,,,,,::,,,::,,,,,,,,...                                  \n" +
-                                    "                              .,,,,,,,:,..,:,,,,,,,..,,,,,,::,,,:,,,..                              \n" +
-                                    "                          ..,,,,,:,.,:,,.....::::.... .,:;,.,,.,::,,,,,,..                          \n" +
-                                    "                       .,,:,:,..,,.,:::,,:,,:;::;:,.,::;,::,,,...,:,,::,,,,,.                       \n" +
-                                    "                     .,,,.,,:,... .:::;:;;;;:.....,,,,,..,:;;;,::,:;,.:,.,::,,.                     \n" +
-                                    "                  .,,,,:,,:::,,,.,::,. .;;:;::..       .,:;;;;:,:::;:. ..,:,.,,,.                   \n" +
-                                    "                .,,:,..,,.,:,;;:,,,.  ,;;;..:;;:::,,,:::;;:.,::   .:,,,,..,::,,:,,,                 \n" +
-                                    "               .,,,:,,....:::.     :i:;::i;:;;;;:,,,,,:;;i:::;;;.   .,,:;:,;:.:,.,,,.               \n" +
-                                    "             .,:,.,::,.,;;;;,,.,,,,i11i;i,......,,,,::,,.,,:;;:,::,;:   .,:::..,,,,:,,.             \n" +
-                                    "            .,,,:,,:::;::;;:,:;;;::i1;i1;;,.      .          :i;;i11;,:,,:;;;;. .,:.,,,.            \n" +
-                                    "           ,:,..:. ,;:, .:;:.,;i:::iiii1i1i;i;:,:Lf.   ...,:;;iti;11;:;i:,;;;:::,,::,,:,,           \n" +
-                                    "          ,,:,,,. .,::  .;;;i;:,   i:i:. 1Lt1;;iLCLL;;i;i11t;:iiiiii::;;:.:;:.,:::;.,:,,,,          \n" +
-                                    "         ,,,,::.,,,,,.  ,;,:i.    ,iit::;tfftf;fCLLCt:;ittfLi. .i1;;  ,:i;;;,   ::: .,..,:,         \n" +
-                                    "        ,,,.,:;,;;,.   ,:,.:;    .;itftCtiti:iLCGf1CGftft1Lt11tfL1;;   .;;:;:   :,,,  ,,:,,,        \n" +
-                                    "       .,,,:,.:::,   .::,.,:,    ;iiiftf;:,  iC1GGf0fLi ..:iitL1ti1i.   ,;,,:,  .,:::.,:,.,,.       \n" +
-                                    "      .,,,.,. ,:;,,::;::;:,.   .;;i,;Lt.    ;C1Gt1tfL1C;     .tLi,ii:   .:,..::.  .:;,:::,,,,       \n" +
-                                    "      ,,:,,, ,;;;;:,:;;;,     ,;::,,1t,    ;GCC8f:,.L0fC:     :L1 ;:;.   .:::,:;:,..:::.,:,,,,      \n" +
-                                    "     .,,,,:,,::;;;:.::;,   .,ii;,,:1i;    iCGfCC@GC80GGGC;    ,t1,,;:;.    .:;;;;:;;;;: .,.,,,      \n" +
-                                    "     .,,.,:;::: .:;;;i, .,,;1i;:itti,    iLL1;8Ci1ttC0CtGLi    ;11:,:ii,     ::;..;;;;:. ,,,,,.     \n" +
-                                    "     ,,,,:..:::  .::,ii;iiitf11Lf;.     tff1;0L     .t8;tfLi    ,ift;iii:.   ,;;;:;,,:::.,:.,,,     \n" +
-                                    "     ,,,.,. ,,:, ,i1i1iiii:;fftf,     .fCf1tGf.       LGiifLt.    :ff1ff1i;, ,i:;;,  ,:,;;:.,,,     \n" +
-                                    "     ,,,.,. ,,,, .:iiiiiii, ,fiti    ,LGCfC0;         .t0tiLGL,    ;LtL1;;i;i1;,:,   ,:;,.:::,,     \n" +
-                                    "     ,,:::.:;:,   ::,;i;;i;itLtL:   1LL80L@;            i@LfGGL;   i1;f, ,iii;1ii;. ,,,, .,.,,,     \n" +
-                                    "     ,,,.:;:,;,  ,;;:i. ,;i1tt1Lf,.1LfCtC0LC,          ;tC080G1Ct. :LtLf;;iiii1iii, ,,:, .,.,,,     \n" +
-                                    "     ,,,,:,.:::,::::;;,   .:iii;1LCCfG1  CC0Lt11111i;i10GCt:,t0fLf1Lfi1ftii;:ii,::.  :::..:,,,,     \n" +
-                                    "     .,:,,, .:;;;; ,;;:     ,i;;tCCtCCGii08CLCfft1ffLGGC8G,,tLCLfGGf:;ii;,.  ,i;;;:..:::;:,.,,.     \n" +
-                                    "     .,,,.,..;;;:;;;;:;:.    .1CLLCfCCLCCfG0CCLfttffCCG0CCCLCCGffCLLC1;.    :;:,.:;;;::,,:,,,,      \n" +
-                                    "      ,,,,:,.:::...:;:,,::.  1CCLffCCti1i;;;;;;;::;;;;;:;iiiitCCfLfLCCi   .:;;;:,;;;;;, ,,,:,.      \n" +
-                                    "       ,,,,:;:,;:.  .:,,.,:. ,,;i1.if1.                     ,tL::ii;.,. .:::::;:,.,::. ,,.,,,       \n" +
-                                    "       .,,.,:..:::,.  ,:,,i.   .i1ittLti1:...,:;;::,.    :;iL1fiii:    ,:,.,::.   :::,.,:,,,.       \n" +
-                                    "        ,,,:,,. ,,,,   :;:;;.   i;tLt1i1fL1fft1i;;i1tt1;1titLtL1i;     ;:.,:.  .,:;::;:,.:,.        \n" +
-                                    "         ,,,..:. :::   ,;;;;:,  i;t;.  iLft1;;:::,,,:;ftfft:,,t;i,    ,i:,;,  .,,,,..::,,,,         \n" +
-                                    "          ,,,,:,,;::;,.:;, :;;::iiiiii;iti1i;;;;;:;;ii;1tCi ,;i:;  .::;;;;;.  ::,. .,,,:,,          \n" +
-                                    "           ,,:,,::,,:::;;;:;i;:;11;iti::,,..      ..,:;i;i1i1ii1i:;;;;,.:;:..::;, ,:.,,:.           \n" +
-                                    "            .,,,,:,. .;;;:,,,,,i1ii;:i,         .       .,:i1i;1;::;;;::;;;::;,::,,:,:,.            \n" +
-                                    "             .,,:,,,,..:::,.   ,:,,::;;i::,.,:::,,::,..,,.:i;i11;,,....,;:;;,.,::,.,,,              \n" +
-                                    "               .,,,.,:.:;,;;:,,.   .:;;:,:i;;:,,,,,:;;i;:ii::;:;,    .,:::....,,,,:,.               \n" +
-                                    "                 .,,:,,::,...,,::..  ::,.:;;::,,,,:::;;:.,;;:.  .,,,:;;,;,.,:..,:,.                 \n" +
-                                    "                   .,,,.,,,.. .:;:::::;;;:,..        .,:;:;:..,:::,..,,::,,,:,,,.                   \n" +
-                                    "                     .,,::,.,:.,;:::,,;;;:,,,,,,,,,...,:;;i::;,::. ..,,:,,,,,,.                     \n" +
-                                    "                       ..,,:,:,,,:,...,.,;::;:,,.,:;::;:.,:.,::;,,,:..,:,,,..                       \n" +
-                                    "                          ..,,,,,,::,.,,,:;:,......:::,....,,,:,.,:,,,,,.                           \n" +
-                                    "                              ..,,,,,,,::,,.,:,..,,,,,,::,.,,:,,,,,...                              \n" +
-                                    "                                   ..,,,,,,:,:,,,,::,,,,,:,,,,...                                   \n" +
-                                    "                                          ...............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[17] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         .......,..,.......                                         \n" +
-                                    "                                  ...,,,,,,:,,,,,::,,,::,:,,,,,...                                  \n" +
-                                    "                              ..,,,,,,::,..,:,,::,,,.,,:,.,,:,,,,:,,,.                              \n" +
-                                    "                          ..,,,,,::,,::,,... .:::,.... .,:;,,,,.,::,,,,,..                          \n" +
-                                    "                       .,,,,,,,.,,..::::,::,,:;,:;:,,,:;;,;:.,....:,,,:,,:,..                       \n" +
-                                    "                     .,,:,.,:,... .,;::::i;;;,....,,,,,,,,:;;;:,,,,:;,,:..,:,,.                     \n" +
-                                    "                   ,,,,,:,,::::,,,,::,. :;::::,..       .,:;;;;,:;::;, ..,,:,,,,,                   \n" +
-                                    "                .,:,,,.,,  :::;:,,... .:;;:..;;;:::,,,::;;;,,::,  .,:,,....:,,,,:,,                 \n" +
-                                    "               .,,,,:,..,.,::,      ;ii::;i::i;;;:,,,,,:;;;,,:;;,   .,,:;;,:;,,:,,,,.               \n" +
-                                    "             .,,:,,:;,,:;i;;:,,,,,::ii1ii;......,,:,,::,,.::i;;:::..,.  .,,::. ,,.,:,,.             \n" +
-                                    "            ,,,,::,.:,::,;;:,,;;;;::i1:11i;,.                ,;;:iii1;,,.,:;;;, .,:,,:,.            \n" +
-                                    "           ,,,..,, .:;:. :;;,,:i;:,:ii1iiitiiii::Lf.     ..,,:;11;i1i::;;:;;;;::,.::,,,,,           \n" +
-                                    "          ,:,:,,. .,,:.  ;;:;;,,   ,;:;. ,Cf1;;iLCCL;;;;;ii1i;i1iii1;:;;;..;:.,:;,::,,:,:,          \n" +
-                                    "         ,,,.::,,::,,.  ,:,,i,     i;ti:;1tLtf1fCLLCt:;i1ttL1. .,t;i: ,:;;;;:  .,::. :,.,,,         \n" +
-                                    "        ,,:,,,:::;,.   ,:,.,;.    :i1LtLLi1i,;LCGftCGftff1fLt1itfL;i,   ;;;;:.  ,:,, .,,,:,,        \n" +
-                                    "       .,,,,, .::,  .,::,,::,    :ii:f1f;,,  iC1GGf0LCi ..:1i1Lftii1,   .i:,:,  .,,:,..:,.,,.       \n" +
-                                    "      .,,,.,. ,:::,:;i;:;:,.   .;;i::Lf,    ;CiGfitfLiL;    ..iLt.ii;    :,.,:,.  .:;:,::.,,,       \n" +
-                                    "      ,,:,:, :;i;;;..;;;,    .:;::,.1t:    iGGC8L;, tGfC:     ,Lf ;:;,   .::,,:;:. .::::,::,,,      \n" +
-                                    "     .,,.,:::::::;::;::,  .,:ii:,,;1i;    iCGtLC@GC0GG0GC;    .11:.;:;.    ,:;:;i;;:;;;..:.,,,      \n" +
-                                    "     .,,,,,::::  ,;;:i:.,::i1i:;1ft;,    ifL1;8C;1ffCGGtGCi    ;1i:,;ii.     :;;,.;;;;;. ,,,,,.     \n" +
-                                    "     ,,,,:. :::. .;;:i1ii11fLttLt:      tLf1;0L     .t8itfLi    :1f1;;ii,    ,;;:,:::::, .:,,,,     \n" +
-                                    "     ,,,.,. .,,, ,i111;iii,,1f1f,     .tGL1tGf.       LGi1fLt.    ;Lfitti;,. ,i:;;:  ,;::::.,,,     \n" +
-                                    "     ,,,,: .:,:.  ,;;;11ii: ,f1ti    :fGCLGG;         .t81iLGL,    ;LtLti;;;:;:,::   ,:::,:,,,,     \n" +
-                                    "     ,,,,:::::,  .::,;;:;;;1fLtL;   iCL88L@i            1@ftGGC;   111t. :ii1i;;;,  .:,:..:,,,,     \n" +
-                                    "     ,,,.::::;, .:;;;i.  ,;ittifL;,tftL1f0LC,          ;tG088G1Lt. :f1f1,:iiii111i, ,,,. ,,.,,,     \n" +
-                                    "     ,,,,:. ,:::::.:;;,    ,iii:iLCGfGt  GC0Lt11111i;i10GLt;:fGtCfiff1tLt1iii1i:;:. .:;: .::,,,     \n" +
-                                    "     .,,,,, .;;;;;.:;;:     .i;;tCCtCCGit88LLLffttffC0GC8L.,tLCLLGGL;:i1i::, :i:;;, .;::::,,,,.     \n" +
-                                    "     .,,,.:..;;:,:;i::;;,.   .1CLLCfCLCCLL0GCLfftffLCL00CCLLCCGffCLLL1;:.   ::::,:;:::::::,,,,      \n" +
-                                    "      ,,:::,::::. .,::,,::.  1CCLfLGC1i1;;i;;;;::;;;;;::;ii;ifCLfLfCCCi   .,;;;.,;;;;;, ,,:,,.      \n" +
-                                    "       ,,,.::,:;:,  .,:,.,:  ,,iii,tfi..                    :ff,;;i:.,. .::;:;;::,:::. ,,.,,,       \n" +
-                                    "       .,,,,,..,:,,.  ,;,:i.   :1ittfft1t:,,.::;:::,     ::1ftf;ii,    ,:,,,::.   ::: .:,,,,.       \n" +
-                                    "        ,,:,,,. ,,:,  .;;;;;.  :i;Lt1;itLttLft1i;i1tt1i:t11LLtLii,    .;,.,:,   .:;,:::,,,,,        \n" +
-                                    "         ,,,.,: ,;:,.  :;:;:;, :ii1,. .tLtt1;;::,,,,:1ftLt1:,i1;;     :i.::.  .,,::,,:,.,,,         \n" +
-                                    "          ,,,:,:;:,;;,,:;..;;;;i1i;iii;i1ii;;;;;;:;ii;;1fL. ,i:i,  .::i;:;:  .:,,. .,,:,:,          \n" +
-                                    "           ,:,.,:,.,,:;;;;:;;::i1i;1i:,,..        .,:;ii;tiiii1i::;;i:,,;;: .:;:. ,,..,,.           \n" +
-                                    "            .,,,::,. ,;;;,..,,;1ii;,;;,         .      .,;;1i;1i:;;;;:,:;;;,;:,:,,:,,,,.            \n" +
-                                    "             .,::,.,, ,;:::.  ....:::;;i::,,:::,,::,...,.,iii11i:,,,,,,:;;i;,,:::.,:,,              \n" +
-                                    "               .,,,,:,:;,,;::,,.   ,;;:,,i;;:,,,,,:;;;i:;i;:;;i;     .,::,...,,:,,,,.               \n" +
-                                    "                 .,:,,,,:. ..,,:,.. ,::,,;;:::,,,,::;;:..:;;:  ..,,,:;,:: .,,.,:,,.                 \n" +
-                                    "                   .,,,,:,,,. ,;::;::;;;;:..        .,:;::;, .,::,,,,,:;:,,:,,,,.                   \n" +
-                                    "                     .,,:,..:,,;:,,,.:;;::,,,,,,,,...,:;;;;:;::;,  ..,,:,.,:,,.                     \n" +
-                                    "                       ..,:,::,,,,......:;,::,,.,:;:,;:,.:,,:::,.,,..,:,:,,.                        \n" +
-                                    "                          ..,,,,,::,.,,,,;:,......,::,.....,,::.,::,,,,,..                          \n" +
-                                    "                              ..,,,,,,::,,.,:,,.,,,,,.,:,..,::,,,,,,..                              \n" +
-                                    "                                   ...,,,,:,,:,,,,:,,,,,,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[18] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ........,.........                                         \n" +
-                                    "                                  ...,,,,:,,:,,,,,:,,,,:,,:,,,,...                                  \n" +
-                                    "                              ..,,,,,,,:,,.,::,.::,,,.,::,.,,:,,,,,,..                              \n" +
-                                    "                          .,,,:,,,:,,,::..... .::;,......,::,,,..,:,,,,,..                          \n" +
-                                    "                       ..,,,,:,,,,,..::::,::,:;;,:;:,,,:;:,;:.....,,.,,:,,,..                       \n" +
-                                    "                     .,:,,,.::,.....:;:::;i;;:,.. .,,,,,,,,:;;;..,,,;:,:,.,,:,.                     \n" +
-                                    "                  .,,,,.,:,,:::::,,,:,. .:;::::,.       ..,:i;;::;;,;:..,,,,:,:,..                  \n" +
-                                    "                .,:,,,,,,. ,::::,,.. ..,;:;,.,;;;::,,,,::;;:,:::  .,::,.. .,:,.,:,,                 \n" +
-                                    "               .,,..::,.,,,::,.     .i1i::;;:;;:i;:,,,,:;;i:,,;;:   .,,::::,:::::,:,.               \n" +
-                                    "             .,:,,,,:::;:i;;;:,::::::iii1i:... ..,,,,,::,.,:;i;;::,  ....,:::: ,,..,:,.             \n" +
-                                    "            .:,.,:, ,:::.:;;,.,;;;;::1i:1ii;,.               .:;,:;;i1,...,;;;: .,,:,,,.            \n" +
-                                    "           ,,,,,,. .:::. ,;;:::;;::,;iiii;t1i1i;:Lf.       ...,;1ii11i:;;;;;;;:,..,:..,,,           \n" +
-                                    "          ,,,,:,..,,,,.  :;,;i,,.   ;:;,  fCti:iLCLL;;;;;;iii;ii1i;11i:;;,.:;:,;;,,::,,:,,          \n" +
-                                    "         ,,,.,;::;:,,.  ,:,.;:     :i1t:;11fffffCLLCt:;i1ttLt,..,;t;i..;::,::. .,:;:.,:.,,,         \n" +
-                                    "        ,,,:,,.:::,    ,:,.,;.    ,iifftCti1,,LCGLtCGf1fLttLfi;i1f1:i  .:;;;;.  .:,, .,.,,:,        \n" +
-                                    "       .,,.,,  ,;:  .,;:::::,    :ii:ttt1:,  iCtC0fGCC1.,,:111tLtti1i    ;;,;,  .,,,,  ,:,,:.       \n" +
-                                    "      .,,,.,..:::;:::;;:;:,.   .;;;::ff:    ;CiCLitfC1L:    ..;ff,;ii.   ::.,:,   ,:;:.,:.,,,       \n" +
-                                    "      ,,,,:,.:;;;;;..:;i,    ,:;;:,.it;    ;GGC0Gi, 1CfC;      fL.::;,   .::,.::,  .:::;:,,:,,      \n" +
-                                    "     .,,..:;:::,,;;;;;:. ..:iii:,,;ti;    iCGtfC80C0GG0GC:     1t:.;:i.   .,;;::i;:,:;;,.:,,,,      \n" +
-                                    "     .,,,:,.::;. .;:,i;,;;;11i;ifft;,    ifft:8G;iffGC0fGCi    ;1i,,;;;.     :;;;,;;;;;..,..,,.     \n" +
-                                    "     ,,,,,. ,::, ,i1i11ii1itCftL1,      1Lf1;0C     .181tLL1    :1fi;;i;.    ,:;,.:;:::. .:::,,     \n" +
-                                    "     ,,,.,. ,,,, .:ii1;iii, ;fit:     .tGL1fGf.       LG;1fL1.   .iLt1t1i:.  ,i;;;:. :;:,,:.,,,     \n" +
-                                    "     ,,:::.,;:,   ,:,:i1i;;.,ftti    :fGGLGG:         .f81;fCL,    1ftLfi;;:.:;:;:.  ,;,:;:,,,,     \n" +
-                                    "     ,,,,:;:,;.  .;;:;,.:;i1fL1fi   iCL08C8i            1@f1CGC;   1ttf..;;i1i:::.  .:::,.:,:,,     \n" +
-                                    "     ,,,.:.,:;: ,:;;;i.  .:i111fLi,tftLit0LG.          ;1G08801ft. ;tif; ,ii;i1ii:. ,,,. ,,.,,,     \n" +
-                                    "     ,,:,:. .::;;: ,;;,    .;ii:ifGGLGt  GC0Lt11t11i;it0GLti;fGtCfi1ftfLti1ii11;ii. ,::. ,:,,,,     \n" +
-                                    "     .,,.., ,;;;;;:;;i:     .i;;tCCtCLGiL80fLfftttfLG0CG81.,tfGLfGGCi:i11;;:,;i:;;. .;::.,,,,,.     \n" +
-                                    "      ,,,,:.,;::,,;;:,;;,.   .tLLLCLCLCCfL0GCLfttffLCC0GCLfLCGGtLCLfL1i;,.  ,:;;::;,,:::;:.,,,      \n" +
-                                    "      ,,:,::;:::.  ,::..::.  1CCLfLGL11i;;i;;;;::;;;;::;;i;;iLCffLfCCCi    ,i;:.,;;;i;:.,:,,,.      \n" +
-                                    "       ,,,.:,.:;:,.  ,:,.::  ,,i1;:ff:..                    ;Lt,;;i:.,. .,;;:;;:::;::, .,.,,,       \n" +
-                                    "       .:,::,  ,,,,   :;,;;    i1iffLt1tt;:,,::;;:,.    .:;ttft;i;.    ,::,:;:,. .:;, .:..,,.       \n" +
-                                    "        ,:,,.,. :,:   .;;;i:. .i:tfi;:ifLtfLtti;;i1tti::tifCtftii.    ,:,.,:,   .::::.,,:,:,        \n" +
-                                    "         ,,,.:,.::::. .::,::;.,i;t;,,.,tftti;;::,,,:iftff1i::tii,     ;;.::.  .,::;,::,.,:,         \n" +
-                                    "          ,,:,,::,,;:,:;:.:;;;i11;i1ii;ii;;:;;;;;:;i;:itC1 .:;:;   .,:i;:;,  ,,,,...,:,,,,          \n" +
-                                    "           ,,,..:,..,;;;;;;;;:i1iiii;,..         ..,;i1i11;iii1:,::i;,::;:, .:;,  ,,.,:,,           \n" +
-                                    "            .,,,:,,. :;;:,...:i;;;:,;:..      ..      .,;ii1:1i::;;;;,,:;;:,;,:,.,:,,,,.            \n" +
-                                    "             .,:,..:,.:::::,..   ,:;;;i;:,,:::,,::,,.....;i1iii::,,,,,:;;;i:::;:,,,,:,              \n" +
-                                    "               .,:,:,:;:,,:::,,.   :;:.,;i;::,,,,:;i;i;:i;::i1i.     .:::,,..,::,,,,.               \n" +
-                                    "                 .,:,..:,.  .,::,.. :;:,;;;::,,,,::;;;,.,;:;......,,::::. .,,,,,:,.                 \n" +
-                                    "                   .,:,:,,,,..::,;;::;;i:,.         ,,:;:;:...,:,,,:::::,,:,,,:,.                   \n" +
-                                    "                     .,:,,.,:,::,....;;;:,,,::,,,....,:;;i;:::;,. ...,:,.,:,:,.                     \n" +
-                                    "                       ..,,,:,,.,,.....:;:::,,.,:;:,;:,.,:,::::..,,,,,,,,,,.                        \n" +
-                                    "                          ..,,,,,:,.,:,,::,......,;::.....,,::,,::,,,,,,.                           \n" +
-                                    "                              ..,,,,,,:,,.,::,.,,,:,.,::..,::,,,:,,,..                              \n" +
-                                    "                                   ...,,,:,,:,,,,:,,,,,:,,,,,,...                                   \n" +
-                                    "                                          ................                                          \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[19] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         .......,..........                                         \n" +
-                                    "                                  ...,,,,,,,,:,,,,,:,,,,:,,,,,,...                                  \n" +
-                                    "                              .,,,,,:,,,:,,.,:,,,::,,,.,::,.,,:,,,,,..                              \n" +
-                                    "                          ..,,,,,,,:,,,;:,.... ,::;,......,::,,,.,,:,:,,..                          \n" +
-                                    "                       .,,:,,,:,,,,...:,;::;,,:;:,;:,,,,::::;,....,,,.,,:,,,.                       \n" +
-                                    "                     .,,,:,,,::,....,;;:,:;;;;:... .,,,:,,,,:;;,...,:::,:,,,,,.                     \n" +
-                                    "                  .,,:,.,:,.,:,;;:,,::. .:;;:::,..       .,,;;;;:;;::;:.,,.,::,:..                  \n" +
-                                    "                .,,,,:,,..  :;:,....  ,,;;;;,.:;;;::,,,:::;;:,;:. .,:::,  ..,,.,,,.                 \n" +
-                                    "               .,:,.,::,,:::::.     .,11i:;;::i;;i::,,,,:;;i,.:;:.   ,,,:,,.,::,,,,,.               \n" +
-                                    "             .,:,:,,,:::;;i;;;::::::::1i11i:.. ...,:,,:::,,::i;;;;,.  ..,:;:,;,.:,.,,,.             \n" +
-                                    "            .,,..,,  :::,.:;:,.:i;;;:;1i;1ii::,             ..:;:,:::;;.  .,;;:..,,,:,,.            \n" +
-                                    "           ,:,,,,. .,:;. .;;;;::;:,..;i1i;;fi11i;Lf,          .:ii;i11i:;;;;;;;,  .:,.,,,           \n" +
-                                    "          ,,,.::,,,,,,,  ,;,,i:..   ,;:;  ;Cf1:;LLCL;;;;:;;;;;;i11;i11;:;;.:;;,:;:,::,,:,,          \n" +
-                                    "         ,,:.,:;::;,..  ,:,.:;     .iiti:i11LtfLCLLCt:;;ittft:,,::1ii;.;::.,:, .:::;:,:,,:,         \n" +
-                                    "        ,,,,:, ,:::   .,:,.,:,    .;11L1CLi1:.LCGCtLCf1fLf1fL1::;1L;;: .:i:;;,   :::..:..,,,        \n" +
-                                    "       .:,..,. ,::,.,:;;::::,    ,;i;1L1t:,. iC1C0fGCC1.,:;1t1tfff1i1,   ;;:;:   ,,,. .,,:,,.       \n" +
-                                    "      .:,:,,..:;;;;:,:;;;:.    .;;;;,tf;    iC1LGitfC1L:    .,:ffi,1i,   ,;,,:,  .,::,..:.,,,       \n" +
-                                    "      ,,,,::::;;;;;,,::;.   .,;;::,,i1i    ;GGC001, iLfC;      1C:.;;:   .:,.,::.  ,;:,::,,,,,      \n" +
-                                    "     .,,,.:::,:,.:;;;;:..,,;ii;,,:iti;.   iLGttC80CGCG0GC:     ;fi ;:i.   .:;:,:;;,.,:::,:::,,      \n" +
-                                    "     .,,::, ,;;, .;;:ii;iiitti;1Lf1:.    ifft:0G;ifL0C0CGCi    :11,,;;;     .:;:;:;;;;;, ,..,,.     \n" +
-                                    "     ,,,.,, .,,, .i111iii1;iLftL;.      1Cf1;0C.    .18ttCL1    ;1t;;;i;     ,;;, :;;::. ,,,,,,     \n" +
-                                    "     ,,,,:..:,,,  .:;ii1ii: .ti1;     .tGCtfGf.       fG;1fL1.   .1Lt111;,   ,i;:::,.:::..:,,,,     \n" +
-                                    "     ,,,::,:::,   ,:,:;;i;;::fffi    :LG0CGG:         .f81;fCf,   .tt1Lfi;:. :i:;;.  ,;,:::.,,,     \n" +
-                                    "     ,,,.:::,;,  ,;;:i, .:;ifL1ft.  iLf08C81            t@tiCGG;   1tft.:;;iii,,:,   ,:::,::,,,     \n" +
-                                    "     ,,,,:..:::,,:::;;.   ,;111tLi,tftL:i0LG.          ;1G0080tft. i1it, :i1iii;;.  ,,,, .,.,,,     \n" +
-                                    "     ,,,,,, .:;;;: :;;.     ;i;:;fGGLCt ,0C0Lf11t1i;;it8GLt11LGtCf;iLtLL1i1ii1111i. ,,:. ,,.,,,     \n" +
-                                    "     .,,.,, :;;;;:;;:;:.     ;;;tCLtCCCiG8GtLfttttfC00C00;,,tfGCLCGG1:it1ii;;ii:;;. ,;:, ,::,,.     \n" +
-                                    "     .,,:::,:::,.,:;:,:;:.   .tLLLCLCLCLfC0GCLfttfLCLG0GCffLCGGtLGLLL1ii:,. .:;;;;:.,:,:::.,,,      \n" +
-                                    "      ,,,.,::,:;,  .::,.,:.  1CCLfCGf11i;iii;;::;;;;:::;;i;;iLCfLLfCCC1    ,i:,.,;;;;;:,::,,,,      \n" +
-                                    "       ,,,,:..,::,.  ,:,,;,  ,;11:itf:,.                   .if1,;;i:.,. ..;;:i:::;;:;:..,,:,,       \n" +
-                                    "       .,::,,. ,,,,   :;:;:   ,1itLLft1f1;;::;;;::,     ,:;f1Li;i;.    ,::::;::, ,;:. .,..,,.       \n" +
-                                    "        ,,,..: .:::   ,;;:i:. ;;;Li:,:1Lf1fLt1i;i1tt1;,;11LLtL11:     ::,.,:,    :::,.,:,,,.        \n" +
-                                    "         ,,,,:,:;:::. ,:,.:;;.ii1i::,,:tft1;;;::,,,:1f1L11;,i1ii     .i,.::.  .,:;::::,,:,,         \n" +
-                                    "          ,:,,,::.,;::;;:,;;:i11;it1i;;;::::::;;;;;;::1LC, ,i:;.   ..:i,:;.  ,,,,,,,::,,,,          \n" +
-                                    "           ,,,.,:.  ,;;;;::;:i1ii;;i,.          ..,:i1iit;ii1i;.,,:;:::;;:  ,::,  ,,,:,:.           \n" +
-                                    "            .,::,,,..:;;,.  .;::::,;;:,.     ...     .,:;i1;i1::;;;;:.,:;:.,::: .:,.,,,.            \n" +
-                                    "             .,,,.,:,:;,:;:,..   ,;;;;i::,::::,,::,,....:i11ii::::::,,;;;i;;:::,,,:,:,              \n" +
-                                    "               .,,:,,::,.,,:,,,   .::,.:i;::,,,,::i;;i:;;;:i1i,.     ,::::,.,::,.,,,.               \n" +
-                                    "                 .,,,.,:,.. ,:::,,.,;;,:;;::,,,,,::;;,.,;;;:,. ....,::;,  .,,,:,:,.                 \n" +
-                                    "                   .,,::,.,,.:;,:;;:;;;;,..        .,:;:;;, ..::,,:;:,:,,,:..,:,.                   \n" +
-                                    "                     .,,,,,:,:::....,;;:,,:::,,,....,:;;i;:::;:.....,::,,,::,,.                     \n" +
-                                    "                       ..,,:,,.,,,....,;:::,,,,,;;,:;,.,:,::::...,,,,:,,,:,.                        \n" +
-                                    "                          ..,,:,:,..,,,::,......,;::......,::,,,:,,,:,,,..                          \n" +
-                                    "                              ..,,,:,:,,.,::,.,,,:,.,::,.,,:,,,:,,,,..                              \n" +
-                                    "                                   ...,,,,,:,,,,:,,,,,:,,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[20] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         .......,,.,.......                                         \n" +
-                                    "                                  ...,,,,,,,,,:,,,,::,,,,:,,,,,...                                  \n" +
-                                    "                              ..,,,:,,.,,:,,.,:,,,::,,,.,::,.,::,:,,..                              \n" +
-                                    "                          ..,,,,,..::,,:;:.... .,::;,......,::,:,.,::,:,..                          \n" +
-                                    "                       .,,,,.,:,,,.. .,:,;:;:,,:;:,;:,,,,::,:;,.,.,,:,.,,:,,.                       \n" +
-                                    "                     .,,,::,,,;:,,..,:;:,,:i;;:,....,,,,:::,:;;:....,::,::,,,,.                     \n" +
-                                    "                  .,,,,,.,,..,:,;::,,,,  ,:;:::,,.        .,:i;;::;;,:;,.:,.,:,,,                   \n" +
-                                    "                 ,,,,,:,,.  ,:::....   :;;:;:.,:;;::,,,,::;;;,:;:..,,::,. ..,:.,,,,                 \n" +
-                                    "               .,,,..:;:,:;:::,.   ..,:11i;;;:;i:;;:,,,,,::i;..::,   .:,,,...:,,,:,,.               \n" +
-                                    "             .,,,,:,,,:,;:;;;;:::;;::::1i11i:.. ..,::,::::,::;;:;;,.   .,:;;,:;,,:.,,,.             \n" +
-                                    "            .,,,.,,. ,;:, ::;,.,;;;;;:i1;i1i;;:.            ..::;:::,,,,  .,:;;..,,.,:,.            \n" +
-                                    "           ,,,:,,,..,,:,  :;:;;:;:,..,ii1;,tfi11iLf,.          .;;:iii1i:;::;;;:  .,:,,,,           \n" +
-                                    "          ,,,.,;:::::,,  .::.i:..    ;:;, .fLt;;LLCL;;;;::::;:;;iti;111::i::;;:::,.,:,.,:,          \n" +
-                                    "         ,,:,,,,:,;,.   .:,.,i.     ;i1t:itifttCGLLCt:;;;1tft::::;;1ii::;:..::..:;,:;:,:,,,         \n" +
-                                    "        ,,,.,,  :::   .,::,,:,    .:11LtfCt1;.fCCCtLCtitfL1fL1:,:;tt,i. :;:;;,   ,::: :,.,,,        \n" +
-                                    "       .,,,.,. ,:::,,:;;:;::.    ,;i;iLtt;,. iC1C0LCCGt,:;;1ftttLLfi1;   :;;;:   ,:,, .,,,,,.       \n" +
-                                    "      .,,,::,,;;;;;:,,;;;:.    ,;;;;,1fi.   iC1L0itLC1L:    ,::tf1,i1;   .i,,:,  .,,:, .:,,,,       \n" +
-                                    "      ,,,.,;;::::;;::::;.  .,:;;:,,,i11    iGGC00f, iLtC;      ;C1 ;;;   .:,.,:,.  ,;;,,:,.,,,      \n" +
-                                    "     .,,:,:.,::, ,;;:;;,,::i1i;,,;1ti;.   ;LG1iC00CCLG0GG:     :f1 ;,i,   .:;,,:;:..,::;::,:,,.     \n" +
-                                    "     .,,,:, .;:, .ii;i11ii1tf1i1Lfi,.    1Ltt,00;;fL0C0GGCi    :11:,;;;     ,;;:;;:;:;;: ,,.,,.     \n" +
-                                    "     ,,,.,, .,,:  ,ii1i;i1;:fftL:       1Cf1;0C.    .10LtCL1    ;1t;:;i:     .;;:.:;;;;. ,,.,,,     \n" +
-                                    "     ,,:::.,:,:.  .:::i1i;;  1111     .tGCfLGf.       f0i1fL1.   ,1Lt11i;.   ,;;,,::,::, .:::,,     \n" +
-                                    "     ,,,,:;:::.   :;:;:,;;;;;fff1    :LG0CGG,         .f8i;fCf,   ,f1tLfi;,  :i:i;,  ,;:,,:.,,,     \n" +
-                                    "     ,,,.:,,:;, .:;i:i,  ,;ifL1tf,  iLfG0C0t            t@t;CGG;   tfLt:;;;;:;::;,   ,::;::,,,,     \n" +
-                                    "     ,,:::. ,:::::.,;;.   .;i11tL1:tftL::0CC           :iG0000fft. 1111  ;i11i:::.  .:,:..:,:,,     \n" +
-                                    "     ,,,.,, ,;;;;:.:;;.     :i;:;fC0LCf :0C0Lft1t1i;;if8GLfttCC1LL:;LtLf:;1i;i1ii, .:,,. ,,.,,,     \n" +
-                                    "     .,,,,,.:;;::;i;:;;,     ;:;tCLtCCC108CtffttttLC00C0C:,:tfGCLCGC1;1ftiiii1i;i;  :;;. ,:,,,.     \n" +
-                                    "     .,,:,::;,:, .:::,,::.   ,tLLLCCCCCffG0CCfttffLLC00GLfLLCGCtLGLLL1i1;:,,,;;:;:, ,:,:,:,:,,      \n" +
-                                    "      ,,,.,:,,;;,  .,:,.,:.  1CCLfGCf11i;ii;;;:;;;;:::;;;;;;1LLfLffCCC1.   ,;::,:;;;::::;,.,,.      \n" +
-                                    "       ,,,,:. .:,,.  ,:,:;.  ,i1i;1f1::,                   .1fi,;:i;,,.  .;;;;,,:;;;;:.,:::,,       \n" +
-                                    "       .,,,.,. ,,:.   :;;;;   iiiLLftttL1i;::;;;::.     ,,1ttL;ii;.    ,::;:;;:,.:::. .,.,,,.       \n" +
-                                    "        ,,,.,,.:::,.  :;:;;: .i:f1:,.:1LttLft1i;i1tti:.iitCttL1i,     ::,,::,.  .:::  :,,,,,        \n" +
-                                    "         ,,::,:;:,;:,.::.,:;:;1i1;;;::;ttt1;;;::,,:ifftf11::1ii:     ,i..::.  ..:;,:,,,,,,,         \n" +
-                                    "          ,:,,.:,.,::;;;::i:;11i;11i;::::,,:::;;;;;::;tCt  :;::    ..;;.::. .,,:::,:;,.,:,          \n" +
-                                    "           ,:,,:,.  :;;;::::i1ii;:;;.           .,:i11it1:i1ii..,,;;:;;;;:  ::,. .,,,,,,,           \n" +
-                                    "            .,:,..,.,;::,.  ,.,,:::i;:,.    ...     .::;i1i;1;:;;;;:,.,;:,.::;, .,,.,:,.            \n" +
-                                    "             .,,,,:,:;:,;;:,..  .,;;:;;::,:::,,::,,....:i11i1:::::::,:;;;;:;,:,,,:,,,,              \n" +
-                                    "               .,::,,,:...,,,:.   ,::..;i::,,,,::;;;i;:;;;i11,..    .,:::::,:;:..,,,.               \n" +
-                                    "                 .,,,,:,,. .:::,:,.:;::;;;:,,,,,,:;;:..:;:;:,  ....,:::. ..,,:,,,,.                 \n" +
-                                    "                   .,::,.,:.,;:,::::;;;:,.        ..,:::;:. .,:,,::;,:,.,:,.,:,,.                   \n" +
-                                    "                     .,,:,::,,:,.  .;;;:,:::,,,,...,::;;i:,::;,...,,::,,,:,,,,.                     \n" +
-                                    "                       ..,:,,.,:,,.,.,;:,,,...,:;,:;:,,:::;,:,...,,,,:,,:,,.                        \n" +
-                                    "                          ..,,,:,,.,:,:,,......,:::, ....,:;,,,::..,,,,,..                          \n" +
-                                    "                              ..,,,,::,,,::,.,,,:,.,::,.,,:,,,,,,,,,..                              \n" +
-                                    "                                   ...,,,,:,,,,::,,,,:,,,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[21] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ........,,.......                                          \n" +
-                                    "                                  ...,,,,:,,,,,:,,,,::,,,,:,,,,...                                  \n" +
-                                    "                              ..,,,::,,.,::,,.,:,,,::,,..,:,,,,:,,,,...                             \n" +
-                                    "                          ..,,:,,,.,:,,,:;,,... .,:::,.....,,::::,,,::,,..                          \n" +
-                                    "                       .,,,,,.,:,,,.. .,::;:;:,,;;::;:,,,,,,,;:,.,.,::.,,,,..                       \n" +
-                                    "                     .,:,,::,,:;::,..,:;:,,;;;;:,....,,,::::,:;;,.. .,,,,:,,:,.                     \n" +
-                                    "                  .,,:,,.,,. .:,:;::,,,. .:;;,::,.        ..,;;;;:::,,:;,,,.,,:,.                   \n" +
-                                    "                .,,,.,::,....:;:,.     .;i;:i,.,;;;:,,,,,::;;;:;;,,::,::, .,,:,,:,,                 \n" +
-                                    "               .,,,,,,::::;;:::......,,;1ii;;::i;:i;:,,,,::;i: ,:,    :,,,. .,,.,,:,.               \n" +
-                                    "             .,,,.,:. :,:::;;;::::;;::,;ii1i;:. ...,:,,::::,::;:;;:.   .,:;;,,;:::,,:,.             \n" +
-                                    "            .:,,.,,. .:;:.,:;;,.:;;;;::i1;i1i:;:.     .     .,:;;;::,.... .:,:;:.:,.,,:.            \n" +
-                                    "           ,,,,::,..,,,:  ,;::i:::,.. :iii::L1i11Lf,.           ,;,:;;i1;:,,:;;;. .,,:,:,           \n" +
-                                    "          ,,,.,:;:;::,.  .::.;;.     ,;,;  iLLi;LLCL;;;::,,,,:::;11ii111:i;:;;;::. .:,.,,,          \n" +
-                                    "         ,,,:,,.,:::    .::..;,     ,iiti;111f1CGLLCf:;;;itft;:;;iii1i1:;;, ::,,:;,,::,,:,,         \n" +
-                                    "        ,,,.,,  ,;:. .,:;::,:,     ,i1ff1Cf1i tCLGfCCtitfLttL1:..:if;;; :;::::  .,::;,,:.,,,        \n" +
-                                    "       .,,,,,..,:::,::;;:;;,.    ,;ii;Lt1i,. iLiC0LCGGt::;i1Lft1fLLt;i,  ;;;;;.   :,: .,.,,:.       \n" +
-                                    "      .,,,,:::;;i;;:,.:;;,    .,;;;;,1f1.   iGtf81tLGtL:    ,::1ft;:11.  .;:,;,  .:,,. .:,:,,       \n" +
-                                    "      ,,,.,:;,::,::;::::, .,:;i;:,,:i11.   iG0CG0L: ;L1C;      ,Lf.:;;.   :,.,:,  .:;;,.,,.,,,      \n" +
-                                    "     .:,::, .:;: .;;:ii;;;;i1i;,;itti:.   ;fCt;C00CCfCGCG:     ,ft.::;,   .::,.::,. ,:,:;:,,,,      \n" +
-                                    "     .,,.,,  :::  ;1i11ii11tLt1tLt;.     1Ltt,G0i;fC8C00GL;    ,11:,;;;    .,;;,;i;::;;;,,:,,,.     \n" +
-                                    "     ,,,.,, ,,,,  .:;iiiii;.if1f;       1CftiGG.    .10CtCL1    ;11;:;i,     .;;;,:;;;;, ,,.,,,     \n" +
-                                    "     ,,:::,:;:,   .:,,;i1;;, it1t.    .tGCLLGt.       t0i1fL1    :tLt1ii:    ,;;,.:::::. .,,,,,     \n" +
-                                    "     ,,,.:::,;,  .:;:;: ,;;;itfft    :LG8GG0,         .f8iifLf,   :L1tLti:   ,;;;;:. :;:..:,,,,     \n" +
-                                    "     ,,,,:..:;: .::;;;,   ;itLt1L:  iLfCGG0f            t@1;CGG;  .tff1;;;;,.;;:;:   ,:,:;:.,,,     \n" +
-                                    "     ,,,,,. .::;;: ,;;.    ,iiitL1;tLtL:,0CC           :i00GG0LLt..t1t; ,i;1i;,::.  .::;:,:::,,     \n" +
-                                    "     ,,,.,, :;;;;::;;;.     :i;::tC0CCf i0CGLtttt1i:;if8GffffCCiLL:;f1fi.;1iiii;:. .:,,. ,,.,,,     \n" +
-                                    "     .,,,:,,;::,,;i:,:;,.    i:;tCLtLGCt08CtfttttfLG8GG0f:,:tfGCLCGCtitLt11i11ii1;  :::  ,,,,,.     \n" +
-                                    "     .,,,,:::,:,  ,::,.::.   ,tLLLGCCCLff0GCLfttfLLLG00GffLLGGLfCCCLLii1i::::i;;;;. :::..:,:,,      \n" +
-                                    "      ,,,.,, ,:;:.  ,:,.::   1CCffCCttii;ii;;;:;;:::::;;;;;;tLLfLffLCCt,.. ,::::;::,:::;:,.,,.      \n" +
-                                    "       ,,:,,. .,,:.  ,::;;.  :t1;1tfi::,                   ,tti,;;i;,,.  .:;;:.,;;;i;;,,:,,,,       \n" +
-                                    "       .,,,.:. :,:   .;i;;;  :i;tLft1tfL1ii;;;;;:,      ,:t1ff;ii:.    ,:;;:;;:,,:::,..,.,,,.       \n" +
-                                    "        ,,,,:,,;::,. .::,;;: i:if;,..:1LttLf1i;i1tt1:.,11LC1Lt1i,    .::,,::,.  .;;, .:,.,:,        \n" +
-                                    "         ,,:,,::,,;:,,;: :;;;11iiii;;:;ttti;;;::,,:tLtL11i:i1ii.     :;.,::.   .:::,.,,:,,,         \n" +
-                                    "          ,,,.,:. .,:;;;:;;:111ii1i:,,,,,,,,::;;;;;,:1LL: .i:;.     .i:.::  .,,::::;:..,,,          \n" +
-                                    "           ,,,:,,, .;;;:,,,;ii;;:,;,           ..,;11i1L:;1ii: .,,;:;i::;, .:,,...,::,,,.           \n" +
-                                    "            .,,,.,,.:;:::. .  .,::;;;:,.    ...    .:;:i1i;1i::;;;;,.,;;:..:;:. .,,.,,,.            \n" +
-                                    "             .,:,,::::,,;;:,,   .:;;:;:;,::::,,::,,...,;11i1;,::;;::::;;;::::,.,:,,,,,              \n" +
-                                    "               .,:,,.,,  .,,,:.   ,:, :i;:,,,,::;i;;;::;;i11:,..    .:::;;::;:,.,,:,.               \n" +
-                                    "                 .,:,::,,. ,:::::,,;;:;;;:,,,,,,:;;:,.,i:;;:    . .,:;,. ..,,:,,,,.                 \n" +
-                                    "                   .,:,,.:,,;:,,::,;;;:,.         .,:::;::. .,,,::;:::..,,,.,,:,.                   \n" +
-                                    "                     .,:,::,,,,. ..,;;:,::::,,,....,:;;i;,,:;:,..,,:;,,,:,,,,,.                     \n" +
-                                    "                       ..,,,,,::,.,.,;;:,,...,:;::;:,.,;:;::,. ..,,,:,.,,,,.                        \n" +
-                                    "                          ..,,:,,,,:::,,,.....,:::,. ...,:;:,,::..,,,:,,.                           \n" +
-                                    "                              ..,,,::,,,,:,.,,,:,.,,:,.,,::,,,,::,,,..                              \n" +
-                                    "                                   ...,,,,,,,,::,,,,:,,,,,,,,,...                                   \n" +
-                                    "                                          ...............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[22] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         .........,........                                         \n" +
-                                    "                                  ....,,,,:,,,,::,,,,::,,,,:,,,...                                  \n" +
-                                    "                              .,,,,,,:,,.,:,,,,,,,,,::,,.,,:,,,,:,,,..                              \n" +
-                                    "                          ..,,,::,,.,:,,,:;:,... .,:;:,.....,,,::,.,,:,,,.                          \n" +
-                                    "                       ..,:,,,.,:,,..  .:::;;;,,:;:,:;:,..,,,:;:.,,,,:,,,,,,.                       \n" +
-                                    "                     .,,,.,:,,,::::,.,:;::,:;;;;,,....,,,::::,;;:....,,.,,:,,,.                     \n" +
-                                    "                  .,,,,,,,,.  ,:,::,,,,.  ,:;::::,.        .,:;;;:::,,,;:,:,.,,,..                  \n" +
-                                    "                .,,:,.,::,,..,::,.      ,ii:;;..:;;;,,,,,,::;;:;;:,::::;:..,,,:,,:,                 \n" +
-                                    "               .,,,:,,,:::;i;:;,.....,,,;111i;:;i;;i::,,,,::;;..::.  .,:,,.  .,,.,,,.               \n" +
-                                    "             .,,,.,:. .:,:,:;;:,,:;;;::,iii1i;:. ..,::,::::,::;::;;.   ,,:;:,.:::,:,,,.             \n" +
-                                    "            .,:,,,,. .:;:. :;;:,,;;:;::;11;11;;i:.    ..     .:i;i;:,..   .::,:;,,:.,,,.            \n" +
-                                    "           ,:,.,;:,,,,,,. .;:,i;::,.. .i;i;,tL1i1Lf:..          ,;:,::;;;:,,:;;;, ,,,::,,           \n" +
-                                    "          ,,:,,,:::;,,.  .::.,i.      ;:;: ,tLt;LLCL;;;::,,,,,,,,;iiii11i;i;;;;:,. .,,.,,,          \n" +
-                                    "         ,,,,:, .:::    .::,.::     .ii11:1tif1LGCLCf:;;iittt;;;;i1i;11i;;;.:;:,:;,.,:,,,:,         \n" +
-                                    "        ,,,.,,  ,:;. .,:;::::,.    ,;1tL1fCti,1GLGfCC1itfLttf1:..,:1t:i,,;;,::. .:::;::::,,,        \n" +
-                                    "       .,,:,,.,:;:;::::;;;;,.   .,;ii;ff11,. ;LiLGLLGGt::ii1fLt1ifLLi;i  ;;:i;.   :::..:..,,.       \n" +
-                                    "      .,,,.:::;;;;;;,.,;;,   .,:;;::,1tt,   iGff8ttLGfL:    ,;;ift1:i1;  .;;:;,   :,,. .,,:,,       \n" +
-                                    "      ,,:,,,,:,:.:;;;;;:,.,:;ii;,,,:111.   ;C0CC0C: ;L1C;      .fL:.i;,   ::,::,  .:::. ,:,,,,      \n" +
-                                    "     .,,,,:. :;:  ;iii1iiii11i;:itfti:    ifLt:C00CCtLGCG;      tf.,:;:   .::.,::. .:;,,::.,,,      \n" +
-                                    "     .:,.,,  ,,:. ,iii1ii111Lf1ff1:      iLtt,G0i:tL8GG0GC;    .11;.;:i    .:;:,:;:,,::;::::,,.     \n" +
-                                    "     ,,:,:,.:,:,  .:::ii1i; ,t1t;       1CftiGG.    .1GGfCL1    ;11::;i,     .;;;;:;;;;: ,,.,,,     \n" +
-                                    "     ,,,,::;::,   ,;::::i;;; :ftt.    .tGGCCGt.       t011fLt.   ;tftiii.    .;:,.:;;::. ,,,,,,     \n" +
-                                    "     ,,,.:,,,;,  .;i:;:  :;;ifttf.   :LC8GC0,         .L0iifLf,   ;L1fL1i,   ,;;:::..:;:  ::,,,     \n" +
-                                    "     ,,::,  :::.,:,:;i,   ,i1ff1L;  iftLLG0f            f81:LCG;  .ftft;;;:  ;;;i:.  ,;,:,:.,,,     \n" +
-                                    "     ,,,.,, ,::;;:.:;;.    .iiitf1;tCtC: GCC           :i00CGGLLt..ftf, ;;ii;:,::.   ,::;::,,,,     \n" +
-                                    "     ,,,.:..;;;;;;;;;;.     ,i;::tCGCCf tGCGLfttt1;:;iL8GffLLGCiLL:it1t,.ii1ii:::   ,,,:.,,,,,,     \n" +
-                                    "     .,,:::;;::,,:;:,:;:.    i:itCCtfGCL80LttttttfC08G001:,:tLGLLGCLt1LL111;i1iii. .:,, .,..,,.     \n" +
-                                    "     .,,,.::,,;:. .::,.::.   :1LLLGCCLffL0CCLftffLLCG00CffLCGGffCCCLLii11;;ii1i;i; .:;: .:,,,,      \n" +
-                                    "      ,,,,:, .:::.  ,::,;,   1CCfLCLttiiiii;;:;;;::::;;;;;;;fLffLffLCCt;:..,:;;;;::,:,:,,,.,,.      \n" +
-                                    "       ,,:,,, .,,,   ,;;;;.  itiittfi;;,                   ,tti,;;i;:,.  .:;;,.,;;;;;;:::.,,,       \n" +
-                                    "       .,,..:.,::,   ,;;:i: .i:1LftiitCf111;;;;;:.     ..;t1Lf;i;:,    .,i;;;::::::::..,,:,,.       \n" +
-                                    "        ,,,:::;;,::. ,:,.:;,:i:fi:..,:1ftfLt1i;i1tt;,.;1tCf1L11;.    .:::::;:.. ,;:. .,..,,.        \n" +
-                                    "         ,,,,,:,.,;:,;;,.;;;111;i1ii;;;tt1i;;::,,,ifftf11;:1ii;      ;:.,::.   .:::..,:,,,,         \n" +
-                                    "          ,,,.:,. .,;;;;;i;11iii;i;,......,,::;;;;:,;tLt. ;:::      ,i,,:,  ..,:;:::,.,,,,          \n" +
-                                    "           ,,:,,,, ,;;;,..:;;:::,:;,           .,:i1iiL1:i1i;  .,:::;;,:;. .:,,,,,::,.,:.           \n" +
-                                    "            .,,,.:,,;:,;:,.   .,:;;;i:,    ...     ,;;;11;11::;;;;:,,:;:: ,:;,. .,,,,:,.            \n" +
-                                    "             .,,,:,::,.,:::,,   .;;:,:;::;::,,::,,...,;i1ii;,::;;:::::;;;,:,:..,:..,,,              \n" +
-                                    "               .,,,.,:.. .,,:,.  .::..i;:,,,,,:;i;;;;:;;i11;,,.... .:;:;i;:::,,,:::,.               \n" +
-                                    "                 .,,::,,,..:;::;:,:;;;;;::,,,,,,:;;,.,;;:i;.      ,:;:,..,,::,.,:,.                 \n" +
-                                    "                   .,,,.,::::,.,,,:;;;,,.  .      .:;:;;:, .,,,,:::,:. .,,,,,::,.                   \n" +
-                                    "                     .,,,:,..,,....:;;,:;;:,,,..,,,::;;;:,:;;,,.,::;:,,::,,:,,.                     \n" +
-                                    "                       ..,,,,,:,.,,.:;:,....,:;:,::,,,;;;::,. ...,,:,.,,,:,..                       \n" +
-                                    "                          ..,,,,,,:::,,,.....,:;:,. ...,,;:,,,:,.,,::,,,.                           \n" +
-                                    "                              ..,,,:,,,,:,..,,:,.,,:,,,,::,.,,::,,,...                              \n" +
-                                    "                                   ..,,,,,,,,::,,,,:,,,,,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[23] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ..................                                         \n" +
-                                    "                                  ...,,,,:,,:,,,,::,,,,:,,,,,,,...                                  \n" +
-                                    "                             ...,,,,,,::,,.,:,,,,,,,,,::,,.,::,,,,,,,.                              \n" +
-                                    "                          ..,,:,,::,,,,,..,:;:,..  .,:;:,....,,.,::,,,,,..                          \n" +
-                                    "                       ..,,,::,,,::,,.. .,:,:;;:,,:::,;:,.....,:;:,,.,,:,:,..                       \n" +
-                                    "                     .,:,,..,,..,::;:,,:;;:,:;;;;:,.,..,,,:;;:,:;;....,,,.,,:,.                     \n" +
-                                    "                  ..,,,,:,,,.  ,:::,,,,..  :;;;:::,.       ..,:;;;:,...,::::,,:,,                   \n" +
-                                    "                ..,:,,,,:;:::::::,.     .,:1i;;,.,:;;:,,,,,,:;:;;;::;;:,:;,,,.,,:,,                 \n" +
-                                    "               .,,.,:,,.,,:;i;:;:,,,,,,::,ii11i:;;;;i;::,,,,:;i,,;:  .,,:,, ..,:,,,,.               \n" +
-                                    "             .,:,,.,,  ,;::,:;;:,,,;;;;;,:1;i1;;,..,,::,:::;:;;:.::,    ,,::. .,,.,,:,.             \n" +
-                                    "            .:,,:::,..,::, .;:;;::;;:::,:i1;iti:1;,    ...    ,;;:;;:..  .,:;:,:::::,,,.            \n" +
-                                    "           ,,,,.,:::::,,.  ,:,,i:,,..   ;;i;,1C1iCL;:,          ,:;:::,,,...,::;;,,:.,,:,           \n" +
-                                    "          ,,,,,,..:,:.    ,:,.;;      .;:;: ,tLtLLCL;;;::,.....  .:;::;;i1i;::;;:, .,,:,,,          \n" +
-                                    "         ,,,.,,  ,;:.  .,:::,::.     ,iiii:1t1tLGCCCf,:;i;1t1;;;;;11i;111i;;:;;;::,  :,.,,,         \n" +
-                                    "        ,:,:,,..,:::,,,:;;;;:,.    ,:i1Lf1LL1;tGLGtLGt;1tfftfi:,,,:;i1iii;:,.::.,:;,,::,,,,,        \n" +
-                                    "       .,,,,;::;i;;;;,,,;;:.    ,:;ii;tLt1i. iL;f0ftGCt:;111tLf;::itL1:i,,i:::,  .,::;:::,,:.       \n" +
-                                    "      .,,,.,,:,::::;::::;:..,:;;;;:::i1t:   ;GCf8CtLGLL:   ,:1t1tfffii1; .;:;;:   .:,: ,,.,,,       \n" +
-                                    "      ,,,::, .:;, ;iii1ii::i1ii,,,:it1i,   ;CGLf00i.:L1L:      .;Lt.,ii,  ,i:::,  .:,,  ,,:,,,      \n" +
-                                    "     .:,..,. ,::, .;ii11;i1tfti;tLf1:,    iLff.LG0GLitCfC;      ;C1 ;:;.  .:,,::,  .:;, .:.,,,      \n" +
-                                    "     .,,,,,.,,,:.  :,:ii;ii:iLtf1,.      iLtt,C81,tL8GG80G;     iti.;:i.   ,::,,::,.,:,,::,,,,.     \n" +
-                                    "     ,,,,::;::,   .::,:;i1;; ,t1t.      1CLf1GG,    ,tC8CCL1    ;11::;;,    .:;::;;::;;;::::,,,     \n" +
-                                    "     ,,,.:,:,:,   :;;;;. ;;;;.tLf,    .fGG0GC1.       10f1Lft.   itf1ii;      :;;,:;;;;:.,,.,,,     \n" +
-                                    "     ,,:,,  :;: .:::;;:   :;;ff;f:   :LL00L0,         .L0iifLf,   1ftft1:    ,i:.,:::::. .,,,,,     \n" +
-                                    "     ,,,,,. ,:::;:.,;;.    :1tffLi  iftLiG0L            L8i:LCC;  ;fift;;:   ;:;;:, .:;: .:,,,,     \n" +
-                                    "     ,,,.:..:;;;;::;;:      ;i;1t1itGfL: CGL           ,;00fLGCCt.,fLt.;;;; .;;;;,   ::,::,.,,,     \n" +
-                                    "     ,,::::;;;;::i;,:;:.    ,;;::tCCCCf.C0GGLftt1i::i1C8GfLGG0C;ffit1t, ;;1i;:,::   .::;::::,,,     \n" +
-                                    "     .,,.,::,,:,.,::,.::,   .i,itCGif0GG8Gt11tttfCG80G0L;:,itCGLfGCLt1Li;1i;1i:::  .:,,..,,,,,.     \n" +
-                                    "     .,,,,:. :;:.  ,::,::.  .iiCLCGCCftfGGGCffftLLCG80CffLLGGGttCGCCCttft1ii111i;. ,::. .,.,,,      \n" +
-                                    "      ,,::,,  :,:.  ,::;;.  ,fCLLLCLf1iiiii;;;;;::::;;:;;;;iLfLLfffLCCt1;::iiiiii: ,::. ,,:,,.      \n" +
-                                    "       ,,,.:,.:,:    :;;:;  i1i1Lfft1ti,,                 .:t1;,;;;i;;:...:;:,::;:;::,:,,.,,,       \n" +
-                                    "       .:,,,::;:::.  ::,:i,,i,tf1;,,;tLt1t1iii;:,      .:11fL1;i;:,.    ,;;;,,,;;:;;;::;,,,:.       \n" +
-                                    "        ,:,,,:,,,;;,.;: ,:;1iiii;;,:::1ftfft1ii1ft;, ,itCf1ff1i:.    .::;;;;:,,.:::,..,,:,,.        \n" +
-                                    "         ,,,.,,  ,::;;;:;;111i;i1i;;;;;i1i;;;:,,,iff1f1ti:i;ii.     ,;,,:::.   ,:;. .:,.,:,         \n" +
-                                    "          ,,::,,. ,;i;::;i1i;;::::       .,,:;;;;,,;tLt. ;:;:      .i:.,:,    ,:,:..,,:,,,          \n" +
-                                    "           ,,,,.:,,;:::,....,,::;;:,.         .,;11i1Ci:iii:  ..,,,;i.,:,  .,,:::::,.,,,,           \n" +
-                                    "            .:,,::::,,:;:,.   .:;;:;;,  .....    .;1:it;;1i,,;::;;,:;;:;..:::,..,::,,,,.            \n" +
-                                    "             .,:,,.,,. .,,,,    ,::.:;;:;::,:::,,,.,;;1ii1,:;;;;:,,,:;::,:::. .,,.,,:,              \n" +
-                                    "               .,:,,:,,. ,::,,,. :;,,i;:,,,,::;i;;;::i111;::,,,,..,:;:;i;::,.,,:,,:,.               \n" +
-                                    "                 .,:,,.,,:;:,:;;::;;;:::,,..,,,:;:,.,;;i1:.      .,::,,:::;:,.,,:,.                 \n" +
-                                    "                   .,:,,::,:, ..,:;;;:,....     .,:;:;:;,  .,,,,::::.  .,,,:,,,,.                   \n" +
-                                    "                     .,:,,.,,,,...;;:,:;::,,,.,,,,:;;;;:,:;:,,,:;::,..:,..,,:,.                     \n" +
-                                    "                       ..,,,:,,.,,:;:,. ...,:;,:::,,,;;:,:,. ..,,;:,,,::,,,.                        \n" +
-                                    "                           .,,,,,:,,.,,,,,,,:;:,.  ..,:;:,,,,,.,,::,,:,,..                          \n" +
-                                    "                              ..,,,,,,::,.,,::.,,::,.,,:,.,,::,,,,,,..                              \n" +
-                                    "                                   ...,,,,,,:,,,,::,,,,:,,:,,,...                                   \n" +
-                                    "                                          ................                                          \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[24] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ..................                                         \n" +
-                                    "                                  ...,,,,,,,,:,,,,::,,,,:,,,,,,...                                  \n" +
-                                    "                              .,,,,,,,,::,,.::,,,,,,,.,::,,.,::,,,,,..                              \n" +
-                                    "                          ..,,,,.,:,,,,,...,:;:,..  .,:;:,,,,,,,.,::,:,,..                          \n" +
-                                    "                       ..,:,,:,,,,:;:,...,,:,;i;,,:::::;:,..  .,:;:,,.,::,,,.                       \n" +
-                                    "                     .,::,,.,,...,::;:,,:;:,,:;;;:,,,,..,,::;::,:;:...,:,.,,,,.                     \n" +
-                                    "                  .,,:,.,::,.. .::::.....  .;:;::;,.      ...,::;i:,.  .,,,::,,,..                  \n" +
-                                    "                .,,::,,,,::;;::::,.      ,,;1ii:.,,:;:,,,,,,,::;;;;,:;:,,;;,:,.,,:.                 \n" +
-                                    "               ,,,,.,,. .:,:;;:;;,,,,:::::,i111i:;;;;i;::,,,,:;;,:;..,,,:::..,,,:,,,.               \n" +
-                                    "             .,:::,,,. .:;:,::i;,,,:;;i;:,;1:1i;;,.,,,:::::;::;:.,::    .:,:.  ,,..,,,.             \n" +
-                                    "            .,,..::::,,::,  :;:;;::;;::,.:i1;if;;1:.   .....  ,;i::;;,   .,:;:.,:::,:,,.            \n" +
-                                    "           ,:,,.,,::;:,,.  ,:,.;;...    ,i;i::LL1LLi::.         ,:;i;::,.  .,:::;;,:,.,,,           \n" +
-                                    "          ,,,,:,. :,:,    ,:,.:i.      ,;:;. iffLCCf;;;;:,.       .;::::;;i;::;;;: .,,,:,,          \n" +
-                                    "         ,,,.,,. .:;,  .,;;::::,     .iiii:if1tCCGGCf,:;;;i1i;;::;;iiii1111i;;;;::,  ,:,,:,         \n" +
-                                    "        ,,::::,,:::::::::;;i:,.   .,:i1Lf1tCt;fCfG1fGt;1tfftfi::::;ii;ii11;: :;,,:;,.,:.,,:,        \n" +
-                                    "       .:,.,:;:;;i:;;,.,;;:.   .,:;i;;tLfi1, iC;t0f1GCt:;1t1tft;:,:itf;:;:;:,::  .:::;::::,,.       \n" +
-                                    "      .,,:,,.,:,:::;;;;;;;,,;;i;;:,,:i1t:.  ;GGL0GfLGLC:  .::1ftttfLtii1, ;:;;:    :::,,:.,,,       \n" +
-                                    "      ,,,,:, .:;, ,i11111i;i1i;,,:;1t1i,   ;LGLtG01.:L1L;     ..:ft;.ii;  .;;;:,  .:,, .,,,,,,      \n" +
-                                    "     .,,..,. ,,:,  ::;i1:ittfL1itLf1:.    iLff.fG0GCiiCtC;      ,Lf.:;;,   ;:,::,  ,::, .:,,,,      \n" +
-                                    "     .:,:::,:,,,   ::,:iiii:.tttt,       iLtt:C8t,1C@GC00G;     :ft.;:i,   ,::.,::. ,::,,:..,,.     \n" +
-                                    "     ,,,.::;::,   .::;:::1;;, 1tf,      1CLLtGG,    ,fC8GCLi    :11;:;;,    .;;,,;;::;::;:::,,,     \n" +
-                                    "     ,,,.:..,::  .:;;:;  .;:;,1Lf:    .f0000C1.       i0ftCft.   i1t1;i:      :;;::;:i;;,,:.,,,     \n" +
-                                    "     ,,::,. ,;:.,::,:;:   .i;tL;ti   :fLG0L0,         .f0iifLf,   1ffft1,    ,;:..:;:::, .,.,,,     \n" +
-                                    "     ,,,.,. ,::;;:.,;;.    ,1tfLfi  iftL;C8C            L8i:fCL;  1tiL1;;.   :;;,::..:;, .,::,,     \n" +
-                                    "     ,,,,:,:;i;:;;;;;:      :;;1t1itGfL:.CGf           ,;8GtfGCGt.:LLi,i:;, .i;;;,  .::,,,,.,,,     \n" +
-                                    "     ,,,,::;::;,:;;,,;;.    :;i,:tCLCCf,GGGCCLtt1i::itC8CLC0G0Ciff1tt1 ,;;1::::::    :::;::,,,,     \n" +
-                                    "     .,,.,,.,:;, .::,.::,   :i,itCC:f0GG8C1i1ttfLG08G00t;:,1tGGLtCCCttt,;iiii:,:,  .,,,:,:,:,,.     \n" +
-                                    "     .,,,:,  ,::,  ,::,::   :;1CCCGCLttf0GGLfftfLLC080LfffLGGG1tCGCCCffftti:1ii::  ,::, .,.,,,      \n" +
-                                    "      ,,,,,, .,,:   ,;;;;.  ;fCLLCCCLtiiiii;;;;;::::;;;;;;iiffLLffLLLCt1i;i11111i, :;:  ,,,,,.      \n" +
-                                    "       ,,,.:,::::   .:;::; :1i1fLftttf1:,                 .;t1;,:;;i;i;:,,;;;:;;;:::,:,,,.:,,       \n" +
-                                    "       .,,:::::,::. .::.:;:i:if1;,,,;tft1f1iii;:.      .;11LL1;i;::,    ,:;:,,,;;;i;;:;:,.,:.       \n" +
-                                    "        ,,,..:..,;:,:;,.:;111i;ii;::::1fffftii1tf1:. ;ifLt1ff1i:.    .,:i;;:::,,::::,,:::,,,        \n" +
-                                    "         ,,,,:,  .,:;:;;i111ii;ii;:::::iii;;;:,,:tLttttt::i;i;.     ,;:::;:,.  ,;:. .,..,,,         \n" +
-                                    "          ,::,.,. :;;;::;;;;::,:;.       .,,:;;;:.:1Lf; ,;:;,      ,i,.,:.    ,::, .,,,,,,          \n" +
-                                    "           ,,,.,::;;:::,.  .,::;i;;,         .,:i1iiLL:;i;;.  ..,,,;;.::,  .,,::::,,.,,:.           \n" +
-                                    "            .,,:,,::..:;:,.   .;;::i;, ......   .:1;;fi;1i:,:::;;::;;:;: .:::,,,:::.,,,.            \n" +
-                                    "             .,,,..,,  .,,:.    ,:,.:;:;:::::::,,.,;;ii;1:,:;i;;:,,,;;::,:;:. .,,,::,,              \n" +
-                                    "               .,,,:,,,.,:::::,.,;:,;;:,,,,::;i;:;;:i111i,::,,,,.,,;;:i;:,:..,:,.,:,.               \n" +
-                                    "                 .,,,.,::;;,,:;:,;:;:::,.....,:::,..;ii1:,.      .,::::;:::,,,,::,.                 \n" +
-                                    "                   .,,,:,,,,.  .,;i;::,....     .,;::;::. ..,,,,:::,. .,,,:,.,:,.                   \n" +
-                                    "                     .,,,,.,:,.,.:;:,::;::,:..,,,::;;;:,,:;:,,:;::,..,,,.,,:,,.                     \n" +
-                                    "                       ..,,:,,.,,:::,.  ..,:;::::,,,;i;,:,. ..,,::,,,::,,:,.                        \n" +
-                                    "                          ..,,,,::,.,,,,,,,:;:,.  ..,:::,..,,,,,,:,,:,,,.                           \n" +
-                                    "                              ..,,,,,::,,,,:,..,::,.,,:,.,,::,,,,,,,..                              \n" +
-                                    "                                   ...,,,,,:,,,,::,,,,:,,,,,,,...                                   \n" +
-                                    "                                          ...............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[25] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         .......,..........                                         \n" +
-                                    "                                  ...,,,:,,,,::,,,,:,,,,,:,,,,,...                                  \n" +
-                                    "                              ..,,::,,.,::,..::,,,,,,,.,::,,.,:,,:,,,.                              \n" +
-                                    "                          ..,:,,,.,:,,,,....::;:...  .,:;,,,.,,,..,::,:,..                          \n" +
-                                    "                       .,,,,.,:,,,,;::,...,::,ii:,,:::::;:,..  .,:::,.,,::,,.                       \n" +
-                                    "                     .,,,:,.,,,...,,:::,::;,,::;;;:,,,,.,:,::::,,;;,.,,,:,.,,,.                     \n" +
-                                    "                  .,:,,..:;:,...,;::,..... .,;;;:::,.     ...,,::;i:.   ,,.,,:,,,                   \n" +
-                                    "                 ,,,,:,,,,::;;;:::.      .,:;11i,.,::::,,..,,:::;;;::::,,:;::,.,,,,                 \n" +
-                                    "               .,,,..,.  ,:::;;;;:,,,:::::,,i111i;;;:;i:::,,,,:i::;:.,::::::.,,,,:,,.               \n" +
-                                    "             .,,,::,,...,;:,,:;i:,,,:;;i;:,ii:1;;;,,,,::::::;:;;,.::.   .:,,. ..:,.,,,.             \n" +
-                                    "            ,,,,.,:;:::::,. ,;,:;;:;;::,..;1i;tt:11,.   ..... .:i:::;,   .,:;:..,:,,::,.            \n" +
-                                    "           ,,::,,,.:,;,..  ,::.:;...     :;ii,1CfLLi;:,         ,;:i;;:,.  .,::,:;::,.,,,           \n" +
-                                    "          ,,,.,,  ,::,    ,::,,;,      .;:;: :tfCCCL;;;;:,.       .::,,,::::::;;;;..:.,,:,          \n" +
-                                    "         ,,,,.,. .::, ..,;;;;::,     .;iii;:tf1CCCGGt,:;;;i1i:::,,::;;;;i111i;:;;,, .,:,,,,         \n" +
-                                    "        ,,,,::::;;:::::::;:;:.    .,:i1fft1LLifCfG1fGfi1tffffi::;;iii;;111i;,,;:,::, .:..,,,        \n" +
-                                    "       .,,..::::;i;;;,.,:;:,  .,:;;i;;1fLi1; iC;10fiCCt;i1f1tf1;,,,;1ft:ii;:.::. ,::,:::,:,,.       \n" +
-                                    "      .,,:,,. :::,:;iiiii;::iii;;:,,:11t;.  ;GGL00LLGLC:  .:;1Lft1tLL1iii.;;:;:.  .,::;::,,,,       \n" +
-                                    "      ,,,.,,  :;: .;i111iii1ti;,,;1tt1i,   iLGL1G8t,:LtL;     .,,tt1.;1i, ,;;;;,   ,,,, :..,,,      \n" +
-                                    "     .,,,.,..,,:,  ::,;1;;11tCtttfti,.    iLff.fG0GC;;LtL:       fL:.;;;   :;:::.  ,::, .,::,,      \n" +
-                                    "     .,,::::;::.   ,:,,;i1i; :t1t.       iLtt:C8t,1C8GCGGG;     .ff.::;:   ,::.,:,. :;:. ,..,,.     \n" +
-                                    "     ,,,.,::,::   .;;;;, ;i:; ;ff;      1CCCtGG:    :fC80GCi    ,t1;,;;,    ,;;,,:;,,:,::::,,,,     \n" +
-                                    "     ,,,,,. ,::. .:;;:;.  :;;:iff;    .f0008Ci.       ;0CtCft.   i1t1;i:      :;;;;;:;i;::::,,,     \n" +
-                                    "     ,,,,,. ,::,,:,.:;:    ;;tLit1   :ffC0L0,          f0iifLf,   1LLfti.    .;;,.:;;:::..: ,,,     \n" +
-                                    "     ,,..:..::;;;:,:;:     .ittLL1  iLtL;f8C            C8;:fCL;  tiiL1;;    :;:.::,,::. .,,,,,     \n" +
-                                    "     ,,,:::;;;;:;;;:;:.     :;;1t1i1GLL,.C0f           .i8Gt1GCGt.iLf;:;;:  .;:;;:. .::, .,,,,,     \n" +
-                                    "     ,,,,:::,,:,,;:,.;;,    ::i,;tCLLCL:GGGCCLtt1;,:itC0CLC000Gifftff; ;;i;.:;;;:.   :::::,.,,,     \n" +
-                                    "     .:,.,, .:;:  ,:,.,:,   ;;::tGC:f0G00L1i1ttfLG08G0C1;::1fGCLtCCL1t; ;i1i;,,:,   ,::;::::,,.     \n" +
-                                    "     .,,::,. ,::,  .:::;:   ;;1CCGCCL11L0CGLfftfLCG08CffffL0CCi1CGCCCLLt11:;1;:,,  ,:,,.,,.,,,      \n" +
-                                    "      ,,,.,, ,,:,   ,;;;;, :1fCCCCCCLt11ii;;;;;:::::;:;;;;iiffLCffLLCCf1iii1111i;. :;:  ,,.,,.      \n" +
-                                    "       :,,,::;::,.  .:::;;.i;1fLLti1fLi;:.                .i11i:::;iiii;::;i;iii;:,:,, ,,,:,,       \n" +
-                                    "       .,,:,::,,::, ,:,.;;i;:tti:.,,;1ft1L1iii;,       ,i11Lf1;;;::,.   ,:;:..:;;;i;:;::..,,.       \n" +
-                                    "        ,,,.,,. ,::,:;,,;1111:ii1i;;:;ifffftii1fti, .i1Cf1tff1;:.    .,;;:;:::::::;;::::,,,,        \n" +
-                                    "         ,,,::,. ,,;;;;i11ii;;;;:,,,,::;i;;;;:,,iff1ttti,;;ii:      ,:::;;:,.  :::. .,.,,,,         \n" +
-                                    "          ,,,,.:.,;;;::,::::,,,::.       .,:;;;;,.;fL1. ;:;:.      :;,,::.    :::. .:,.,:,          \n" +
-                                    "           ,:,.,:;;:,::,.  .,:;;;:;,         ,:;1i;tC;:iii,    ...,i:.::.  ..,:,:.,,,::,.           \n" +
-                                    "            .,:,,,,,..::,,.   ,;:,:i:....,...   ,ii:t1;i1;.,:::;;:;;::;, .:::,::;:,.,,,.            \n" +
-                                    "             .,,,.,:.. .,,:..  .::.,;;:;:::::::,,,;;i1:1;,:;i;;:,,,:i;:,,:;,...,,::,,,              \n" +
-                                    "               .,,:,.,,.:;::::,.:;::i:,,,,::;i;::;:i111i,:::,:,,,,:;:;;;,:, .,,..,,,.               \n" +
-                                    "                 .,,,.,:::,.,::::;;;::,.....,::::,.,ii1;:,.     .,::::;;::,,,,:,,,.                 \n" +
-                                    "                   .,,:,..,,.  .:i;::,,...      ,:;:;:;,  .....,:::,...,:::..,,,.                   \n" +
-                                    "                     .,,:,,:,,,.,;;,,::::,:,.,,,,:;;;;:,:;:,,:;:,,...,,..,:,,,.                     \n" +
-                                    "                       ..,:,,,.,::,,.  ..,:;:::::,,:i;,:,....,::;,,,,:,,:,,.                        \n" +
-                                    "                          ..,:,::,..,:,,,,:;:,.  ..,:;:,...,,,,,:,.,,,,,..                          \n" +
-                                    "                              ..,,:,::,,,,::..,::,.,,::.,,::,,,,,,,,..                              \n" +
-                                    "                                   ...,,,,:,,,,::,,,,:,,,,,,,,...                                   \n" +
-                                    "                                           ...............                                          \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[26] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ........,.........                                         \n" +
-                                    "                                  ...,,,,:,,,,::,,,,:,,,,,:,,,....                                  \n" +
-                                    "                              ..,,,::,,.,:,,.,::,,,,:,,.,::,,,,:,,,,..                              \n" +
-                                    "                          ..,,:,,..,:,,,....,::;:..  .,,:;,,,,,:,.,,:,,,..                          \n" +
-                                    "                       .,,,,,.,:,,,:;;:...,,:,:i;:,,:::,:;,,.  .,,,::,.,,:,..                       \n" +
-                                    "                     .,:,,:,,,..  .:,;::::::,::;;;:,,,,,.,:,:::,,:;;,,,,::,,:,.                     \n" +
-                                    "                  .,,:,,.,:;::..,:;::. ...  .;;;;:;:.      ..,,::;i;,. ..,,.,,:,,                   \n" +
-                                    "                 .,,.,:,,.,::i;:::,.     .,::i11;,.,:::,....,,:::;;;,::,.,::::,,:,,                 \n" +
-                                    "               .,:,..,.  .:::;;;;::,,,:;:::,,1111;;:::ii:::,,,:;;:;;.,:::::;,,,.,::,.               \n" +
-                                    "             .,:,,:::,..,:;,.;:;;,,,::;;i;::1i:1:;;,,,:::::::::i: ,:,  ..,:,, ..,:,,:,.             \n" +
-                                    "            .:,,.,,::;::,,. .;:.;;::;:,,..,i1iif1;1;,   ...... :;;,::,    ,,::. .,..,,,.            \n" +
-                                    "           ,,,,:,, ,,:,.   .::.,i,       .;;i::LLLL1i;:.        ,;:;i;:,.  .,::,,::::,,:,           \n" +
-                                    "          ,,,.,,. .:::   .,:::,;:      .:;:;. itCCCL::;;:,.       .:;:,,,,,,,,::;i:,:..,,,          \n" +
-                                    "         ,,::,:,.,,::..,,:;;;::,     .:ii;i:iftLCCGGt,:;;iii;:,,,...:;;;:;i1i;;;i:, .,,::,,         \n" +
-                                    "        ,,,.,:;;i;;:;::,,::::.    .,:;1fft1fL1fCtGttGfi1tffffi;;;;i1ii;i111i:,;;:::,  ,,.,,,        \n" +
-                                    "       .,,,.,.:,:;:;i:,,:;;:.,,:;;;;;;ttL1i;.iGii0LiCC1;i1f1tfi:,..:;tti;1i:.,:, ,;:,,,:,,,,.       \n" +
-                                    "      .,,,,,. ,::,,;i1111i;:iii;:,,,;11t;.  ;GGCG0LLGCC;  .;i1Lft11fLf1;i::;,::,  .:::;::,,,,       \n" +
-                                    "      ,,,.,, .,::  ::;i1i;1ttti::itft1;,   iLCLiC8L,:CtL;     ,::tft;,i1i ,;;;;,   .:,:.,,.,,,      \n" +
-                                    "     .,,:,:,,,,:.  ,:,,ii;i1iLftf1i:.     iLtf tG0GC;;LtL:       1Li :;i.  :;:::.  ,:,, .,,:,,      \n" +
-                                    "     ,,,,::;:::.   ,:::::iii. 11f,       iLtf;C8f,1C8CLGGG;      tL:.;:i   ,:,,::,  :;:. ,,,,,.     \n" +
-                                    "     ,,,.,,,,,:.  .;;;;, ,i:i,,LLi      1GCGfGG:    :LC000Ci    .t1i,;::    ,;:.,::,,:,,,:,.,,,     \n" +
-                                    "     ,,::,. ,;:. ,::::;.  ,;:;itt1    .fG800C;        ;GCLCft.   i111;;:     .;;:;;;:;;;;::::,,     \n" +
-                                    "     ,,,.,. ,:::::,.:i,    :i1L111   :ffLGLG;          f011ffL,   1LLtti      :;:,:;;;::,,:.,,,     \n" +
-                                    "     ,,,.:,:;;;:;:::;,     .i1tLf1  iL1L:t8C            C8;:fCL;  fitLii:    :i:.,::,::, .,.,,,     \n" +
-                                    "     ,,::::;:;;:;;:,;;,     :;;111i1GLL,,C0t           .i8G11GCGt.1ft;;:;.  .;::::. .:;, .,::,,     \n" +
-                                    "     ,,,.,,,,::,.::,.:;,    ;:i.itGLLCLi0GGGCLft1;,;itC0CLC0GGGiLftfL.,i:i. :;;;;.  .:,,,,,.,,,     \n" +
-                                    "     .,,,,, .:;:  ,::,,:,  .i:;,fGL:f0G0Gfi;itfLC088G0L1;::tL0CL1CCf11.,iii;::::,   .::;;::,,,.     \n" +
-                                    "     .,,:,,. ,,:,  .:;;;:  ,i;1LCCCCL11CGCCfftffLC080LffffC0CCi1C0CCCLLi1i:ii,,:,  ,:,,,,:,,,,      \n" +
-                                    "      ,,,.,,.:,:.   ,;;:;..i1fCGGCLCft11i;;;;;;::::;::;;;iiiffCCfLLLCCLt1i;i1i;:: .::,  ,,.,,.      \n" +
-                                    "       ,,:,::;:::.  ,::,;:;;;fLLtiiifL1;:.                 i11i:::;ii11i:;i1i11i;,,::. .,:,,,       \n" +
-                                    "       .:,,.,,.,:;, ::..;ii;i11;:.,,:ifttL1ii;:.       ,i1tCf1;;;;;:,...:;;,,,;;:;;:,:,,.,,:.       \n" +
-                                    "        ,:,.,,  ,::::;:;1111;;ii1i;;;;iffft1i1tft;. :ifLt1tffi;:,.    .;:;:,,::::;;;;;:,,,:.        \n" +
-                                    "         ,,::,,. ,:i;:;i1i;::;;:....,,:;i;;;;:,:tLt1ttt::i;i;,      ,::;;;:,...::,..,,,:,,,         \n" +
-                                    "          ,,,.,:,;i:::,,.,,,,::;:.       .,:;;;:.:1Lt; ,;:;,       ;;,,::.   .:::. .,..,,,          \n" +
-                                    "           ,,,:::::,,:;,.  .,:;;:;;,        .:;i1;iCf:;i;;.     . :i.,::   ..::,, ,,,,,,,           \n" +
-                                    "            .,,,..,. .:::,    ,::,:;:..,,,,.   ,;1:1f;i1;,.,:::;::;;.::. .,:::;::,,.,,,.            \n" +
-                                    "             .,:,,:,,. ,,:,..  ,:,.:;:::::::;:,,,i;;1:ii::;i;;:,,,,;;::.,;:,..,:::,,:,              \n" +
-                                    "               .,:,,.,,:;:,:::,,;;:i;:,,,:::ii:::;;111i,,:::::,,,:;;;;;:::. .,,.,,:,.               \n" +
-                                    "                 .,:,,::::...,:,;;;:::,.....,,::,..;11;::..     .,:::;i::,.,,:,,:,.                 \n" +
-                                    "                   .,:,,.,,.. .,;i:::,,...     .:;:;;;:.  ....,::;:...::;:,.,,:,.                   \n" +
-                                    "                     .,:,,:,,,,,;;,,,:::,:,.,,,,,:;;;:,,::::::;,,.  .,,.,:,,:,.                     \n" +
-                                    "                       ..,,,,.,::,,,. ..,:;:,,::,,:ii:,,,...,:;;,,,,:,.,,,,.                        \n" +
-                                    "                          ..,,::,,.,:,.,,:;:,.. ..,:;;,,...,,,,:,.,,,:,,..                          \n" +
-                                    "                              ..,,,,:,,,,::,.,,:,,,,::.,,::,,,,::,,,..                              \n" +
-                                    "                                   ...,,,,,,,,,:,,,,::,,,,:,,,...                                   \n" +
-                                    "                                          ................                                          \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[27] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         .........,........                                         \n" +
-                                    "                                  ...,,,,,:,,,,::,,,,:,,,,,,,,,...                                  \n" +
-                                    "                              ..,,,,::,,.,:,,.,::,,,,:,,.,::,,,,:,,,..                              \n" +
-                                    "                          ..,,,:,,.,,:,,,....,:;;,..  .,::;,,,,::,.,,:,,..                          \n" +
-                                    "                       .,,:,,..,:,,,:;;,,..,,:,;i;,,::,,,;:,..  .,,,::,,,,,,.                       \n" +
-                                    "                     .,,,.,:,,,.  .,,::,::::,,::;;;,,,,,,.:::::,,,:;:,,,,::,,,.                     \n" +
-                                    "                  .,,::,.,,:;;:,,,;:,,      .:;;i:;:,.     ..,,:::;i:. ..,,..,,,..                  \n" +
-                                    "                .,,,,.:,...:,;i;::,.     ..,:,;11;.,:::,,.....,::;;;:::,..,,,::,,,,                 \n" +
-                                    "               .,,:,.,,. .:::::;;;::,,,;;:::,:1111;;::;i;::,,,,:i;:;,,:;:,:;;,,..,,,.               \n" +
-                                    "             .,,,.,:::,,,:;,.,;:;;,,:::;i;:,;1:;1:i;,,,:;::::::;;,.:,  .,,:::..,,::,,,.             \n" +
-                                    "            .,:,,,,,:::,,,. .::.,i::;:,,,..:i1;if;i1;.   .,,,,.,;;.:::    ,:,:. .,,.,,,.            \n" +
-                                    "           ,:,.::. .:,:.   .::,.i:        :;ii,iCCLii;;,        .;;:;;;,.  .,;:,.,::::,,,           \n" +
-                                    "          ,,,..,. .:;,.  .,;:::::       ,;;;: :tCCCf,:;;;,.       ,:i;:::,,..,:::;;::,.,,,          \n" +
-                                    "         ,,,:::::,:::,,,::;;;;:,     .:ii;i;:tfLCCCGt,:;;iii;:,...  ,:::,::;i;:;i;:..:.,,,,         \n" +
-                                    "        ,,,.,:::;;;:;;:,,,:::.   .,,:;ifft1tLffLtGttGL11tffLfi;;;;iiiii;i111i:;:;,:,  ,:,,:,        \n" +
-                                    "       .,,:,,..,,;::ii;:;i;;:::;;;;;:;ttLtii,iG1i0LiCC1;iift1t;:,,,:;iiiii1i,.::.,;:,..,.,,,.       \n" +
-                                    "      .,,,,:. .;:,.;;i111i;;iii:,,,:;111;.  ;CGCG8CLGCL;  .;i1LL1i;1fLfi:i;;,,:,  ,:,::::,:,,       \n" +
-                                    "      ,,,.,,..,::. ,:,:1i:itff1;;1fLti;,   iLCL;L8C::CtC;    .,;i1ftf:ii1,,;:;;,   .::;:,,.,,,      \n" +
-                                    "     .,,::::::,,.  ,::,:iiii:iLtf1;,      iLtf.10GGC;:ftL:       ;Lt..ii:  :;;;:.  .:,, .,.,,,      \n" +
-                                    "     .,,.,:::,:.   :;;;:.:1i: :tf;       iLff;C8f,iC8CfCCG;      iL1 ;:i.  ,;:,::. .:;:  ,::,,.     \n" +
-                                    "     ,,,,,, ,::.  ,:;:;,  ;;;; fL1      tGCGLGG:    :LC080Ci     1t1,i:;    :;:.,:,.,::,.,,.,,,     \n" +
-                                    "     ,,,:,. ,;:..,:,,:;.   ;:;it1t    .tG800C;        :0GCCLt.   i111;;:     ,;:,:;;:;::;::,,,,     \n" +
-                                    "     ,,,.:..,,::;:..:i,    ,i1Lt1t   :ffLCCG;          f0tiLfL,  .1fLt1i      ,;;:;;:;;;:::,,,,     \n" +
-                                    "     ,,,,::;;;;:;;;;;,      i1tLf1  iCtL:18C           .G8;;fCL:  tiffii.    ,i:.,;:::,, .:.,,,     \n" +
-                                    "     ,,,,:::::;:;;:,:;,     ;;;11111GCC,:C01           .i8Gi;GCGt,t1t;;:;   .;:,,:, .:;. .,:,,,     \n" +
-                                    "     ,,,.,, ,::,.,:,,,;:    ;:i.1tGLfCL18GGCCLfti;,;itG0CCC8GGGiLftLt ;;;;  :;;;:.  ,:,, ,,.,,,     \n" +
-                                    "     .,,::,  :::. .::::;.  ,i::.fGL;f0G0Gt;;itfLG080GGf1;:;tC0CL1LCLt: ;i1:,:;;;,   .:,:::,.,,.     \n" +
-                                    "     .,,,.,..,,:.  .:;;;,  ;i;iLCCCGfitGGGCLftffCG08GLfffLGGCLitC0CCCL1;1iii:,::.  .:,::::::,,      \n" +
-                                    "      ,,,.,::;::.   ,;;:;,;1itGGGCLCfft1i;i;;;;::::;::;;;ii;fLLCfLLLCCLtti:11:,:, .::,..,..,,,      \n" +
-                                    "      .,,:,:::,,:,  ,:,,;ii:1Lfti;;iff1i;.                .i11i:,,:;111i;;1111i;;.,::. .:,,,,       \n" +
-                                    "       .,,..,. ,;;,.;:.,i1iiiii;:,,::it1fL1ii;:       .;11fLt1;;;;;;:,,:;i;:::ii:;;,:..,,:,,.       \n" +
-                                    "        ,,,,:,  ,,:;:;;11i1i;ii;i;;;;;ifLtt1i1ffi:  ;1Lf11tffi;:,..   .:::,,,:;::;;;;::,.,,.        \n" +
-                                    "         ,,,,.:..:;;;:;i;:,,:::,   ...,;;;;;;:,iff11tf1,;;;i;,     .,:;;;;:,,.,::,,,::::,,,         \n" +
-                                    "          ,,,.,::;;:::,..,,:::;;:,       .,:;;;..ifL1. :;;:.      .;:,:::,   .:;:. .,.,,,,          \n" +
-                                    "           ,,::,,:,.,::,.  .,;;;:;;.        .:;1i:fC;:ii;,       .;;.,:,    .:,:. ,,:,,:.           \n" +
-                                    "            .,,,.,,. .:,:,    ,:,.;;,.,,,,..  .;1;;fi;1i,..,,:;;:;;,.::  .,:::::,,,,::,.            \n" +
-                                    "             .,,,::,,.,:::,,.  :;.,;;::::::;;:,,ii:1;;1:::;i;::,,,;;:;,.:;:,,,:::,.,,,              \n" +
-                                    "               .,,,.,::;;,,:;:,:;:;;:,,,,::;i;:::;1111,,:::;:,,,::;;;::,:,  .,,.,::,.               \n" +
-                                    "                 .,,,::,,,. .,::;;;::,.. ...,,::,.;11;::,.     ..:::;i;,,.,,:,.,,,.                 \n" +
-                                    "                   .,,,..,,...,:i;::::,,.      ,;;:i;;,  ... .,:;;,..:;;:,,.,::,.                   \n" +
-                                    "                     .,,,:,,,,,;;:,.,,::::,,,::,:;;;::,:;::::;,:,. ..,,,:,,,,,.                     \n" +
-                                    "                       ..,,,,,::,,,.  ..,;;,,,:,,,;i:,,,,..,:;;:,,,:,.,,,:,..                       \n" +
-                                    "                          ..,,:,,,,::,,,,;:,,.  .,,;;:,....,,,:,.,,,:,,,.                           \n" +
-                                    "                              ..,,,:,,,,::,.,,:,,.,::,.,,:,.,,::,,,...                              \n" +
-                                    "                                   ...,,,,,:,,:,,,,::,,,,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
+        /*{
+            String[] width100pentagram = new String[ 31 ];
+            width100pentagram[ 0 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,..........                                         \n" +
+                                      "                                  ...,,,,,,,,:,,,,::,,,,:,,,,,,...                                  \n" +
+                                      "                              .,,,:,,,,::,.,,:,,,,::,,,,:,..,:,,,,,,..                              \n" +
+                                      "                          ..,,,,.,:,,,,:;:,,.  .,:;:,.. ..,,::,,.,::,,,,..                          \n" +
+                                      "                       ..,:,,::.,,....,::;,,,::,,:i;,,,,,,,:;:,...,,,.,::,,,.                       \n" +
+                                      "                     .,,:,,.,,:::,..,::::,,,:,,,;;;:;,,:::,,::,,.. .,,::,.,,,,.                     \n" +
+                                      "                  .,,,,.,:,..,:;;::::,,.      ,:;:i;;:.      ,,:;:,,:;;:,,,::,,,.                   \n" +
+                                      "                .,,,:,.,,. .,:,;;;::,......,,::,.;11,,::,..    .,::;i;,,. .,,,.,,,,                 \n" +
+                                      "               ,,,,.,:::,,,:;:,;:;;:,,,:::;i;:,:i1111:,::;;::,,,::;;:;,:;,..,:,::,,,.               \n" +
+                                      "             .,,:,,,,.:::,,,. ,;:.;;::::::;;:,:ii,1:;1;::;;::::,,;;:;:..:::,:;;:,..,,,.             \n" +
+                                      "            .,,.,:,. ,,,:    .::.,;:.,,,,..  .;1i;Li;1i,  .,,::::;:.,:,  ..,:,:..,,:,,,.            \n" +
+                                      "           ,,,,.,,..,;:,   .,;:::i:        .;;i;iCG1,;ii:.       ,i:,::,    ,:::  .,..,,,           \n" +
+                                      "          ,,,,::::,,::...,,:;;i::.       ,:;;;,.LCGL; ,;;;:.      .;::;;;,.  .::,..,,,::,,          \n" +
+                                      "         ,,,.,,,:;;;::;::,,,:::     ..,;ii;;::;LGCCGLt;:;;ii;,.     .:;::::::,::::;;::,.,,,         \n" +
+                                      "        ,,::,,. ,,;;:;11;;;iii::;;:;;;ifLtt11tCG1LCtCCft1ttLfi;;:,,.  ,:;:,,,:;;;i;,:.:.,,:,        \n" +
+                                      "       .,,.,,  ,::,,;:,i111;;iii;:::,;t1ffii:tGf;CG;fGi:iifLtt;:;;;iiii;;i11i1i;::::, .,,:,,.       \n" +
+                                      "      .,,,,,,,,::, .::.:ii:;tfti::;1ff11;.  ;LGGC00CCGL:  .i11ti;,,,;i11iii11:,;, ,;:. .,.,,,       \n" +
+                                      "      ,,,,::;;::.   ::::;;ii1ifLtttt1:.    iCfL:i001;CLC;   .:;tLf11tLft1:ii:.::. .::,,,:,,,,,      \n" +
+                                      "     .,,..:.,,::   .;;;;: :ii: itt.       ;L1f,iGGGG;,LtL;      .,1ft1.;i1;;::::.   ,::;::,,,,      \n" +
+                                      "     .,,:,,  :::  .::;:;   i;;,,LL:      iCLCtC8L;:C8LiLfL;      .tf1 :;i; .;;;;,   ,:,,.:..,,.     \n" +
+                                      "     ,,,,,. .:;, ,::,,::   ,;:;,tt:     1008GGC:    ;GGC0G01     ,fL;,i:;   :::::,  ,::. ,,:,,,     \n" +
+                                      "     ,,,.:,,,,:::;,.,i:    .;;;tit;   .tLCGGG,        ;G00GC1.   :fit;:;,   .;;,,::.,::, ,,.,,,     \n" +
+                                      "     ,,:::;;;;;:;;;;;,      i1fLf1.  :LtLiLG1          tGCtLtf,  .ttLf1i     .;;,,;;:;::,,:.,,,     \n" +
+                                      "     ,,,.:,,::;:;;,,;;.    .iiff1t  ;CLf:;8C           .08;iffC; .ttLt1;      :;::;;:;;;;::::,,     \n" +
+                                      "     ,,,.,. ,::,.::,,;;.   :;;;tif:tGCC:iG0;.           t0C,:CCG1i1i1;;;    .;;,.,;:::,,,,,.,,,     \n" +
+                                      "     ,,,:,. .::,  ,:::::  .i:i.iLfLf1GCC8GCC0Cf1;,:itfCGCGG8tCGtLCft.i:;,   ::,,::. ,;:. ,:,,,,     \n" +
+                                      "     .,,.,,.:,:.   :;;;:. ii;, tCCLiLG0Gfi:;1fCG080GCfti;;tC0GGf;LCC,.;;;  .;:;:,  .:,:  ,,:,,.     \n" +
+                                      "     .,,,,::;::,   .::::;iii;,fCCCGL11LGCGLffffC08GCfftfLLGCG1itCCCCL::ii: ::;;;    :::,,:.,,,      \n" +
+                                      "      ,,,,,:,,,::. .:,.;1;:ttCGCLfCLCLLf;;i;;;:::;::::;;;i;itfLLCCCCGGfiii;;:,:,   ,::;;:::,,,      \n" +
+                                      "       ,,..,. .:;, ::,;11iiii11i,,,:;111i.                .ii1t1;:,:i1ft;:11,.::  :::,.,,,,,,       \n" +
+                                      "       .,,:,,. ,,:::;i1ii1i;;;;ii;;;:;ttLfi1;,       ,;i11Lftt;::::;iii;i111i,:;,,::. .:,.,,.       \n" +
+                                      "        ,,,,.:.::;i:;;:,,,:::,  .,,,:;ifftt1tLt;, .;tft11ttLfi;;::::,:ii;;;;i1;:;;,, .,,:,,.        \n" +
+                                      "         ,,,,,::;::::,,:,::;;i:,     .,;;;;;::tft1tft:,:;;;;:,.     .:::,,,::::;;;;:,:..,,,         \n" +
+                                      "          ,::,,,,..,;:.  .,;;;::;.      .:;;;, ;tL1: :;;;:.       ,:;i;;:,.. ,::,,::::,,:,          \n" +
+                                      "           ,,,.,:.  ,::,    ,::.:i,       .:iii:tC1:ii;:.       .;;,:::,   .,:;, .,,.,,:.           \n" +
+                                      "            .,,:,,,..:::,,.  ,:,.;;::::,,. .,i1;1f;i1:.  .,,,:,,;;..:,    .:,,. .,:,,,,.            \n" +
+                                      "             .,,,..,:;;:,:::..:;:;:,,:::;i;::;1;;1:1i:::;;::::::;;.::. ,,:::::.,,,,:,,              \n" +
+                                      "               .,,,::,,,..,;::;:;;:::,,,:;:::,:1111;:,:;i;:::,,::;;:;,:;:,,,:::,.,,,.               \n" +
+                                      "                 .,,,..,,. .,,;i:::,.     .,,:,,11:.,:,,...  ..,::;;;,,.  .,,.,::,.                 \n" +
+                                      "                   .,,,:,,,,:;;:,,:;:,,      .:;;i:;:.     .,,:::::;;:,.,,:,.,,,.                   \n" +
+                                      "                     .,,,,.,::,,.  .,,::::::::,;;;;:,::::,,:,:,,..,:::,,.,,:,,.                     \n" +
+                                      "                       ..,,:,,.,,,,,.::;:,..,,,,;i:,,,,,,,;::,...,,..,:,,,,.                        \n" +
+                                      "                          ..,,,,::,.,,:,,,....,:;;:,.  .,,:;,,,,::,,:,,,..                          \n" +
+                                      "                              ..,,,,,::,.,,:,,,,::,,,,:,,.,::,,,,,,,..                              \n" +
+                                      "                                   ...,,,,,:,,,,::,,,,:,,:,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 1 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,,.........                                         \n" +
+                                      "                                  ...,,,:,,,,::,,,,:,,,,,:,,,,,...                                  \n" +
+                                      "                              ..,,,:,,,,::..,,:,,,,::.,,::,.,,:,,,,,,.                              \n" +
+                                      "                          ..,,,,,.,:,,,,:;:,.  ..,:;:,.. ..,,::,,,,::,:,..                          \n" +
+                                      "                       .,,,,.,::,,,. ..,:;:,,::,,,;i:,,,,..,:;:,.,,:,.,,::,..                       \n" +
+                                      "                     .,,,:,,,,,;;,,.,::::,.,,,,,:;;;::,::::,::,:,. ..,,::,.,,,.                     \n" +
+                                      "                  .,,,,.,,,...,:i::::,,..     .,;::i;;,.     .,,;:,,,:;;,,,,::,,,                   \n" +
+                                      "                 ,,,,::,,,..,:,:;;;::,.....,,::,..i11:::,..    ..:::;i:,,..,:,.,,,,                 \n" +
+                                      "               .,,,.,,:;:,,:;:.:;:;;:,,,:::ii:::;i111i,,::;;:,,,::;;;;::::. .,,,::,,.               \n" +
+                                      "             .,,,:,,,.,,::,,. .::.,;;::::::;:,,:i;:1:i1::;;;;::,,,;;:;..:::,,:;;:,.,,,.             \n" +
+                                      "            ,,,..,,  .:,:.   .::,,;;..,,,..   ,i1;1fii1;, .,,,:::;;..::  .,,::::.,,,::,.            \n" +
+                                      "           ,,::,,:..,;:,.  .,;;::;;.        ,;iiiLGL::ii;,       .;;.,:,    .:,:. .:,.,:,           \n" +
+                                      "          ,,,.,:;;;:::,..,,:::;;,,       .:;;;:,LCCC1. :;;:.      .;:::;;,.  .:;:. .,.,,:,          \n" +
+                                      "         ,,,,.:.,:;;;:;i;:,,:::.   ..,:;iii;:::fGCCGLf1:;;;i;,.     ,:;;;:::,,,::::::::,,,,         \n" +
+                                      "        ,,,,:,  ,,:;:;;11i1i;ii;ii;;;;ifLff111LG1fCtLfff1ttLfi;:,,.   .:::,,,:;;;;i:::,..,,,        \n" +
+                                      "       .,,..,. ,;;,.;:.:11iiiii;:,,,:it1tfii;tCLiCG;tG;,iitLt1;:;;;i;;:;;;i;;;i;:::,, .,,:,,.       \n" +
+                                      "      .,,:,:::,,:,  ,:,:ii;:tfft;;;1Lf1i;.  iLGGLG8GCGC:  .i11t;:,,,;i1i;;i111;;:.,;:. .,,,,,       \n" +
+                                      "      ,,,.,:::::.   ::;:;.;1i;iftf1ii,.    ;LfL::G8t;CLL;   ,;ifLfi;itLtti:1i,,:, .::,..,,.,,,      \n" +
+                                      "     .,,,.,..,,:   .;;;;, .;i; :tf,       ;L1f,;GGGGi.LtL;      ,;1ftf;:iiii:,::.  .,::;::::,,      \n" +
+                                      "     .,,::,  ::,  .::,:;.  :i:; fL;      iGLGfC8C;,L8LiffL;       ift, ;ii,.:;;;,   .:,:::,.,,.     \n" +
+                                      "     ,,,.,, ,::,.,:,.:;,   .i:i,1ti     1G080GL:    ;GGCGCG1     .tC1 i:i,  :;:;:.  ,::, ,,,,,,     \n" +
+                                      "     ,,,,:::::;:;;,,:;,     ;;;tit;   .tLCCG0:        ;G000C1.   ,fit;;;:   .;:,,::..:;. .,,,,,     \n" +
+                                      "     ,,,,::;;;;:;;;;;,      i1fLf1   :LtLif0t          1CCfLff,   t1ff1i.    ,;:.,;;::,:..: ,,,     \n" +
+                                      "     ,,..:..,,::;:,.:i,    ,iiLfit  ;CLf:i8C           .08;;LtC; .tfLt1;      ,i;;;;:;;;;:::,,,     \n" +
+                                      "     ,,,,,. ,;:..,:,,:;.   ;:;;t1t,fGCG:iG8i.           f0C,,CCG11111;;:     :i,.:;::;:,:::,,,,     \n" +
+                                      "     ,,,,,, ,::,  .:;:;,  :;;; tLfLf1GGG8CCC0Cti;,;itfCCCGG01CCfLCt1.i:i.  .:;,,,:, ,;:. ,,.,,,     \n" +
+                                      "     .:,.,:::,:.   ,;;;:.:1i; :fLCL1LG0Ct;:;1fGG080GLfti;;fG0G0t;CGf.::i,  .;::::. .:::  ,,:,,.     \n" +
+                                      "     .,,::::::,,.  ,::,:iiii;iLCCCGLt1LCGCLffffG00GCfftfLCGGC1ifGCCCL;ii;  :;;;:   .:,,.,,.,,,      \n" +
+                                      "      ,,,.,,..,::. ,:,,11:itfCCCLLLLCLLf;ii;;;::;::::;;;;i;itffLCCCGGGti1;,;:::,   .::;::,,,,,      \n" +
+                                      "       ,,,,:. .;:,.;;i1111;;i11i::,::1i1i.                .;i1fti;:;1ff1:iii,,:,  ,:,,:::,:,,       \n" +
+                                      "       .,,:,,..:,;;:ii;:;ii;::::;;;;;;ttCt11;.       :;ii1Lttt;::,,;iii;i111:.:;.,;:, .,..,,.       \n" +
+                                      "        ,,,.,::;;;;:;;:,,,:::.   ..,:;ifft11fL1;  :iff1i1ttLfi;;;;;;;ii;iii11;;:;:,, .,::,,.        \n" +
+                                      "         ,,,,::::,:::,,,,:;;;;:,      ,;i;;;,ift11ffi,:;;;;;:,..    ,:::,,:;;;:;i;:,.:.,,:,         \n" +
+                                      "          ,,,,.,. .:;:.  .,:::,:;.      .:;;; .1ffi..;;;:,.       ,:;;;::,,..,::::;;:,.,,,          \n" +
+                                      "           ,:,,,:. .:,:.    ,:,.;;.       ,;ii:;Cf;;1i;,        .;;::;:.   .,::,..:,,::,,           \n" +
+                                      "            .,::,,,.::::,,.  ::.,i;:;::,,..,;1i;fi;1;.  ..,,,,,,;;.,:,    ,:,:. .,,.,,,.            \n" +
+                                      "             .,,,.,:::,,,:;:.,;:;;,,,::;;i;::1i:1:ii:,:;;:::::::i,,;:  .,,:::,.,,,:,,,              \n" +
+                                      "               .,,:,,,,. .,:,::;;;::,,,:;:::,,i111;::::i;:::,,,:;;:;:,:;:,,;;:,,.,,,.               \n" +
+                                      "                 .,,,.,:,..,,;i;:::.      .,:::11;.,::,,... ..,::;;;::,. .,,,::,,,.                 \n" +
+                                      "                   .,::,,,,:;;:,,,;::,. ..  .,;;i:;;,.     .,,:::::i:,...,:..,,,.                   \n" +
+                                      "                     .,,,.,:,,,.. ..:,:::::;:,::;;;:,::,,,:::,,,.,:;;,,,,,:,,,.                     \n" +
+                                      "                       ..,:,,,.,:,,,,:;:,..,,,,:i;,,,:,,,:;:,....,,.,:,,:,,.                        \n" +
+                                      "                          ..,,,::,,.,:,,,....,::;:,.. .,,:;:,,,,:,.,,,,,..                          \n" +
+                                      "                              ..,,,,::,,.,::,..::,.,,::,..::,,,,:,,,..                              \n" +
+                                      "                                   ...,,,,:,,,,::,,,,:,,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 2 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                          .......,,........                                         \n" +
+                                      "                                  ...,,,,:,,,,::,,,,:,,,,,:,,,....                                  \n" +
+                                      "                              ..,:,::,,,,::..,,,,,,,:,.,,::..,,:,,,,..                              \n" +
+                                      "                          .,,,:,,..,:,,,,:;:,.  ..,:;:,....,,,::,.,,::,,..                          \n" +
+                                      "                       .,,,,,.,::,,.  ..,:;:,,::,,:i;,:,,...,:;:,,,,:,.,,,,..                       \n" +
+                                      "                     .,:,,:,.,,:;;,,,:::,:,.,,,,,;;;::,,:::::::,,.  .,,,::,,:,.                     \n" +
+                                      "                  .,,:,,.,,.. .:;i:::,,..      .:;:;;;:.  ... ,,:;:,.,:;:,,.,,:,..                  \n" +
+                                      "                .,,,.,:::,..,::,;;;::,,....,,:::,.,i11:::,.     .,:::ii::..,,:,,:,.                 \n" +
+                                      "               .,:,,.,,:;:::::,,;::i:,,,,::;i;::;;i111i,,:::;:,,,::;;:;:::. .,,.,,:,.               \n" +
+                                      "             .,:,,:,,..,,:,..  ,:,.;;:::::::::,,:i:;1:1i::;i;;::,,:i;;:.,;:,,,::::.,:,.             \n" +
+                                      "            .:,,.,,. .:::,   .:::,;;,..,.,..  .:i1:tt;1i;..,,,:;::i:.::. .,::::::,,.,,:.            \n" +
+                                      "           ,,,:::::,,::,.  .,:i;:;;.        .:;i1LCCt,;i;;.       :i,.::.   .:,,, ,,:,,,,           \n" +
+                                      "          ,,,.,,,;i:;:,,,,,:,::;,.       .,:;;::LCCCt; ,;:;,       ;;,:::,.  .:;:. .,..,,,          \n" +
+                                      "         ,,:,,,. ::i;:;1ii;:;;;:....,,:;ii;;::,fGCCCftf;:i;ii:.     ,:;;;;:,,..::,,,,:,:,,,         \n" +
+                                      "        ,:,.,,  ,:,:;;:;1111;;ii1i;;;;1fffft11LG1tGtCftLt1tLfi;:,..   .::::,,:;::;;;;::,.,,,        \n" +
+                                      "       .,,,.:,.,:;, ::..;ii;i11;:.,,:it1tfii;tCLiC0;1G;,iitLt1;;;;;;:,,,:;;:,:;i:;;,,,.,.,,,.       \n" +
+                                      "      .,,,:::;:,:.  ,:,,i:;;;tLLtiitLL1i:.  iCCGLC8GCGC:  .it11;,,,:;iii;;i1111i;,,:;. .:,,,,       \n" +
+                                      "      ,,,.,,,:,:.   :;;:;..11i,1tfi;:,     iLtL::C8LiCCL;   ,;1ffti:;1ftti;i1;::: .::,. ,,.,,,      \n" +
+                                      "     .:,,,,. ,,:,  .:;;;,  ,ii, tL;       ;LtL:iCG0Gi.LtL;     .:itftLt;1i;1;,,:,  .:,::,:::,,      \n" +
+                                      "     .,,,,, .:;,  ,::,,:,  .i:i.iL1      iGCGLG8Ci,L8f;ffL;       ;t1; :i1;,::::,   .::;::,,,,.     \n" +
+                                      "     ,,,.,,,,::,,::,.:;,    ;:i,111     1C080Cf,    ;GGLGCGi      1Lf :;:;. :;;i;.  .:,,.,,.,,,     \n" +
+                                      "     ,,::::;:;;:;;:,;;.     ;;;t11i   .tfCLG0:       .iG008Gt.   .t1t;;:;.  .;::::, .:;. .,::,,     \n" +
+                                      "     ,,,.:,:;;;:;:::;,     .ittLL1   :LfLit0t          iGCCLff,   t1tLii,    :i:.,::::,, .,.,,,     \n" +
+                                      "     ,,,.:. ,,:,::,.:i,    :iiL11t  ;LCf:i8L           .G8i;LtL; .tfLt1i      ,;;:;;:;;;:,:,,,,     \n" +
+                                      "     ,,::,. ,;:. ,::::;.  .;:;;tt1.fGCG;1G0;.           f0L.:CCG11111;;:     ,;:,:;;:;::;:::,,,     \n" +
+                                      "     ,,,.,,.,,:.  .;;;;, .i:i,.Lftff1GG00CCC0Cti;,;1tfLCCGG0iLCfLCti.i:;    :;,.,:,.,::,.,,.,,,     \n" +
+                                      "     .,,,,:;;::.   ,:::::i1i, i1LCL1LC0Lt::;1L0G080CLfti;ifG0G0t;CGt,;:i.  ,:,,::. .:;:  ,:,,,.     \n" +
+                                      "     .,,:,:,,,,:.  ,:,,ii;i1ifLCCC0C11CC0CffffL080CLfttLLCCGC11LCCCCL1;i,  :;;;:.  ,:,, ,,,,,,      \n" +
+                                      "      ,,,.,, .,::  :::i1i;11tLCCLLffCLLf;ii;;:::;::::;;;;;;i1tffCLCGGCti1.,;:;;,   .:,:,,,.,,.      \n" +
+                                      "      .,,,,:. .::,,;i1111i;:i11i;::::i11;                 .;i1Lfi;i1fLf;;;;;,::,  ,:,:;::,:,,       \n" +
+                                      "       .:,,.:.,,,;;:i:,,:;;:,.,,:;;;;;ttCt1i:       .:iii1Lttt;:,,,:;1ii;11;..:: ,;:,.,,.,,,.       \n" +
+                                      "        ,,,.,:;;;;;::::,,:::;.    .,:;ifft1tLfi, .:tft1i1tfLfi;;;;iiii;i1111i:;::,:,  ,,,,:.        \n" +
+                                      "         ,,::,:,.,,::..,,:;;;;:,      ,;i;;::ttt1tft:,:;;;;;:,,.....::::::;ii;:;i:: .,,,:,,         \n" +
+                                      "          ,,,..,. .:::.   ,:::,;;       ,;:;, ;tL1:.:;;;:,.       ,:;::::,,..,:::;;,:,.,,,          \n" +
+                                      "           ,,,,:,, ,,::.   .::,,i: .     .;;i;:tCi:1i;:.        ,;::;;:..  .,;:,,:::::,,,           \n" +
+                                      "            .:,,.,,::;:::,. .::.;;::;::,,..;1i;t1:1i,   .,,,,,.:;:,::,    :,:,. .,..,,,.            \n" +
+                                      "             .,:,,:::,..,:;,.:;;;:,,,:;;i;:,i1:1;;i:,,:;:::::::;:.,:,  .,,:,: .,,:,,:,              \n" +
+                                      "               .,:,,.,,. .:::;;;;;:,,,:::::,,i111i;:::;i;::,,,:;;::;,,;::,:;:,,.,,:,.               \n" +
+                                      "                 .,:,,:,,.,::i;:::,.     ..,:;11i,.,::,,......,::;;;,:,...:,::,,:,.                 \n" +
+                                      "                   .,:,,.,:;::...:;::, ...  .:;;;:;:.     ...,::::i;,....,,.,,:,.                   \n" +
+                                      "                     .,:,,:,,,,.  .,,:::::::,,:;;;:,:,,,,,:,:::,,,;;,,,.,:,,:,.                     \n" +
+                                      "                       ..,,,,.,:,,,,:;:,...,,,,;i:,,:,,,:;:,.. .,,,::,.,,,,.                        \n" +
+                                      "                          ..,,::,,.,::,,,....,:;:,..  .,:;:,,,,:,.,,,:,,..                          \n" +
+                                      "                              ..,,,,:,,,,::,,.::,,.,:,,..::,,,,:,,,,..                              \n" +
+                                      "                                   ...,,,:,,,,,:,,,,::,,,,:,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 3 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .........,,.......                                         \n" +
+                                      "                                  ...,,,,,:,,,,::,,,,:,,,,,,,,,...                                  \n" +
+                                      "                              ..,,:,::,.,,:,.,,,,,,,,:,.,,::,,,,:,,,..                              \n" +
+                                      "                          ..,,,:,,.,,,,,,,:;:,.  ..,:;:,...,,,,::..,,:,,..                          \n" +
+                                      "                       .,,:,,.,,::,,.  ..,:;:::::,,;i;,:,,...,:;:,,,::,,:,,,.                       \n" +
+                                      "                     .,,,.,:,,,.:;:,,:::::,..,,,,:;;;::,:;::::;:,,. .,,.,::,,,.                     \n" +
+                                      "                  .,,,:,..,.  .,:i;::,,...     .,;::;;;,  .....,:::,..,:::,.,,,,..                  \n" +
+                                      "                .,,,,.::::,.,::::;;;::,,....,:::,,.:111::,.     ..:::;i;::.,,::,,,,                 \n" +
+                                      "               .,,:,.,,.::::::,.:;:;i:,,,,::;i;;;;;i111;,:::::,,,::;;;;:,:,  ,,..,,,.               \n" +
+                                      "             .,,,.,,.. ,,::.   ,:: :;;:;::::::,,,:i:ii:1;,:;i;;:,,,;i:;.,:;,..,,,:,,,,.             \n" +
+                                      "            .,:,,,,...::,,    ,;:,:;:.......   .:1i;fi;1i:..,::;;:;;,:;, .,:::::;:,.,,,.            \n" +
+                                      "           ,:,,,:;;,,::,   .,:;i;:;,        .,;;1LLfC::iii,     . ,i,.::.  ..,:,:.,,,:,,,           \n" +
+                                      "          ,,,..:.:;;;:,,:::,,,:;:.       .,:;;:;LCCCf1. ;:;:.      :;,,::,    :::. .,,.,,,          \n" +
+                                      "         ,,,:,,. ,,;;;;i11ii;;;;:,,,,::i1i;;;:,fGGCCL1f1:iiii:.     ,::;;;:,...::,,..,,,,:,         \n" +
+                                      "        ,,,.,,  ,::,;;,:;111i:ii1;;;;:1fffftiifGttGfCt1Lf1tff1i:,.    .:;::,::::::;;;:::,,,,        \n" +
+                                      "       .,,,,::,,::, ,:,.;;i;;tti:.,,;1f11fii;tCCiL0iiC;.;i1Lf1;;i;;:,...,:;:,,:;:;;:,:,,.,,,.       \n" +
+                                      "      .,,,,::;::,.  ,:::;:,i;itLf11tfL1;:.  iCCGLL8GLGC:  .;t1i:,,:;iiii::i1ii1i;:,::, .,::,,       \n" +
+                                      "      ,,,.,, ,,:,   ,;;;;. :11::1f1:,.     ;LtL,,L8CiCCL;   ,i1ft1;,:i1t1iii11i;:  :;:  ,,.,,,      \n" +
+                                      "     .,,::,. ,::,  .:::;:  .;;; iL1       ;LtL;iCG0G1.ftC;    .,;1fttfC111:i1:,:,  ,:,,.,,,,,,      \n" +
+                                      "     .,,.,, .:;,  ,:,.::,   ;:;,:Lt.     i0GGLG8Ci,f8f;ftL;       ,f11,.ii1;:,::,   ,::;;::,,,.     \n" +
+                                      "     ,,,.,::,,:,,;:.,;;,    :;;,i1t.    1CG00Cf,    ;0GfCCCi      ifL,.i:i: :;;;;.   :,,:,,.,,,     \n" +
+                                      "     ,,::::;;;;:;;;:;:.     :;;111i   .tfCfCG:       .iG808Gt.    1ft;;:;,  .;:;::. .;;, .:,:,,     \n" +
+                                      "     ,,..:..::;;;:,:;:     .itfLfi   ,Lffi10t          iGL0Lff,   t11L1i:    :i:.,::,::. .,,,,,     \n" +
+                                      "     ,,,,,. ,::,,:,.:i:    ;;1Li11  ;LCt:i8L           .G81;LtL; .1LLt1i.     :;:,:;:;::..:.,,,     \n" +
+                                      "     ,,,,:. ,::. .:;;:;.  :;;:;ffi.fGCGit08;.           L0L.:LLG111t1;;:     .;;:;;;:;;;;::::,,     \n" +
+                                      "     ,,, ,::,::   .;;;;, ;i:; ;fftffiGG00LLG0C1i:,;1tfLCCGGG:LCLLCt;,;;:    ,;:.,::,,:,,::,.,,,     \n" +
+                                      "     .,,::::;::.   ,:,,;i1i; :t1LCCtLCGfi,:;tC0G80GCft1ii1L00G0t;CG1::;;   ,:,,::,  :;:. ,,.,:.     \n" +
+                                      "     .,,,.,..,,:,  :,,;1;:11tCLCCC0L11CG0LfftfC08GCfftffLGC0L11LCCCCL1;;.  :;:::.  ,,:. .,::,,      \n" +
+                                      "      ,,,.,,  :;: .;;111iii1tfCCLCffCLffii;;;;:;:::::;;;;;ii11tLCCCCCCf1: ,:;;;,   ,:,,.:..,,,      \n" +
+                                      "      .,,:,,. ,::,:;iiiiii::i11ii;:::i1t;                 .:;1Lf1i1fLf1;i,;;:::.  .::;;::,,,,       \n" +
+                                      "       .,,..,,:,;i;;;:..:;:,  .,::;;;;1fC11i,       ,;iii1L1tfi:,..:itt;;1;:.,:, ,;:,,::,,,,.       \n" +
+                                      "        ,,,,::::;;::::::,;:;;.    .,:;1fft1fC1i. ,itf1iitffffi;;;;i1ii:i111;::;:,::, .:,.,,,        \n" +
+                                      "         ,,,,.,. .:::  .,:;;;::,     .:ii;i,ittt1ffi,,:;;;;i;:,,,,,,;;;;;i11i;:;;:, .,,:,,,         \n" +
+                                      "          ,,,.,:. .:::    .::,,;:      .:;:; .1Lfi.,;;;;:,.       .;;:,:,:,,,,:;;;,.:.,,,,          \n" +
+                                      "           ,,,:,,,.:,:,..  .::.:i,...    ,iii:;Cf;i1;:,         ,;:;;;:,.  .,;:,,:;:,,,:.           \n" +
+                                      "            .,,,.,:;::,::,. ,;:,;;:;;:::,.:i1;1f:i1,   ..,,,...:i:,::,   .::::. ,,.,,:,.            \n" +
+                                      "             .,,,,:,,...,;:,,;;i:,,,:;;i;:,;1:ii;i:,,::;::::;:;;,.::.  ..::,. ..:,.,,,              \n" +
+                                      "               .,,,..,,  ,:,;;;:;:,,,,:::::,;111i:;::;i;::,,,,:i::;:.,::::;:.,,.,::,.               \n" +
+                                      "                 .,,,::,,,::;;;:::..     .,:;11i:.,:::,,.....,::;;;:::,..,::::.,,,.                 \n" +
+                                      "                   .,,,,.::::,..,:::,.....  ,;;;:;;,.     ..,,,::;i:.  .,,..,::,.                   \n" +
+                                      "                     .,,,:,,.,,...,,:;:,::;:,::;;;:,,,,,,:,::::,,:;:.,.,:,,:,,.                     \n" +
+                                      "                       ..,,:,,::,,,:;:,....,:,;i;,,,:,,:;:,..  .,,:::,,,,:,..                       \n" +
+                                      "                          ..,,:,,.,::,,,,...,:;:,..  .,:;:,,,,:,,.,,:,,,.                           \n" +
+                                      "                              ..,,,:,,,,::,,.,:,,,,,:,..,:,,,,::,,,...                              \n" +
+                                      "                                   ..,,,,,,,,,:,,,,::,,,,:,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 4 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ..........,.......                                         \n" +
+                                      "                                  ...,,,,,,:,,,,:,,,,,:,,:,,,,,...                                  \n" +
+                                      "                              ..,,,,,:,,.,,:,.,,,,,,,,:,.,,:,.,,,:,,,.                              \n" +
+                                      "                          ..,,,,:,..,,,,,,,:;:,.  ..,:;:,...,,,,::.,,,,,..                          \n" +
+                                      "                       .,,,:,,.,,:::,.  ..,:;,:::,,:;i:,:,....,:;:,,,::,,:,..                       \n" +
+                                      "                     .,,,,.::,,..:;:,:;;:,,,..,,,::;;;:,,:;:,,:;::...,,,.,::,,.                     \n" +
+                                      "                  .,,,::,,,,  ..,;i;::,...     ..:;:;;;:.  ....,::;,...,,::,.,,,,                   \n" +
+                                      "                 ,,,,.,,:;:,,:;:,;:;:::,,,.,,::::,.,;i11:,.      .,:::;;:::,,,:,,,,                 \n" +
+                                      "               .,,,:,,,.,::::,,.,;:,i;:,,,,::;i;:;;;1111;,::::,,,,:;:;;;:,,  .:,.,,,.               \n" +
+                                      "             .,,,..,.  .,,:.   .::..;;:;::::::,,,.:;;1;;1::;i;;:,,,,;;:,,:;:. .,,,::,,.             \n" +
+                                      "            ,,,:,::,.,:;:,.   ,;;::i:.  ....    ,;1:itii1i,.,::;;::;:,;: .:::,,::;:.,,,.            \n" +
+                                      "           ,,,.,::;;,::,.  .,::;i:;,         ,::iLL1Ct,;i;;.    ...;;.::,  .,,:::,,,,,::,           \n" +
+                                      "          ,::,.,..:;;;::;;;::::::.       .,:;;;;LCCLft; ,;:;,      ,i,.::,    ,::, .,,,,:,          \n" +
+                                      "         ,,,,:,  ,,:;;;;i111i;iii;::::;i1i;;;:,fCGGCC1tt;;iii;.     ,::::;;,.  ,;:. .,..,,,         \n" +
+                                      "        ,,,..:..,;:,:;,.:;11i;;ii;::::1ffLft1ifGttGfCf;fL11ff1i:,.   .,:i;;:::::::;::,::,,,,        \n" +
+                                      "       .,,:::::,::. .::.;;:i:1ft;,,,;tft1fi;;tCCiL01iC; :1iLf1;;i;:,.   ,:;:,.,;;;i;::::..,,.       \n" +
+                                      "      .,,..:,:::,   .;;:;; :1iifLfttffi;:.  ;CLGLf0GLGG:  .;t1i::,:;ii;;:,;i;;;i;:,:,:..,,:,,       \n" +
+                                      "      ,,,,,, .,,:   ,;;;;. .ii;.itf,..     ;L1L,,f8GtCGL;   :i1t1i:,,;i1i;i1111i;. :;:  ,,,,,,      \n" +
+                                      "     .,,,:,  ,::,  ,::,::   :;;.,Lf.      ;CtL;iCG0Gt.LfL;    .,itft1tCf1t;:1i;:,  ,:,, .,.,,,      \n" +
+                                      "     .,,.,:.,:;, .::,.::,   :;::.ff,     i000CG8C1,f@L:ftL;       .ttti ;iiii,,:,   ,,::,:::,,.     \n" +
+                                      "     ,,,,::;::;,:;:,,;;.    :;i,;1t,    1LG08Ct,    :0GtLLCi      ;ffi :;ii,:;;;:.   :::;:,.,,,     \n" +
+                                      "     ,,,,:,:;i;:;;;;;,      ;i;1t1;   .ffCtC0:       .1C0000t.    ;ffi:;:;. .;:;;:. .::,..,.,,,     \n" +
+                                      "     ,,,.,. ,:::;:.,;;.    ,1tfffi   ,fLfi10t          :0L0Cff,   11iL1;;    :;:,::,.::, .,:,,,     \n" +
+                                      "     ,,::,. ,;:..::,:;:   .i;tL;ti  iLCf:i8f           .G8f;LtL;  1fLtti.    .;:,.:;:::, .,.,,,     \n" +
+                                      "     ,,,.:..,::   :;;:;. .;:i,iLL:.fGCG1f00;,           LGL ;LLG111ti;i:      :;;;;;:;i;:,:,,,,     \n" +
+                                      "     ,,,.::;::,   .::;::,1;;, 1tt1ftiG0G0CLG8C1i::i1ttLCCG0C,LCCLCt::;;,    ,;;,,;;,,:,:;::,,,,     \n" +
+                                      "     .,,:::,:,:,   ,:,:iiii:.tttCGCtLGGti,:;t00G80CLftt1i1C8GG0t;GG1;,i:   ,:,.,:,. :;:..:..,:.     \n" +
+                                      "     .,,,.,. ,,:,  ::;i1:ittfLfCCGGC11GGGLfffL080CLLftffLGC0fttCCGCCLi;:   ;:,::.  ,::, .:,:,,      \n" +
+                                      "      ,,,,:,  :;: ,;11111i;i1fCLLLffLLffii;;;::;::::;;;;;iiiiitLCCCLLCti. ,;;;;.   :,,. ,.,,:,      \n" +
+                                      "       ,,:,,..:,:::;;;;;;;,,:;iii;::,i1t;.                .:;1Lt11fLLti1: i::;:   .::;:,:.,,,       \n" +
+                                      "       .:,..:;:;;i:;;,.,:;:,   .,::;i;tLL11;.      .:;iiitf1tf1:,,,;1fi:i;;:.::. ,::,:::,:,,.       \n" +
+                                      "        ,,,:::,,:::::,:::;;i:,.    .:i1fft1LL1; .:1ft1iitffffi::;;iii;;111;:.:;:,:;,..:..,,.        \n" +
+                                      "         ,,,..,. .:;,  .,:;::::,     .;i;i::ttt1tLt;,,:;;;ii;::::::;i;;i111i;;:;:,. .,:,,,,         \n" +
+                                      "          ,,,,,,. ,::,    ,::.,i,      ,;:;, ;fL1:.:;;;:,..       ,;:,,:::;:::;;;:.,,.,,,,          \n" +
+                                      "           ,::,,,,::::,,.  ,:,.;;,,...  .;;i;,fLi;1i:,.         ,;;i;::,.  .,::,;;::,.,,,           \n" +
+                                      "            .,,..:;::,,:::. :;:;;::;;:::,:i1;if;;1:.   ...... ,;i::;;.   .,:;:..,,,,:,,.            \n" +
+                                      "             .,,::,,,. .:;:,::;;,,,,:;i;:,:1;i1;;:,,,:::::::::;:.,:,    .:,,. .,:..,,,              \n" +
+                                      "               .,,,.,:...:,:;i::;:,,,,,,::,;111i;;;:;i;:::,,,:;;,;;,.,:::::,.,,,::,,.               \n" +
+                                      "                 .,,::,,,:::;::::,.      .,:1ii;..,:::,.....,:::;;;,:::,,:;::,.,,,.                 \n" +
+                                      "                   .,,,.,::,,. .,:::,.,,.. .:;;;:;,.     ....,::;i;,.  .,,.,:,,,.                   \n" +
+                                      "                     .,,:,,.,,,...::;:,,:;;,,:;;;::,,,,.:,::::,,:;:.,,,::.,,,,.                     \n" +
+                                      "                       ..,:,,::,,,:;:,.. .,:,:i;,,,:::,;:,..  .,:::,,.,,:,,.                        \n" +
+                                      "                          ..,,,:,,::,,,,,..,:;:,..  .,:;:,,,,,,,.,,:,,,,..                          \n" +
+                                      "                              ..,,,,,,,::,,.,:,,,,,:,..,:,,,,::,,,,,..                              \n" +
+                                      "                                   ..,,,,,,,,:,,,,::,,,,:,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 5 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,..........                                         \n" +
+                                      "                                  ...,,,,,,,::,,,,:,,,,,:,,,,,,...                                  \n" +
+                                      "                              .,,,,,,,,:,.,,,:,.,,,,,,,::,.,::,,,,,,..                              \n" +
+                                      "                          ..,,,,,,:,.,,,....,;::,. ...,:;:,.,,,,,,:,,,,,..                          \n" +
+                                      "                       .,,:,,:,.,,,:::.....,:;:::;:,,;;;:::.  ..,:;,.,,::,,,.                       \n" +
+                                      "                     .,::,..,,....:;;,:;;::,,.....,:;;;:,,:;:,,,;:::.,,:,.,,,,.                     \n" +
+                                      "                  .,,,,,:::::..,,,;;;:,..       ..::::;::. .,,,,,:::,  ..,,:,,,,..                  \n" +
+                                      "                .,,::,.,,.;;::;;:,;;;;;::,,,,,,;;::..;;;1i,.     .,::,,,:::;,.,,,,,                 \n" +
+                                      "               .,,,,:,.. ,,::..  ,:,.;;:,,,,::;i;;;;:;i1ii:::,,,...,;:;i;;,:.,,:,,,,.               \n" +
+                                      "             .,::,,,,..,::,:    ,::,::;:::::,::,,...:;i1;1;,:;;;;:,,:;;:,:::,  ,,.,,,,.             \n" +
+                                      "            .,,.,::;:,:;:..  .,:;;:;;,.   ...    .:1;;ti;11;,:;:;;:,:;;;, ,;:,..,,,:,,,.            \n" +
+                                      "           ,:,,.,,.;;;:,..,,:,:,:;:,          ,,;LLiiLf,;i;i.  ..,,:i:.;:  .,:::::;:..,,,           \n" +
+                                      "          ,,,::,. .:;;;:;;11i;;;;;........,::;;;LLLL1Lf: ,;:;.      ;;.,:,   ..::,,.,,:,,,          \n" +
+                                      "         ,,,.,,..,:::;;,:;;111;i11i;;;;1t1ii;::fLCCGft1tt;i1ii,     .;:,,::.   .:;,  ,,.,:,         \n" +
+                                      "        ,,:,,::,,;:. ::.,:;;i;11;:.,,:1ftfft1;tGLtGLG1;1LL1tL1i:,    .,:;;;;:,,.:::,..,.,,,,        \n" +
+                                      "       .,,.,:,;::,   ,:::i, i;ifft;;ifLt11i;;fCGtLGfiL; .i1tLt;ii;:.    ,;;;:,,;;;;;;::::,,,.       \n" +
+                                      "      .,,,.,, ,,:.   :;;:;  ,1i;1fft11i,.   ;LLGLtC0fCG:   :tti,::;;;:,. .:;:,,:;:;::,;:,.,,,       \n" +
+                                      "      ,,,,:. .:,:.  ,:::;.  .;i: tLi       ;L1L,.i00LLGC:   ,11t;,,,:ii1;::;;ii;i;.,::, ,,:,,,      \n" +
+                                      "     .,,..:..:;:. .,:,.::.   ;:; iC;      iGfCt1CG0GL.ffL;   .,;tff1:;tft1ii11i1i, .::, .,.,,,      \n" +
+                                      "     .:,,,:;:,:,.:::.,;:.   .i:;.iti     iG08G08Lt,t8L,ftL;      .;tftC1;1i;ii;::  .:,,..,,,,,.     \n" +
+                                      "     ,,,,:,:;;;:;;;:;;,     ,;;:;11:    1LCC8C1.    :0C1fLCi      .11t: :;i1;:,::   .::;::::,,,     \n" +
+                                      "     ,,,.:. ::;;;:,:;:     .;iitft;   .ffL1f0i       .tGGGGGt.    ,fLf.:;;;..;;;;,   ,:,:::.,,,     \n" +
+                                      "     ,,::,. ,::,::,,;i,    ;1fftf;   ,fLf;18t          :8L88Lf,   :fiff;;:   ;;;;:,  :;:..:,,,,     \n" +
+                                      "     ,,,,:..:;:  ,:;;;:  .;;;tfif,  iCCf:18t            C0GtLtf;  1ffft1:    ,i:.,:::::. .,,:,,     \n" +
+                                      "     ,,,.::;,:,   ,;:;;.,i:;,.fff..tCCGLL00;,           CGC ;LtG1i1f1ii;      :;:,:;;;;: ,, ,,,     \n" +
+                                      "     ,,:::,:;::.   ::,:i1ii, it11iLfiGGCCLLG8L1;:;1tttLLGC0f LCCGLt,:;;,    .:;::i;::;;;:,:,,,,     \n" +
+                                      "     .,,.,, .,,:. .::;1i;11;tC1fLCGfLGL1;,:iC0G80GLfttt11f08CGGt1GC1;,i    ,::,,::,.,:,:::,,,,.     \n" +
+                                      "     .,,,,,. ,;:. ,i1i11iiittitCCCGCtfG0CLLfLG00CLLftfffCC0CttfCCGLLLi;   ,:,.,:,  .:;,..:.,,,      \n" +
+                                      "      ,,,,,, ,::,.;;;ii;;,:;itCCLfffLLff;;;;;;;:::::;;;;;iiiiitfLCLLLCt   ,i:::.  ,,,,  ,::,,,      \n" +
+                                      "      .,,,.::;::;;:;:,,:;,. .,:;i;;;,i1t,                  .:111tffti1t, .;:i;:   .:,, ,,.,,,       \n" +
+                                      "       .,,,::,:;;;:;:,,:;;;,    .,:ii;tLt1i,.      ,:;iii1t1fLt;:;1ff;:;.:i:::,  .,::;,:,,,:.       \n" +
+                                      "        ,,,,.,. ,::,..,:;;;;::.    .:11Lt1CL1i..:1ft1ii1tfftfi:,,,:;11;1;;:..::.,:;,,::,,:,.        \n" +
+                                      "         ,:,.,,. ,;:.   .::,,:;.     ,iii;:111ftLt:,,::;;;11i;;;;i11ii111;;;:;;:::, .:..,,,         \n" +
+                                      "          ,:,:,,.:,::..   ,:,.;:      .;:;, ;fL1:,:;;;::,,.. .   .;::;;i11;;:;;;:. .,::,,,          \n" +
+                                      "           ,,,..:;:::::,.  :;.:i:,:..  .i;1;,Lfii1i:,.         .,:;:::,,,...,::;;.,,.,,:.           \n" +
+                                      "            .,,,:,,...,:;, ,;;;:,:;;:;:,;1i;1t:;i,    ....   .:i;;;;,.   .,:;:,:;::,,:,.            \n" +
+                                      "             .,,,,.,,  ,:::,:;;:,,:;;;;:,;1i1i;:..,,:::,,::;:;:,,::,   .:,:,. .:,.,:,,.             \n" +
+                                      "               .,,,,:,,.::;;i;:;,.....,:::111i;:;;;;i:::,,,,:i;.:;, ..,::,. ..,:.,,,.               \n" +
+                                      "                 .,,,..:;:,,,,,::,.     ..i1;;:.,::;:,,,,,,:::;;;;,:;;,:;;.,,.,::,.                 \n" +
+                                      "                   .,,,,,,,..  ,:::,,,,,. .::;::;,.      ....,:;;;,,...:::::,,,,.                   \n" +
+                                      "                     .,,,,.,:,,.::;:,,,:;::,:;;;::,,,.,,,::;;:,;;,....,,.,,:,,.                     \n" +
+                                      "                       ..,,:,,,.,;,,..  .,::;;:,,:::,:;:.....,:;:,,,.,:,,:,..                       \n" +
+                                      "                          ..,,,,,:,,,,,,,,:;:,... .,:;:,.,.,,,,.,:,,:,,,.                           \n" +
+                                      "                              ..,,,,,,:,,.,::,,,,:,,.,:,,..,:,,,,,,,..                              \n" +
+                                      "                                   ...,,,,,:,,,,,:,,,,:,,:,,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 6 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,..........                                         \n" +
+                                      "                                  ...,,,,,,,,:,,,,,:,,,,::,,,,,...                                  \n" +
+                                      "                              ..,,:,,,,::,.,,,:,.,,,,,,,::..,,:,,,,,,.                              \n" +
+                                      "                          ..,:,,,,::,,,,.....,;::.. ...,:;:,,,,,.,,:,,,,..                          \n" +
+                                      "                       .,,,,,::,,,,,;:,,,...,:;::;:,,:;;;,:,. ...,::,.,,::,,.                       \n" +
+                                      "                     .,,::,.,,.....;;:,::::,,,....,:;;;;,,:;;,,,,:::,,,:,..:,,.                     \n" +
+                                      "                  .,,,,.,::;:,,,,,:;;;,,.        .,::,;;:,  ,,,,,::::. ..,,,:,,,,                   \n" +
+                                      "                .,:,::,,,.,;:::::,:;;;;;::,,,,,:;;:,.,i;;1;.      .,::,.,,,::,.,,,,                 \n" +
+                                      "               .,,,.,,.  .,,:..  .::.,i;::,,,,:;i;;i::;i1i1::,,.....:;:ii;:::,,,:,,,.               \n" +
+                                      "             .,,:,,::,.,::,,.   ,;;::;;:::::,,:,,.. ,:;11i1:,:;;;::,,:;;:,:::  ,,..,,,.             \n" +
+                                      "            ,,,..:,:;:,;:.   ..:;;;;i:.    ..     .;i:iti;1i::;;;i:,,;;;: ,:;,. .,,,::,.            \n" +
+                                      "           ,,:,,,, :;;:,,,:;;:::,:;,          .,;LL1itC;:ii;;  ..,::i;,::. .,,:,:::;,.,,,           \n" +
+                                      "          ,:,.:,  .:;;;;;i;11iiiii:,,,..,,,::;;;LCLfifL1. ;:;:      ,i.,::   .,:;,:,,,,,,,          \n" +
+                                      "         ,,,,,:,.:;:,;;,,;;;11i;i1i;;;;ttti;;::LLLCGL1t1ti;1ii;      ;:.,::.   .::: .,,,,,,         \n" +
+                                      "        ,,,:::;;,::. ,:,,:;,;;;fi:..,:1f1fLttitCLfGLGi:itCt1L11;,    .,:::;;:,. ,::, .,..,,,        \n" +
+                                      "       .,,..:.,::,   ,;;:i: ,i:1Lf1i1tLt11i::fGGfL0fiL: .:11Lt;ii:,.   .,;;;;,::;;:;:,,:::,,.       \n" +
+                                      "      .,,,,,. .,,,   :;;;:   i1i;tffii;,.   ;LfGL1L8tLG:   ,tti,::i;:,.   ,;;,.:;;;;;::;:.,,,       \n" +
+                                      "      ,,,,:, .:::.  ,:,,;,   :ii iLt       ;L1L:.;G0CC0C:   ,111:,,,;iii:,,::;;;;:,.:,:.,,,,,,      \n" +
+                                      "     .,,,.:,,,;:  .::,.::.   ;:;.:L1      iGLGftCG00L,fLf;   .:itfti:;it1iii11ii1: .:;, .:,,,,      \n" +
+                                      "     .,,:::;:::,,;;:,:;:.    i:;.i1i     iC08GG8Lt:18L,ftL;      ,ifftLfi11;i1ii;. .:,,  ,..,,.     \n" +
+                                      "     ,,,.:..;;;;;;;;;;.     ,;;:;11:    1LCf0G1.    ,0GitfCi       1111 .ii1i;,::   ,:,:,,:,,,,     \n" +
+                                      "     ,,,.,. ,::;;:.,;:.    .iiitft:   .fff1t0i       ,fGCGGGt.    ,ffL..i;i;:::::,   ,::;::,,,,     \n" +
+                                      "     ,,::,  :::.,:::;;,   ,i1Lf1L:   ,fLf;18t.         :8C08CL,   ,f1ffi;;,  ;;;i:.  :;,,,:.,,,     \n" +
+                                      "     ,,,.:,,,;,  .;i;;:  :;;itftf.  iGGL:t@t            C0GLLtf;  iLtff1;.   ,i;,,:,,::, .:::,,     \n" +
+                                      "     ,,,,::;::,   ,;::::ii;; ,Ltt .tLCGCC00;:          .GGG ;LtC1;tf1ii;.    .:;,.:;;;:. ,,.,,,     \n" +
+                                      "     ,,:,:,.:,:,  .:::;i1i; ,t1t;;LfiGGLLfLG8fi;:i1tttfLGC01 LCGGLt,:;;,     ,;;;;;;;;;;.,,.,,,     \n" +
+                                      "     .:,.,,  ,,:. .;ii1i;111LL1fLCCfLGLt:,:100G80Cfttttt1L00LGGttCCt;:i    .:;,,:;:.,:,:;:::,,.     \n" +
+                                      "     .,,,,,. :;:  ;iii1iiii1ti1CLCCCtLGGCLffC00GCLLffftLGC0LffLCCGLLL1:   ,:,.,:,. .:;,,,:.,,,      \n" +
+                                      "      ,,,,,,,:,:,,;;;;;:,.,:;tCCLfffffLf;;;;;;;::::;;;:;;iiiiittLCLfCC1   :;,::,  .:::. ,:,,:,      \n" +
+                                      "       ,,,.:::;;;;;;,.,;;,   .,:i;;;,itt,                  .,iiifftiiti  .;;;;,   :,,. ,,,,,,       \n" +
+                                      "       .,,:,:.,:;::::::;;;;,.    ,:ii;fL1t;..     .:;;;;;111fLti;1fL1:i. ;;:;;,   ,::,.:..,,.       \n" +
+                                      "        ,,,..,. ,:;, .,:;:::::.    ,;1tL1fCt1; ,;tt1i;i1tfftL1:,.,:it;i;,;:.,:, ,::,;;:,:,,,        \n" +
+                                      "         ,,,,:,. :::.   .::,.:;      ;ii1:;tiftffi,,,:;;;i1t1;;;ii1i;i11;;;,:;;,::,.,:.,,:,         \n" +
+                                      "          ,:,,,,,::;:,.   ::,,i,      :;:; .tLf;,:;;;;::,,.......:i;iii11;i;;;;;,. .,:,,,,          \n" +
+                                      "           ,:,.,;:,,,,,,. .;:,;;:::..  ;iii:iL1i11;,.          .,;:,:::::,..,:;;, ,,.,:,.           \n" +
+                                      "            .,:,,,,. .,;:, :;;:,,:;;;;::i1;it;;i:     ....   ,:i:;;:,.   .,:;,:;:,:.,,,.            \n" +
+                                      "             .,,,..,,. :,:::;;::,::;;;:,;1i1i;:...,,::,,::;::;:,:::.   ,,,::,.,:,,::,,              \n" +
+                                      "               .,,::,,,:::;i;:;:......,::111i;::;;;i;:,,,,,:;i,.::. ..,:,,. .,:,.,,,.               \n" +
+                                      "                 .,,,.,::,,..,:::,      .;1;;;,.,:;:,,,,,,,:;;;;;:,:;:,;;..,,,::,,.                 \n" +
+                                      "                   .,,::,,,,. .:,::::,,,. ,:;;:;:,.     .  .,,;;;:,,,.,::::,.,,,.                   \n" +
+                                      "                     .,,:,,::,,:;::,.,,;;:,:;;;;:,,,..,,,:;;:,:;:....,,..,:,,,.                     \n" +
+                                      "                       ..,:,,,.,:,,,.. .,::;;;,,,::::;:,.....:;;,,,.,::,:,,.                        \n" +
+                                      "                          ..,,,,:,,.,:,,,:;:,... .,:;:,....,,,,,::,,,,,,..                          \n" +
+                                      "                              ..,,,,,:,,..::,,,,:,,.,::,,,,:,,,,,,,,..                              \n" +
+                                      "                                   ...,,,,:,,,,,:,,,,::,,,,,,,,..                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 7 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ........,.........                                         \n" +
+                                      "                                  ...,,,,:,,,,:,,,,::,,,,,,,,,....                                  \n" +
+                                      "                             ...,:,:,,,,::,.,,,:,.,,,,.,,:,.,,::,,,,..                              \n" +
+                                      "                          .,,,:,,.,:::,,......,;::.  ..,,:;,,,,,..,,:,,,..                          \n" +
+                                      "                       ..,,,,,::,,,.,;:,,,...,:;,:;:,,:;:;,:,  ..,,::..,,,,..                       \n" +
+                                      "                     .,:,::,,,,. ..:;;:,:::,,,,....,:;;;:,,:;:,..,:::,,,:,,,:,.                     \n" +
+                                      "                  .,,:,..:,:;:,::::;;;:,.        .,,:::;::  .,,,::;,:,  ,,,.,,:,..                  \n" +
+                                      "                .,,,,::,,. :::,:,,,;;:;;;:,,,,,,:;;:,.:i:;i:      .,:;,...,,::..:,.                 \n" +
+                                      "               .,:,..,,  .,,:,    ::, :i::,,,,::;;:i;::;i11i:,,.....,;:;i;::;:,,,,:,.               \n" +
+                                      "             .,:,:::::,:;;:,.   .;;::;::,::::,::,..  ,:i11i1:::;;;::::;;;::,:, ,:,.,,,.             \n" +
+                                      "            .:,,.,,.;;::,. . ..,::;;;:,     ..    .,;;:11ii1i::;;;;,.:;;:..:;:. .,,,,,,.            \n" +
+                                      "           ,,,:,,. .;;;:,,:iii;;,:;,          ..:LL1iiff,;iii, ..,::;i::;. .:,,,,,:::,,,,           \n" +
+                                      "          ,,,.,,. .::;;;;i;;111ii1i:::,,,,,::;;;LCLL;1Lf: .;:;.     .i:.:,. ..,:;::;:,,,,,          \n" +
+                                      "         ,,:,,::,:;:,:;: :;;;1iiiii;;:;tfti;;::fCLCGL1f1t1:11ii.     :;.,::.   .:::..,:,,,,         \n" +
+                                      "        ,:,,:,:;::,. .::,;;,.i:1t;,..:tL1tLftitCLfGLG1.11CL1Lt1i,    .:::::;:,. .::, .,..,:,        \n" +
+                                      "       .,,..:..:,:   .;;;;:  ;i;fLf11tLf1i;::fGGLL0LiC: .,11ff;ii:,    .,;;:i::::::::..,,:,:.       \n" +
+                                      "      .,,::,. .,,,   ,::;;   ,11:itfi;;,    ;ftGLtt8tfG;   ,tti,;;i;,.    :;;,.,;;;i;;:::,,,,       \n" +
+                                      "      ,,,.,, ,::,.  ,:,.::   ,;i,,Lf.      iL1L: :C0GC0C:   .11i:,,:;i;;,. ,:;;:;::,:,:::,.,,,      \n" +
+                                      "     .,,,,:::,;, .,:,.,::.   :;::.ft      ;GC0LfCC0GC:fLf;   .:ift1;,;i1i;;;;1;;i;  :;: .:::,,      \n" +
+                                      "     .,,,:,,;;:,,;i:,;;,.    i:;.;11.    iCG0GG8Lt:18C,ftLi     .;tft1fLt11ii1i11, .::,  ,,.,,.     \n" +
+                                      "     ,,,.,, :;;;;::;;;.     :i;:;11:    tLCt0Gi.    ,0GitfCi       ;t1f: ;iiii;::   ,,,,.,,,,,,     \n" +
+                                      "     ,,,,,. ,::;;:.,;;.    :iiitL1:   .tLf1101       ,fGLCCGt     .ttf: :;;i;:,::.   ,::::::,,,     \n" +
+                                      "     ,,,,:..:;: .::;;;,   :itLt1L:   ,fLf;18t.         :8CG8GL,   .ftfti;;:. ;;:;:.  ,:,:::.,,,     \n" +
+                                      "     ,,,.:::,;,  .:;:;: ,;;;;tfft   iGCL:t@1            C0GCLff;  ;L1ff1i,   ,i;;::..:;: .:,,,,     \n" +
+                                      "     ,,,::,:::,   .::,;i1;i, ;t1t .tLL0GC0Gi:          .GCG ;LtL1;tftiii.    .;:,.:;;::. .,,,,,     \n" +
+                                      "     ,,,.,, ,,,,  .::;iiii;.if1f;;CfiGCLLfLG8fi;:i1tttfLGC0; LCCGLt::;i,     .;;;::;;i;: ,,.,,,     \n" +
+                                      "     .,,.,,  :::  :11111i11tLt1tCGCLCGft:,:f0GG8GLfttttttC80fGCftCCt;:;    .:;:,:i:,,::;::::,,.     \n" +
+                                      "     .,,:,,..:;: .;;;ii;;;;i1;1CLCCCfLGGLLffG00GLLLfttfLCG0ffLCCCGLLL1,   ,::.,::. .::,:::.,,,      \n" +
+                                      "      ,,,.,:::::,::;::::, .,:fCCLfffffLt;;;;;;:::::;;:;;;ii;iittCCfLCCi   ::.::,  .:::. ,,.,,.      \n" +
+                                      "       ,,,,::,;;i;;;,.:;;:   .,:;i:;,it1.                   ,;;ift1;1t:  .;;:;,  .:,,. .,,:,,       \n" +
+                                      "       .,,:,,..,:::,:::;:;;:.    ,;ii;ff1t:,      ,:;;;;;111LLt11fLf;i:  ;;;;;.   ::: .:.,,,.       \n" +
+                                      "        ,:,.,,  ,;:. ..:;::,::.    ,i1fL1LL11,.:1tt1i;i1fLttL1,..,:f1:i.:;:,::. .:::;:::,,:.        \n" +
+                                      "         ,,,,:,.,:::.   .::,.;:     .ii1i:i11ftLt;,,,:;;;ittt;;;;iiii11;;;: :;:,;;,,::,,::,         \n" +
+                                      "          ,,,..:;::::,,  .::.:i.     .;:i. :LL1:,;;;;;::,,,,,,,,:i1ii111;;i;;;;:,. .:,.,,,          \n" +
+                                      "           ,,,,::,,.,,,:. ,;::i;:;,,. ,ii1;:Lti11;,..          .,;,,;;;i;,,,:;;;..,,,:,,,           \n" +
+                                      "            .,,,.,,. .:;:..:;;,.,;;;;::i1ii1i:;:.    ....   .,;;;;::,.   ..:::;:.:,.,,,.            \n" +
+                                      "             .,:,.,:,.,::::;;;::::;;::,:ii11i:....,::,,::::,;::,:;:.   ,,:;:,,:::::,:,              \n" +
+                                      "               .,:,,,,:;::;;:::,    ..,:11i;;::;i;i;::,,,,::i: ,:,   .:,,,  .,,..,:,.               \n" +
+                                      "                 .,,..::,,...,;:,.      :i;:i:.,:;;:,,,,,,:;;;:;;,,::,::, ,,,::,,,.                 \n" +
+                                      "                   .,:,,.,,,..,::;::,,:.  ,:;:::,.         .,:;;;,::,,:;:,:.,,:,.                   \n" +
+                                      "                     .,:,,,:,,,;::,..,:;:,,;i;;:,.,..,,,::::,:;;,.. .,,.,::,:,.                     \n" +
+                                      "                       ..,,,,.,::,,..  ,:,;:;,.,:;:,;:,...,,,:;,.,,,::,,,,,.                        \n" +
+                                      "                          ..,,:,,,..::,,,;:,,..  .::;,.....,,,:::,,,,:,,.                           \n" +
+                                      "                              ..,,,,:,,,.,:,,.,:,,.,:,,,.,::,,,::,,,..                              \n" +
+                                      "                                   ...,,,,,,,,,:,,,,::,,,,:,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 8 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .........,.......                                          \n" +
+                                      "                                  ...,,,,,:,,,,:,,,,::,,,,,,,,,...                                  \n" +
+                                      "                              .,,,,,:,,.,::,.,,,:,.,,,,,,,:,.,,,:,,,..                              \n" +
+                                      "                          ..,,,:,..,,:::,......:;:,. ....,:;,,,:,..,,:,,..                          \n" +
+                                      "                       .,,:,,.,:,,,..:;:,:,,,,:;:,:;:,,;:;:,:. ..,,,:,.,:,,,.                       \n" +
+                                      "                     .,,,,::,::. ..,;;;,,:::,,,. ...:;;;;:,:;;,...,:::,,,:,,,,.                     \n" +
+                                      "                  .,,::,.,,.:;,,;:::;;;,,.        .,::::;:. .,,,,:;;,:...,,.,,,,.                   \n" +
+                                      "                .,,,,,:,.. .:::,,..:;::;;::,,,,::;;;:.,;;:;;,     .,:;:. ..,,:,,,,.                 \n" +
+                                      "               .,:,,,,,...,,,:.   ,::.,i;::,,,,::i;;i;:;;;i1i,,.    .:::;;:::;,.,:,,.               \n" +
+                                      "             .,,,,:,:;:,;;:,.   .:;;:i;:,,:::,,::... .,:i1iii::::;;:::;;;;::,:.,,:,,,,.             \n" +
+                                      "            .,:,.,:.,;::,. .,.,,:::;;:..     .      ,;:;11;i1;:;;;;:..:;:,.::;. .,,.,,,.            \n" +
+                                      "           ,:,,:,.  ;;;;:,::11ii;:;:.          .:LLi11iLi:iiii...,;::;;:;:  ::,,..,,:,,,,           \n" +
+                                      "          ,,,..:..,::;;;::i:;11i;11;;::::::::;;;LCLL:ifC1  ;:;:     .;;.::. .,,::::::,.,,,          \n" +
+                                      "         ,,:,,:;:,;:..:: ,:;,iii1;;:::;fft1i;::fCLLGCttt11;;tii:     ,;..,:.   .::,:.,,:,,,         \n" +
+                                      "        ,,,.,,.:::,   :;:;;: ,;:f1:,,:tLttLftifCLtGLCt iifCtffii:    .::,,::,.   :;:  ,,.,,,        \n" +
+                                      "       .,:,,,. ,,:.  .:;;;:  .ii1LLftttf1;;,,fGGCL0L1C; .,ittL;ii;,    ,:;;:;;:,,:::,..,.,,,.       \n" +
+                                      "      .:,,,:. ,:,,.  ,:,:;.   i1;:1f1::.    ;ftGft18ttC;   .1f1,;;;;,    .:;;:.,:;;i;:,,::,,,       \n" +
+                                      "      ,,,.,:.,;;,  .::,.,:   .;;; fL,      iC1L: :L0GC0C;   .11i,,,:;i;,.  ,:::::;;::::;:,.,,,      \n" +
+                                      "     .,,:,::;,:, .::,,,::.   ,;:;.tf,     ;GC0CLCC00C;fCL;   .;1t1;:,;i1i:::,i;:;;. :::,.:,:,,      \n" +
+                                      "     .,,,:,.;;;::;i;:;;,     i;;.:11,    iCGGGG0Lf;i0G,ftLi    .,ifL1itLt11i11ii1;  :::  ,,,,,.     \n" +
+                                      "     ,,,.,, ,;;;;:.:;;.     :i;:;t1:    tLC1C0i.    ,GG;tfCi       ;f1L1,;1i;iii;. .:,,. ,,.,,,     \n" +
+                                      "     ,,:::  ,:::::.,;;.   .;i11tL1,   .tLfii0t       ,fGfLCG1     .titi .i;11;,,:.  .::;,,:::,,     \n" +
+                                      "     ,,,.:,,:;,  :;i:i,  ,;;fL11f.   ,LCf;18t.         :0GG0GL,    tfft;;;;:.;;:;:   ,:,;;:.,,,     \n" +
+                                      "     ,,,,:;:::.   :;:;:,:;;;:tff1   iGGL;f@i            L0G0CfL;  :f1tLti;.  ,i;;;:  :;:,.:.,,,     \n" +
+                                      "     ,,:,:.,:,:.  .:,:i11;;  1111 ,tff00G0Gi:          .GCG,;LtL1:1Ltiii:    ,;;,.:::::, .:::,,     \n" +
+                                      "     ,,,.,, .,,:  ,ii1i;i1;:fLtf:;CL1GLtffLG0ti:;i1t1tfL0CG: LCC0Ct::;i,     .;;;,:;;;;, ,,.,,,     \n" +
+                                      "     .,,,:, .::, .i1ii11ii1tf1itGGCLCGf1,,:C0C00CLfttttftG8GtGCLtLCt;;;    .,;;:;i:::;;;.,,,,:.     \n" +
+                                      "     .,,,,,.,::, ,;;:;;,,::i1;1LLCCLfCGCLLfLG00CLLffttfCG0GffLCCCGLLL1.   ,::,.::,. ::,;;:,,,,      \n" +
+                                      "      ,,,.,:;::::;;::::;,  .,tCCLfLffLL1;;;;;;::::;;;:;;;ii;i11fCGfLCCi  .:,.,:,  .:;;,.:,.,,,      \n" +
+                                      "       ,,,::,,:;;;;:,,;;;:.  .,,;i:;,1fi.                   ,::1f1;i11.  .i:::,  .,,:. .:,,,,       \n" +
+                                      "       .,,,.,. ,:::.,:;;:;::,    .;iiiLtti,,     .::;;;:;ii1Ltt1fLLiii   ;;;;:   .:,, ,,.,,,.       \n" +
+                                      "        ,,,.,,  :;:   .,::,,::     ,i1LttCf1i.:;tt1i;i1tfL1tL1,..:1f:i, :;;:;:  .,:::.:,.,,.        \n" +
+                                      "         ,,,,,,,:,;:.   .:,.,i,     :ii1::11ftffi:,,::;;;1ttt;:;;iiii1i:;:,.::.,;;,:;:,::,,         \n" +
+                                      "          ,,,.,;:::::,,  .::.;;..    :;:;  1Cf;::;;;;;:::,,,::::;11;i11;:i;:;;;::...:..,,,          \n" +
+                                      "           ,,,,:,,..,,::  :;:;;:;;,,..ii1i:1fi11i:,.           .:;:;ii1i::,:;;;:  .,:,,:.           \n" +
+                                      "            .,:,.,,. ,;::.,:;:..:;;i;:;1i;11;::.     ...    .,;;;:::,...  .,::;,.:..,:,.            \n" +
+                                      "             .,,,,:,,.:,;:;;;;::::;::::ii11i:....,,::,,:::,::;;:;;,.  ..,:;;,:;:,:,,,,              \n" +
+                                      "               .,,,,.:;:,:;:::,.    ..,i1i;;;:;i;;;::,,,,::;;..::,   .:,,,. .,,,,,:,.               \n" +
+                                      "                 .,,,,:,,.. .:;:,....  ,:;:;;..:;;:,,,,,,:;;;::;:.,:::::...,,:,,,,.                 \n" +
+                                      "                   .,,:,.,:..,:,;::,,:,. .:;::;:,.        .,:;;;::::,,;:.:,.,,:,.                   \n" +
+                                      "                     .,,,,:,,,::,,...,;;:,:i;;::,...,,,,:::,,;;:..  ,:,,::,:,,.                     \n" +
+                                      "                       ..,,:,,::,,,.. .:,;:::,,:;:,;:,...,,,:;,.,,,,:,.,,:,..                       \n" +
+                                      "                          ..,,:,,..,:,,,;:,.... .::;,......,,:,:,,,,:,,,.                           \n" +
+                                      "                              ..,,,:,,,.,:,,.,::,.,:,,,.,::,,,,:,,,,..                              \n" +
+                                      "                                   ...,,,,,,,,:,,,,,:,,,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 9 ]  = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ..........,.......                                         \n" +
+                                      "                                  ...,,,:,::,,,,:,,,,::,,:,,,,,...                                  \n" +
+                                      "                              ..,,,,,:,..,::,.,,,:,,,:,..,,:,.,,,:,,,.                              \n" +
+                                      "                          ..,:,,:,.,:,:::,......:;:,. ....,::,,,:,.,:,,,..                          \n" +
+                                      "                       .,,,:,,.,,,....:;:::,,,,:;:,;;,,:;:;:::. ..,,,:,,,,,..                       \n" +
+                                      "                     .,,,,,:,::,....:;;:,,::,,,,. ..,:;;;;,,:;:,...,,;:,,,:,,,.                     \n" +
+                                      "                  .,,,:,,.,..;:,:;::;;;:,..       .,,:::;:,  .:,,,:;:::..,,..,,,,                   \n" +
+                                      "                 ,,,,.,,..  ,:;,,..,:;,:;;::,,,,::;;;,.,i:;::.  ....::;,  .,,,:,,,,                 \n" +
+                                      "               .:,:,,::,.,,:,,,   .::,.:i;;:,,,,:;i:;;:;;;;i1i,.     ,:::::,,::,.,,,.               \n" +
+                                      "             .,,,.,:,:;,:;:,.   .,;;;;i::,,:::,,:,.. ..,;i1iii::::::::;;;i:;:::,,::,,,.             \n" +
+                                      "            .,::,,,..;;;,.  ,;::::,;;:..            .,:;i11;11::;;;;,.,;;:.,::: .,,.,,,.            \n" +
+                                      "           ,,,.,,.  ,;;;;:;;:11ii;;;,           ,Lf;i1i1f:;iii:.,,:;:;;;;:  ,::,  .,,,::,           \n" +
+                                      "          ,:,,,:,.:;::;;:,i;:i11;itii;;;;;::;;;;LCCL;;tLL, .i:i.   ..:i,:;.  ,,,::,,::.,,,          \n" +
+                                      "         ,,,::,:;,::. ::,,:;:.i;1i::,,:fft1i;::fCLLGLftL11i:11i;     .i,.,:.  ..,;:::,,,:,,         \n" +
+                                      "        ,,,.,: ,::,   :;;:i:. ;:ifi;,:tLf1LLt1fCLtCCCf.;11CL1L11:.    ::,,,:,.   :::. ,:,,,,        \n" +
+                                      "       .,:,,,. ,,,,   :;:;:   :1itfLft1fi;:,,tCGCL0LtC; .,;t1Li;i;,    ,::;:;;:,.,::. .,..,,.       \n" +
+                                      "      .,,,,:..,::,.  ::,,;.   ;1i.1ft,,.    ;f1Cfti0ftC;   .if1,;;;:.    .:;;;,,:;;;;:..,,:,,       \n" +
+                                      "      ,,,.,::,:;,  .:,,.,:.   ;;; 1C;      iCtL; ,f80C0G:    11i,,:;;;:.   ,;::,:;;;::::::.,,,      \n" +
+                                      "     .,,:::,:::,.,;;,,:;:.   ,i,;.1f;     ;GG0GCGC00CitGL;   .;iti:,:iii;,,..;;:;;, ,:,:,:.,,,      \n" +
+                                      "     .,,.,, :;;;;:;;:;:.     i;;,:11,    iCGG0CGLf;i0G,ftfi    .:1fL1;1ttiiii1i;i;. ,;;. ,:,,,.     \n" +
+                                      "     ,,,,,, .:;;;: ::;.    .;i;:it1:    tLC1L0i     .GG;tfCi      .iLtLf;;1iii111:  :,,. ,,.,,,     \n" +
+                                      "     ,,,,:..:::.,:::;;.   ,;111fLi.   .tffii0t       ,LGffCC1     .1111  ;ii1i;::.  ,,,:..:,,,,     \n" +
+                                      "     ,,,.:::,;,  ,;;:i, .:iifL1ft    ,LCf;18t.         :0GC0Gf,    1fft:;;;;:;:,:,   ,:::::,,,,     \n" +
+                                      "     ,,,::::::,   ,:,:;;i;;:,fff1   iGGC;f@i            f0C8GfL;  ,fttLfi;,  :i:i;,  ,;,:::.,,,     \n" +
+                                      "     ,,,,:..:,,,  .:;;i1ii: ,ti1i ,tff0000Ci:          ,GL0:;Ltf1:1Lt11i;.   ,;;:,::,::: .:,,,,     \n" +
+                                      "     ,,,.,, .:,, .;111iii1iiLLtL;;LL1Gf1ttLG0ti:;11t1tfL0CG. fCC0Ct::;i:     .;;:.:;;;:. ,,,,,,     \n" +
+                                      "     .,,::, ,;;, .;;:i1;iiitt1:tGGCfCGft,,i00C80CfttttfffG8C1GCCtCCt;;;     .;;:;;;;;;;: ,,.,,.     \n" +
+                                      "     .,,,.:::,:,.:;;;;:..,,;ii1LLCCLfGGCLffCG0GLLLfttfLCG0CfLCLCLCLLL1.   .::,,:;:..,::;::::,,      \n" +
+                                      "      ,,,.::::;;;;;,,,:;,   .tCCLfLffLLi;;i;;:::;:;;::;;iii;i11LGCfLCCi  .:,.,:,.  ,;:,::,.,,,      \n" +
+                                      "       ,,:,:..:;;;;:,:;;;:.  .,,;i;;,1fi                    ,,:ft1:11;.  ,;,::,  .,::, .:,,,,       \n" +
+                                      "       .,,..,. ,::,.,:;;::::,    .;i;1L1f;:,     ,::;;;::;itfttfLLti1,   ;;;;:   ,,,. .,,:,,.       \n" +
+                                      "        ,,,,:, .:::    ,:,,,::    .:11L1LL11;,;1tt1i;i1tff1fL1,,:ifi:; .:i:;;,   :::..:..,,.        \n" +
+                                      "         ,,:,,::::;,..  .:,.,i      ;i1i,;11Ltft:,,,::;;;1tft:::;:i1ii,;;:.,::.,::,;::,:,,,         \n" +
+                                      "          ,,,.::,,,,,,,  .;:,i:..   .i,i, ,LL1::;;;;;;::::::;;;;iti;11i:;i,:;;:::,.,:,,,:,          \n" +
+                                      "           ,:,:,,.  ,:;,  ;;;;::;:,,.;iiii;fii1i;,..           ,;;;ii11:;::;;;;,  .:,.,,.           \n" +
+                                      "            .,,,.,,. :::,.:;;,.,;;;;::1i;11i::.      ..     .,:;;,:::,:.  .,:;:..,.,::,.            \n" +
+                                      "             .,,,,,,,:::;;i;;;,,::::::iii1i:.....,::,,::::,::i;;;;,   ..,:;:,;:,:,.,,,              \n" +
+                                      "               .,,,.,::,.:::::,     ..i1i:;;;:;;;i::,,,,::;i:.,::.   ,,,,,..,:,,,:,,.               \n" +
+                                      "                 ,,,,:,,,.  ,;::,.... .,:;;;,.,;;::,,,,,::;;::;;,.,,,;:, ..,,,.,,,.                 \n" +
+                                      "                   .,,,..:,,.:::;:,,::,. ,;;:;:,.         .,;;;;::;:,;:.,,.,,:,,.                   \n" +
+                                      "                     .,,:,,,,:;,,....:;:::;i;;:,....,,,::::,:;;,....:::,:,,,,,.                     \n" +
+                                      "                       ..,:,,,:,,,,...::::,:,.,;;,:;:,..,:::;:....,:,.,,:,,.                        \n" +
+                                      "                          ..,,,:,.,:,,,::,.... .,:;,......,::,,:..,:,,,,..                          \n" +
+                                      "                              ..,,,,,,,,:,,..::,.,:,,,.,::,.,,:,,,,,..                              \n" +
+                                      "                                   ...,,,,:,,:,,,,,:,,,,:,,,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 10 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ........,,........                                         \n" +
+                                      "                                  ...,,,,:,:,,,,::,,,,::,,,,,,,...                                  \n" +
+                                      "                             ...,,,,,,:,,.,:,..,,,:,,,:,.,,:,,.,,,:,..                              \n" +
+                                      "                          ..,,:,::,.,,,:::,......:::,. ....,::,,::,.,,,,..                          \n" +
+                                      "                       .,,,::,.,,,.....::,::,,,,:;::;:,,::,;::,..,,,,,,,,,,..                       \n" +
+                                      "                     .,:,,.:,,::,...,;;;:,,,,,,,,....,;;;i::::;,....,::,.,,,:,.                     \n" +
+                                      "                  ..,,,:,,,,.,;:,;;::;;;:,.        .,::::;:. .,:,,,:;:::.,:,.,:,..                  \n" +
+                                      "                .,,:,.,:,.  .,::.. .::,,;;;::,,,:::;;;..:;:;,,. ...,::::. .,,,,,:,.                 \n" +
+                                      "               .,,,:,:;:,::::,,   .:;:.,;;;:,,,,,:;;;i;:;;:;i1;.     .:::::..,::.,:,.               \n" +
+                                      "             .,:,..:..;:,:,...  .,:;;;i::,,,::,,:,,.. ..,;11ii;::::::,:;;i;:;,;:,,:,:,.             \n" +
+                                      "            .:,:,,,. :;;:....;i;;;,:;,.              .,:;i1i;1i:;;;;;.,:;:,,:::..,:..,,.            \n" +
+                                      "           ,,,.,:. .,;;;;;;;::11iiii:,..        ,Lf:i11iti;i1ii,,,:;:::;;;. .::,  .,,,,:,           \n" +
+                                      "          ,,:,,::,:;:,:;: :;;;i1i;11ii;ii;;;;;;;LCCL;:1fCi  ;:;:   ..:i:,;,  ,,,,,.,::,,,,          \n" +
+                                      "         ,,,,:,,;::,. ,::,::; :i;t:,..:fftti;;:fCLLCfftft11:;tii,     ;:.::.  .,,:;:;:,.,,,         \n" +
+                                      "        ,:,..,. :,:   ,;;;i:  .i:fti;;1fL1fLt1fGLtCCCf,:1ifCtLt1;.    ,:,.,:,    ::::.,,,,:,        \n" +
+                                      "       .:,::,  ,,,,   :;,;:   .1iiffLtit1:,,.tCCGL0CtC; .,:ttf1;i;,    ,::::;;,, .::, .,..,,.       \n" +
+                                      "      .,,,.:,.:;:,   ,:,.:,   ,ii,;ff:..    iL1CftiGL1C;    ;Lt,;;;:.   .,:;:i;:::;:;:..,,:,,       \n" +
+                                      "      ,,,,::;,::.  ,:,.,::.   :;;,:C1      iCfCi ,100CGG:    i1i.,:;;:,    ,i::.,;;;;;:,,:,,,,      \n" +
+                                      "     .,,,,:.::::,,;;:,;;,.   .i:;.iti     ;GG0GGGC08CtfGL;   .;it;,,:iii:.. .:;;;;:.,:,:;:.,,,      \n" +
+                                      "     .,,.., ,;;;;::;;;:     .i;;,:i1:    iCGL0CGffii00,fffi    ,;tffi;it1;;;:ii,;;. .;:,.,::,,.     \n" +
+                                      "     ,,:,:. .::;;: ,;;,    .;i;:if1:    tLL1f81     .GG;1fCi      ,1LtLL1i1ii11i1i. ,::. ,,.,,,     \n" +
+                                      "     ,,,,:.,:;:.,:;;;i.  .:i1t1fLi.   .tffii0t       ,LGttLG1      ;1if, :iiiiii;,  ,,,, .,.,,,     \n" +
+                                      "     ,,,,:;:,;.  .;;:;,.:;;1fL1f1    ,LCf;t8t.         ;0GLGGf,    1fff,,;;iii:,:,   ,:;:,:::,,     \n" +
+                                      "     ,,:::.:;:,   ,:,:i1i;;..ftti   iGGCiL@;            t8C80fC;  .tf1Lfii:, :;:;;.  ,;,:;:.,,,     \n" +
+                                      "     ,,,.,. ,,,,  :ii1iiii, ;tit: ,fft0800G1:          ,GL0i;Ltf1,1Ct111;,   ,i;;::,.:::..:,,,,     \n" +
+                                      "     ,,,,,, .::, .i1i11ii1itLftL1iLCtGf;1tLG01i;i11t11fL0CG  fCLGCf;:;i;.    ,:;, :;;::. .,,,,,     \n" +
+                                      "     .,,,:,.::;. .;:,i;,;;;11i:1GGCfCGft,,t8GC0GLftttffLf08LiGCCtCCt;;;     .:;;;:;;;;;..:..,,.     \n" +
+                                      "     .,,..:;:::,,:;;;;:.  .:;i1LfCCffGGCLfLCG0CLLffttfLCG0LfCCLCLCLLL1.   .:;:,:;;,.::::.:,,,,      \n" +
+                                      "      ,,,,:,.:;;;;;,.:;i,    tCCLfLffCfi;;i;;:::;;;::;;;ii;;i11CGLfLCCi  ,::.,::.  ,:::;:,,,,.      \n" +
+                                      "      .,,,.,..,::;:::;;:;:,. .,.;i;;,tf;                    ..;ft:;11,.  ::.,:,  .,::,.,:.,,,       \n" +
+                                      "       .,,..:. ,;:. .,:;::::,    ,;i;tftt:,.    .,:;;;:,::;tt1tLffiii    ;;:;,   :,,. .,,:,,.       \n" +
+                                      "        ,,,:,,.::::    ,:,.,;,    .iitftCfit::ittti;;ittLftLfi::itf:i. .;i;;;.   ::: .,..,:.        \n" +
+                                      "         ,,,.,:::;::,.  .::.;;     ,iit::i1tftfi:,,,::;;ittft,,,,;t;i,.;::.::. .:::;,,:,,:,         \n" +
+                                      "          ,,,,:,,..,,,,  ,;,:i:,.   :;;;. 1Cti:;i;:;;;;;:;;;i;ii11;i1i:;i:.:;:,;;,,::,,:,,          \n" +
+                                      "           ,,,,.,,  ,::. ,:;;::;;::,:ii1i;11i1i;,,.          .,;iii111::;:;;;;;,. ,:..,,,           \n" +
+                                      "            .:,,,:,..:::,:;;:,,;;;;::i1:1ii;,.      ..      .,:;,::;;i:. ..:;;: .,,,:,,.            \n" +
+                                      "             .,:,,,,:::::ii;;:,,,::::i1i1i;.....,,::,,:::,,:;i;;;:.   ..,:;,:;.,:..,,,              \n" +
+                                      "               .,:,.::,..,,:::.     .;1i;:;i:;i;;;:,,,,,::i;,.:;:   .,,:::,,:::,,,:,.               \n" +
+                                      "                 .,:,,,,,. .::::,,,.....;:;:.,;;;::,,,,::;;;,:;:..,,::,.  .,:.,,:,.                 \n" +
+                                      "                   .,:,.,:,.:::::,,,:,...:;:::,,         .,:i;;::;;,:;..,,,,:,:,.                   \n" +
+                                      "                     .,:,:,,,:,,.. .,;::::i;;:,....,,,::::,:;;;....,::,:,.,,,,.                     \n" +
+                                      "                        .,,,,:,,,,,..,:::,::.,:;,:;:,.,,::,;:.....,:..,::,,.                        \n" +
+                                      "                          ..,,,,,,::,,::,,.....,:;:......,:::,:,.,::,,,,.                           \n" +
+                                      "                              ..,,,,,,,::,,.,:,.,:,,,..::,..,:,,,,,,..                              \n" +
+                                      "                                   ...,,,,,,::,,,,:,,,,:,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 11 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ..........,.......                                         \n" +
+                                      "                                  ...,,,,,,,:,,,,::,,,,,:,,,,,,...                                  \n" +
+                                      "                              .,,,,,,,::,,,::,.,,,,:,,,:,.,,:,,,,,,,..                              \n" +
+                                      "                          ..,,,,,::,.,,,:;:,......:::,......,::,,::,,,,,..                          \n" +
+                                      "                       ..,:,:,,,,,.....,;:,;:,,,,:;::;:,,:,,:::,..,.,,:,,,,..                       \n" +
+                                      "                     .,::,.,:,,;:,,,.:i;:,,,,,,,,. ...:;;i;:::;:,....,::,.,,:,.                     \n" +
+                                      "                  .,,,,,:,,,. :;::;::;;;;,,.       .,,:::;;, .,::,,,:::;,,,:,,,,.                   \n" +
+                                      "                .,,:,,,,,....,,:,.  ,::.:;;:::,,,:::;;:.,;;;: ....,,::::, .,,,,:,:,                 \n" +
+                                      "               .,,,,:,:;,:;::,,.   :;;,,:i;;:,,,,::;;;i:;i;,;i1:      ,::,,,.,,:,,,,.               \n" +
+                                      "             .,:,,.,, ,;:,,.  ...,::;;i;:,.,,::,,:,......,ii1i1;::,,,,,;;;i;:,:;,,,,,,.             \n" +
+                                      "            .,,,::.. :;;;,..,,i1ii;,;:.          .    .,:;i1;;1;:;;;;:,,;;:,;:::.,:,,,,.            \n" +
+                                      "           ,:,,,:,.,::;;;;;i;:;11ii1i:,,..      ,Lf::i1iit;ii1ii,::;;:,:;;, .:;:. ,,.,:,,           \n" +
+                                      "          ,,,:,:;:,;:,,::..;;:;i1iiiii;i1ii;;;;;LLCLi;itLL. ,i:i.  .,,i;:;:  .:,,...,:,,,,          \n" +
+                                      "         ,,,.,, ,;:,. .:;:;::. ;;11,. ,tLtt1;;:fCLLCftftL11;:11;;     :i.::.  .,,::,:;,.,:,         \n" +
+                                      "        ,,:,,,. ,,:.  .;;;;:   ;;iLt1i1tLttLf1fGL1LGCL:,1itCftfii,    .;,.,:,   .,:,:,,,:,,,        \n" +
+                                      "       .,,,,, .,:,,.  ::,;;    ;1i1tLf1i1,,. 1CLGf0CtC;  ,:1ttt:ii:    ,::,,::,.  :;:  :,,,,.       \n" +
+                                      "      .,,,.::,:;:.  .,:,.::    ii;,ff;..    iL1CftiCC1C:    :Lf,;;;:.   .,:;:;;::,;::, .,.,,,       \n" +
+                                      "      ,,:,:,::::. .:::,,:,.   ,;::.Lf      ;CfG1 ,iG8CGG;    iti.::;;:.    ,i;:.,;;;;;,.,:,,,,      \n" +
+                                      "     .,,,,:..;;:::;i::;:,    .i:;.;t1     ;CG0G00C08CffGC;   .;i1;,,:ii;,.  ,:;;::;:,:::::.,,,      \n" +
+                                      "     .,,.,, .;;;;;.:;;,     .i;;,:11:    iCGf0CCffiiG0,tff;    ,;tf1;;i1i:::.;i:;;, .;::,,,,,,.     \n" +
+                                      "     ,,,,:. ,:::::.:;;,    ,iii;1f1:    1LL1t8i     .CG:1fL1      :tLtfLt1iii1i;i;. ,::, .:,,,,     \n" +
+                                      "     ,,,.::,:;, .:;;;i.  ,;itt1fL:    .tftii0f       ,LGt1LGt.     :tifi.,ii;;1i1;. ,,,. ,,.,,,     \n" +
+                                      "     ,,,,::::;.  .::,;;:;;;1fLtL;    :LGf;t8t.         ;0CLGGf,    1t1f. ;ii11:::.  .:,:..:,,,,     \n" +
+                                      "     ,,,,: .:,:.  ,;:;11ii: .f1ti   iCGC1L@;            t8L80fC;   iftLf1i;:,:;,;:   ,:::::,,,,     \n" +
+                                      "     ,,,.,. .,,, ,i111;iii,,tf1f, .ff10800C1:          :CL0tiLtf1,iLfit1i;.  ,i;;;:. :;:,::.,,,     \n" +
+                                      "     ,,,,:. ,;:. .;;;i1iii1fLt1ftiLLf0t:itLG01i;i11111tL0CC  fGfGCLi:;i;,    ,:;,.:::::, .::,,,     \n" +
+                                      "     .,,,,,::::  ,;;:i:.,::i1i:iCGGfLCft,.L8CG0CfftttfLLL881iGCCtCCt;;;.     :;;:,;;;;;..,.,,,.     \n" +
+                                      "      ,,,,:::::::;::;::,   ,:itLfCCffGCCLLCC00LCLfftffLCG0LLCCLCfCLLL1.   .,;;::i;:,:;;..:.,,,      \n" +
+                                      "      ,,,::,.:;i;;;..;;;,    1CCLfLfLCfi;ii;::;;;;;::;;;;i;;1i1CGLfLCCi  ,::,,::,. .::::::,,,,      \n" +
+                                      "       ,,,.,. ,:::,::;;:;:,. ,,.;i;:,ff,                    ..ift,i1i,.  :,.,:,   ,:;:,::.,,,       \n" +
+                                      "       .,,,,:  :;:  .,::,,,:,    ,ii;f1f1::     .::;;::,,,;ti1fffti1:   .i:,;,  .,,:, .:,,,:.       \n" +
+                                      "        ,,,,,,::,;,.   ,:,.,;.    ,iiLtLL111:i1tt1i;i1tfLttLti;i1L;;:  .;;;;;.  ,:,, .,,,:,.        \n" +
+                                      "         ,:,.,;,,::,,.  .::.i,     ;i1i,:1tLtft;,,,:::;;1ttL1..,,1i;; ,;:::;:  .,:;, :,.,,,         \n" +
+                                      "          ,,,,,,. .,,:.  :;:;i:,.  .i:i, .LL1;;;i;:;;;;;;;iii;ii1ii1i;;;;..;;,,;;,:;:,:,:,          \n" +
+                                      "           ,,:..,, .:;:. :;;,,:i;::,i11iiit;ii;:,..        ..,:i1ii11;:;;;;;;;:,..,:.,,:.           \n" +
+                                      "            .,,,,:,.:,::,;;;:,:;;;;:;1;i1i;:.                ,;;,;ii1i....,;;;, .,:,,:,.            \n" +
+                                      "             .,,:,.:;:,:;i;;;,,,,,,:;1iiii,.....,::,,:::,,::ii;;::. .. ..:::;, ,,.,,:,              \n" +
+                                      "               .,,,,:,,...,::,.     :1;;:;i;:i;;;:,,,,,:;;i,.:;;,   .,,::;,,;:,:,,,,.               \n" +
+                                      "                 .,,,,.,,. ,::;:,,...  :;;;..:;;::,,,,,:;;;,,::, ..,:,,.  .:,,,,:,.                 \n" +
+                                      "                   .,,,,::,,;::,,,,::,. ,;::;:,.        ..,;;;;::;::;, .,,,:,,,,.                   \n" +
+                                      "                     .,,,,.,::.... .::,;:;;;;:,...,,,,:,,,,;;;:..,,:;,,:,.,:,,.                     \n" +
+                                      "                       ..,,,,:,..,,.,:::,,:..:;::;:,..,::,::......,,,,,:,:,.                        \n" +
+                                      "                          ..,,,,,::,,,:,,.....,:::......,:::,,,.,::,,,,,.                           \n" +
+                                      "                              ..,,,,,,,:,,.,:,,,,,,,..,::..,::,,,,,,..                              \n" +
+                                      "                                   ..,,,,,,,,,,,,::,,,,:,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 12 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,..,.......                                         \n" +
+                                      "                                  ...,,,,,,,,:,,,,::,,,,,,,,,,,...                                  \n" +
+                                      "                              .,,,:,,,,:,,,,,:,.,,,,:,,,:,.,,:,,,:,,,.                              \n" +
+                                      "                          ..,,,,,,:,,.,,,:::.......:::,.....,,:,,,:,,,,,..                          \n" +
+                                      "                       .,,,,,:,,,:,...,.,;::;:,,,:;;,:;,.::.,:::,.,,.,,:,,,,.                       \n" +
+                                      "                     .,,:,..,,.:;,::,,;;;:,,.,,,,,. ..,:;;i::::;:. ...,:,.,:,,.                     \n" +
+                                      "                  .,,,,.,,,.. .:;:::,:;;;:,..       .,::::;:..,::,,,,,,:;,,:,,,,,.                  \n" +
+                                      "                .,:,:,,::,...,,::.  .::,.;;;:::,,:::;;;,.,;;:.  ..,,:;:,;. ,,..,:,,                 \n" +
+                                      "               .,,,.:,.::,;;:,,.   ,;;;:,;i;;:,,,,:;;:i;:i;::;;i.     .:::....,,,,,,.               \n" +
+                                      "             .,,:,,,,..:::,.   ::,:::;;;:,..,,:,,,,,......:ii111;,,,,,,:;:;;,,,::,.,,,.             \n" +
+                                      "            ,,,,,:,. ,;;;:,,,::111i;;;,          .      ,:;i1;i1::;;;;,,;;;::;,:,,,:,,,.            \n" +
+                                      "           ,,:,,::,,:::;;;:;i::;11;11;::,,...   ,Lf,,;ii;1iiii11;:;:i;,,:;: .,:;, ,,..,:,           \n" +
+                                      "          ,:,,:,,;:::..:;,.:;;::iiiii;;iti1i;i;;LLCLi;;1fC; .;;;;   ,,;i;;;.  :,,. .,,:,:,          \n" +
+                                      "         ,,,.,: .:::   :;;;;:, .i:t:. .1Cttti;:fCLLCtiftLt1;:;f;i.    ,i,,;,  .,,::,,::.,,,         \n" +
+                                      "        ,,,:,,. ,,,,  .;::;:   .i;fft111ff1fftLGL1LGCL;:i1ifLtL1i;     ;:.,:,   .,;::;:,,:,,        \n" +
+                                      "       .,,.,:..:::,.  ,:,,i.   ,1iittL1;i,.. 1LL0fGG1C;  ,:;f1f;ii:    ,:,,,::.   ,::, ::,,,.       \n" +
+                                      "      .,,,,:;::;:.  .:,,.,:.   ;ii.tLi      iC1CftifC1C:    ,fL::i;;.   .,:;:;;;:,:::, ,,..,,       \n" +
+                                      "      ,,,,:,,:::..,:;:,::,.   ,;:; tL,     ;Cf0t.,:L8CGC;    :t1.:::;,     ,;;;,,;;;;;, ,,,:,,      \n" +
+                                      "     .,,..:..;;;:;;i;:;:.    ,;:;.:11.    iCG0G00LG@CCfGC;    ii1:,,;i;,.   ,:::,:;::::,,:,,,,      \n" +
+                                      "     .,:,,, .:;;;; ,;;:     ,i;:,;1i:    1CGtGGCtt1iC8:tLf;    :ifti:;i1;:,. :i:;;:..:::;:,.,,.     \n" +
+                                      "     ,,,,:..:::,::::;;,   .:iii;tfi,    1LL1181     .CG:1tL1     .iff1tftiii;ii:;:  .:;: .:::,,     \n" +
+                                      "     ,,,.:;:,;,  ,;;:i. ,;i1ft1Lf,    .tLtiiGf       ,LG11LGt.     :f1ft::iiii1i1i, ,,,. ,,.,,,     \n" +
+                                      "     ,,:::.:;:,   ::,;i;;i;itLtL:    :LGLif81          i0CfCGf,    11if. :iiiii;;,  ,,,, .:.,,,     \n" +
+                                      "     ,,,.,. ,,:, .:iiiiiii, ,fi1i   iLGGtL@;            1@L88LCi   ;LtLti;i;;i:,::   ,:::,:,:,,     \n" +
+                                      "     ,,,.,. ,,,, ,i1i1iiii:;fftf, .fL1G080Ct;          :CL0LtLtL1.;Lfitti;:. ,i:;;,  ,;,:;:.,,,     \n" +
+                                      "     ,,:,:..:;:  .::,ii;iiitf1iff1LLf01,;fCGG1i;i1t111tCGCL  fGfGCL1;iii:.   ,;;:,;:,:::.,:,,,,     \n" +
+                                      "     .,,.,:;:::..:;;;i, .,,;1i:;LGGfLCLt,,G8CGGLftttffCLC80i1GCLtCC1;;i.     :;;,.;;;;:. ,,,,,.     \n" +
+                                      "     .,,,,:,,::;;;:.::;,   .,;tCfCCffGCCLCCC0GCCffttfLCC0GfCCLCCfCLLL1.    ,;;:;i;::;;: .,.,,,      \n" +
+                                      "      ,,:,,, ,;;;;;,,;;;:.   1CCLfLfCCtiiii;:;;;;;::;;;;;;;i1itCCffLCCi  .::,,:;:. .:::,,::,,.      \n" +
+                                      "      .,,,.,. ,::,.::;::;::. ,,.;ii::Lt.                     .tfi,11;,. .:,.,:,.  .:;,:;:.,,,       \n" +
+                                      "       .,,,:,.,::,   .::,.,:,    :iiif1Li;,    .,::;;:,.,,;1itLtti1i.   ,i,,:,  .,,:,..:,,,,.       \n" +
+                                      "        ,,:.,:;::;,..  ,:,.:;     ;i1LtCfit1;1tt1i;;i1tff1ffti1tft;i   .;;:;:   ,,,. .,,::,,        \n" +
+                                      "         ,,,,::.,,:,,.  ,;,:i,    .iit:,:tfftfi:,,,:::;;1ttLi. .;t;i  ::;;;;:  .::: .:..,,,         \n" +
+                                      "          ,,,,,,. .,::  .;;;;;::.  ;:i;, iCt1;ii;;:;;;;;iii1i;iiiiii;:;;: ,;:.,;::;,,:,,:.          \n" +
+                                      "           ,:,..:, ,;:,..:;:.,;;:;:;1ii1i1i;i;:,..      ...,,:;1i;11;:;i;:;;;:::,,::,,:,.           \n" +
+                                      "            .,:,:,,::,;::;;;::;;;;:;1i;1i;,.       .         ,;:;ii1i,,,.,:;;;. .,:,,,,.            \n" +
+                                      "             .,,,.,::,,,;;:;,...,,,;111;i:..,..,,::,:::,.,::i;;::,,,,   .,::: .,,,,:,,              \n" +
+                                      "               .,,,,,,....:::.     ,i:;::;i:;i;;::,,,,:;;i:,,;;:.   .,,:;;,::,::.,,,.               \n" +
+                                      "                 .,:,..,,..;,;;:,,,.  .:;;,.,;;:::,,,,::;;:.,::. ..::,,...,:,,,:,,.                 \n" +
+                                      "                   .,,,::,,::,,,.,:::,..:;:;::..        .,:;;;:::::;:. ..,,,.,,,.                   \n" +
+                                      "                     .,,:.,,:,... .:;,;::i;;:,...,,,,,,,,,:;;;,,,,:;:.:,.,::,,.                     \n" +
+                                      "                       ..,:,:,..,,.,:::,.:,.,;:,;:,.,,:;::;,.,...,:,,,:,:,,.                        \n" +
+                                      "                          ..,,,,,:,.,:,,,....,:::.......:::,,,.,,:,,,,,,..                          \n" +
+                                      "                              ..,,,,,,:,,.,::,,,,,,,.,:,,,,::,,,,,,,..                              \n" +
+                                      "                                   ...,,,,,,,,,,::,,,,:,,,,,,,,..                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 13 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ........,.........                                         \n" +
+                                      "                                  ...,,,,:,,,::,,,,:,,,,,,,,,,....                                  \n" +
+                                      "                              ..,,,:,,,,:,,,,,,,.,,,,,,,::,.,::,,,,,..                              \n" +
+                                      "                          .,,,:,,.,:,,.,.,:::......,:::,....,,:,,,,:,,,,..                          \n" +
+                                      "                       ..,,,,,:,,::....,.:;,:;:,,,:;;,;;,,:,.,:::,,:,.,:,,,..                       \n" +
+                                      "                     .,:,:,..,..::,;:,:i;;,...,,,,,....:;;;;:;::;, ...,,:,,,:,.                     \n" +
+                                      "                  .,,,,,,:,... ,:;,:,,;;;;:,.       ..,::::;, .,::,..,,,::,,:,:,..                  \n" +
+                                      "                .,,,,:,:::,,,,,,:,   :;:.,;;;::,,,:::;;;..:;;,   ,,,::;,::.,:,.,:,.                 \n" +
+                                      "               .,,,.,:..;::;:,,.   .:;;;::i;;:,,,,,:;;;i:;i;:;::;.    .,::. ..,,:,:,.               \n" +
+                                      "             .,:,:,,...:::,    .i;::,:;;:,,..,::,,,:,...,.,;;;111:,,...,;:;;,..,:,.,:,.             \n" +
+                                      "            .:,,.:,...;;;;::,:::111i;i:.         .       ,:;11;ii::;;;;:;;;;:;::;:,,:,,.            \n" +
+                                      "           ,,:,,:;:,;;:;;;,:i;;:i1i;11;;;,,,... ,Lf,,:;i;i1i1ii1i::;;;:.,;;,.,::: .:,.,,,           \n" +
+                                      "          ,,,.:,.:;::. ,;:.::i:,;iii;;:;t11i;i;;LLCLii;1tLf .,i:i,  ,::;;;;,  :::. .,,,:,,          \n" +
+                                      "         ,,,.,,. ,::.  ,;;;i:,  :;i1.  ;Lftt1;:fCLLCf;ftfLt;,,11;:    .i:,;,  .,,,,..,:,,,,         \n" +
+                                      "        ,,,,:, .,,,,   :;,;;    :iiLff11tL1tftLGC1fGCLi;;titLfffii.    :;.,:,  .,,;;,:;,.,:,        \n" +
+                                      "       .,,.,:,,;;:,   ,:,.;,    i1;11Lt;i:   iLf0fGG1C;  ,;;tttiii;    ,:,.,::.   ,:::.,,:,:.       \n" +
+                                      "      .,,:,::;,::   ,:,..,:.   :ii,;Ct.     iC1LttifC1C:    .tC;,i;;.   .:::::;:,..::, .:.,,,       \n" +
+                                      "      ,,,.:, :::..,;;::::,.   .;:; 1L:     ;Cf0L,,,f8CCC:    ,t1.,:::,    .:;;;::;;;;;, ,,,:,,      \n" +
+                                      "     .,,,.,..;;;;;::;;;,     ,i:;.,11,    iCGGG08CG@CCLGC;    iii:,:;i;.    ,;:: :;;;::..::,,,      \n" +
+                                      "     .,,::, ,::;;;..;::    .:i;:,;1i:    1LG1CGLtt1iC8;tLL;    :if1;:;ii;,.  ,;;;;:,.:::;:,.,,.     \n" +
+                                      "     ,,,.:,,:;:.,;;;;i.  .,;1i;iff;,    1ff1i81      L0:1tfi     ,1Lfi1ttii;,;i,:;.  :::,,:,:,,     \n" +
+                                      "     ,,,,::::;,  ,;:,i,.:iitff1Lt.    .fLfiiGf       .LG11fGt      :LtLfi;iii1i;i;. .::, .:,,,,     \n" +
+                                      "     ,,:,: .:::   ,;:;11ii;:1Ltf:    :LGLif01          i0LfCGf,    i1;f, .iii;11i;, ,,,. .,.,,,     \n" +
+                                      "     ,,,.,. ,,,, ,i111;iii. :f;t;   iLG0fL@:            i@L08LLi   :ftL1;;iii1;::,   ::;..:,:,,     \n" +
+                                      "     ,,,,:. :::. .;i;i1iiii1LftL: .fL1G080Cf:          ;CC0CfCtL1.,fLiff1i;,.,i:;;,  ,;,;::,,,,     \n" +
+                                      "     ,,,,:,::::  .;:,i:,;ii1t1ifL1LLf01.:fCGG1iii11111tCGCL  tGfCCLt;iii:,   ,;;;::,.:::,,:.,,,     \n" +
+                                      "     .,,.,:::::.,:;;;;,  .,:ii;:fGGfLCL1.;80CGCLft1tffCLG8G:1GCLfGC1:;i,     ;:;..;;;;:. ,::,,.     \n" +
+                                      "     .,,:,:..:;;;;, ::;,    .:tCfLCtLGLCLCLC0CCLffttfLCC0CLCCLCCfCLLL1.    .:;;;;:;;;;: ,,.,,,      \n" +
+                                      "      ,,,.,, ,;:;;::;;;;:.   1CCLfffCL1iii;;;;;;;;::;;;;;;;i1ifCCfLLCCi  .:::,:;:,.,::: ,:,,,.      \n" +
+                                      "       ,,,.:. ,::..,:;:::::. ,,.;ii,iC1.                     ,tL::1i:,. ,:,.,::.  .::,;::,:,,       \n" +
+                                      "       .:,:,,,:::,   .::,.,:,    ;1i1ttf;;,    .:::;:,....;iifL1ti1;    :;.,:,  .,:::,,:.,,:.       \n" +
+                                      "        ,:,.,::,;:,,.  ,:,.;:    .iifffL1ifiittt1i;;1ttft1Lt11ttLii:   .;;:;:  .:,,. .,,,,:.        \n" +
+                                      "         ,,,,:,..,,,,.  :;,;;..   ;;1i.,;fLttt;::,,:::;ittLL: .,1;i:  ,:i;;;,  .;:, .,..,:,         \n" +
+                                      "          ,,:,,,. .:::  ,;;;;:::. ,i;i:,.ff1i;ii;;:;;;i;i11t;;i;iii;::i:,.::, ,::;:.:,,,,,          \n" +
+                                      "           ,,,.,:..::::.,;;,.:;;;:;11;i1i1;;;:,..      ...,:;;11:i1i::;i::;;;:;;,:::,,,,,           \n" +
+                                      "            .,,:,,:;,:;:;;;;:;;;:::1i;1i;,.                 .;;;i111:::,::;;;:...,:.,,,.            \n" +
+                                      "              ,:,.,:,..,;;::.....,:111:;;,,,..,,::,,::,,.,:;;;:::::;    .,;:,..,,,:,:,              \n" +
+                                      "               .,:,,,,,. .::,,.   .:,:;:;i::i;;;:,,,,,:;;i,:;;;:.  ..,::;::;..:,.,:,.               \n" +
+                                      "                 .,:,.,:,.:::;::,,,   ,:;:..;;;::,,,,::;;;,.::,  .,:,,,,,,::,,:,:,.                 \n" +
+                                      "                   .,:,:,,::,....,::,..,;;;;:,.        .,:;;;;,,::;:, ...,:.,,:,.                   \n" +
+                                      "                     .,:,,,,,,... ,;,:;:;;;:,....,,,,,,,,:;;;:,::,;:.,:..,:,,,.                     \n" +
+                                      "                       ..,,,,..,:,,:::,.,,.,;;,;;:,.,:;::;,.,....::,,:,,,,,.                        \n" +
+                                      "                          ..,,:,:,,,,,,,....,:::.......:::,,,.,,:,,,,:,,.                           \n" +
+                                      "                              ..,,,,,::,.,::,,,,,,,.,::,,,,:,,,,:,,,..                              \n" +
+                                      "                                   ...,,,,,,,,,,:,,,,:,,,,,,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 14 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ........,.,.......                                         \n" +
+                                      "                                  ...,,,,,,,,,,:,,,,::,,,:,,,,,...                                  \n" +
+                                      "                              ..,,,,::,.,::,,,,,,,.,,,,,,,:,,.,:,,,,..                              \n" +
+                                      "                          ..,:,:,.,,:,,....,:::......,:::..,.,,,,,.,:,,,..                          \n" +
+                                      "                       .,,,:,.,:,,::,...:.,;:,;;:,,,:;::;:.,,..,:;,,:,,.,:,,.                       \n" +
+                                      "                     .,,,,:,,... ,;,:;:;;;;:....,,,,,...,;;;;:;;,::..,.,,:,,,,.                     \n" +
+                                      "                  .,:,:,,,:,....,:;,,.,;;;;:,..      ..,::;;;,.,,;:,....,:,,.:,,,                   \n" +
+                                      "                 ,,,,,:,,::,;::,,,.  .:;:..;;;:::,,,::;;;,.,;:.  .,,,:::::;,,:,,,,,                 \n" +
+                                      "               .,,:,,,, .:::,... .,.,;:;i;:;;;;:,,,,,:;;i::;;;;, .....,:::;. ,,..,:,.               \n" +
+                                      "             .,,,.:,...:::;,.  ..;1ii::;:,,,..,,:,,:,,...,,:;:,;i1i.    .::::. .,:,,,,.             \n" +
+                                      "            .,:,.,::,::;;;;::;;;::1i;11;,.       ..        .:i1ii1i::;:::;;;;:,,,:,.,:,.            \n" +
+                                      "           ,,,,:,.:::;,.:;:.,;;;;;11;i1iii:::,,.,Lf,..,,::;i;11;i1;;;;i:.,;;,,;::;,,:,,:,           \n" +
+                                      "          ,:,..,. :::.  :;;:;:;..,i:1::.;Lt1iiiiLCCL;iii11f1.::i;i:.,;::::;:  .::: .:..,,,          \n" +
+                                      "         ,,,,,,  ,,,,  .;::i;.   ,iit,.,1Lf1fi:fLLLLf:it1fLt,..i1;;  .,;i;;;.  :,,. .,,,:,,         \n" +
+                                      "        ,,,.,:.,::,,.  ,:,,i.    ;i1LfLtitt;11LGGttGGL1titfitLfLti;    .i:,;,  .,,::..::.,,,        \n" +
+                                      "       ,,:,,:;::;,.  .::,.,:    ,ii;t1Li;:   iLt0LC0tL;   :;iLtt;11,    :,.,:,   .:;::;:,,,,.       \n" +
+                                      "      .,,,,:..:::  .:;:,,::.   .i;i.fL:     ;CtCt11tLtC;     :Lf.i;i.   ,::,,::,.  :::,.::,,,       \n" +
+                                      "      ,,,.,, ,;:;:;;i;:;:.    ,;:;.:f1     ;CLG0;,,;0GLC:     1f:,;:;.   .,:;:;i;:,::;. ,,.,,,      \n" +
+                                      "     .,,:,, .:;;;;,.::i.     :i;:.,i1;    iGGCGG@CC8GGCGC;    ;1i,,:;i,     ,i:;.,;;;;: .,,:,,      \n" +
+                                      "     .,,.::,:::,:;::;;:   .:ii;::1ti:    iLC1t8L1tt1L8ttCLi    :1t;,:ii;,    ::;,,;::::,.,:,,,.     \n" +
+                                      "     ,,,.::;,;,  ,;;:i, ,;;1tiitLt:.    1ff1;8f     .f8:tffi    .;fL1;i1i::. ,i:;;:. ::,;;,.,,,     \n" +
+                                      "     ,,:::..;::   :::i1iiiitLftL;     .fCfi1Gf       .LGiifCt     .iLtfLtii;;i;,::   :::,.:,:,,     \n" +
+                                      "     ,,,.,. ,,,, :i1i1;iii. ;fit;    :LGLtL0i         .10f1CGL,    ;tif;.,iiiiiii;. ,,,, .,,,,,     \n" +
+                                      "     ,,,,,. :,:. .;i;iiiii,,1L1f:   ifC8CL@;            i@LC0Cf;   ;tif; ,iiii1iii, ,,,, .,.,,,     \n" +
+                                      "     ,,:,:.::;,  .::,;;:;iitLftLi..tCtCC00CL:          ;LC00GCtC1..iLtfLtii;;i;,::   ::;..:::,,     \n" +
+                                      "     ,,,.:;:,:: .:;;;i. .,:i1i;iffLLfG1 .fC0C1ii1111ii1GGCt. tGfCLfL1;i1i;:. ,i:;;:  ::,;:,.,,,     \n" +
+                                      "     .,,,:,.,::::;,,;::    .;i;:tGGfLCC1,L8GLGLff1tffCGL081,tCCLfGGt:;i;,   .::;::;:::::,::,,,.     \n" +
+                                      "     .,,,,,. :;;;;,,;;i,     ,1CLLLtCCLCGLL0GLLffttfLCC0GLCCLLGLtCLLC1,     ,i;:.,;;;;: .:,:,,      \n" +
+                                      "      ,,,.,, .:::,:;i::;:,.  1CCLLfLCfiiii;;;;;;;::;;;;;;;iii1LCLfLLCCi  .,:;:;;;:,;::..,..,,.      \n" +
+                                      "       ,,:::.::::   ,::,,::. ,,,ii;,Lf:                      iLt.iii,,. ,::,,::,.  :::..:,,,,       \n" +
+                                      "       .,,.,::,:;:.   ,:,.::    ,1iittL1i;.   .:;:::,.   .ii1L1ti1i.   .;,.,:,   .:;::;:,,,,.       \n" +
+                                      "        ,,,,:,..,:,,.  ,;,:i.   .i;fLfft1ft1ftt1i;;i1tttift1tffL1i:    ,i,,:,  .,,::,.:,.,,,        \n" +
+                                      "         ,,:,,,. .,:,  .;;;i;,.  ;;1i. ,fLt11;:::,,,::it1fL1..,t;i,  .,;;:;:   :,,. .,,:,:,         \n" +
+                                      "          ,,,.,:. :::. .:;:::;;,,;;ii;:,1t11iii;;::;;iii11f;,:;1;i,.,;:::;;,  ,;:, .,..,:,          \n" +
+                                      "           ,:,,,,:;,:;,:;;,.:i;;:i1i;1i;i;,,,..     ..,,::iii1i;1i;;;;i,.:;:,:;,::,,:,,,.           \n" +
+                                      "            .,:,.,:,.,:i;;;::::::i1iiii:.                  ,;11iii:::;:::;;i;:,,::,.,:,.            \n" +
+                                      "             .,,,,:,...,:::.    .ii;;,:;::,,.,,::,,::,..,,::;,:ii1:.    ,;::,..,,,,,,,              \n" +
+                                      "               .,:,..,, ,;:::,,...  ,;;;;::i;;:,,,,,:;;i;,;;;;:.......,::::  ,,,,:,,.               \n" +
+                                      "                 .,,,,:,:;:::::,,,.  .:;,.,;;;::,,,,::;;:..:;:   .,,,:::,::,::,,,,.                 \n" +
+                                      "                   .,:,.,,:,.. .,::,,.:;;;;:..        .,:;;;;,.,:;:,....,:,.,:,,.                   \n" +
+                                      "                     .,,,,:,,,,..::,;:,;;;;,,..,,,,,...,:;;i::;::;, .,.,,,,,,,.                     \n" +
+                                      "                       ..,:,,,,:,,::...,,.:;,:;:,.,:;;,;:,.,...,::,,:,,,:,,.                        \n" +
+                                      "                          ..,,,:,,,,,,,.,.,:;:,......:::,.,..,,:,,,,,,,,..                          \n" +
+                                      "                              ..,,,,:,.,,:,,,,::,.,,,,,,,::,.,:,,,,,..                              \n" +
+                                      "                                   ...,,,,,,,:,,,,,:,:,,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 15 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ........,,........                                         \n" +
+                                      "                                  ...,,,,,,:,,,::,,,,:,,,,,,,,,...                                  \n" +
+                                      "                             ...,,,,,:,,.,:,,,,,,,..,,,,,,::,,,::,,,..                              \n" +
+                                      "                          ..,,:,:,,,,,,.....,:::......,:::..,.,,:,,,,:,,..                          \n" +
+                                      "                       .,,,:,..,:,,::,,.,,.,;::;:,,,,:;::;,.,...,::,,:,,,,,..                       \n" +
+                                      "                     .,:,,,:,,.. .::,;;:;;;:,....,,,,...,:;;i::;:,;,.,,.,,:,:,.                     \n" +
+                                      "                  ..,,:,,,::,....,::,. :;::::,..      ..,:;;;:,,,:;:,  ..,:,,,:,..                  \n" +
+                                      "                .,,,,.,:..;::;::,,,   :;;,.,;;;::,,,:::;;;..:;,   ,:,,,,,,::,,:,:,.                 \n" +
+                                      "               .,,,,,,.. ,::,.    ,:,:::;i::i:;:,,,,,:;;;;:;;;;:.  ..,,:;::: .:..,:,.               \n" +
+                                      "             .,,,.,:,..:;;;:....,,;11i:;;,.,...,:,,,:,,..,,:;;,:;;i;    .,;:,...,,,,:,.             \n" +
+                                      "            .:,:,,:;,:;:;;;;:;;;::;1i;1i:,.      ..         .;iiii1;::::::;;i:...,,.,,:.            \n" +
+                                      "           ,,,.,:..;::,.,;:..:i;;:;1i;1ii1;;;:,.,Lf. ...,,:;;i1i:11;:;;;,,;;:,;;,:::,:,:,           \n" +
+                                      "          ,,:.,,. ,:;,  ,;;;;::,  :;;;,.,Lfti;iiLCLL;ii;11tt::;;1;i:,:;:,,;;, ,::;,.:,.,,,          \n" +
+                                      "         ,,,,:,..,,,,.  :;,;;.    i;ti,,ifLtft;fLLLLt:;1ttLL: .,t;i.  ,:i;;;.  .:,, .,,,:,,         \n" +
+                                      "        ,:,.,;:,;:,,.  ,:,.;,    ,iiffLL11f;i1LGGt1GGLtf11L11tffL;i,   .;;,;:  .,,,,..,:,,:,        \n" +
+                                      "       .,,:,,,:::,   .::,.,:.   .ii;11f1;:.  iLt0CL0fL;   :iiff11i1;    ::.,:,   ,:;:,::,.,:.       \n" +
+                                      "      .,,,,:. :::..,:;::::,.   .;;i.1Li     ;CtCt11fLtC;     ,fL,:ii,   .:,.,::.   :::;,:,:,,       \n" +
+                                      "      ,,,.,, ,;;;;;:;;;;:.    ,;:;,,tt.    ;GLC81,,,GGfC:     iL;.;:;.   .,:;::;;:.,;;, ,,.,,,      \n" +
+                                      "     .:,:::..:;;;;, ::i,    .;i;:.:i1;    iGGLGG@CC8GGGGC;    :11,,:;;,     ,;;;::;;;;: .,.,,,      \n" +
+                                      "     .,,.,:::::.,:;;;;,  .,;ii;:;1ti:    iLC118LitttL0ftGLi    ;1t;,:;i:.    ::;..;;;::, ,::,,.     \n" +
+                                      "     ,,,,:,:::,  .;:,i:,;iitt1ifLi,     1ft1;8f      f8;tffi    ,iffiii1;,.  ,i;;;:..:;::::.,,,     \n" +
+                                      "     ,,,,:. :::. .;i;i1iiii1LftL,     .fCfi1Gf.      .LGiifLt     ,tL1fftii:,:;,:;.  ,:::::,,,,     \n" +
+                                      "     ,,..,. ,,,, :i111;iii. :f;1;    :LGCtC0;         .t8tiLGL,    :ftLi,;ii11;:;,  .:::..:,,,,     \n" +
+                                      "     ,,:,: .:::.  ,;:i1i;i;:tLtf:   1LL8GL@;            i@fL0Gf;   i1if: .iii;111i, ,,,. ,,.,,,     \n" +
+                                      "     ,,,,::::;,  ,;:,i,.:iitft1Lt..tLtCfG0LL:          ;fC000C1Ct. ;LtLL1iiii1i:;:  .::: .:,,,,     \n" +
+                                      "     ,,,.::,:::.,;;;;i.  .,;1iiitLCCfG1  LLGLt11111iii10GCt,.t0fLftLti1t1;;:.:i,;;.  ::::,,,,,,     \n" +
+                                      "     .,,,:, .:;;;;..;::     :i;;tCCfCLG1:G8CLCfft1tfLCGL00:,tLCLfGGf:;ii:.   :;;;:;,,:::::,.,,.     \n" +
+                                      "      ,,,.,..:;;;;::;;;:.    .1CLLCfCCLCCLC0CCLfttffLCC0CLGLLLGftCLLC1:.    ,;:: :;;;;:..:::,,      \n" +
+                                      "      ,,,.:, ,:;,.,:;::::,.  1CCLLfCCfi1i;;;;;;;:::;;;;;;;iiitCCfffLCCi   .:;:;;::;;::,.,,.,,.      \n" +
+                                      "       ,,:,::;:::   .::,.,:. ,,:ii::Lt.                     .1C;,ii;.,. ,:::,:;,, .::, .:.,,,       \n" +
+                                      "       .:,.,:,,:;:,.  ,:,.;:    ;1i11Lfii;.. .,:;:::.    ,;iftt1i1;    ,:,.,:,   .::,;,,,:,,.       \n" +
+                                      "        ,,,,:,  ,,,,.  :;,;;    :iiLft11tL1tftt1i;i1tttiifi1ffffii.    :;.::.  .,:::,::,.,:.        \n" +
+                                      "         ,,,..,. ,::.  ,;;;i:,  ,i;t,  :LL1ti;:::,,,:;1ttLf;..i1;;   .,i;,;:  .:,,. .,:,,:,         \n" +
+                                      "          ,,,.,:.,;::, ,::.,:;:,:iii;i::t11i;i;;;::;ii;i1ff.,:i;;: .:::;;;;,  :::. .,.,:,,          \n" +
+                                      "           ,,,:,:;:,;;:;;;,,i;::;11:11;;;,,..      ..,:;;;1i1i;i1;:;;i:..;;,.:::;.,:,,,,,           \n" +
+                                      "            .:,,.:,...;;;;::,:::i11ii;;.                 .,;i1;i1;::;;;:;;;;:::,;:,,:,,.            \n" +
+                                      "             .,:,:,,...,:;,.    ;;:;::;;;:,.,,::,,::,,.,,,,;;:i11;... ..::;;,..,:,.,:,              \n" +
+                                      "               .,:,.,:..;::;::,..  .:;;;:,;;;;,,,,,:;;;i::i;:;:,:. ...,,::, .,,,,,,,.               \n" +
+                                      "                 .,:,:,,::,,,,,,:,.  ,;:..;;;::,,,,::;;;,.,;:,   ,,,::;::;,,:,.,:,.                 \n" +
+                                      "                   .,:,,.:,... ,:;::,,;;;;:,.        .,:;;;;:.,,;:,....,::,,:,:,.                   \n" +
+                                      "                     .,:,:,,.,,.:;,::,:;;;:,,,,,,,,,...,;;;;:;;,;, ...,,:,,,,,.                     \n" +
+                                      "                        .,,,,,:,,::,...,.,;::;:,.,,:;,:;,.,,..,::,,:,..,,,,.                        \n" +
+                                      "                          ..,,:,,,,:,,.,,.:;:,......:::,....,,,,,,,:,:,,.                           \n" +
+                                      "                              ..,,,:,,,,::,,,::,..,,,,,,::,.,::,,,,,..                              \n" +
+                                      "                                   ...,,,,,,,,:,,,,::,,,,,,,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 16 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .........,........                                         \n" +
+                                      "                                  ...,,,,,:,,,,,::,,,::,,,,,,,,...                                  \n" +
+                                      "                              .,,,,,,,:,..,:,,,,,,,..,,,,,,::,,,:,,,..                              \n" +
+                                      "                          ..,,,,,:,.,:,,.....::::.... .,:;,.,,.,::,,,,,,..                          \n" +
+                                      "                       .,,:,:,..,,.,:::,,:,,:;::;:,.,::;,::,,,...,:,,::,,,,,.                       \n" +
+                                      "                     .,,,.,,:,... .:::;:;;;;:.....,,,,,..,:;;;,::,:;,.:,.,::,,.                     \n" +
+                                      "                  .,,,,:,,:::,,,.,::,. .;;:;::..       .,:;;;;:,:::;:. ..,:,.,,,.                   \n" +
+                                      "                .,,:,..,,.,:,;;:,,,.  ,;;;..:;;:::,,,:::;;:.,::   .:,,,,..,::,,:,,,                 \n" +
+                                      "               .,,,:,,....:::.     :i:;::i;:;;;;:,,,,,:;;i:::;;;.   .,,:;:,;:.:,.,,,.               \n" +
+                                      "             .,:,.,::,.,;;;;,,.,,,,i11i;i,......,,,,::,,.,,:;;:,::,;:   .,:::..,,,,:,,.             \n" +
+                                      "            .,,,:,,:::;::;;:,:;;;::i1;i1;;,.      .          :i;;i11;,:,,:;;;;. .,:.,,,.            \n" +
+                                      "           ,:,..:. ,;:, .:;:.,;i:::iiii1i1i;i;:,:Lf.   ...,:;;iti;11;:;i:,;;;:::,,::,,:,,           \n" +
+                                      "          ,,:,,,. .,::  .;;;i;:,   i:i:. 1Lt1;;iLCLL;;i;i11t;:iiiiii::;;:.:;:.,:::;.,:,,,,          \n" +
+                                      "         ,,,,::.,,,,,.  ,;,:i.    ,iit::;tfftf;fCLLCt:;ittfLi. .i1;;  ,:i;;;,   ::: .,..,:,         \n" +
+                                      "        ,,,.,:;,;;,.   ,:,.:;    .;itftCtiti:iLCGf1CGftft1Lt11tfL1;;   .;;:;:   :,,,  ,,:,,,        \n" +
+                                      "       .,,,:,.:::,   .::,.,:,    ;iiiftf;:,  iC1GGf0fLi ..:iitL1ti1i.   ,;,,:,  .,:::.,:,.,,.       \n" +
+                                      "      .,,,.,. ,:;,,::;::;:,.   .;;i,;Lt.    ;C1Gt1tfL1C;     .tLi,ii:   .:,..::.  .:;,:::,,,,       \n" +
+                                      "      ,,:,,, ,;;;;:,:;;;,     ,;::,,1t,    ;GCC8f:,.L0fC:     :L1 ;:;.   .:::,:;:,..:::.,:,,,,      \n" +
+                                      "     .,,,,:,,::;;;:.::;,   .,ii;,,:1i;    iCGfCC@GC80GGGC;    ,t1,,;:;.    .:;;;;:;;;;: .,.,,,      \n" +
+                                      "     .,,.,:;::: .:;;;i, .,,;1i;:itti,    iLL1;8Ci1ttC0CtGLi    ;11:,:ii,     ::;..;;;;:. ,,,,,.     \n" +
+                                      "     ,,,,:..:::  .::,ii;iiitf11Lf;.     tff1;0L     .t8;tfLi    ,ift;iii:.   ,;;;:;,,:::.,:.,,,     \n" +
+                                      "     ,,,.,. ,,:, ,i1i1iiii:;fftf,     .fCf1tGf.       LGiifLt.    :ff1ff1i;, ,i:;;,  ,:,;;:.,,,     \n" +
+                                      "     ,,,.,. ,,,, .:iiiiiii, ,fiti    ,LGCfC0;         .t0tiLGL,    ;LtL1;;i;i1;,:,   ,:;,.:::,,     \n" +
+                                      "     ,,:::.:;:,   ::,;i;;i;itLtL:   1LL80L@;            i@LfGGL;   i1;f, ,iii;1ii;. ,,,, .,.,,,     \n" +
+                                      "     ,,,.:;:,;,  ,;;:i. ,;i1tt1Lf,.1LfCtC0LC,          ;tC080G1Ct. :LtLf;;iiii1iii, ,,:, .,.,,,     \n" +
+                                      "     ,,,,:,.:::,::::;;,   .:iii;1LCCfG1  CC0Lt11111i;i10GCt:,t0fLf1Lfi1ftii;:ii,::.  :::..:,,,,     \n" +
+                                      "     .,:,,, .:;;;; ,;;:     ,i;;tCCtCCGii08CLCfft1ffLGGC8G,,tLCLfGGf:;ii;,.  ,i;;;:..:::;:,.,,.     \n" +
+                                      "     .,,,.,..;;;:;;;;:;:.    .1CLLCfCCLCCfG0CCLfttffCCG0CCCLCCGffCLLC1;.    :;:,.:;;;::,,:,,,,      \n" +
+                                      "      ,,,,:,.:::...:;:,,::.  1CCLffCCti1i;;;;;;;::;;;;;:;iiiitCCfLfLCCi   .:;;;:,;;;;;, ,,,:,.      \n" +
+                                      "       ,,,,:;:,;:.  .:,,.,:. ,,;i1.if1.                     ,tL::ii;.,. .:::::;:,.,::. ,,.,,,       \n" +
+                                      "       .,,.,:..:::,.  ,:,,i.   .i1ittLti1:...,:;;::,.    :;iL1fiii:    ,:,.,::.   :::,.,:,,,.       \n" +
+                                      "        ,,,:,,. ,,,,   :;:;;.   i;tLt1i1fL1fft1i;;i1tt1;1titLtL1i;     ;:.,:.  .,:;::;:,.:,.        \n" +
+                                      "         ,,,..:. :::   ,;;;;:,  i;t;.  iLft1;;:::,,,:;ftfft:,,t;i,    ,i:,;,  .,,,,..::,,,,         \n" +
+                                      "          ,,,,:,,;::;,.:;, :;;::iiiiii;iti1i;;;;;:;;ii;1tCi ,;i:;  .::;;;;;.  ::,. .,,,:,,          \n" +
+                                      "           ,,:,,::,,:::;;;:;i;:;11;iti::,,..      ..,:;i;i1i1ii1i:;;;;,.:;:..::;, ,:.,,:.           \n" +
+                                      "            .,,,,:,. .;;;:,,,,,i1ii;:i,         .       .,:i1i;1;::;;;::;;;::;,::,,:,:,.            \n" +
+                                      "             .,,:,,,,..:::,.   ,:,,::;;i::,.,:::,,::,..,,.:i;i11;,,....,;:;;,.,::,.,,,              \n" +
+                                      "               .,,,.,:.:;,;;:,,.   .:;;:,:i;;:,,,,,:;;i;:ii::;:;,    .,:::....,,,,:,.               \n" +
+                                      "                 .,,:,,::,...,,::..  ::,.:;;::,,,,:::;;:.,;;:.  .,,,:;;,;,.,:..,:,.                 \n" +
+                                      "                   .,,,.,,,.. .:;:::::;;;:,..        .,:;:;:..,:::,..,,::,,,:,,,.                   \n" +
+                                      "                     .,,::,.,:.,;:::,,;;;:,,,,,,,,,...,:;;i::;,::. ..,,:,,,,,,.                     \n" +
+                                      "                       ..,,:,:,,,:,...,.,;::;:,,.,:;::;:.,:.,::;,,,:..,:,,,..                       \n" +
+                                      "                          ..,,,,,,::,.,,,:;:,......:::,....,,,:,.,:,,,,,.                           \n" +
+                                      "                              ..,,,,,,,::,,.,:,..,,,,,,::,.,,:,,,,,...                              \n" +
+                                      "                                   ..,,,,,,:,:,,,,::,,,,,:,,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 17 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,..,.......                                         \n" +
+                                      "                                  ...,,,,,,:,,,,,::,,,::,:,,,,,...                                  \n" +
+                                      "                              ..,,,,,,::,..,:,,::,,,.,,:,.,,:,,,,:,,,.                              \n" +
+                                      "                          ..,,,,,::,,::,,... .:::,.... .,:;,,,,.,::,,,,,..                          \n" +
+                                      "                       .,,,,,,,.,,..::::,::,,:;,:;:,,,:;;,;:.,....:,,,:,,:,..                       \n" +
+                                      "                     .,,:,.,:,... .,;::::i;;;,....,,,,,,,,:;;;:,,,,:;,,:..,:,,.                     \n" +
+                                      "                   ,,,,,:,,::::,,,,::,. :;::::,..       .,:;;;;,:;::;, ..,,:,,,,,                   \n" +
+                                      "                .,:,,,.,,  :::;:,,... .:;;:..;;;:::,,,::;;;,,::,  .,:,,....:,,,,:,,                 \n" +
+                                      "               .,,,,:,..,.,::,      ;ii::;i::i;;;:,,,,,:;;;,,:;;,   .,,:;;,:;,,:,,,,.               \n" +
+                                      "             .,,:,,:;,,:;i;;:,,,,,::ii1ii;......,,:,,::,,.::i;;:::..,.  .,,::. ,,.,:,,.             \n" +
+                                      "            ,,,,::,.:,::,;;:,,;;;;::i1:11i;,.                ,;;:iii1;,,.,:;;;, .,:,,:,.            \n" +
+                                      "           ,,,..,, .:;:. :;;,,:i;:,:ii1iiitiiii::Lf.     ..,,:;11;i1i::;;:;;;;::,.::,,,,,           \n" +
+                                      "          ,:,:,,. .,,:.  ;;:;;,,   ,;:;. ,Cf1;;iLCCL;;;;;ii1i;i1iii1;:;;;..;:.,:;,::,,:,:,          \n" +
+                                      "         ,,,.::,,::,,.  ,:,,i,     i;ti:;1tLtf1fCLLCt:;i1ttL1. .,t;i: ,:;;;;:  .,::. :,.,,,         \n" +
+                                      "        ,,:,,,:::;,.   ,:,.,;.    :i1LtLLi1i,;LCGftCGftff1fLt1itfL;i,   ;;;;:.  ,:,, .,,,:,,        \n" +
+                                      "       .,,,,, .::,  .,::,,::,    :ii:f1f;,,  iC1GGf0LCi ..:1i1Lftii1,   .i:,:,  .,,:,..:,.,,.       \n" +
+                                      "      .,,,.,. ,:::,:;i;:;:,.   .;;i::Lf,    ;CiGfitfLiL;    ..iLt.ii;    :,.,:,.  .:;:,::.,,,       \n" +
+                                      "      ,,:,:, :;i;;;..;;;,    .:;::,.1t:    iGGC8L;, tGfC:     ,Lf ;:;,   .::,,:;:. .::::,::,,,      \n" +
+                                      "     .,,.,:::::::;::;::,  .,:ii:,,;1i;    iCGtLC@GC0GG0GC;    .11:.;:;.    ,:;:;i;;:;;;..:.,,,      \n" +
+                                      "     .,,,,,::::  ,;;:i:.,::i1i:;1ft;,    ifL1;8C;1ffCGGtGCi    ;1i:,;ii.     :;;,.;;;;;. ,,,,,.     \n" +
+                                      "     ,,,,:. :::. .;;:i1ii11fLttLt:      tLf1;0L     .t8itfLi    :1f1;;ii,    ,;;:,:::::, .:,,,,     \n" +
+                                      "     ,,,.,. .,,, ,i111;iii,,1f1f,     .tGL1tGf.       LGi1fLt.    ;Lfitti;,. ,i:;;:  ,;::::.,,,     \n" +
+                                      "     ,,,,: .:,:.  ,;;;11ii: ,f1ti    :fGCLGG;         .t81iLGL,    ;LtLti;;;:;:,::   ,:::,:,,,,     \n" +
+                                      "     ,,,,:::::,  .::,;;:;;;1fLtL;   iCL88L@i            1@ftGGC;   111t. :ii1i;;;,  .:,:..:,,,,     \n" +
+                                      "     ,,,.::::;, .:;;;i.  ,;ittifL;,tftL1f0LC,          ;tG088G1Lt. :f1f1,:iiii111i, ,,,. ,,.,,,     \n" +
+                                      "     ,,,,:. ,:::::.:;;,    ,iii:iLCGfGt  GC0Lt11111i;i10GLt;:fGtCfiff1tLt1iii1i:;:. .:;: .::,,,     \n" +
+                                      "     .,,,,, .;;;;;.:;;:     .i;;tCCtCCGit88LLLffttffC0GC8L.,tLCLLGGL;:i1i::, :i:;;, .;::::,,,,.     \n" +
+                                      "     .,,,.:..;;:,:;i::;;,.   .1CLLCfCLCCLL0GCLfftffLCL00CCLLCCGffCLLL1;:.   ::::,:;:::::::,,,,      \n" +
+                                      "      ,,:::,::::. .,::,,::.  1CCLfLGC1i1;;i;;;;::;;;;;::;ii;ifCLfLfCCCi   .,;;;.,;;;;;, ,,:,,.      \n" +
+                                      "       ,,,.::,:;:,  .,:,.,:  ,,iii,tfi..                    :ff,;;i:.,. .::;:;;::,:::. ,,.,,,       \n" +
+                                      "       .,,,,,..,:,,.  ,;,:i.   :1ittfft1t:,,.::;:::,     ::1ftf;ii,    ,:,,,::.   ::: .:,,,,.       \n" +
+                                      "        ,,:,,,. ,,:,  .;;;;;.  :i;Lt1;itLttLft1i;i1tt1i:t11LLtLii,    .;,.,:,   .:;,:::,,,,,        \n" +
+                                      "         ,,,.,: ,;:,.  :;:;:;, :ii1,. .tLtt1;;::,,,,:1ftLt1:,i1;;     :i.::.  .,,::,,:,.,,,         \n" +
+                                      "          ,,,:,:;:,;;,,:;..;;;;i1i;iii;i1ii;;;;;;:;ii;;1fL. ,i:i,  .::i;:;:  .:,,. .,,:,:,          \n" +
+                                      "           ,:,.,:,.,,:;;;;:;;::i1i;1i:,,..        .,:;ii;tiiii1i::;;i:,,;;: .:;:. ,,..,,.           \n" +
+                                      "            .,,,::,. ,;;;,..,,;1ii;,;;,         .      .,;;1i;1i:;;;;:,:;;;,;:,:,,:,,,,.            \n" +
+                                      "             .,::,.,, ,;:::.  ....:::;;i::,,:::,,::,...,.,iii11i:,,,,,,:;;i;,,:::.,:,,              \n" +
+                                      "               .,,,,:,:;,,;::,,.   ,;;:,,i;;:,,,,,:;;;i:;i;:;;i;     .,::,...,,:,,,,.               \n" +
+                                      "                 .,:,,,,:. ..,,:,.. ,::,,;;:::,,,,::;;:..:;;:  ..,,,:;,:: .,,.,:,,.                 \n" +
+                                      "                   .,,,,:,,,. ,;::;::;;;;:..        .,:;::;, .,::,,,,,:;:,,:,,,,.                   \n" +
+                                      "                     .,,:,..:,,;:,,,.:;;::,,,,,,,,...,:;;;;:;::;,  ..,,:,.,:,,.                     \n" +
+                                      "                       ..,:,::,,,,......:;,::,,.,:;:,;:,.:,,:::,.,,..,:,:,,.                        \n" +
+                                      "                          ..,,,,,::,.,,,,;:,......,::,.....,,::.,::,,,,,..                          \n" +
+                                      "                              ..,,,,,,::,,.,:,,.,,,,,.,:,..,::,,,,,,..                              \n" +
+                                      "                                   ...,,,,:,,:,,,,:,,,,,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 18 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ........,.........                                         \n" +
+                                      "                                  ...,,,,:,,:,,,,,:,,,,:,,:,,,,...                                  \n" +
+                                      "                              ..,,,,,,,:,,.,::,.::,,,.,::,.,,:,,,,,,..                              \n" +
+                                      "                          .,,,:,,,:,,,::..... .::;,......,::,,,..,:,,,,,..                          \n" +
+                                      "                       ..,,,,:,,,,,..::::,::,:;;,:;:,,,:;:,;:.....,,.,,:,,,..                       \n" +
+                                      "                     .,:,,,.::,.....:;:::;i;;:,.. .,,,,,,,,:;;;..,,,;:,:,.,,:,.                     \n" +
+                                      "                  .,,,,.,:,,:::::,,,:,. .:;::::,.       ..,:i;;::;;,;:..,,,,:,:,..                  \n" +
+                                      "                .,:,,,,,,. ,::::,,.. ..,;:;,.,;;;::,,,,::;;:,:::  .,::,.. .,:,.,:,,                 \n" +
+                                      "               .,,..::,.,,,::,.     .i1i::;;:;;:i;:,,,,:;;i:,,;;:   .,,::::,:::::,:,.               \n" +
+                                      "             .,:,,,,:::;:i;;;:,::::::iii1i:... ..,,,,,::,.,:;i;;::,  ....,:::: ,,..,:,.             \n" +
+                                      "            .:,.,:, ,:::.:;;,.,;;;;::1i:1ii;,.               .:;,:;;i1,...,;;;: .,,:,,,.            \n" +
+                                      "           ,,,,,,. .:::. ,;;:::;;::,;iiii;t1i1i;:Lf.       ...,;1ii11i:;;;;;;;:,..,:..,,,           \n" +
+                                      "          ,,,,:,..,,,,.  :;,;i,,.   ;:;,  fCti:iLCLL;;;;;;iii;ii1i;11i:;;,.:;:,;;,,::,,:,,          \n" +
+                                      "         ,,,.,;::;:,,.  ,:,.;:     :i1t:;11fffffCLLCt:;i1ttLt,..,;t;i..;::,::. .,:;:.,:.,,,         \n" +
+                                      "        ,,,:,,.:::,    ,:,.,;.    ,iifftCti1,,LCGLtCGf1fLttLfi;i1f1:i  .:;;;;.  .:,, .,.,,:,        \n" +
+                                      "       .,,.,,  ,;:  .,;:::::,    :ii:ttt1:,  iCtC0fGCC1.,,:111tLtti1i    ;;,;,  .,,,,  ,:,,:.       \n" +
+                                      "      .,,,.,..:::;:::;;:;:,.   .;;;::ff:    ;CiCLitfC1L:    ..;ff,;ii.   ::.,:,   ,:;:.,:.,,,       \n" +
+                                      "      ,,,,:,.:;;;;;..:;i,    ,:;;:,.it;    ;GGC0Gi, 1CfC;      fL.::;,   .::,.::,  .:::;:,,:,,      \n" +
+                                      "     .,,..:;:::,,;;;;;:. ..:iii:,,;ti;    iCGtfC80C0GG0GC:     1t:.;:i.   .,;;::i;:,:;;,.:,,,,      \n" +
+                                      "     .,,,:,.::;. .;:,i;,;;;11i;ifft;,    ifft:8G;iffGC0fGCi    ;1i,,;;;.     :;;;,;;;;;..,..,,.     \n" +
+                                      "     ,,,,,. ,::, ,i1i11ii1itCftL1,      1Lf1;0C     .181tLL1    :1fi;;i;.    ,:;,.:;:::. .:::,,     \n" +
+                                      "     ,,,.,. ,,,, .:ii1;iii, ;fit:     .tGL1fGf.       LG;1fL1.   .iLt1t1i:.  ,i;;;:. :;:,,:.,,,     \n" +
+                                      "     ,,:::.,;:,   ,:,:i1i;;.,ftti    :fGGLGG:         .f81;fCL,    1ftLfi;;:.:;:;:.  ,;,:;:,,,,     \n" +
+                                      "     ,,,,:;:,;.  .;;:;,.:;i1fL1fi   iCL08C8i            1@f1CGC;   1ttf..;;i1i:::.  .:::,.:,:,,     \n" +
+                                      "     ,,,.:.,:;: ,:;;;i.  .:i111fLi,tftLit0LG.          ;1G08801ft. ;tif; ,ii;i1ii:. ,,,. ,,.,,,     \n" +
+                                      "     ,,:,:. .::;;: ,;;,    .;ii:ifGGLGt  GC0Lt11t11i;it0GLti;fGtCfi1ftfLti1ii11;ii. ,::. ,:,,,,     \n" +
+                                      "     .,,.., ,;;;;;:;;i:     .i;;tCCtCLGiL80fLfftttfLG0CG81.,tfGLfGGCi:i11;;:,;i:;;. .;::.,,,,,.     \n" +
+                                      "      ,,,,:.,;::,,;;:,;;,.   .tLLLCLCLCCfL0GCLfttffLCC0GCLfLCGGtLCLfL1i;,.  ,:;;::;,,:::;:.,,,      \n" +
+                                      "      ,,:,::;:::.  ,::..::.  1CCLfLGL11i;;i;;;;::;;;;::;;i;;iLCffLfCCCi    ,i;:.,;;;i;:.,:,,,.      \n" +
+                                      "       ,,,.:,.:;:,.  ,:,.::  ,,i1;:ff:..                    ;Lt,;;i:.,. .,;;:;;:::;::, .,.,,,       \n" +
+                                      "       .:,::,  ,,,,   :;,;;    i1iffLt1tt;:,,::;;:,.    .:;ttft;i;.    ,::,:;:,. .:;, .:..,,.       \n" +
+                                      "        ,:,,.,. :,:   .;;;i:. .i:tfi;:ifLtfLtti;;i1tti::tifCtftii.    ,:,.,:,   .::::.,,:,:,        \n" +
+                                      "         ,,,.:,.::::. .::,::;.,i;t;,,.,tftti;;::,,,:iftff1i::tii,     ;;.::.  .,::;,::,.,:,         \n" +
+                                      "          ,,:,,::,,;:,:;:.:;;;i11;i1ii;ii;;:;;;;;:;i;:itC1 .:;:;   .,:i;:;,  ,,,,...,:,,,,          \n" +
+                                      "           ,,,..:,..,;;;;;;;;:i1iiii;,..         ..,;i1i11;iii1:,::i;,::;:, .:;,  ,,.,:,,           \n" +
+                                      "            .,,,:,,. :;;:,...:i;;;:,;:..      ..      .,;ii1:1i::;;;;,,:;;:,;,:,.,:,,,,.            \n" +
+                                      "             .,:,..:,.:::::,..   ,:;;;i;:,,:::,,::,,.....;i1iii::,,,,,:;;;i:::;:,,,,:,              \n" +
+                                      "               .,:,:,:;:,,:::,,.   :;:.,;i;::,,,,:;i;i;:i;::i1i.     .:::,,..,::,,,,.               \n" +
+                                      "                 .,:,..:,.  .,::,.. :;:,;;;::,,,,::;;;,.,;:;......,,::::. .,,,,,:,.                 \n" +
+                                      "                   .,:,:,,,,..::,;;::;;i:,.         ,,:;:;:...,:,,,:::::,,:,,,:,.                   \n" +
+                                      "                     .,:,,.,:,::,....;;;:,,,::,,,....,:;;i;:::;,. ...,:,.,:,:,.                     \n" +
+                                      "                       ..,,,:,,.,,.....:;:::,,.,:;:,;:,.,:,::::..,,,,,,,,,,.                        \n" +
+                                      "                          ..,,,,,:,.,:,,::,......,;::.....,,::,,::,,,,,,.                           \n" +
+                                      "                              ..,,,,,,:,,.,::,.,,,:,.,::..,::,,,:,,,..                              \n" +
+                                      "                                   ...,,,:,,:,,,,:,,,,,:,,,,,,...                                   \n" +
+                                      "                                          ................                                          \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 19 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,..........                                         \n" +
+                                      "                                  ...,,,,,,,,:,,,,,:,,,,:,,,,,,...                                  \n" +
+                                      "                              .,,,,,:,,,:,,.,:,,,::,,,.,::,.,,:,,,,,..                              \n" +
+                                      "                          ..,,,,,,,:,,,;:,.... ,::;,......,::,,,.,,:,:,,..                          \n" +
+                                      "                       .,,:,,,:,,,,...:,;::;,,:;:,;:,,,,::::;,....,,,.,,:,,,.                       \n" +
+                                      "                     .,,,:,,,::,....,;;:,:;;;;:... .,,,:,,,,:;;,...,:::,:,,,,,.                     \n" +
+                                      "                  .,,:,.,:,.,:,;;:,,::. .:;;:::,..       .,,;;;;:;;::;:.,,.,::,:..                  \n" +
+                                      "                .,,,,:,,..  :;:,....  ,,;;;;,.:;;;::,,,:::;;:,;:. .,:::,  ..,,.,,,.                 \n" +
+                                      "               .,:,.,::,,:::::.     .,11i:;;::i;;i::,,,,:;;i,.:;:.   ,,,:,,.,::,,,,,.               \n" +
+                                      "             .,:,:,,,:::;;i;;;::::::::1i11i:.. ...,:,,:::,,::i;;;;,.  ..,:;:,;,.:,.,,,.             \n" +
+                                      "            .,,..,,  :::,.:;:,.:i;;;:;1i;1ii::,             ..:;:,:::;;.  .,;;:..,,,:,,.            \n" +
+                                      "           ,:,,,,. .,:;. .;;;;::;:,..;i1i;;fi11i;Lf,          .:ii;i11i:;;;;;;;,  .:,.,,,           \n" +
+                                      "          ,,,.::,,,,,,,  ,;,,i:..   ,;:;  ;Cf1:;LLCL;;;;:;;;;;;i11;i11;:;;.:;;,:;:,::,,:,,          \n" +
+                                      "         ,,:.,:;::;,..  ,:,.:;     .iiti:i11LtfLCLLCt:;;ittft:,,::1ii;.;::.,:, .:::;:,:,,:,         \n" +
+                                      "        ,,,,:, ,:::   .,:,.,:,    .;11L1CLi1:.LCGCtLCf1fLf1fL1::;1L;;: .:i:;;,   :::..:..,,,        \n" +
+                                      "       .:,..,. ,::,.,:;;::::,    ,;i;1L1t:,. iC1C0fGCC1.,:;1t1tfff1i1,   ;;:;:   ,,,. .,,:,,.       \n" +
+                                      "      .:,:,,..:;;;;:,:;;;:.    .;;;;,tf;    iC1LGitfC1L:    .,:ffi,1i,   ,;,,:,  .,::,..:.,,,       \n" +
+                                      "      ,,,,::::;;;;;,,::;.   .,;;::,,i1i    ;GGC001, iLfC;      1C:.;;:   .:,.,::.  ,;:,::,,,,,      \n" +
+                                      "     .,,,.:::,:,.:;;;;:..,,;ii;,,:iti;.   iLGttC80CGCG0GC:     ;fi ;:i.   .:;:,:;;,.,:::,:::,,      \n" +
+                                      "     .,,::, ,;;, .;;:ii;iiitti;1Lf1:.    ifft:0G;ifL0C0CGCi    :11,,;;;     .:;:;:;;;;;, ,..,,.     \n" +
+                                      "     ,,,.,, .,,, .i111iii1;iLftL;.      1Cf1;0C.    .18ttCL1    ;1t;;;i;     ,;;, :;;::. ,,,,,,     \n" +
+                                      "     ,,,,:..:,,,  .:;ii1ii: .ti1;     .tGCtfGf.       fG;1fL1.   .1Lt111;,   ,i;:::,.:::..:,,,,     \n" +
+                                      "     ,,,::,:::,   ,:,:;;i;;::fffi    :LG0CGG:         .f81;fCf,   .tt1Lfi;:. :i:;;.  ,;,:::.,,,     \n" +
+                                      "     ,,,.:::,;,  ,;;:i, .:;ifL1ft.  iLf08C81            t@tiCGG;   1tft.:;;iii,,:,   ,:::,::,,,     \n" +
+                                      "     ,,,,:..:::,,:::;;.   ,;111tLi,tftL:i0LG.          ;1G0080tft. i1it, :i1iii;;.  ,,,, .,.,,,     \n" +
+                                      "     ,,,,,, .:;;;: :;;.     ;i;:;fGGLCt ,0C0Lf11t1i;;it8GLt11LGtCf;iLtLL1i1ii1111i. ,,:. ,,.,,,     \n" +
+                                      "     .,,.,, :;;;;:;;:;:.     ;;;tCLtCCCiG8GtLfttttfC00C00;,,tfGCLCGG1:it1ii;;ii:;;. ,;:, ,::,,.     \n" +
+                                      "     .,,:::,:::,.,:;:,:;:.   .tLLLCLCLCLfC0GCLfttfLCLG0GCffLCGGtLGLLL1ii:,. .:;;;;:.,:,:::.,,,      \n" +
+                                      "      ,,,.,::,:;,  .::,.,:.  1CCLfCGf11i;iii;;::;;;;:::;;i;;iLCfLLfCCC1    ,i:,.,;;;;;:,::,,,,      \n" +
+                                      "       ,,,,:..,::,.  ,:,,;,  ,;11:itf:,.                   .if1,;;i:.,. ..;;:i:::;;:;:..,,:,,       \n" +
+                                      "       .,::,,. ,,,,   :;:;:   ,1itLLft1f1;;::;;;::,     ,:;f1Li;i;.    ,::::;::, ,;:. .,..,,.       \n" +
+                                      "        ,,,..: .:::   ,;;:i:. ;;;Li:,:1Lf1fLt1i;i1tt1;,;11LLtL11:     ::,.,:,    :::,.,:,,,.        \n" +
+                                      "         ,,,,:,:;:::. ,:,.:;;.ii1i::,,:tft1;;;::,,,:1f1L11;,i1ii     .i,.::.  .,:;::::,,:,,         \n" +
+                                      "          ,:,,,::.,;::;;:,;;:i11;it1i;;;::::::;;;;;;::1LC, ,i:;.   ..:i,:;.  ,,,,,,,::,,,,          \n" +
+                                      "           ,,,.,:.  ,;;;;::;:i1ii;;i,.          ..,:i1iit;ii1i;.,,:;:::;;:  ,::,  ,,,:,:.           \n" +
+                                      "            .,::,,,..:;;,.  .;::::,;;:,.     ...     .,:;i1;i1::;;;;:.,:;:.,::: .:,.,,,.            \n" +
+                                      "             .,,,.,:,:;,:;:,..   ,;;;;i::,::::,,::,,....:i11ii::::::,,;;;i;;:::,,,:,:,              \n" +
+                                      "               .,,:,,::,.,,:,,,   .::,.:i;::,,,,::i;;i:;;;:i1i,.     ,::::,.,::,.,,,.               \n" +
+                                      "                 .,,,.,:,.. ,:::,,.,;;,:;;::,,,,,::;;,.,;;;:,. ....,::;,  .,,,:,:,.                 \n" +
+                                      "                   .,,::,.,,.:;,:;;:;;;;,..        .,:;:;;, ..::,,:;:,:,,,:..,:,.                   \n" +
+                                      "                     .,,,,,:,:::....,;;:,,:::,,,....,:;;i;:::;:.....,::,,,::,,.                     \n" +
+                                      "                       ..,,:,,.,,,....,;:::,,,,,;;,:;,.,:,::::...,,,,:,,,:,.                        \n" +
+                                      "                          ..,,:,:,..,,,::,......,;::......,::,,,:,,,:,,,..                          \n" +
+                                      "                              ..,,,:,:,,.,::,.,,,:,.,::,.,,:,,,:,,,,..                              \n" +
+                                      "                                   ...,,,,,:,,,,:,,,,,:,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 20 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,,.,.......                                         \n" +
+                                      "                                  ...,,,,,,,,,:,,,,::,,,,:,,,,,...                                  \n" +
+                                      "                              ..,,,:,,.,,:,,.,:,,,::,,,.,::,.,::,:,,..                              \n" +
+                                      "                          ..,,,,,..::,,:;:.... .,::;,......,::,:,.,::,:,..                          \n" +
+                                      "                       .,,,,.,:,,,.. .,:,;:;:,,:;:,;:,,,,::,:;,.,.,,:,.,,:,,.                       \n" +
+                                      "                     .,,,::,,,;:,,..,:;:,,:i;;:,....,,,,:::,:;;:....,::,::,,,,.                     \n" +
+                                      "                  .,,,,,.,,..,:,;::,,,,  ,:;:::,,.        .,:i;;::;;,:;,.:,.,:,,,                   \n" +
+                                      "                 ,,,,,:,,.  ,:::....   :;;:;:.,:;;::,,,,::;;;,:;:..,,::,. ..,:.,,,,                 \n" +
+                                      "               .,,,..:;:,:;:::,.   ..,:11i;;;:;i:;;:,,,,,::i;..::,   .:,,,...:,,,:,,.               \n" +
+                                      "             .,,,,:,,,:,;:;;;;:::;;::::1i11i:.. ..,::,::::,::;;:;;,.   .,:;;,:;,,:.,,,.             \n" +
+                                      "            .,,,.,,. ,;:, ::;,.,;;;;;:i1;i1i;;:.            ..::;:::,,,,  .,:;;..,,.,:,.            \n" +
+                                      "           ,,,:,,,..,,:,  :;:;;:;:,..,ii1;,tfi11iLf,.          .;;:iii1i:;::;;;:  .,:,,,,           \n" +
+                                      "          ,,,.,;:::::,,  .::.i:..    ;:;, .fLt;;LLCL;;;;::::;:;;iti;111::i::;;:::,.,:,.,:,          \n" +
+                                      "         ,,:,,,,:,;,.   .:,.,i.     ;i1t:itifttCGLLCt:;;;1tft::::;;1ii::;:..::..:;,:;:,:,,,         \n" +
+                                      "        ,,,.,,  :::   .,::,,:,    .:11LtfCt1;.fCCCtLCtitfL1fL1:,:;tt,i. :;:;;,   ,::: :,.,,,        \n" +
+                                      "       .,,,.,. ,:::,,:;;:;::.    ,;i;iLtt;,. iC1C0LCCGt,:;;1ftttLLfi1;   :;;;:   ,:,, .,,,,,.       \n" +
+                                      "      .,,,::,,;;;;;:,,;;;:.    ,;;;;,1fi.   iC1L0itLC1L:    ,::tf1,i1;   .i,,:,  .,,:, .:,,,,       \n" +
+                                      "      ,,,.,;;::::;;::::;.  .,:;;:,,,i11    iGGC00f, iLtC;      ;C1 ;;;   .:,.,:,.  ,;;,,:,.,,,      \n" +
+                                      "     .,,:,:.,::, ,;;:;;,,::i1i;,,;1ti;.   ;LG1iC00CCLG0GG:     :f1 ;,i,   .:;,,:;:..,::;::,:,,.     \n" +
+                                      "     .,,,:, .;:, .ii;i11ii1tf1i1Lfi,.    1Ltt,00;;fL0C0GGCi    :11:,;;;     ,;;:;;:;:;;: ,,.,,.     \n" +
+                                      "     ,,,.,, .,,:  ,ii1i;i1;:fftL:       1Cf1;0C.    .10LtCL1    ;1t;:;i:     .;;:.:;;;;. ,,.,,,     \n" +
+                                      "     ,,:::.,:,:.  .:::i1i;;  1111     .tGCfLGf.       f0i1fL1.   ,1Lt11i;.   ,;;,,::,::, .:::,,     \n" +
+                                      "     ,,,,:;:::.   :;:;:,;;;;;fff1    :LG0CGG,         .f8i;fCf,   ,f1tLfi;,  :i:i;,  ,;:,,:.,,,     \n" +
+                                      "     ,,,.:,,:;, .:;i:i,  ,;ifL1tf,  iLfG0C0t            t@t;CGG;   tfLt:;;;;:;::;,   ,::;::,,,,     \n" +
+                                      "     ,,:::. ,:::::.,;;.   .;i11tL1:tftL::0CC           :iG0000fft. 1111  ;i11i:::.  .:,:..:,:,,     \n" +
+                                      "     ,,,.,, ,;;;;:.:;;.     :i;:;fC0LCf :0C0Lft1t1i;;if8GLfttCC1LL:;LtLf:;1i;i1ii, .:,,. ,,.,,,     \n" +
+                                      "     .,,,,,.:;;::;i;:;;,     ;:;tCLtCCC108CtffttttLC00C0C:,:tfGCLCGC1;1ftiiii1i;i;  :;;. ,:,,,.     \n" +
+                                      "     .,,:,::;,:, .:::,,::.   ,tLLLCCCCCffG0CCfttffLLC00GLfLLCGCtLGLLL1i1;:,,,;;:;:, ,:,:,:,:,,      \n" +
+                                      "      ,,,.,:,,;;,  .,:,.,:.  1CCLfGCf11i;ii;;;:;;;;:::;;;;;;1LLfLffCCC1.   ,;::,:;;;::::;,.,,.      \n" +
+                                      "       ,,,,:. .:,,.  ,:,:;.  ,i1i;1f1::,                   .1fi,;:i;,,.  .;;;;,,:;;;;:.,:::,,       \n" +
+                                      "       .,,,.,. ,,:.   :;;;;   iiiLLftttL1i;::;;;::.     ,,1ttL;ii;.    ,::;:;;:,.:::. .,.,,,.       \n" +
+                                      "        ,,,.,,.:::,.  :;:;;: .i:f1:,.:1LttLft1i;i1tti:.iitCttL1i,     ::,,::,.  .:::  :,,,,,        \n" +
+                                      "         ,,::,:;:,;:,.::.,:;:;1i1;;;::;ttt1;;;::,,:ifftf11::1ii:     ,i..::.  ..:;,:,,,,,,,         \n" +
+                                      "          ,:,,.:,.,::;;;::i:;11i;11i;::::,,:::;;;;;::;tCt  :;::    ..;;.::. .,,:::,:;,.,:,          \n" +
+                                      "           ,:,,:,.  :;;;::::i1ii;:;;.           .,:i11it1:i1ii..,,;;:;;;;:  ::,. .,,,,,,,           \n" +
+                                      "            .,:,..,.,;::,.  ,.,,:::i;:,.    ...     .::;i1i;1;:;;;;:,.,;:,.::;, .,,.,:,.            \n" +
+                                      "             .,,,,:,:;:,;;:,..  .,;;:;;::,:::,,::,,....:i11i1:::::::,:;;;;:;,:,,,:,,,,              \n" +
+                                      "               .,::,,,:...,,,:.   ,::..;i::,,,,::;;;i;:;;;i11,..    .,:::::,:;:..,,,.               \n" +
+                                      "                 .,,,,:,,. .:::,:,.:;::;;;:,,,,,,:;;:..:;:;:,  ....,:::. ..,,:,,,,.                 \n" +
+                                      "                   .,::,.,:.,;:,::::;;;:,.        ..,:::;:. .,:,,::;,:,.,:,.,:,,.                   \n" +
+                                      "                     .,,:,::,,:,.  .;;;:,:::,,,,...,::;;i:,::;,...,,::,,,:,,,,.                     \n" +
+                                      "                       ..,:,,.,:,,.,.,;:,,,...,:;,:;:,,:::;,:,...,,,,:,,:,,.                        \n" +
+                                      "                          ..,,,:,,.,:,:,,......,:::, ....,:;,,,::..,,,,,..                          \n" +
+                                      "                              ..,,,,::,,,::,.,,,:,.,::,.,,:,,,,,,,,,..                              \n" +
+                                      "                                   ...,,,,:,,,,::,,,,:,,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 21 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ........,,.......                                          \n" +
+                                      "                                  ...,,,,:,,,,,:,,,,::,,,,:,,,,...                                  \n" +
+                                      "                              ..,,,::,,.,::,,.,:,,,::,,..,:,,,,:,,,,...                             \n" +
+                                      "                          ..,,:,,,.,:,,,:;,,... .,:::,.....,,::::,,,::,,..                          \n" +
+                                      "                       .,,,,,.,:,,,.. .,::;:;:,,;;::;:,,,,,,,;:,.,.,::.,,,,..                       \n" +
+                                      "                     .,:,,::,,:;::,..,:;:,,;;;;:,....,,,::::,:;;,.. .,,,,:,,:,.                     \n" +
+                                      "                  .,,:,,.,,. .:,:;::,,,. .:;;,::,.        ..,;;;;:::,,:;,,,.,,:,.                   \n" +
+                                      "                .,,,.,::,....:;:,.     .;i;:i,.,;;;:,,,,,::;;;:;;,,::,::, .,,:,,:,,                 \n" +
+                                      "               .,,,,,,::::;;:::......,,;1ii;;::i;:i;:,,,,::;i: ,:,    :,,,. .,,.,,:,.               \n" +
+                                      "             .,,,.,:. :,:::;;;::::;;::,;ii1i;:. ...,:,,::::,::;:;;:.   .,:;;,,;:::,,:,.             \n" +
+                                      "            .:,,.,,. .:;:.,:;;,.:;;;;::i1;i1i:;:.     .     .,:;;;::,.... .:,:;:.:,.,,:.            \n" +
+                                      "           ,,,,::,..,,,:  ,;::i:::,.. :iii::L1i11Lf,.           ,;,:;;i1;:,,:;;;. .,,:,:,           \n" +
+                                      "          ,,,.,:;:;::,.  .::.;;.     ,;,;  iLLi;LLCL;;;::,,,,:::;11ii111:i;:;;;::. .:,.,,,          \n" +
+                                      "         ,,,:,,.,:::    .::..;,     ,iiti;111f1CGLLCf:;;;itft;:;;iii1i1:;;, ::,,:;,,::,,:,,         \n" +
+                                      "        ,,,.,,  ,;:. .,:;::,:,     ,i1ff1Cf1i tCLGfCCtitfLttL1:..:if;;; :;::::  .,::;,,:.,,,        \n" +
+                                      "       .,,,,,..,:::,::;;:;;,.    ,;ii;Lt1i,. iLiC0LCGGt::;i1Lft1fLLt;i,  ;;;;;.   :,: .,.,,:.       \n" +
+                                      "      .,,,,:::;;i;;:,.:;;,    .,;;;;,1f1.   iGtf81tLGtL:    ,::1ft;:11.  .;:,;,  .:,,. .:,:,,       \n" +
+                                      "      ,,,.,:;,::,::;::::, .,:;i;:,,:i11.   iG0CG0L: ;L1C;      ,Lf.:;;.   :,.,:,  .:;;,.,,.,,,      \n" +
+                                      "     .:,::, .:;: .;;:ii;;;;i1i;,;itti:.   ;fCt;C00CCfCGCG:     ,ft.::;,   .::,.::,. ,:,:;:,,,,      \n" +
+                                      "     .,,.,,  :::  ;1i11ii11tLt1tLt;.     1Ltt,G0i;fC8C00GL;    ,11:,;;;    .,;;,;i;::;;;,,:,,,.     \n" +
+                                      "     ,,,.,, ,,,,  .:;iiiii;.if1f;       1CftiGG.    .10CtCL1    ;11;:;i,     .;;;,:;;;;, ,,.,,,     \n" +
+                                      "     ,,:::,:;:,   .:,,;i1;;, it1t.    .tGCLLGt.       t0i1fL1    :tLt1ii:    ,;;,.:::::. .,,,,,     \n" +
+                                      "     ,,,.:::,;,  .:;:;: ,;;;itfft    :LG8GG0,         .f8iifLf,   :L1tLti:   ,;;;;:. :;:..:,,,,     \n" +
+                                      "     ,,,,:..:;: .::;;;,   ;itLt1L:  iLfCGG0f            t@1;CGG;  .tff1;;;;,.;;:;:   ,:,:;:.,,,     \n" +
+                                      "     ,,,,,. .::;;: ,;;.    ,iiitL1;tLtL:,0CC           :i00GG0LLt..t1t; ,i;1i;,::.  .::;:,:::,,     \n" +
+                                      "     ,,,.,, :;;;;::;;;.     :i;::tC0CCf i0CGLtttt1i:;if8GffffCCiLL:;f1fi.;1iiii;:. .:,,. ,,.,,,     \n" +
+                                      "     .,,,:,,;::,,;i:,:;,.    i:;tCLtLGCt08CtfttttfLG8GG0f:,:tfGCLCGCtitLt11i11ii1;  :::  ,,,,,.     \n" +
+                                      "     .,,,,:::,:,  ,::,.::.   ,tLLLGCCCLff0GCLfttfLLLG00GffLLGGLfCCCLLii1i::::i;;;;. :::..:,:,,      \n" +
+                                      "      ,,,.,, ,:;:.  ,:,.::   1CCffCCttii;ii;;;:;;:::::;;;;;;tLLfLffLCCt,.. ,::::;::,:::;:,.,,.      \n" +
+                                      "       ,,:,,. .,,:.  ,::;;.  :t1;1tfi::,                   ,tti,;;i;,,.  .:;;:.,;;;i;;,,:,,,,       \n" +
+                                      "       .,,,.:. :,:   .;i;;;  :i;tLft1tfL1ii;;;;;:,      ,:t1ff;ii:.    ,:;;:;;:,,:::,..,.,,,.       \n" +
+                                      "        ,,,,:,,;::,. .::,;;: i:if;,..:1LttLf1i;i1tt1:.,11LC1Lt1i,    .::,,::,.  .;;, .:,.,:,        \n" +
+                                      "         ,,:,,::,,;:,,;: :;;;11iiii;;:;ttti;;;::,,:tLtL11i:i1ii.     :;.,::.   .:::,.,,:,,,         \n" +
+                                      "          ,,,.,:. .,:;;;:;;:111ii1i:,,,,,,,,::;;;;;,:1LL: .i:;.     .i:.::  .,,::::;:..,,,          \n" +
+                                      "           ,,,:,,, .;;;:,,,;ii;;:,;,           ..,;11i1L:;1ii: .,,;:;i::;, .:,,...,::,,,.           \n" +
+                                      "            .,,,.,,.:;:::. .  .,::;;;:,.    ...    .:;:i1i;1i::;;;;,.,;;:..:;:. .,,.,,,.            \n" +
+                                      "             .,:,,::::,,;;:,,   .:;;:;:;,::::,,::,,...,;11i1;,::;;::::;;;::::,.,:,,,,,              \n" +
+                                      "               .,:,,.,,  .,,,:.   ,:, :i;:,,,,::;i;;;::;;i11:,..    .:::;;::;:,.,,:,.               \n" +
+                                      "                 .,:,::,,. ,:::::,,;;:;;;:,,,,,,:;;:,.,i:;;:    . .,:;,. ..,,:,,,,.                 \n" +
+                                      "                   .,:,,.:,,;:,,::,;;;:,.         .,:::;::. .,,,::;:::..,,,.,,:,.                   \n" +
+                                      "                     .,:,::,,,,. ..,;;:,::::,,,....,:;;i;,,:;:,..,,:;,,,:,,,,,.                     \n" +
+                                      "                       ..,,,,,::,.,.,;;:,,...,:;::;:,.,;:;::,. ..,,,:,.,,,,.                        \n" +
+                                      "                          ..,,:,,,,:::,,,.....,:::,. ...,:;:,,::..,,,:,,.                           \n" +
+                                      "                              ..,,,::,,,,:,.,,,:,.,,:,.,,::,,,,::,,,..                              \n" +
+                                      "                                   ...,,,,,,,,::,,,,:,,,,,,,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 22 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .........,........                                         \n" +
+                                      "                                  ....,,,,:,,,,::,,,,::,,,,:,,,...                                  \n" +
+                                      "                              .,,,,,,:,,.,:,,,,,,,,,::,,.,,:,,,,:,,,..                              \n" +
+                                      "                          ..,,,::,,.,:,,,:;:,... .,:;:,.....,,,::,.,,:,,,.                          \n" +
+                                      "                       ..,:,,,.,:,,..  .:::;;;,,:;:,:;:,..,,,:;:.,,,,:,,,,,,.                       \n" +
+                                      "                     .,,,.,:,,,::::,.,:;::,:;;;;,,....,,,::::,;;:....,,.,,:,,,.                     \n" +
+                                      "                  .,,,,,,,,.  ,:,::,,,,.  ,:;::::,.        .,:;;;:::,,,;:,:,.,,,..                  \n" +
+                                      "                .,,:,.,::,,..,::,.      ,ii:;;..:;;;,,,,,,::;;:;;:,::::;:..,,,:,,:,                 \n" +
+                                      "               .,,,:,,,:::;i;:;,.....,,,;111i;:;i;;i::,,,,::;;..::.  .,:,,.  .,,.,,,.               \n" +
+                                      "             .,,,.,:. .:,:,:;;:,,:;;;::,iii1i;:. ..,::,::::,::;::;;.   ,,:;:,.:::,:,,,.             \n" +
+                                      "            .,:,,,,. .:;:. :;;:,,;;:;::;11;11;;i:.    ..     .:i;i;:,..   .::,:;,,:.,,,.            \n" +
+                                      "           ,:,.,;:,,,,,,. .;:,i;::,.. .i;i;,tL1i1Lf:..          ,;:,::;;;:,,:;;;, ,,,::,,           \n" +
+                                      "          ,,:,,,:::;,,.  .::.,i.      ;:;: ,tLt;LLCL;;;::,,,,,,,,;iiii11i;i;;;;:,. .,,.,,,          \n" +
+                                      "         ,,,,:, .:::    .::,.::     .ii11:1tif1LGCLCf:;;iittt;;;;i1i;11i;;;.:;:,:;,.,:,,,:,         \n" +
+                                      "        ,,,.,,  ,:;. .,:;::::,.    ,;1tL1fCti,1GLGfCC1itfLttf1:..,:1t:i,,;;,::. .:::;::::,,,        \n" +
+                                      "       .,,:,,.,:;:;::::;;;;,.   .,;ii;ff11,. ;LiLGLLGGt::ii1fLt1ifLLi;i  ;;:i;.   :::..:..,,.       \n" +
+                                      "      .,,,.:::;;;;;;,.,;;,   .,:;;::,1tt,   iGff8ttLGfL:    ,;;ift1:i1;  .;;:;,   :,,. .,,:,,       \n" +
+                                      "      ,,:,,,,:,:.:;;;;;:,.,:;ii;,,,:111.   ;C0CC0C: ;L1C;      .fL:.i;,   ::,::,  .:::. ,:,,,,      \n" +
+                                      "     .,,,,:. :;:  ;iii1iiii11i;:itfti:    ifLt:C00CCtLGCG;      tf.,:;:   .::.,::. .:;,,::.,,,      \n" +
+                                      "     .:,.,,  ,,:. ,iii1ii111Lf1ff1:      iLtt,G0i:tL8GG0GC;    .11;.;:i    .:;:,:;:,,::;::::,,.     \n" +
+                                      "     ,,:,:,.:,:,  .:::ii1i; ,t1t;       1CftiGG.    .1GGfCL1    ;11::;i,     .;;;;:;;;;: ,,.,,,     \n" +
+                                      "     ,,,,::;::,   ,;::::i;;; :ftt.    .tGGCCGt.       t011fLt.   ;tftiii.    .;:,.:;;::. ,,,,,,     \n" +
+                                      "     ,,,.:,,,;,  .;i:;:  :;;ifttf.   :LC8GC0,         .L0iifLf,   ;L1fL1i,   ,;;:::..:;:  ::,,,     \n" +
+                                      "     ,,::,  :::.,:,:;i,   ,i1ff1L;  iftLLG0f            f81:LCG;  .ftft;;;:  ;;;i:.  ,;,:,:.,,,     \n" +
+                                      "     ,,,.,, ,::;;:.:;;.    .iiitf1;tCtC: GCC           :i00CGGLLt..ftf, ;;ii;:,::.   ,::;::,,,,     \n" +
+                                      "     ,,,.:..;;;;;;;;;;.     ,i;::tCGCCf tGCGLfttt1;:;iL8GffLLGCiLL:it1t,.ii1ii:::   ,,,:.,,,,,,     \n" +
+                                      "     .,,:::;;::,,:;:,:;:.    i:itCCtfGCL80LttttttfC08G001:,:tLGLLGCLt1LL111;i1iii. .:,, .,..,,.     \n" +
+                                      "     .,,,.::,,;:. .::,.::.   :1LLLGCCLffL0CCLftffLLCG00CffLCGGffCCCLLii11;;ii1i;i; .:;: .:,,,,      \n" +
+                                      "      ,,,,:, .:::.  ,::,;,   1CCfLCLttiiiii;;:;;;::::;;;;;;;fLffLffLCCt;:..,:;;;;::,:,:,,,.,,.      \n" +
+                                      "       ,,:,,, .,,,   ,;;;;.  itiittfi;;,                   ,tti,;;i;:,.  .:;;,.,;;;;;;:::.,,,       \n" +
+                                      "       .,,..:.,::,   ,;;:i: .i:1LftiitCf111;;;;;:.     ..;t1Lf;i;:,    .,i;;;::::::::..,,:,,.       \n" +
+                                      "        ,,,:::;;,::. ,:,.:;,:i:fi:..,:1ftfLt1i;i1tt;,.;1tCf1L11;.    .:::::;:.. ,;:. .,..,,.        \n" +
+                                      "         ,,,,,:,.,;:,;;,.;;;111;i1ii;;;tt1i;;::,,,ifftf11;:1ii;      ;:.,::.   .:::..,:,,,,         \n" +
+                                      "          ,,,.:,. .,;;;;;i;11iii;i;,......,,::;;;;:,;tLt. ;:::      ,i,,:,  ..,:;:::,.,,,,          \n" +
+                                      "           ,,:,,,, ,;;;,..:;;:::,:;,           .,:i1iiL1:i1i;  .,:::;;,:;. .:,,,,,::,.,:.           \n" +
+                                      "            .,,,.:,,;:,;:,.   .,:;;;i:,    ...     ,;;;11;11::;;;;:,,:;:: ,:;,. .,,,,:,.            \n" +
+                                      "             .,,,:,::,.,:::,,   .;;:,:;::;::,,::,,...,;i1ii;,::;;:::::;;;,:,:..,:..,,,              \n" +
+                                      "               .,,,.,:.. .,,:,.  .::..i;:,,,,,:;i;;;;:;;i11;,,.... .:;:;i;:::,,,:::,.               \n" +
+                                      "                 .,,::,,,..:;::;:,:;;;;;::,,,,,,:;;,.,;;:i;.      ,:;:,..,,::,.,:,.                 \n" +
+                                      "                   .,,,.,::::,.,,,:;;;,,.  .      .:;:;;:, .,,,,:::,:. .,,,,,::,.                   \n" +
+                                      "                     .,,,:,..,,....:;;,:;;:,,,..,,,::;;;:,:;;,,.,::;:,,::,,:,,.                     \n" +
+                                      "                       ..,,,,,:,.,,.:;:,....,:;:,::,,,;;;::,. ...,,:,.,,,:,..                       \n" +
+                                      "                          ..,,,,,,:::,,,.....,:;:,. ...,,;:,,,:,.,,::,,,.                           \n" +
+                                      "                              ..,,,:,,,,:,..,,:,.,,:,,,,::,.,,::,,,...                              \n" +
+                                      "                                   ..,,,,,,,,::,,,,:,,,,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 23 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ..................                                         \n" +
+                                      "                                  ...,,,,:,,:,,,,::,,,,:,,,,,,,...                                  \n" +
+                                      "                             ...,,,,,,::,,.,:,,,,,,,,,::,,.,::,,,,,,,.                              \n" +
+                                      "                          ..,,:,,::,,,,,..,:;:,..  .,:;:,....,,.,::,,,,,..                          \n" +
+                                      "                       ..,,,::,,,::,,.. .,:,:;;:,,:::,;:,.....,:;:,,.,,:,:,..                       \n" +
+                                      "                     .,:,,..,,..,::;:,,:;;:,:;;;;:,.,..,,,:;;:,:;;....,,,.,,:,.                     \n" +
+                                      "                  ..,,,,:,,,.  ,:::,,,,..  :;;;:::,.       ..,:;;;:,...,::::,,:,,                   \n" +
+                                      "                ..,:,,,,:;:::::::,.     .,:1i;;,.,:;;:,,,,,,:;:;;;::;;:,:;,,,.,,:,,                 \n" +
+                                      "               .,,.,:,,.,,:;i;:;:,,,,,,::,ii11i:;;;;i;::,,,,:;i,,;:  .,,:,, ..,:,,,,.               \n" +
+                                      "             .,:,,.,,  ,;::,:;;:,,,;;;;;,:1;i1;;,..,,::,:::;:;;:.::,    ,,::. .,,.,,:,.             \n" +
+                                      "            .:,,:::,..,::, .;:;;::;;:::,:i1;iti:1;,    ...    ,;;:;;:..  .,:;:,:::::,,,.            \n" +
+                                      "           ,,,,.,:::::,,.  ,:,,i:,,..   ;;i;,1C1iCL;:,          ,:;:::,,,...,::;;,,:.,,:,           \n" +
+                                      "          ,,,,,,..:,:.    ,:,.;;      .;:;: ,tLtLLCL;;;::,.....  .:;::;;i1i;::;;:, .,,:,,,          \n" +
+                                      "         ,,,.,,  ,;:.  .,:::,::.     ,iiii:1t1tLGCCCf,:;i;1t1;;;;;11i;111i;;:;;;::,  :,.,,,         \n" +
+                                      "        ,:,:,,..,:::,,,:;;;;:,.    ,:i1Lf1LL1;tGLGtLGt;1tfftfi:,,,:;i1iii;:,.::.,:;,,::,,,,,        \n" +
+                                      "       .,,,,;::;i;;;;,,,;;:.    ,:;ii;tLt1i. iL;f0ftGCt:;111tLf;::itL1:i,,i:::,  .,::;:::,,:.       \n" +
+                                      "      .,,,.,,:,::::;::::;:..,:;;;;:::i1t:   ;GCf8CtLGLL:   ,:1t1tfffii1; .;:;;:   .:,: ,,.,,,       \n" +
+                                      "      ,,,::, .:;, ;iii1ii::i1ii,,,:it1i,   ;CGLf00i.:L1L:      .;Lt.,ii,  ,i:::,  .:,,  ,,:,,,      \n" +
+                                      "     .:,..,. ,::, .;ii11;i1tfti;tLf1:,    iLff.LG0GLitCfC;      ;C1 ;:;.  .:,,::,  .:;, .:.,,,      \n" +
+                                      "     .,,,,,.,,,:.  :,:ii;ii:iLtf1,.      iLtt,C81,tL8GG80G;     iti.;:i.   ,::,,::,.,:,,::,,,,.     \n" +
+                                      "     ,,,,::;::,   .::,:;i1;; ,t1t.      1CLf1GG,    ,tC8CCL1    ;11::;;,    .:;::;;::;;;::::,,,     \n" +
+                                      "     ,,,.:,:,:,   :;;;;. ;;;;.tLf,    .fGG0GC1.       10f1Lft.   itf1ii;      :;;,:;;;;:.,,.,,,     \n" +
+                                      "     ,,:,,  :;: .:::;;:   :;;ff;f:   :LL00L0,         .L0iifLf,   1ftft1:    ,i:.,:::::. .,,,,,     \n" +
+                                      "     ,,,,,. ,:::;:.,;;.    :1tffLi  iftLiG0L            L8i:LCC;  ;fift;;:   ;:;;:, .:;: .:,,,,     \n" +
+                                      "     ,,,.:..:;;;;::;;:      ;i;1t1itGfL: CGL           ,;00fLGCCt.,fLt.;;;; .;;;;,   ::,::,.,,,     \n" +
+                                      "     ,,::::;;;;::i;,:;:.    ,;;::tCCCCf.C0GGLftt1i::i1C8GfLGG0C;ffit1t, ;;1i;:,::   .::;::::,,,     \n" +
+                                      "     .,,.,::,,:,.,::,.::,   .i,itCGif0GG8Gt11tttfCG80G0L;:,itCGLfGCLt1Li;1i;1i:::  .:,,..,,,,,.     \n" +
+                                      "     .,,,,:. :;:.  ,::,::.  .iiCLCGCCftfGGGCffftLLCG80CffLLGGGttCGCCCttft1ii111i;. ,::. .,.,,,      \n" +
+                                      "      ,,::,,  :,:.  ,::;;.  ,fCLLLCLf1iiiii;;;;;::::;;:;;;;iLfLLfffLCCt1;::iiiiii: ,::. ,,:,,.      \n" +
+                                      "       ,,,.:,.:,:    :;;:;  i1i1Lfft1ti,,                 .:t1;,;;;i;;:...:;:,::;:;::,:,,.,,,       \n" +
+                                      "       .:,,,::;:::.  ::,:i,,i,tf1;,,;tLt1t1iii;:,      .:11fL1;i;:,.    ,;;;,,,;;:;;;::;,,,:.       \n" +
+                                      "        ,:,,,:,,,;;,.;: ,:;1iiii;;,:::1ftfft1ii1ft;, ,itCf1ff1i:.    .::;;;;:,,.:::,..,,:,,.        \n" +
+                                      "         ,,,.,,  ,::;;;:;;111i;i1i;;;;;i1i;;;:,,,iff1f1ti:i;ii.     ,;,,:::.   ,:;. .:,.,:,         \n" +
+                                      "          ,,::,,. ,;i;::;i1i;;::::       .,,:;;;;,,;tLt. ;:;:      .i:.,:,    ,:,:..,,:,,,          \n" +
+                                      "           ,,,,.:,,;:::,....,,::;;:,.         .,;11i1Ci:iii:  ..,,,;i.,:,  .,,:::::,.,,,,           \n" +
+                                      "            .:,,::::,,:;:,.   .:;;:;;,  .....    .;1:it;;1i,,;::;;,:;;:;..:::,..,::,,,,.            \n" +
+                                      "             .,:,,.,,. .,,,,    ,::.:;;:;::,:::,,,.,;;1ii1,:;;;;:,,,:;::,:::. .,,.,,:,              \n" +
+                                      "               .,:,,:,,. ,::,,,. :;,,i;:,,,,::;i;;;::i111;::,,,,..,:;:;i;::,.,,:,,:,.               \n" +
+                                      "                 .,:,,.,,:;:,:;;::;;;:::,,..,,,:;:,.,;;i1:.      .,::,,:::;:,.,,:,.                 \n" +
+                                      "                   .,:,,::,:, ..,:;;;:,....     .,:;:;:;,  .,,,,::::.  .,,,:,,,,.                   \n" +
+                                      "                     .,:,,.,,,,...;;:,:;::,,,.,,,,:;;;;:,:;:,,,:;::,..:,..,,:,.                     \n" +
+                                      "                       ..,,,:,,.,,:;:,. ...,:;,:::,,,;;:,:,. ..,,;:,,,::,,,.                        \n" +
+                                      "                           .,,,,,:,,.,,,,,,,:;:,.  ..,:;:,,,,,.,,::,,:,,..                          \n" +
+                                      "                              ..,,,,,,::,.,,::.,,::,.,,:,.,,::,,,,,,..                              \n" +
+                                      "                                   ...,,,,,,:,,,,::,,,,:,,:,,,...                                   \n" +
+                                      "                                          ................                                          \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 24 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ..................                                         \n" +
+                                      "                                  ...,,,,,,,,:,,,,::,,,,:,,,,,,...                                  \n" +
+                                      "                              .,,,,,,,,::,,.::,,,,,,,.,::,,.,::,,,,,..                              \n" +
+                                      "                          ..,,,,.,:,,,,,...,:;:,..  .,:;:,,,,,,,.,::,:,,..                          \n" +
+                                      "                       ..,:,,:,,,,:;:,...,,:,;i;,,:::::;:,..  .,:;:,,.,::,,,.                       \n" +
+                                      "                     .,::,,.,,...,::;:,,:;:,,:;;;:,,,,..,,::;::,:;:...,:,.,,,,.                     \n" +
+                                      "                  .,,:,.,::,.. .::::.....  .;:;::;,.      ...,::;i:,.  .,,,::,,,..                  \n" +
+                                      "                .,,::,,,,::;;::::,.      ,,;1ii:.,,:;:,,,,,,,::;;;;,:;:,,;;,:,.,,:.                 \n" +
+                                      "               ,,,,.,,. .:,:;;:;;,,,,:::::,i111i:;;;;i;::,,,,:;;,:;..,,,:::..,,,:,,,.               \n" +
+                                      "             .,:::,,,. .:;:,::i;,,,:;;i;:,;1:1i;;,.,,,:::::;::;:.,::    .:,:.  ,,..,,,.             \n" +
+                                      "            .,,..::::,,::,  :;:;;::;;::,.:i1;if;;1:.   .....  ,;i::;;,   .,:;:.,:::,:,,.            \n" +
+                                      "           ,:,,.,,::;:,,.  ,:,.;;...    ,i;i::LL1LLi::.         ,:;i;::,.  .,:::;;,:,.,,,           \n" +
+                                      "          ,,,,:,. :,:,    ,:,.:i.      ,;:;. iffLCCf;;;;:,.       .;::::;;i;::;;;: .,,,:,,          \n" +
+                                      "         ,,,.,,. .:;,  .,;;::::,     .iiii:if1tCCGGCf,:;;;i1i;;::;;iiii1111i;;;;::,  ,:,,:,         \n" +
+                                      "        ,,::::,,:::::::::;;i:,.   .,:i1Lf1tCt;fCfG1fGt;1tfftfi::::;ii;ii11;: :;,,:;,.,:.,,:,        \n" +
+                                      "       .:,.,:;:;;i:;;,.,;;:.   .,:;i;;tLfi1, iC;t0f1GCt:;1t1tft;:,:itf;:;:;:,::  .:::;::::,,.       \n" +
+                                      "      .,,:,,.,:,:::;;;;;;;,,;;i;;:,,:i1t:.  ;GGL0GfLGLC:  .::1ftttfLtii1, ;:;;:    :::,,:.,,,       \n" +
+                                      "      ,,,,:, .:;, ,i11111i;i1i;,,:;1t1i,   ;LGLtG01.:L1L;     ..:ft;.ii;  .;;;:,  .:,, .,,,,,,      \n" +
+                                      "     .,,..,. ,,:,  ::;i1:ittfL1itLf1:.    iLff.fG0GCiiCtC;      ,Lf.:;;,   ;:,::,  ,::, .:,,,,      \n" +
+                                      "     .:,:::,:,,,   ::,:iiii:.tttt,       iLtt:C8t,1C@GC00G;     :ft.;:i,   ,::.,::. ,::,,:..,,.     \n" +
+                                      "     ,,,.::;::,   .::;:::1;;, 1tf,      1CLLtGG,    ,fC8GCLi    :11;:;;,    .;;,,;;::;::;:::,,,     \n" +
+                                      "     ,,,.:..,::  .:;;:;  .;:;,1Lf:    .f0000C1.       i0ftCft.   i1t1;i:      :;;::;:i;;,,:.,,,     \n" +
+                                      "     ,,::,. ,;:.,::,:;:   .i;tL;ti   :fLG0L0,         .f0iifLf,   1ffft1,    ,;:..:;:::, .,.,,,     \n" +
+                                      "     ,,,.,. ,::;;:.,;;.    ,1tfLfi  iftL;C8C            L8i:fCL;  1tiL1;;.   :;;,::..:;, .,::,,     \n" +
+                                      "     ,,,,:,:;i;:;;;;;:      :;;1t1itGfL:.CGf           ,;8GtfGCGt.:LLi,i:;, .i;;;,  .::,,,,.,,,     \n" +
+                                      "     ,,,,::;::;,:;;,,;;.    :;i,:tCLCCf,GGGCCLtt1i::itC8CLC0G0Ciff1tt1 ,;;1::::::    :::;::,,,,     \n" +
+                                      "     .,,.,,.,:;, .::,.::,   :i,itCC:f0GG8C1i1ttfLG08G00t;:,1tGGLtCCCttt,;iiii:,:,  .,,,:,:,:,,.     \n" +
+                                      "     .,,,:,  ,::,  ,::,::   :;1CCCGCLttf0GGLfftfLLC080LfffLGGG1tCGCCCffftti:1ii::  ,::, .,.,,,      \n" +
+                                      "      ,,,,,, .,,:   ,;;;;.  ;fCLLCCCLtiiiii;;;;;::::;;;;;;iiffLLffLLLCt1i;i11111i, :;:  ,,,,,.      \n" +
+                                      "       ,,,.:,::::   .:;::; :1i1fLftttf1:,                 .;t1;,:;;i;i;:,,;;;:;;;:::,:,,,.:,,       \n" +
+                                      "       .,,:::::,::. .::.:;:i:if1;,,,;tft1f1iii;:.      .;11LL1;i;::,    ,:;:,,,;;;i;;:;:,.,:.       \n" +
+                                      "        ,,,..:..,;:,:;,.:;111i;ii;::::1fffftii1tf1:. ;ifLt1ff1i:.    .,:i;;:::,,::::,,:::,,,        \n" +
+                                      "         ,,,,:,  .,:;:;;i111ii;ii;:::::iii;;;:,,:tLttttt::i;i;.     ,;:::;:,.  ,;:. .,..,,,         \n" +
+                                      "          ,::,.,. :;;;::;;;;::,:;.       .,,:;;;:.:1Lf; ,;:;,      ,i,.,:.    ,::, .,,,,,,          \n" +
+                                      "           ,,,.,::;;:::,.  .,::;i;;,         .,:i1iiLL:;i;;.  ..,,,;;.::,  .,,::::,,.,,:.           \n" +
+                                      "            .,,:,,::..:;:,.   .;;::i;, ......   .:1;;fi;1i:,:::;;::;;:;: .:::,,,:::.,,,.            \n" +
+                                      "             .,,,..,,  .,,:.    ,:,.:;:;:::::::,,.,;;ii;1:,:;i;;:,,,;;::,:;:. .,,,::,,              \n" +
+                                      "               .,,,:,,,.,:::::,.,;:,;;:,,,,::;i;:;;:i111i,::,,,,.,,;;:i;:,:..,:,.,:,.               \n" +
+                                      "                 .,,,.,::;;,,:;:,;:;:::,.....,:::,..;ii1:,.      .,::::;:::,,,,::,.                 \n" +
+                                      "                   .,,,:,,,,.  .,;i;::,....     .,;::;::. ..,,,,:::,. .,,,:,.,:,.                   \n" +
+                                      "                     .,,,,.,:,.,.:;:,::;::,:..,,,::;;;:,,:;:,,:;::,..,,,.,,:,,.                     \n" +
+                                      "                       ..,,:,,.,,:::,.  ..,:;::::,,,;i;,:,. ..,,::,,,::,,:,.                        \n" +
+                                      "                          ..,,,,::,.,,,,,,,:;:,.  ..,:::,..,,,,,,:,,:,,,.                           \n" +
+                                      "                              ..,,,,,::,,,,:,..,::,.,,:,.,,::,,,,,,,..                              \n" +
+                                      "                                   ...,,,,,:,,,,::,,,,:,,,,,,,...                                   \n" +
+                                      "                                          ...............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 25 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .......,..........                                         \n" +
+                                      "                                  ...,,,:,,,,::,,,,:,,,,,:,,,,,...                                  \n" +
+                                      "                              ..,,::,,.,::,..::,,,,,,,.,::,,.,:,,:,,,.                              \n" +
+                                      "                          ..,:,,,.,:,,,,....::;:...  .,:;,,,.,,,..,::,:,..                          \n" +
+                                      "                       .,,,,.,:,,,,;::,...,::,ii:,,:::::;:,..  .,:::,.,,::,,.                       \n" +
+                                      "                     .,,,:,.,,,...,,:::,::;,,::;;;:,,,,.,:,::::,,;;,.,,,:,.,,,.                     \n" +
+                                      "                  .,:,,..:;:,...,;::,..... .,;;;:::,.     ...,,::;i:.   ,,.,,:,,,                   \n" +
+                                      "                 ,,,,:,,,,::;;;:::.      .,:;11i,.,::::,,..,,:::;;;::::,,:;::,.,,,,                 \n" +
+                                      "               .,,,..,.  ,:::;;;;:,,,:::::,,i111i;;;:;i:::,,,,:i::;:.,::::::.,,,,:,,.               \n" +
+                                      "             .,,,::,,...,;:,,:;i:,,,:;;i;:,ii:1;;;,,,,::::::;:;;,.::.   .:,,. ..:,.,,,.             \n" +
+                                      "            ,,,,.,:;:::::,. ,;,:;;:;;::,..;1i;tt:11,.   ..... .:i:::;,   .,:;:..,:,,::,.            \n" +
+                                      "           ,,::,,,.:,;,..  ,::.:;...     :;ii,1CfLLi;:,         ,;:i;;:,.  .,::,:;::,.,,,           \n" +
+                                      "          ,,,.,,  ,::,    ,::,,;,      .;:;: :tfCCCL;;;;:,.       .::,,,::::::;;;;..:.,,:,          \n" +
+                                      "         ,,,,.,. .::, ..,;;;;::,     .;iii;:tf1CCCGGt,:;;;i1i:::,,::;;;;i111i;:;;,, .,:,,,,         \n" +
+                                      "        ,,,,::::;;:::::::;:;:.    .,:i1fft1LLifCfG1fGfi1tffffi::;;iii;;111i;,,;:,::, .:..,,,        \n" +
+                                      "       .,,..::::;i;;;,.,:;:,  .,:;;i;;1fLi1; iC;10fiCCt;i1f1tf1;,,,;1ft:ii;:.::. ,::,:::,:,,.       \n" +
+                                      "      .,,:,,. :::,:;iiiii;::iii;;:,,:11t;.  ;GGL00LLGLC:  .:;1Lft1tLL1iii.;;:;:.  .,::;::,,,,       \n" +
+                                      "      ,,,.,,  :;: .;i111iii1ti;,,;1tt1i,   iLGL1G8t,:LtL;     .,,tt1.;1i, ,;;;;,   ,,,, :..,,,      \n" +
+                                      "     .,,,.,..,,:,  ::,;1;;11tCtttfti,.    iLff.fG0GC;;LtL:       fL:.;;;   :;:::.  ,::, .,::,,      \n" +
+                                      "     .,,::::;::.   ,:,,;i1i; :t1t.       iLtt:C8t,1C8GCGGG;     .ff.::;:   ,::.,:,. :;:. ,..,,.     \n" +
+                                      "     ,,,.,::,::   .;;;;, ;i:; ;ff;      1CCCtGG:    :fC80GCi    ,t1;,;;,    ,;;,,:;,,:,::::,,,,     \n" +
+                                      "     ,,,,,. ,::. .:;;:;.  :;;:iff;    .f0008Ci.       ;0CtCft.   i1t1;i:      :;;;;;:;i;::::,,,     \n" +
+                                      "     ,,,,,. ,::,,:,.:;:    ;;tLit1   :ffC0L0,          f0iifLf,   1LLfti.    .;;,.:;;:::..: ,,,     \n" +
+                                      "     ,,..:..::;;;:,:;:     .ittLL1  iLtL;f8C            C8;:fCL;  tiiL1;;    :;:.::,,::. .,,,,,     \n" +
+                                      "     ,,,:::;;;;:;;;:;:.     :;;1t1i1GLL,.C0f           .i8Gt1GCGt.iLf;:;;:  .;:;;:. .::, .,,,,,     \n" +
+                                      "     ,,,,:::,,:,,;:,.;;,    ::i,;tCLLCL:GGGCCLtt1;,:itC0CLC000Gifftff; ;;i;.:;;;:.   :::::,.,,,     \n" +
+                                      "     .:,.,, .:;:  ,:,.,:,   ;;::tGC:f0G00L1i1ttfLG08G0C1;::1fGCLtCCL1t; ;i1i;,,:,   ,::;::::,,.     \n" +
+                                      "     .,,::,. ,::,  .:::;:   ;;1CCGCCL11L0CGLfftfLCG08CffffL0CCi1CGCCCLLt11:;1;:,,  ,:,,.,,.,,,      \n" +
+                                      "      ,,,.,, ,,:,   ,;;;;, :1fCCCCCCLt11ii;;;;;:::::;:;;;;iiffLCffLLCCf1iii1111i;. :;:  ,,.,,.      \n" +
+                                      "       :,,,::;::,.  .:::;;.i;1fLLti1fLi;:.                .i11i:::;iiii;::;i;iii;:,:,, ,,,:,,       \n" +
+                                      "       .,,:,::,,::, ,:,.;;i;:tti:.,,;1ft1L1iii;,       ,i11Lf1;;;::,.   ,:;:..:;;;i;:;::..,,.       \n" +
+                                      "        ,,,.,,. ,::,:;,,;1111:ii1i;;:;ifffftii1fti, .i1Cf1tff1;:.    .,;;:;:::::::;;::::,,,,        \n" +
+                                      "         ,,,::,. ,,;;;;i11ii;;;;:,,,,::;i;;;;:,,iff1ttti,;;ii:      ,:::;;:,.  :::. .,.,,,,         \n" +
+                                      "          ,,,,.:.,;;;::,::::,,,::.       .,:;;;;,.;fL1. ;:;:.      :;,,::.    :::. .:,.,:,          \n" +
+                                      "           ,:,.,:;;:,::,.  .,:;;;:;,         ,:;1i;tC;:iii,    ...,i:.::.  ..,:,:.,,,::,.           \n" +
+                                      "            .,:,,,,,..::,,.   ,;:,:i:....,...   ,ii:t1;i1;.,:::;;:;;::;, .:::,::;:,.,,,.            \n" +
+                                      "             .,,,.,:.. .,,:..  .::.,;;:;:::::::,,,;;i1:1;,:;i;;:,,,:i;:,,:;,...,,::,,,              \n" +
+                                      "               .,,:,.,,.:;::::,.:;::i:,,,,::;i;::;:i111i,:::,:,,,,:;:;;;,:, .,,..,,,.               \n" +
+                                      "                 .,,,.,:::,.,::::;;;::,.....,::::,.,ii1;:,.     .,::::;;::,,,,:,,,.                 \n" +
+                                      "                   .,,:,..,,.  .:i;::,,...      ,:;:;:;,  .....,:::,...,:::..,,,.                   \n" +
+                                      "                     .,,:,,:,,,.,;;,,::::,:,.,,,,:;;;;:,:;:,,:;:,,...,,..,:,,,.                     \n" +
+                                      "                       ..,:,,,.,::,,.  ..,:;:::::,,:i;,:,....,::;,,,,:,,:,,.                        \n" +
+                                      "                          ..,:,::,..,:,,,,:;:,.  ..,:;:,...,,,,,:,.,,,,,..                          \n" +
+                                      "                              ..,,:,::,,,,::..,::,.,,::.,,::,,,,,,,,..                              \n" +
+                                      "                                   ...,,,,:,,,,::,,,,:,,,,,,,,...                                   \n" +
+                                      "                                           ...............                                          \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 26 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ........,.........                                         \n" +
+                                      "                                  ...,,,,:,,,,::,,,,:,,,,,:,,,....                                  \n" +
+                                      "                              ..,,,::,,.,:,,.,::,,,,:,,.,::,,,,:,,,,..                              \n" +
+                                      "                          ..,,:,,..,:,,,....,::;:..  .,,:;,,,,,:,.,,:,,,..                          \n" +
+                                      "                       .,,,,,.,:,,,:;;:...,,:,:i;:,,:::,:;,,.  .,,,::,.,,:,..                       \n" +
+                                      "                     .,:,,:,,,..  .:,;::::::,::;;;:,,,,,.,:,:::,,:;;,,,,::,,:,.                     \n" +
+                                      "                  .,,:,,.,:;::..,:;::. ...  .;;;;:;:.      ..,,::;i;,. ..,,.,,:,,                   \n" +
+                                      "                 .,,.,:,,.,::i;:::,.     .,::i11;,.,:::,....,,:::;;;,::,.,::::,,:,,                 \n" +
+                                      "               .,:,..,.  .:::;;;;::,,,:;:::,,1111;;:::ii:::,,,:;;:;;.,:::::;,,,.,::,.               \n" +
+                                      "             .,:,,:::,..,:;,.;:;;,,,::;;i;::1i:1:;;,,,:::::::::i: ,:,  ..,:,, ..,:,,:,.             \n" +
+                                      "            .:,,.,,::;::,,. .;:.;;::;:,,..,i1iif1;1;,   ...... :;;,::,    ,,::. .,..,,,.            \n" +
+                                      "           ,,,,:,, ,,:,.   .::.,i,       .;;i::LLLL1i;:.        ,;:;i;:,.  .,::,,::::,,:,           \n" +
+                                      "          ,,,.,,. .:::   .,:::,;:      .:;:;. itCCCL::;;:,.       .:;:,,,,,,,,::;i:,:..,,,          \n" +
+                                      "         ,,::,:,.,,::..,,:;;;::,     .:ii;i:iftLCCGGt,:;;iii;:,,,...:;;;:;i1i;;;i:, .,,::,,         \n" +
+                                      "        ,,,.,:;;i;;:;::,,::::.    .,:;1fft1fL1fCtGttGfi1tffffi;;;;i1ii;i111i:,;;:::,  ,,.,,,        \n" +
+                                      "       .,,,.,.:,:;:;i:,,:;;:.,,:;;;;;;ttL1i;.iGii0LiCC1;i1f1tfi:,..:;tti;1i:.,:, ,;:,,,:,,,,.       \n" +
+                                      "      .,,,,,. ,::,,;i1111i;:iii;:,,,;11t;.  ;GGCG0LLGCC;  .;i1Lft11fLf1;i::;,::,  .:::;::,,,,       \n" +
+                                      "      ,,,.,, .,::  ::;i1i;1ttti::itft1;,   iLCLiC8L,:CtL;     ,::tft;,i1i ,;;;;,   .:,:.,,.,,,      \n" +
+                                      "     .,,:,:,,,,:.  ,:,,ii;i1iLftf1i:.     iLtf tG0GC;;LtL:       1Li :;i.  :;:::.  ,:,, .,,:,,      \n" +
+                                      "     ,,,,::;:::.   ,:::::iii. 11f,       iLtf;C8f,1C8CLGGG;      tL:.;:i   ,:,,::,  :;:. ,,,,,.     \n" +
+                                      "     ,,,.,,,,,:.  .;;;;, ,i:i,,LLi      1GCGfGG:    :LC000Ci    .t1i,;::    ,;:.,::,,:,,,:,.,,,     \n" +
+                                      "     ,,::,. ,;:. ,::::;.  ,;:;itt1    .fG800C;        ;GCLCft.   i111;;:     .;;:;;;:;;;;::::,,     \n" +
+                                      "     ,,,.,. ,:::::,.:i,    :i1L111   :ffLGLG;          f011ffL,   1LLtti      :;:,:;;;::,,:.,,,     \n" +
+                                      "     ,,,.:,:;;;:;:::;,     .i1tLf1  iL1L:t8C            C8;:fCL;  fitLii:    :i:.,::,::, .,.,,,     \n" +
+                                      "     ,,::::;:;;:;;:,;;,     :;;111i1GLL,,C0t           .i8G11GCGt.1ft;;:;.  .;::::. .:;, .,::,,     \n" +
+                                      "     ,,,.,,,,::,.::,.:;,    ;:i.itGLLCLi0GGGCLft1;,;itC0CLC0GGGiLftfL.,i:i. :;;;;.  .:,,,,,.,,,     \n" +
+                                      "     .,,,,, .:;:  ,::,,:,  .i:;,fGL:f0G0Gfi;itfLC088G0L1;::tL0CL1CCf11.,iii;::::,   .::;;::,,,.     \n" +
+                                      "     .,,:,,. ,,:,  .:;;;:  ,i;1LCCCCL11CGCCfftffLC080LffffC0CCi1C0CCCLLi1i:ii,,:,  ,:,,,,:,,,,      \n" +
+                                      "      ,,,.,,.:,:.   ,;;:;..i1fCGGCLCft11i;;;;;;::::;::;;;iiiffCCfLLLCCLt1i;i1i;:: .::,  ,,.,,.      \n" +
+                                      "       ,,:,::;:::.  ,::,;:;;;fLLtiiifL1;:.                 i11i:::;ii11i:;i1i11i;,,::. .,:,,,       \n" +
+                                      "       .:,,.,,.,:;, ::..;ii;i11;:.,,:ifttL1ii;:.       ,i1tCf1;;;;;:,...:;;,,,;;:;;:,:,,.,,:.       \n" +
+                                      "        ,:,.,,  ,::::;:;1111;;ii1i;;;;iffft1i1tft;. :ifLt1tffi;:,.    .;:;:,,::::;;;;;:,,,:.        \n" +
+                                      "         ,,::,,. ,:i;:;i1i;::;;:....,,:;i;;;;:,:tLt1ttt::i;i;,      ,::;;;:,...::,..,,,:,,,         \n" +
+                                      "          ,,,.,:,;i:::,,.,,,,::;:.       .,:;;;:.:1Lt; ,;:;,       ;;,,::.   .:::. .,..,,,          \n" +
+                                      "           ,,,:::::,,:;,.  .,:;;:;;,        .:;i1;iCf:;i;;.     . :i.,::   ..::,, ,,,,,,,           \n" +
+                                      "            .,,,..,. .:::,    ,::,:;:..,,,,.   ,;1:1f;i1;,.,:::;::;;.::. .,:::;::,,.,,,.            \n" +
+                                      "             .,:,,:,,. ,,:,..  ,:,.:;:::::::;:,,,i;;1:ii::;i;;:,,,,;;::.,;:,..,:::,,:,              \n" +
+                                      "               .,:,,.,,:;:,:::,,;;:i;:,,,:::ii:::;;111i,,:::::,,,:;;;;;:::. .,,.,,:,.               \n" +
+                                      "                 .,:,,::::...,:,;;;:::,.....,,::,..;11;::..     .,:::;i::,.,,:,,:,.                 \n" +
+                                      "                   .,:,,.,,.. .,;i:::,,...     .:;:;;;:.  ....,::;:...::;:,.,,:,.                   \n" +
+                                      "                     .,:,,:,,,,,;;,,,:::,:,.,,,,,:;;;:,,::::::;,,.  .,,.,:,,:,.                     \n" +
+                                      "                       ..,,,,.,::,,,. ..,:;:,,::,,:ii:,,,...,:;;,,,,:,.,,,,.                        \n" +
+                                      "                          ..,,::,,.,:,.,,:;:,.. ..,:;;,,...,,,,:,.,,,:,,..                          \n" +
+                                      "                              ..,,,,:,,,,::,.,,:,,,,::.,,::,,,,::,,,..                              \n" +
+                                      "                                   ...,,,,,,,,,:,,,,::,,,,:,,,...                                   \n" +
+                                      "                                          ................                                          \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 27 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         .........,........                                         \n" +
+                                      "                                  ...,,,,,:,,,,::,,,,:,,,,,,,,,...                                  \n" +
+                                      "                              ..,,,,::,,.,:,,.,::,,,,:,,.,::,,,,:,,,..                              \n" +
+                                      "                          ..,,,:,,.,,:,,,....,:;;,..  .,::;,,,,::,.,,:,,..                          \n" +
+                                      "                       .,,:,,..,:,,,:;;,,..,,:,;i;,,::,,,;:,..  .,,,::,,,,,,.                       \n" +
+                                      "                     .,,,.,:,,,.  .,,::,::::,,::;;;,,,,,,.:::::,,,:;:,,,,::,,,.                     \n" +
+                                      "                  .,,::,.,,:;;:,,,;:,,      .:;;i:;:,.     ..,,:::;i:. ..,,..,,,..                  \n" +
+                                      "                .,,,,.:,...:,;i;::,.     ..,:,;11;.,:::,,.....,::;;;:::,..,,,::,,,,                 \n" +
+                                      "               .,,:,.,,. .:::::;;;::,,,;;:::,:1111;;::;i;::,,,,:i;:;,,:;:,:;;,,..,,,.               \n" +
+                                      "             .,,,.,:::,,,:;,.,;:;;,,:::;i;:,;1:;1:i;,,,:;::::::;;,.:,  .,,:::..,,::,,,.             \n" +
+                                      "            .,:,,,,,:::,,,. .::.,i::;:,,,..:i1;if;i1;.   .,,,,.,;;.:::    ,:,:. .,,.,,,.            \n" +
+                                      "           ,:,.::. .:,:.   .::,.i:        :;ii,iCCLii;;,        .;;:;;;,.  .,;:,.,::::,,,           \n" +
+                                      "          ,,,..,. .:;,.  .,;:::::       ,;;;: :tCCCf,:;;;,.       ,:i;:::,,..,:::;;::,.,,,          \n" +
+                                      "         ,,,:::::,:::,,,::;;;;:,     .:ii;i;:tfLCCCGt,:;;iii;:,...  ,:::,::;i;:;i;:..:.,,,,         \n" +
+                                      "        ,,,.,:::;;;:;;:,,,:::.   .,,:;ifft1tLffLtGttGL11tffLfi;;;;iiiii;i111i:;:;,:,  ,:,,:,        \n" +
+                                      "       .,,:,,..,,;::ii;:;i;;:::;;;;;:;ttLtii,iG1i0LiCC1;iift1t;:,,,:;iiiii1i,.::.,;:,..,.,,,.       \n" +
+                                      "      .,,,,:. .;:,.;;i111i;;iii:,,,:;111;.  ;CGCG8CLGCL;  .;i1LL1i;1fLfi:i;;,,:,  ,:,::::,:,,       \n" +
+                                      "      ,,,.,,..,::. ,:,:1i:itff1;;1fLti;,   iLCL;L8C::CtC;    .,;i1ftf:ii1,,;:;;,   .::;:,,.,,,      \n" +
+                                      "     .,,::::::,,.  ,::,:iiii:iLtf1;,      iLtf.10GGC;:ftL:       ;Lt..ii:  :;;;:.  .:,, .,.,,,      \n" +
+                                      "     .,,.,:::,:.   :;;;:.:1i: :tf;       iLff;C8f,iC8CfCCG;      iL1 ;:i.  ,;:,::. .:;:  ,::,,.     \n" +
+                                      "     ,,,,,, ,::.  ,:;:;,  ;;;; fL1      tGCGLGG:    :LC080Ci     1t1,i:;    :;:.,:,.,::,.,,.,,,     \n" +
+                                      "     ,,,:,. ,;:..,:,,:;.   ;:;it1t    .tG800C;        :0GCCLt.   i111;;:     ,;:,:;;:;::;::,,,,     \n" +
+                                      "     ,,,.:..,,::;:..:i,    ,i1Lt1t   :ffLCCG;          f0tiLfL,  .1fLt1i      ,;;:;;:;;;:::,,,,     \n" +
+                                      "     ,,,,::;;;;:;;;;;,      i1tLf1  iCtL:18C           .G8;;fCL:  tiffii.    ,i:.,;:::,, .:.,,,     \n" +
+                                      "     ,,,,:::::;:;;:,:;,     ;;;11111GCC,:C01           .i8Gi;GCGt,t1t;;:;   .;:,,:, .:;. .,:,,,     \n" +
+                                      "     ,,,.,, ,::,.,:,,,;:    ;:i.1tGLfCL18GGCCLfti;,;itG0CCC8GGGiLftLt ;;;;  :;;;:.  ,:,, ,,.,,,     \n" +
+                                      "     .,,::,  :::. .::::;.  ,i::.fGL;f0G0Gt;;itfLG080GGf1;:;tC0CL1LCLt: ;i1:,:;;;,   .:,:::,.,,.     \n" +
+                                      "     .,,,.,..,,:.  .:;;;,  ;i;iLCCCGfitGGGCLftffCG08GLfffLGGCLitC0CCCL1;1iii:,::.  .:,::::::,,      \n" +
+                                      "      ,,,.,::;::.   ,;;:;,;1itGGGCLCfft1i;i;;;;::::;::;;;ii;fLLCfLLLCCLtti:11:,:, .::,..,..,,,      \n" +
+                                      "      .,,:,:::,,:,  ,:,,;ii:1Lfti;;iff1i;.                .i11i:,,:;111i;;1111i;;.,::. .:,,,,       \n" +
+                                      "       .,,..,. ,;;,.;:.,i1iiiii;:,,::it1fL1ii;:       .;11fLt1;;;;;;:,,:;i;:::ii:;;,:..,,:,,.       \n" +
+                                      "        ,,,,:,  ,,:;:;;11i1i;ii;i;;;;;ifLtt1i1ffi:  ;1Lf11tffi;:,..   .:::,,,:;::;;;;::,.,,.        \n" +
+                                      "         ,,,,.:..:;;;:;i;:,,:::,   ...,;;;;;;:,iff11tf1,;;;i;,     .,:;;;;:,,.,::,,,::::,,,         \n" +
+                                      "          ,,,.,::;;:::,..,,:::;;:,       .,:;;;..ifL1. :;;:.      .;:,:::,   .:;:. .,.,,,,          \n" +
+                                      "           ,,::,,:,.,::,.  .,;;;:;;.        .:;1i:fC;:ii;,       .;;.,:,    .:,:. ,,:,,:.           \n" +
+                                      "            .,,,.,,. .:,:,    ,:,.;;,.,,,,..  .;1;;fi;1i,..,,:;;:;;,.::  .,:::::,,,,::,.            \n" +
+                                      "             .,,,::,,.,:::,,.  :;.,;;::::::;;:,,ii:1;;1:::;i;::,,,;;:;,.:;:,,,:::,.,,,              \n" +
+                                      "               .,,,.,::;;,,:;:,:;:;;:,,,,::;i;:::;1111,,:::;:,,,::;;;::,:,  .,,.,::,.               \n" +
+                                      "                 .,,,::,,,. .,::;;;::,.. ...,,::,.;11;::,.     ..:::;i;,,.,,:,.,,,.                 \n" +
+                                      "                   .,,,..,,...,:i;::::,,.      ,;;:i;;,  ... .,:;;,..:;;:,,.,::,.                   \n" +
+                                      "                     .,,,:,,,,,;;:,.,,::::,,,::,:;;;::,:;::::;,:,. ..,,,:,,,,,.                     \n" +
+                                      "                       ..,,,,,::,,,.  ..,;;,,,:,,,;i:,,,,..,:;;:,,,:,.,,,:,..                       \n" +
+                                      "                          ..,,:,,,,::,,,,;:,,.  .,,;;:,....,,,:,.,,,:,,,.                           \n" +
+                                      "                              ..,,,:,,,,::,.,,:,,.,::,.,,:,.,,::,,,...                              \n" +
+                                      "                                   ...,,,,,:,,:,,,,::,,,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
 
-            width100pentagram[28] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ..........,.......                                         \n" +
-                                    "                                  ...,,,,,,:,,,,:,,,,,:,,:,,,,,...                                  \n" +
-                                    "                              .,,,,,,:,,.,,:,,,,::,,,,:,,.,:,,,,,:,,,.                              \n" +
-                                    "                          ..,:,,:,,,,::,,,.  .,:;;,..  .,,:;,,,,::,,,,:,..                          \n" +
-                                    "                       .,,,:,,.,,,..,::;,,.,:,,,;i:,,::,,:;:,.. .,,.,::,,,,,.                       \n" +
-                                    "                     .,,,..,:,,,. ..,,::,::::,:;:;;:,,:,,,,:,::,..,:;:,,.,::,,.                     \n" +
-                                    "                  .,,,::,,,,:;;:,,:;:,.      ,;;i;:;:.     ...,::::;;:...,:,.,,,,                   \n" +
-                                    "                 ,,,,.,,.. ,,,i;:;:,.    ..,::,;11:.,::,,......,;:;;;,:.  .,,,::,,,                 \n" +
-                                    "               .,,,:,,,...:;::;:;;:::,::;;;:,,;1111;:::;i;::,,,:;i;;:,:;:,,:;::,.,,,.               \n" +
-                                    "             .,,,.,::;;,,:::..;::i:,,:::;i;::i1:ii:1;,::;:::::::;:.::. .,,,:::.,,,::,,.             \n" +
-                                    "            ,,,:,,,.,,::,..  ,:..;;:::,,,. .:i1;tf;i1:.  ..,,,,.;;,,::.   .:,:. .,,..,,.            \n" +
-                                    "           ,,,.,,. .:::.    ,:,.;;.       ,;;i;,fGL;ii;:.       .;;::;;,.  .,:;,..,,,,:,,           \n" +
-                                    "          ,::,.,,..:;:.  .,;;;:::.      .:;;;..iCGCf.:;;;:.       ,:;i;::,,..,::,:;;:,,,,,          \n" +
-                                    "         ,,,,:::;::::,,::::;;i,.     .,;ii;;:ifCGCCGf::;;;ii;,..    .:::,,,:;;:;;;::.:..,,,         \n" +
-                                    "        ,,,..,,:,;i:;;:,,,;::.  .,,:;;ifLtt1ffLLtCf1GL111ffLfi;;;:;;;;iiiiii1i;:;:,, .,,:,,,        \n" +
-                                    "       .,,:,,. ,,:::;11ii1;;;;iii;;;:;ttLtii:1Gt;0L;LC1;iiLt1t;,:,::iii;i111;.:;,,;:, .:..,,.       \n" +
-                                    "      .,,..,. .:;, ::,;11iii11;:,,,:it11;.  ;CGCG8GCGCL;  .;1tff1;:;1fft;;ii,.::  ,:,,,:,,:,,       \n" +
-                                    "      ,,,,,:,,,::. ,:,.;1;;ttLf1i1fLt;:.   iLLL;t8G::CfC;   ..:i1tftL1;iii:;:::,   .::;;::,,,,      \n" +
-                                    "     .,,,,::;::,   .::::;iii;,ttfi:.      iLtf.iGGGG;:f1L;       ,ft; ;ii, :;;;;.   :,,,,,.,,,      \n" +
-                                    "     .,,.,,.:,:.   :;;;:..ii;..tfi       iCfLiC8L,;C8LfCLC;      ;Lf :;;:  .;::::. .:::  ,,:,,.     \n" +
-                                    "     ,,,:,. .::,  ,:::;:  ,i:i.iLt.     t0G0CGC:    :CG080Gi     itt.i:i.   :;,,::, ,;:. ,,.,,,     \n" +
-                                    "     ,,,,,. ,::,.::,,;;.   :;;itif,   .tC000C:        :0GGCLt.   i1it;;;     :i,.,;:::,,,,,.,,,     \n" +
-                                    "     ,,,.:,,::;:;;,,;;.    .i1ff11   :ffLtCGi          fGf1Ltf,  .tfLt1;      ,i;:;;:;;;;::::,,     \n" +
-                                    "     ,,:::;;;;;:;;;;;,      i1tLf1  iCtL:i8C            G8:;fLC: .t1ffii.    ,;:.,;;::,:,,,.,,,     \n" +
-                                    "     ,,,.,,,,,:::;,.,i:     ;;;1i1itGCC,:C01           .18C;:GCGt:ti1;:;:   ,;;,,::.,::. .,,,,,     \n" +
-                                    "     ,,,.,. .:;, ,::,,::   ,;:;.tfGLfGLt8GGCGCfti:,;1fC0CCG8CGG1LLfLi.i:i.  :;:::,  ,::. ,,:,,,     \n" +
-                                    "     .:,:,,  :::. .::;:;   ;;;.,CCL;fGG0Ct;;itfCG080GCfi;:ifG0GfiLCCt .;ii..;;;;,   .:,:,:..,,.     \n" +
-                                    "     .,,,.:.,,,:   .;;;;: ,ii:;CCCCCtitGCGLLftffCG80CffffLGCGf1tCGCCCf,;iii;:,::.  .,::;:::,,,      \n" +
-                                    "      ,,,,::;;::,   ::::;:iiifGGCCCCLLfti;i;;;::::;:::;;;i;;fLCCLLfLCGLtt;;1;.,:. .::,,,:,,,,.      \n" +
-                                    "      .,,,,,,,,::, .::.:ii:;tfti:::itt1i;.                .i111;:,,:i11i;ii11i:;:.,;:. ,:.,,,       \n" +
-                                    "       .,,.,,. ,::,,;:,i111i;iii;::::;t1fL1ii;,       ,;1ifLtt;;;;;;;;;;;iiiiii;:::,, .,,:,,.       \n" +
-                                    "        ,,,:,,. ,,;;:;i1;;;;ii::;::;;;ifftt11tft;, ,;tLt1ttfti;:,,.   ,:::,.,:;;;i;::,:.,,,,        \n" +
-                                    "         ,,,..:,:;;;::;::,,,:::.    ..,:;;;;:,:tft1tft;:;;;;;,      ,:i;;::,,,,::::;:::,,,,         \n" +
-                                    "          ,:,,::;:,,::, .,,:;;i;:,       .:;;;: :1Lt; ,;;;:.      ,;:::;;,.  .:;,. ,,.,,:,          \n" +
-                                    "           ,,,,.,,..,;:,.   ,;::,;;.        :;ii:iCt:;ii;.       .i:.::,    ,::,  ,:,.,,.           \n" +
-                                    "            .,,..:,. .:,:.   .::.,;;,,:,,,.  .:11;f1;1i:...,,:;::;;.,:,  .,,:::,.,,,:,,.            \n" +
-                                    "             .,,::,,,.:::,:,. .::.;;::::::;;::,;1:ii:1;::;i;:::,,:;:;;..:::,,:;:,..,,,              \n" +
-                                    "               .,,,.,::;:.,:;:,;:;;;:,,,::;i;:::;1111:,:::;;,,,:::;;:;::;,  .,,,:,,,.               \n" +
-                                    "                 .,,::,,,.  .:,;;;::,..  ...,,:,.:11:,::,.     .,:::;i,:...,:,.,,,.                 \n" +
-                                    "                   .,,,.,:,,..:;;:::::,,.     .:;:;;;:.      ,,:;:,,,;;:,,.,::,,.                   \n" +
-                                    "                     .,,:,,.,,:;:,..,,:,:,,::::,:;;:;,,::::,::,,.  .,,,:,.,,,,.                     \n" +
-                                    "                       ..,,,,::,.,,....::;,,,,,,,:i;,,,,..,,;;:,,,,,,.,,:,,.                        \n" +
-                                    "                          ..,,,,,,::,,,,;:,,.  .,,;;:,....,,,;,,,,,:,,,,..                          \n" +
-                                    "                              ..,,:,,,,::,.,,:,,,,::,,,,:,,,,,:,,,,,..                              \n" +
-                                    "                                   ..,,,,,:,,:,,,,::,,,,:,,,,,...                                   \n" +
-                                    "                                           ...............                                          \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[29] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ..................                                         \n" +
-                                    "                                  ...,,,,:,::,,,,:,,,,,:,,,,,,,...                                  \n" +
-                                    "                              ..,,,,,,:,,.,::,,,,::,,,::,..,:,,,,,,,,.                              \n" +
-                                    "                          ..,,:,,:,,,,::,,..  .,:;:,..  .,,::,,.,:,,,,,,..                          \n" +
-                                    "                       .,,,,:,..,,...,:;;,,,,:,,:i;,,,:,,,:;:,....,,.,::,:,..                       \n" +
-                                    "                     .,:,,.,:::,....,:,:,,:::,,:;;;;:,::,,,::::,...,:;:,..,::,.                     \n" +
-                                    "                   .,:,,:,,,,:;;,,:;:,,.     .:;:i::;,      .,,:::::;::.,,,:,,:,.                   \n" +
-                                    "                .,,:,..,,  .,,:i;:;,..  ...,,:,.;ti,.::,,... ..,::;;;,,,  .,,.,::,,                 \n" +
-                                    "               .,,,,:::,..,;:,::;;:::,,::;;;:,,i1111;,::;i;::,,::;;:;:,;;,.,::::.,:,.               \n" +
-                                    "             .,:,,.,,:;::::,. :;,;;:,::::;;:::ii,1;;1;::;;:::::,;i,:;, .,::::;,,,.,::,.             \n" +
-                                    "            .,,,:,,..:,:,.   ,:,.:;,,:,,,.  ,;1i;f1;1i,  ..,,,,,:;,.::.    ::,, .,:,,,,.            \n" +
-                                    "           ,,,..,.  :::,   .,::,:i,       .:;ii,iGC;;ii;,        :i,,::,    ,:;,  ,,.,,:,           \n" +
-                                    "          ,,::,::,,,::. ..,;i;;::.      .:;;;: :LCGf..:;;:,       ,::;;;:,.. ,::,,:::::,,,          \n" +
-                                    "         ,,,.,:;;;;;::,:::,::;:.     .,;ii;;::tCGCGGLi::;;ii;,.     .:::,,,,::::;;;;:,,.,,,         \n" +
-                                    "        ,,,,,,.,,:i:;i;,,:;;;:..,,::;;ifftt1tfCC1CL1CCt11ttLfi;;::::,,;;;;::;ii:;;,,..,,:,,,        \n" +
-                                    "       .,,,,,  ,::,:;:1111i;;iiii;:::;t1Lfii:1Gt;GC;LG1;iiLf1t;:::;;iii;;1t11::;:,::, .:,,,,.       \n" +
-                                    "      .,,,.,. ,:;, ,;,.i1i;i1ti:,,:;1t11;.  ;LGCC00CCGL:  .i1tfti:,,;1fti:i1: ::. :;:,.,,.,,,       \n" +
-                                    "      ,,::::::,:,  .::.:ii;11tCt11fft:,.   iCLL;100i;CfC;   .,:tttttfL11iii;:,:,   ,::;;:::,,,      \n" +
-                                    "     .,,,,::;::,   .::::::1ii.;1t1.       ;Ltf.iGGGG;,ftL;       .tt1.,ii;.::;;;.   ,:,:,:.,,,      \n" +
-                                    "     .,,.,, ,,:,   :;;;;  :i;: iLt.      iLfL1C8L:;C8L1CfC;      ,LL,.;;i. .;;;;,   :,,. ,,,,,.     \n" +
-                                    "     ,,,:,. .;:, .::,:::   ;:i,:Lf,     10G0GGC:    :CGG000i     :ff,;:;:   :::,::. ,;:. .,,,,,     \n" +
-                                    "     ,,,.:. ,,:,,;,.,;:.   ,;:;t;f:   .tLG00G:        :GG0CLt.   ;tit;;;.   .;;,.,;:::,,.,, ,,,     \n" +
-                                    "     ,,,,::::;;:;;::;:      i1fft1   :ftL1CG1          tGL1Ltf,  .tfLt1;      :;::;;:;;:;::::,,     \n" +
-                                    "     ,,,,::;:;;:;;::;:      i1tLtt  ;Cff:i8C           .G8;;fLC: .t1Ltii     .;;,:;;:;:::::,,,,     \n" +
-                                    "     ,,, :..,,:,,;,.,;:.   .;;;1it;tGCC,;C0i            18C::CCG1;ti1;;;.   .;;,,::,,::, .:.,,,     \n" +
-                                    "     ,,,,:. .;:, .::,:::   ::;:,ffCLtGCL8GGCGCf1i::i1fCGCCG8LGG1LCfL,,;:;   :::,:,  ,:;. .,:,,,     \n" +
-                                    "     .,,,,, .,::   ,;;;;. .i;; ;GCLiLG00L1:i1tLGG00GGLti;:1f00GfiLCCi :;i: .;;;;,   ,:,,.:.,,,.     \n" +
-                                    "     .,,..:,:::,   .;;;::.iii,;CCCGCt1tGCGLLtffLG08GLfftLLGCGt1tCGCCCi.ii1::::::.   ,::;::,,,,      \n" +
-                                    "      ,,::::::,:,  .::,:;i;i1fGCCCCCLLLt;;i;;;::::;:::;;;i;;fLLCCCLLCGfti:ii:.::. .::,:::::,,.      \n" +
-                                    "       ,,,.,,.,:;, .:, ;1i:itti;,,,;1t1i;.                .ii11i:,,,;it1i;i1i.,;, :;:. ,,.,,,       \n" +
-                                    "       .:,,,,  ,::,:;:;11t1;;iii;;:::;ttLL11i:.       :i11LLtt;:;;;iiii;;i1111;;::::, .,,,,,.       \n" +
-                                    "        ,,,,,,..,,i;:ii::::;;:..,:::;;ifftt11fL1:  :iff11ttffi;::,,...:;;:,,:;i:;i:,,.:.,,:.        \n" +
-                                    "         ,,,.,,:;;;;:::::,,,:;:.     .,:;;;;:,iff11ff1,:;;;;:,.     .:;::,:::,::::;;;:,.,:,         \n" +
-                                    "          ,,,::::,,,::. ..,:;;;::,       ,:;;;..iffi,.:;;:,       ,;:;;i:,.  .::,..,,,::,,          \n" +
-                                    "           ,,,,.,,  ,:::    ,::,,i:        .;i1;:fL;:ii;,        :i,,::,    :::,  ,,.,,,.           \n" +
-                                    "            .,,,,:,. ,,:,.   .::.,;:,::,,,.  ,i1;1f;i1:. .,,,::::;:.::.  ..,:,: .,,:,,,.            \n" +
-                                    "             .,:,,.,,:;:::::, ,;::i:,:::::;;::;1;;1:1i:::i;:::,,:;;:;, ,:::,:;:,,.,,,,              \n" +
-                                    "               .,:,,::::..,:;,:;;i;::,,:::i;::,:1111;,,:;;;:,,,::;;;::,::,..,:::,,:,.               \n" +
-                                    "                 .,:,,.,,.  ,,,i;:;:..   ...,::,,1t:.::,..    ..,;:;i:,,  .,,..,:,.                 \n" +
-                                    "                   .,:,,:,,,.::;:,:::,,.      ,;:;i:;,.     .,,:;:,,;;:,,,,:,,,,.                   \n" +
-                                    "                     .,:,,..,:::,...,,,::,::::,:;;;;:,::::,::,,,. .,,:::,.,,,,.                     \n" +
-                                    "                       ..,,,::,.,,,...,:;:,,,,,,,;i:,,,,.,,;;:...,,,..,:,,,.                        \n" +
-                                    "                          ..,,,,,::,.,,::,,.. .,,:;:,....,,,::,,,,:,,:,,.                           \n" +
-                                    "                              ..,,,,,,::,..,:,,.,::,.,,::,.,,:,,:,,,..                              \n" +
-                                    "                                   ...,,,,,,:,,,,,:,,,,:,,:,,,...                                   \n" +
-                                    "                                          ................                                          \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "```";
-            width100pentagram[30] = "```                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                                    "                                         ..................                                         \n" +
-                                    "                                  ...,,,,,,,::,,,,:,,,,,:,,,,,,...                                  \n" +
-                                    "                              .,,,,,,,,:,..,::,,,,:,,,,::,.,,:,,,,,,..                              \n" +
-                                    "                          ..,,,,.,:,,,,:::,.. ..,:;:,.. ..,,::,,.,:,,:,,..                          \n" +
-                                    "                       ..,:,,:,.,,....,:;:,,,::,,;i:,,:,,,,:;:,...,,,.,::,,..                       \n" +
-                                    "                     .,::,..,:;:,...,::::,,:::,,;;;:;,,:::,,:,:,. ..,:::,.,,,,.                     \n" +
-                                    "                  .,,,,.:,,,.,:i:::::,,.      ,:::i:;:.      ,,:;::,;;:,,,,::,:,.                   \n" +
-                                    "                .,,::,.,,. .,:,;;:::,......,,::,.iti.,:,,...  ..,;:;i;,,. .,,..,,,.                 \n" +
-                                    "               .,:,.::::,,,:;,,;:;;:,,,:::i;::,:i111i,,::;;:,,,:::;;:;,:;,..,:,:,,,,.               \n" +
-                                    "             .,::,.,,,:::::,. ,;:,;;::::::;;:,:1;:t:i1:::;;::::,,;;,;: .:::::;;:,.,,,,.             \n" +
-                                    "            .,,.,:,. ,,::    .::.:;:,,,,,..  ,;1;ifii1;,  .,,,::,;:.,:,  ..,:,:..,,:,,,.            \n" +
-                                    "           ,:,,.,, .,;:,   .,;:::i:        ,;;i;;CGi,iii:.       ,i:,::,    ,::,  ,,..,,,           \n" +
-                                    "          ,,,,::::,,::...,,:;;i::,       ,:;;:..LCGL: :;;;:.      ,::;;i:,.. .::,..,:,::,,          \n" +
-                                    "         ,,,.,,,;;;;::::,,,,:::.    ..,;ii;;::iLGCCGLt::;;ii;,.     .:;::,:::,::::;;;:,.,:,         \n" +
-                                    "        ,,::,,. ,,;;;;1i:;;ii;:,:::;;;ifLft11tCC1LLtCCft1ttLfi;;:,,,..,;;:,,,;i::i:,,.:.,,,,        \n" +
-                                    "       .,,.,:  ,;:,:;,:1111;;iii;::::;t1ffii:tGf;CG;fGi:iifLtt;:::;iiii;;i1111;;::::, .,,,,,.       \n" +
-                                    "      .,,,.,,.,::, .:: ;1i:itf1;:::itf11;.  ;LGCC00CCGL:  .i11ti;,,.:it1i;i11,,;, :;:. ,,.,,,       \n" +
-                                    "      ,,,,::;;::,   ,:,:;iiiiiLftttt1:,.   iCfL:i001;CLC;   .:;tff11tLft1:ii:.::. .::,:::::,,,      \n" +
-                                    "     .,,..:,:,:,   .;;;:: ;ii,.1tt.       ;L1f,iGGGG;,ftL;      .,1ft;.ii1::::::.   ,::;::,,,,      \n" +
-                                    "     .,,,,, .,::  .::;:;  .i;;.:Lf,      iCfC1C8L::C8L1LfL;      .tfi :;i: .;;;;,   ,:,,.,..,,.     \n" +
-                                    "     ,,,,,. .;:. ,::,:::   :;;;,ff:     1008GGC:    ;GGG0G0i     ,fL:,i:;   :::::,  ,:;. .,:,,,     \n" +
-                                    "     ,,,.:,,,,:,:;,.,i:    .;;;tit;   .tLC0GG,        ;G00GL1.   :fit;:;,   .;;,,::,,::, .,.,,,     \n" +
-                                    "     ,,::::;:;;:;;;;;,      i1fLf1   :ftCiCG1          tGC1Ltf,  .ttLf1i     .:;,:;;:;:::,:,,,,     \n" +
-                                    "     ,,,.:,:::;:;;,,;;.    .iiff1t  ;CLf:;8C           .G8;;ffC; .ttLt1;      :;::;;:;;:;:::,,,     \n" +
-                                    "     ,,,.:. ,::,.::,,;;.   ,;;;tit:tGCC,;G8i            t0C::CCG1i1i1;;;.   .;;,.,;:,:,,.,, ,,,     \n" +
-                                    "     ,,,:,. .::,  ,:::::  .i:i.;LfCLtGCC8GCCGCf1;,:i1fCGGGG8fCGtLCft.;:;,   ::,,::. ,;:. .,,,,,     \n" +
-                                    "     .,,..,.,,:,   :;;;;. ;i;, 1CCLiLG0Gfi:;ifCGG80GCfti;;1L0GGf;LCC,.;;i. .;:;;,  .:,,..,,,,,.     \n" +
-                                    "     .,,,,::;::,   .:::::;1i;.tCCGGCt1fGCGLLtffCG80CfftfLLGGGtitCGCCL::ii;.::;;;.   ::::,:.,,,      \n" +
-                                    "      ,,,,,:,:,::. .::.;ii:1tLGCLLCCCLLf;;i;;;:::;:::;;;;i;itLLLCCCCGGf1;ii;:,::   ,::;;:::,,.      \n" +
-                                    "      .,,..,. .:;, :;,:11iii11i;,,,:i11ii.                .ii1t1;,,,;1fti:i1: ::. :;:,.,,.,,,       \n" +
-                                    "       .,,::,. ,::::;i1ii1i;;iiii;;;:;ttLfi1i,       .;i11Lftt;:::;;iii;;1111::;:,::. .:,.,,.       \n" +
-                                    "        ,,,,.:.:,;i::;;,,,:;:,  .,,::;ifftt1tLfi, .;tLt11ttLfi;;::::,,;;;;::i1;:;;,, .,,:,,.        \n" +
-                                    "         ,:,.,:;;;::::,:::,::;:,     .,;;;;;::tftitff;,:;;;;:,.     .;::,,,:::::;;;;,,,.,,,         \n" +
-                                    "          ,,::,,,..,;:.  .,;;;::;,      .,;;;: :1Lt; ,;;;:.       ,;:;;;:,.. ,::,,:::::,,,          \n" +
-                                    "           ,,,..,.  ,::,    ,::,:i,        :;ii:1Ct:ii;:.       .;i,:::,   .::;, .,,.,,,.           \n" +
-                                    "            .,,,:,,..:,;,..  ,:, :;::::,,,  ,;1;if;;1;.  .,,,::,;;,.::.   .:,,. .,:,,,,.            \n" +
-                                    "             .,,,..,:;;:,:::..:;:;;,,::::;;:::1i:1:i1:::;;:::::,;;,:;. ,,::::;,,,.,::,              \n" +
-                                    "               .,,,::,:,..,;:,;:;;:::,,,:;;::,,i111i:,::;;:::,,::;;:;,:;:,.,::::.,,,.               \n" +
-                                    "                 .,,,..,,. .,,;i:::,.     .,,:,,it;.,::,...  ..,::;;;,:.  .,,.,::,.                 \n" +
-                                    "                   .,,,::,,,,;;:,,:;:,,.     .:;:i:;:.      ,,::::,:;:,.,,::.,,,.                   \n" +
-                                    "                     .,,,,.,::,,.. .,,::,:::::,;:;;;,::::,,:,:,,...,:;:,.,,:,,.                     \n" +
-                                    "                       ..,,::,..,,,..,:;:,..,,,,:i:,,,,,,,;;:,...,,,.,:,,:,.                        \n" +
-                                    "                          ..,,:,::,,,,::,,.....,:;:,.. ..,,;:,,,,:,,:,,,.                           \n" +
-                                    "                              ..,,,:,,:,,.,::,,,,:,,,,::,..,:,,,,,,,..                              \n" +
-                                    "                                   ...,,,,,:,,,,,:,,,,:,,,,,,,...                                   \n" +
-                                    "                                           ..............                                           \n" +
-                                    "                                                                                                    \n" +
-                                    "                                                                                                    \n" +
-                    "```";
-        } // 2nd mov pentagram ~30 frames
+            width100pentagram[ 28 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ..........,.......                                         \n" +
+                                      "                                  ...,,,,,,:,,,,:,,,,,:,,:,,,,,...                                  \n" +
+                                      "                              .,,,,,,:,,.,,:,,,,::,,,,:,,.,:,,,,,:,,,.                              \n" +
+                                      "                          ..,:,,:,,,,::,,,.  .,:;;,..  .,,:;,,,,::,,,,:,..                          \n" +
+                                      "                       .,,,:,,.,,,..,::;,,.,:,,,;i:,,::,,:;:,.. .,,.,::,,,,,.                       \n" +
+                                      "                     .,,,..,:,,,. ..,,::,::::,:;:;;:,,:,,,,:,::,..,:;:,,.,::,,.                     \n" +
+                                      "                  .,,,::,,,,:;;:,,:;:,.      ,;;i;:;:.     ...,::::;;:...,:,.,,,,                   \n" +
+                                      "                 ,,,,.,,.. ,,,i;:;:,.    ..,::,;11:.,::,,......,;:;;;,:.  .,,,::,,,                 \n" +
+                                      "               .,,,:,,,...:;::;:;;:::,::;;;:,,;1111;:::;i;::,,,:;i;;:,:;:,,:;::,.,,,.               \n" +
+                                      "             .,,,.,::;;,,:::..;::i:,,:::;i;::i1:ii:1;,::;:::::::;:.::. .,,,:::.,,,::,,.             \n" +
+                                      "            ,,,:,,,.,,::,..  ,:..;;:::,,,. .:i1;tf;i1:.  ..,,,,.;;,,::.   .:,:. .,,..,,.            \n" +
+                                      "           ,,,.,,. .:::.    ,:,.;;.       ,;;i;,fGL;ii;:.       .;;::;;,.  .,:;,..,,,,:,,           \n" +
+                                      "          ,::,.,,..:;:.  .,;;;:::.      .:;;;..iCGCf.:;;;:.       ,:;i;::,,..,::,:;;:,,,,,          \n" +
+                                      "         ,,,,:::;::::,,::::;;i,.     .,;ii;;:ifCGCCGf::;;;ii;,..    .:::,,,:;;:;;;::.:..,,,         \n" +
+                                      "        ,,,..,,:,;i:;;:,,,;::.  .,,:;;ifLtt1ffLLtCf1GL111ffLfi;;;:;;;;iiiiii1i;:;:,, .,,:,,,        \n" +
+                                      "       .,,:,,. ,,:::;11ii1;;;;iii;;;:;ttLtii:1Gt;0L;LC1;iiLt1t;,:,::iii;i111;.:;,,;:, .:..,,.       \n" +
+                                      "      .,,..,. .:;, ::,;11iii11;:,,,:it11;.  ;CGCG8GCGCL;  .;1tff1;:;1fft;;ii,.::  ,:,,,:,,:,,       \n" +
+                                      "      ,,,,,:,,,::. ,:,.;1;;ttLf1i1fLt;:.   iLLL;t8G::CfC;   ..:i1tftL1;iii:;:::,   .::;;::,,,,      \n" +
+                                      "     .,,,,::;::,   .::::;iii;,ttfi:.      iLtf.iGGGG;:f1L;       ,ft; ;ii, :;;;;.   :,,,,,.,,,      \n" +
+                                      "     .,,.,,.:,:.   :;;;:..ii;..tfi       iCfLiC8L,;C8LfCLC;      ;Lf :;;:  .;::::. .:::  ,,:,,.     \n" +
+                                      "     ,,,:,. .::,  ,:::;:  ,i:i.iLt.     t0G0CGC:    :CG080Gi     itt.i:i.   :;,,::, ,;:. ,,.,,,     \n" +
+                                      "     ,,,,,. ,::,.::,,;;.   :;;itif,   .tC000C:        :0GGCLt.   i1it;;;     :i,.,;:::,,,,,.,,,     \n" +
+                                      "     ,,,.:,,::;:;;,,;;.    .i1ff11   :ffLtCGi          fGf1Ltf,  .tfLt1;      ,i;:;;:;;;;::::,,     \n" +
+                                      "     ,,:::;;;;;:;;;;;,      i1tLf1  iCtL:i8C            G8:;fLC: .t1ffii.    ,;:.,;;::,:,,,.,,,     \n" +
+                                      "     ,,,.,,,,,:::;,.,i:     ;;;1i1itGCC,:C01           .18C;:GCGt:ti1;:;:   ,;;,,::.,::. .,,,,,     \n" +
+                                      "     ,,,.,. .:;, ,::,,::   ,;:;.tfGLfGLt8GGCGCfti:,;1fC0CCG8CGG1LLfLi.i:i.  :;:::,  ,::. ,,:,,,     \n" +
+                                      "     .:,:,,  :::. .::;:;   ;;;.,CCL;fGG0Ct;;itfCG080GCfi;:ifG0GfiLCCt .;ii..;;;;,   .:,:,:..,,.     \n" +
+                                      "     .,,,.:.,,,:   .;;;;: ,ii:;CCCCCtitGCGLLftffCG80CffffLGCGf1tCGCCCf,;iii;:,::.  .,::;:::,,,      \n" +
+                                      "      ,,,,::;;::,   ::::;:iiifGGCCCCLLfti;i;;;::::;:::;;;i;;fLCCLLfLCGLtt;;1;.,:. .::,,,:,,,,.      \n" +
+                                      "      .,,,,,,,,::, .::.:ii:;tfti:::itt1i;.                .i111;:,,:i11i;ii11i:;:.,;:. ,:.,,,       \n" +
+                                      "       .,,.,,. ,::,,;:,i111i;iii;::::;t1fL1ii;,       ,;1ifLtt;;;;;;;;;;;iiiiii;:::,, .,,:,,.       \n" +
+                                      "        ,,,:,,. ,,;;:;i1;;;;ii::;::;;;ifftt11tft;, ,;tLt1ttfti;:,,.   ,:::,.,:;;;i;::,:.,,,,        \n" +
+                                      "         ,,,..:,:;;;::;::,,,:::.    ..,:;;;;:,:tft1tft;:;;;;;,      ,:i;;::,,,,::::;:::,,,,         \n" +
+                                      "          ,:,,::;:,,::, .,,:;;i;:,       .:;;;: :1Lt; ,;;;:.      ,;:::;;,.  .:;,. ,,.,,:,          \n" +
+                                      "           ,,,,.,,..,;:,.   ,;::,;;.        :;ii:iCt:;ii;.       .i:.::,    ,::,  ,:,.,,.           \n" +
+                                      "            .,,..:,. .:,:.   .::.,;;,,:,,,.  .:11;f1;1i:...,,:;::;;.,:,  .,,:::,.,,,:,,.            \n" +
+                                      "             .,,::,,,.:::,:,. .::.;;::::::;;::,;1:ii:1;::;i;:::,,:;:;;..:::,,:;:,..,,,              \n" +
+                                      "               .,,,.,::;:.,:;:,;:;;;:,,,::;i;:::;1111:,:::;;,,,:::;;:;::;,  .,,,:,,,.               \n" +
+                                      "                 .,,::,,,.  .:,;;;::,..  ...,,:,.:11:,::,.     .,:::;i,:...,:,.,,,.                 \n" +
+                                      "                   .,,,.,:,,..:;;:::::,,.     .:;:;;;:.      ,,:;:,,,;;:,,.,::,,.                   \n" +
+                                      "                     .,,:,,.,,:;:,..,,:,:,,::::,:;;:;,,::::,::,,.  .,,,:,.,,,,.                     \n" +
+                                      "                       ..,,,,::,.,,....::;,,,,,,,:i;,,,,..,,;;:,,,,,,.,,:,,.                        \n" +
+                                      "                          ..,,,,,,::,,,,;:,,.  .,,;;:,....,,,;,,,,,:,,,,..                          \n" +
+                                      "                              ..,,:,,,,::,.,,:,,,,::,,,,:,,,,,:,,,,,..                              \n" +
+                                      "                                   ..,,,,,:,,:,,,,::,,,,:,,,,,...                                   \n" +
+                                      "                                           ...............                                          \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 29 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ..................                                         \n" +
+                                      "                                  ...,,,,:,::,,,,:,,,,,:,,,,,,,...                                  \n" +
+                                      "                              ..,,,,,,:,,.,::,,,,::,,,::,..,:,,,,,,,,.                              \n" +
+                                      "                          ..,,:,,:,,,,::,,..  .,:;:,..  .,,::,,.,:,,,,,,..                          \n" +
+                                      "                       .,,,,:,..,,...,:;;,,,,:,,:i;,,,:,,,:;:,....,,.,::,:,..                       \n" +
+                                      "                     .,:,,.,:::,....,:,:,,:::,,:;;;;:,::,,,::::,...,:;:,..,::,.                     \n" +
+                                      "                   .,:,,:,,,,:;;,,:;:,,.     .:;:i::;,      .,,:::::;::.,,,:,,:,.                   \n" +
+                                      "                .,,:,..,,  .,,:i;:;,..  ...,,:,.;ti,.::,,... ..,::;;;,,,  .,,.,::,,                 \n" +
+                                      "               .,,,,:::,..,;:,::;;:::,,::;;;:,,i1111;,::;i;::,,::;;:;:,;;,.,::::.,:,.               \n" +
+                                      "             .,:,,.,,:;::::,. :;,;;:,::::;;:::ii,1;;1;::;;:::::,;i,:;, .,::::;,,,.,::,.             \n" +
+                                      "            .,,,:,,..:,:,.   ,:,.:;,,:,,,.  ,;1i;f1;1i,  ..,,,,,:;,.::.    ::,, .,:,,,,.            \n" +
+                                      "           ,,,..,.  :::,   .,::,:i,       .:;ii,iGC;;ii;,        :i,,::,    ,:;,  ,,.,,:,           \n" +
+                                      "          ,,::,::,,,::. ..,;i;;::.      .:;;;: :LCGf..:;;:,       ,::;;;:,.. ,::,,:::::,,,          \n" +
+                                      "         ,,,.,:;;;;;::,:::,::;:.     .,;ii;;::tCGCGGLi::;;ii;,.     .:::,,,,::::;;;;:,,.,,,         \n" +
+                                      "        ,,,,,,.,,:i:;i;,,:;;;:..,,::;;ifftt1tfCC1CL1CCt11ttLfi;;::::,,;;;;::;ii:;;,,..,,:,,,        \n" +
+                                      "       .,,,,,  ,::,:;:1111i;;iiii;:::;t1Lfii:1Gt;GC;LG1;iiLf1t;:::;;iii;;1t11::;:,::, .:,,,,.       \n" +
+                                      "      .,,,.,. ,:;, ,;,.i1i;i1ti:,,:;1t11;.  ;LGCC00CCGL:  .i1tfti:,,;1fti:i1: ::. :;:,.,,.,,,       \n" +
+                                      "      ,,::::::,:,  .::.:ii;11tCt11fft:,.   iCLL;100i;CfC;   .,:tttttfL11iii;:,:,   ,::;;:::,,,      \n" +
+                                      "     .,,,,::;::,   .::::::1ii.;1t1.       ;Ltf.iGGGG;,ftL;       .tt1.,ii;.::;;;.   ,:,:,:.,,,      \n" +
+                                      "     .,,.,, ,,:,   :;;;;  :i;: iLt.      iLfL1C8L:;C8L1CfC;      ,LL,.;;i. .;;;;,   :,,. ,,,,,.     \n" +
+                                      "     ,,,:,. .;:, .::,:::   ;:i,:Lf,     10G0GGC:    :CGG000i     :ff,;:;:   :::,::. ,;:. .,,,,,     \n" +
+                                      "     ,,,.:. ,,:,,;,.,;:.   ,;:;t;f:   .tLG00G:        :GG0CLt.   ;tit;;;.   .;;,.,;:::,,.,, ,,,     \n" +
+                                      "     ,,,,::::;;:;;::;:      i1fft1   :ftL1CG1          tGL1Ltf,  .tfLt1;      :;::;;:;;:;::::,,     \n" +
+                                      "     ,,,,::;:;;:;;::;:      i1tLtt  ;Cff:i8C           .G8;;fLC: .t1Ltii     .;;,:;;:;:::::,,,,     \n" +
+                                      "     ,,, :..,,:,,;,.,;:.   .;;;1it;tGCC,;C0i            18C::CCG1;ti1;;;.   .;;,,::,,::, .:.,,,     \n" +
+                                      "     ,,,,:. .;:, .::,:::   ::;:,ffCLtGCL8GGCGCf1i::i1fCGCCG8LGG1LCfL,,;:;   :::,:,  ,:;. .,:,,,     \n" +
+                                      "     .,,,,, .,::   ,;;;;. .i;; ;GCLiLG00L1:i1tLGG00GGLti;:1f00GfiLCCi :;i: .;;;;,   ,:,,.:.,,,.     \n" +
+                                      "     .,,..:,:::,   .;;;::.iii,;CCCGCt1tGCGLLtffLG08GLfftLLGCGt1tCGCCCi.ii1::::::.   ,::;::,,,,      \n" +
+                                      "      ,,::::::,:,  .::,:;i;i1fGCCCCCLLLt;;i;;;::::;:::;;;i;;fLLCCCLLCGfti:ii:.::. .::,:::::,,.      \n" +
+                                      "       ,,,.,,.,:;, .:, ;1i:itti;,,,;1t1i;.                .ii11i:,,,;it1i;i1i.,;, :;:. ,,.,,,       \n" +
+                                      "       .:,,,,  ,::,:;:;11t1;;iii;;:::;ttLL11i:.       :i11LLtt;:;;;iiii;;i1111;;::::, .,,,,,.       \n" +
+                                      "        ,,,,,,..,,i;:ii::::;;:..,:::;;ifftt11fL1:  :iff11ttffi;::,,...:;;:,,:;i:;i:,,.:.,,:.        \n" +
+                                      "         ,,,.,,:;;;;:::::,,,:;:.     .,:;;;;:,iff11ff1,:;;;;:,.     .:;::,:::,::::;;;:,.,:,         \n" +
+                                      "          ,,,::::,,,::. ..,:;;;::,       ,:;;;..iffi,.:;;:,       ,;:;;i:,.  .::,..,,,::,,          \n" +
+                                      "           ,,,,.,,  ,:::    ,::,,i:        .;i1;:fL;:ii;,        :i,,::,    :::,  ,,.,,,.           \n" +
+                                      "            .,,,,:,. ,,:,.   .::.,;:,::,,,.  ,i1;1f;i1:. .,,,::::;:.::.  ..,:,: .,,:,,,.            \n" +
+                                      "             .,:,,.,,:;:::::, ,;::i:,:::::;;::;1;;1:1i:::i;:::,,:;;:;, ,:::,:;:,,.,,,,              \n" +
+                                      "               .,:,,::::..,:;,:;;i;::,,:::i;::,:1111;,,:;;;:,,,::;;;::,::,..,:::,,:,.               \n" +
+                                      "                 .,:,,.,,.  ,,,i;:;:..   ...,::,,1t:.::,..    ..,;:;i:,,  .,,..,:,.                 \n" +
+                                      "                   .,:,,:,,,.::;:,:::,,.      ,;:;i:;,.     .,,:;:,,;;:,,,,:,,,,.                   \n" +
+                                      "                     .,:,,..,:::,...,,,::,::::,:;;;;:,::::,::,,,. .,,:::,.,,,,.                     \n" +
+                                      "                       ..,,,::,.,,,...,:;:,,,,,,,;i:,,,,.,,;;:...,,,..,:,,,.                        \n" +
+                                      "                          ..,,,,,::,.,,::,,.. .,,:;:,....,,,::,,,,:,,:,,.                           \n" +
+                                      "                              ..,,,,,,::,..,:,,.,::,.,,::,.,,:,,:,,,..                              \n" +
+                                      "                                   ...,,,,,,:,,,,,:,,,,:,,:,,,...                                   \n" +
+                                      "                                          ................                                          \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+            width100pentagram[ 30 ] = "```                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "                                         ..................                                         \n" +
+                                      "                                  ...,,,,,,,::,,,,:,,,,,:,,,,,,...                                  \n" +
+                                      "                              .,,,,,,,,:,..,::,,,,:,,,,::,.,,:,,,,,,..                              \n" +
+                                      "                          ..,,,,.,:,,,,:::,.. ..,:;:,.. ..,,::,,.,:,,:,,..                          \n" +
+                                      "                       ..,:,,:,.,,....,:;:,,,::,,;i:,,:,,,,:;:,...,,,.,::,,..                       \n" +
+                                      "                     .,::,..,:;:,...,::::,,:::,,;;;:;,,:::,,:,:,. ..,:::,.,,,,.                     \n" +
+                                      "                  .,,,,.:,,,.,:i:::::,,.      ,:::i:;:.      ,,:;::,;;:,,,,::,:,.                   \n" +
+                                      "                .,,::,.,,. .,:,;;:::,......,,::,.iti.,:,,...  ..,;:;i;,,. .,,..,,,.                 \n" +
+                                      "               .,:,.::::,,,:;,,;:;;:,,,:::i;::,:i111i,,::;;:,,,:::;;:;,:;,..,:,:,,,,.               \n" +
+                                      "             .,::,.,,,:::::,. ,;:,;;::::::;;:,:1;:t:i1:::;;::::,,;;,;: .:::::;;:,.,,,,.             \n" +
+                                      "            .,,.,:,. ,,::    .::.:;:,,,,,..  ,;1;ifii1;,  .,,,::,;:.,:,  ..,:,:..,,:,,,.            \n" +
+                                      "           ,:,,.,, .,;:,   .,;:::i:        ,;;i;;CGi,iii:.       ,i:,::,    ,::,  ,,..,,,           \n" +
+                                      "          ,,,,::::,,::...,,:;;i::,       ,:;;:..LCGL: :;;;:.      ,::;;i:,.. .::,..,:,::,,          \n" +
+                                      "         ,,,.,,,;;;;::::,,,,:::.    ..,;ii;;::iLGCCGLt::;;ii;,.     .:;::,:::,::::;;;:,.,:,         \n" +
+                                      "        ,,::,,. ,,;;;;1i:;;ii;:,:::;;;ifLft11tCC1LLtCCft1ttLfi;;:,,,..,;;:,,,;i::i:,,.:.,,,,        \n" +
+                                      "       .,,.,:  ,;:,:;,:1111;;iii;::::;t1ffii:tGf;CG;fGi:iifLtt;:::;iiii;;i1111;;::::, .,,,,,.       \n" +
+                                      "      .,,,.,,.,::, .:: ;1i:itf1;:::itf11;.  ;LGCC00CCGL:  .i11ti;,,.:it1i;i11,,;, :;:. ,,.,,,       \n" +
+                                      "      ,,,,::;;::,   ,:,:;iiiiiLftttt1:,.   iCfL:i001;CLC;   .:;tff11tLft1:ii:.::. .::,:::::,,,      \n" +
+                                      "     .,,..:,:,:,   .;;;:: ;ii,.1tt.       ;L1f,iGGGG;,ftL;      .,1ft;.ii1::::::.   ,::;::,,,,      \n" +
+                                      "     .,,,,, .,::  .::;:;  .i;;.:Lf,      iCfC1C8L::C8L1LfL;      .tfi :;i: .;;;;,   ,:,,.,..,,.     \n" +
+                                      "     ,,,,,. .;:. ,::,:::   :;;;,ff:     1008GGC:    ;GGG0G0i     ,fL:,i:;   :::::,  ,:;. .,:,,,     \n" +
+                                      "     ,,,.:,,,,:,:;,.,i:    .;;;tit;   .tLC0GG,        ;G00GL1.   :fit;:;,   .;;,,::,,::, .,.,,,     \n" +
+                                      "     ,,::::;:;;:;;;;;,      i1fLf1   :ftCiCG1          tGC1Ltf,  .ttLf1i     .:;,:;;:;:::,:,,,,     \n" +
+                                      "     ,,,.:,:::;:;;,,;;.    .iiff1t  ;CLf:;8C           .G8;;ffC; .ttLt1;      :;::;;:;;:;:::,,,     \n" +
+                                      "     ,,,.:. ,::,.::,,;;.   ,;;;tit:tGCC,;G8i            t0C::CCG1i1i1;;;.   .;;,.,;:,:,,.,, ,,,     \n" +
+                                      "     ,,,:,. .::,  ,:::::  .i:i.;LfCLtGCC8GCCGCf1;,:i1fCGGGG8fCGtLCft.;:;,   ::,,::. ,;:. .,,,,,     \n" +
+                                      "     .,,..,.,,:,   :;;;;. ;i;, 1CCLiLG0Gfi:;ifCGG80GCfti;;1L0GGf;LCC,.;;i. .;:;;,  .:,,..,,,,,.     \n" +
+                                      "     .,,,,::;::,   .:::::;1i;.tCCGGCt1fGCGLLtffCG80CfftfLLGGGtitCGCCL::ii;.::;;;.   ::::,:.,,,      \n" +
+                                      "      ,,,,,:,:,::. .::.;ii:1tLGCLLCCCLLf;;i;;;:::;:::;;;;i;itLLLCCCCGGf1;ii;:,::   ,::;;:::,,.      \n" +
+                                      "      .,,..,. .:;, :;,:11iii11i;,,,:i11ii.                .ii1t1;,,,;1fti:i1: ::. :;:,.,,.,,,       \n" +
+                                      "       .,,::,. ,::::;i1ii1i;;iiii;;;:;ttLfi1i,       .;i11Lftt;:::;;iii;;1111::;:,::. .:,.,,.       \n" +
+                                      "        ,,,,.:.:,;i::;;,,,:;:,  .,,::;ifftt1tLfi, .;tLt11ttLfi;;::::,,;;;;::i1;:;;,, .,,:,,.        \n" +
+                                      "         ,:,.,:;;;::::,:::,::;:,     .,;;;;;::tftitff;,:;;;;:,.     .;::,,,:::::;;;;,,,.,,,         \n" +
+                                      "          ,,::,,,..,;:.  .,;;;::;,      .,;;;: :1Lt; ,;;;:.       ,;:;;;:,.. ,::,,:::::,,,          \n" +
+                                      "           ,,,..,.  ,::,    ,::,:i,        :;ii:1Ct:ii;:.       .;i,:::,   .::;, .,,.,,,.           \n" +
+                                      "            .,,,:,,..:,;,..  ,:, :;::::,,,  ,;1;if;;1;.  .,,,::,;;,.::.   .:,,. .,:,,,,.            \n" +
+                                      "             .,,,..,:;;:,:::..:;:;;,,::::;;:::1i:1:i1:::;;:::::,;;,:;. ,,::::;,,,.,::,              \n" +
+                                      "               .,,,::,:,..,;:,;:;;:::,,,:;;::,,i111i:,::;;:::,,::;;:;,:;:,.,::::.,,,.               \n" +
+                                      "                 .,,,..,,. .,,;i:::,.     .,,:,,it;.,::,...  ..,::;;;,:.  .,,.,::,.                 \n" +
+                                      "                   .,,,::,,,,;;:,,:;:,,.     .:;:i:;:.      ,,::::,:;:,.,,::.,,,.                   \n" +
+                                      "                     .,,,,.,::,,.. .,,::,:::::,;:;;;,::::,,:,:,,...,:;:,.,,:,,.                     \n" +
+                                      "                       ..,,::,..,,,..,:;:,..,,,,:i:,,,,,,,;;:,...,,,.,:,,:,.                        \n" +
+                                      "                          ..,,:,::,,,,::,,.....,:;:,.. ..,,;:,,,,:,,:,,,.                           \n" +
+                                      "                              ..,,,:,,:,,.,::,,,,:,,,,::,..,:,,,,,,,..                              \n" +
+                                      "                                   ...,,,,,:,,,,,:,,,,:,,,,,,,...                                   \n" +
+                                      "                                           ..............                                           \n" +
+                                      "                                                                                                    \n" +
+                                      "                                                                                                    \n" +
+                                      "```";
+        }*/ // 2nd mov pentagram ~30 frames
         SendMessage message = new SendMessage();
         message.setParseMode("MarkdownV2");
         Integer i = 0;
         Integer cinemaMessageId = sendToPlayingRoomAndGetMessageId(message, "kek");
+        // Integer cinemaMessageId = 71734; 44 cinema msgid
         for (i = 0; i <= 107; i++) {
             Integer s = Integer.parseInt("4") + Integer.parseInt(String.valueOf(i % 3));
-            editMessage(n[i] + "\n0." + s + " fps", cinemaMessageId);
+            editMessage(n[ i ] + "\n0\\." + s + " fps", cinemaMessageId);
             if (i == 107) {
                 i = 0;
             }
         }
 
 
-        
-
-
-
     }
+
+
 
 
     @Override
