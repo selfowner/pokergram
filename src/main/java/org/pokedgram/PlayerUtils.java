@@ -12,7 +12,7 @@ public class PlayerUtils extends PokedgramBot {
         if (updateId > -1) {
             playersQueue[updateId].set(0, userId); // string userId
             playersQueue[updateId].set(1, userName); // string user firstname + lastname
-            playersQueue[updateId].set(2, messageSourceId); //chatid
+            playersQueue[updateId].set(2, messageSourceId); //TODO() remove legacy
             playersQueue[updateId].set(3, chips); //chipsQuantity
             playersQueue[updateId].set(4, "true"); // isActive for reg/unreg && autofold
             playersQueue[updateId].set(5, "false"); // FoldFlag
@@ -27,7 +27,7 @@ public class PlayerUtils extends PokedgramBot {
                 playersQueue[registeredPlayers] = new ArrayList(12) {};
                 playersQueue[registeredPlayers].add(0, userId); // string userId
                 playersQueue[registeredPlayers].add(1, userName); // string user firstname + lastname
-                playersQueue[registeredPlayers].add(2, messageSourceId); //chatid
+                playersQueue[registeredPlayers].add(2, messageSourceId); //TODO() remove legacy
                 playersQueue[registeredPlayers].add(3, chips); //chipsQuantity
                 playersQueue[registeredPlayers].add(4, "true"); // isActive for reg/unreg
                 playersQueue[registeredPlayers].add(5, "false"); // FoldFlag
