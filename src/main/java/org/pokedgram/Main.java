@@ -10,12 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws TelegramApiException {
 
-
         TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
         botsApi.registerBot(new PokedgramBot());
-
-        /*TODO() start bots by request
-        botsApi.registerBot(new PokedgramCashierBot());
-        botsApi.registerBot(new AssCinema());*/
     }
 }

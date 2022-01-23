@@ -3,20 +3,23 @@ package org.pokedgram;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.pokedgram.SuperStrings.*;
+import static org.pokedgram.SuperStrings.bigBlindId;
+
 public class PlayerUtils extends PokedgramBot {
     //TODO() create type "Player"
-    public static ArrayList[] addPlayerToQueue(String userId, String userName, ArrayList[] playersQueue, String messageSourceId, int registeredPlayers, int chips, boolean ifFull, int unregid) {
+    public static ArrayList[] addPlayerToQueue(String userId, String userName, ArrayList[] playersQueue, String nickName, int registeredPlayers, int chips, boolean ifFull, int unregid) {
         //check if somebody unregistered
         int updateId = PlayerUtils.checkUserRegExistAndActive(userId, playersQueue, registeredPlayers);
 
         if (updateId > -1) {
             playersQueue[updateId].set(0, userId); // string userId
             playersQueue[updateId].set(1, userName); // string user firstname + lastname
-            playersQueue[updateId].set(2, messageSourceId); //TODO() remove legacy
+            playersQueue[updateId].set(2, nickName);
             playersQueue[updateId].set(3, chips); //chipsQuantity
             playersQueue[updateId].set(4, "true"); // isActive for reg/unreg && autofold
-            playersQueue[updateId].set(5, "false"); // FoldFlag
-            playersQueue[updateId].set(6, "false"); // AllinFlag manual
+            playersQueue[updateId].set(5, false); // FoldFlag
+            playersQueue[updateId].set(6, false); // AllinFlag manual
             playersQueue[updateId].set(7, "false"); // isChipleader?
             playersQueue[updateId].set(8, 0); // currentPhaseBet
             playersQueue[updateId].set(9, 0); // currentRoundBet
@@ -27,11 +30,11 @@ public class PlayerUtils extends PokedgramBot {
                 playersQueue[registeredPlayers] = new ArrayList(12) {};
                 playersQueue[registeredPlayers].add(0, userId); // string userId
                 playersQueue[registeredPlayers].add(1, userName); // string user firstname + lastname
-                playersQueue[registeredPlayers].add(2, messageSourceId); //TODO() remove legacy
+                playersQueue[registeredPlayers].add(2, nickName);
                 playersQueue[registeredPlayers].add(3, chips); //chipsQuantity
                 playersQueue[registeredPlayers].add(4, "true"); // isActive for reg/unreg
-                playersQueue[registeredPlayers].add(5, "false"); // FoldFlag
-                playersQueue[registeredPlayers].add(6, "false"); // AllinFlag manual
+                playersQueue[registeredPlayers].add(5, false); // FoldFlag
+                playersQueue[registeredPlayers].add(6, false); // AllinFlag manual
                 playersQueue[registeredPlayers].add(7, "false"); // isChipleader?
                 playersQueue[registeredPlayers].add(8, 0); // currentPhaseBet
                 playersQueue[registeredPlayers].add(9, 0); // currentRoundBet
@@ -64,6 +67,33 @@ public class PlayerUtils extends PokedgramBot {
         return allinCount;
     }
 
+
+/*    public static String getCurrentBets(ArrayList[] players) {
+        String output = "";
+
+        new String(
+                "1." + players[ smallBlindId ].get(2) + " bet: " + players[ smallBlindId ].get(9) + ". " +
+                "Balance " + players[ smallBlindId ].get(3) + NEXT_LINE +
+                "2." + players[ bigBlindId ].get(2) + " bet: " + players[ bigBlindId ].get(9) + ". " +
+                "Balance " + players[ bigBlindId ].get(3));
+
+        for (int i = 0; i < players.length; i++) {
+
+            output += players[ smallBlindId ].get(2);
+
+
+
+            } else {
+                //all ok
+            }
+        }
+
+        return players;
+
+
+        return output;
+    }*/
+
     public static ArrayList<String>[] checkLastChips(ArrayList[] players, int bigBlindSize) {
         for (int i = 0; i < players.length; i++) {
             if (Integer.parseInt(players[i].get(3).toString()) < bigBlindSize) {
@@ -90,7 +120,19 @@ public class PlayerUtils extends PokedgramBot {
         return players;
     }
 
+    public static Integer findMaxbet(ArrayList[] playersList) {
 
+
+        int maxBet = 0;
+        for (int i = 0; i < playersList.length; i++) {
+            if (maxBet < Integer.parseInt(playersList[i].get(9).toString())) {
+                maxBet = Integer.parseInt(playersList[i].get(9).toString());
+            }
+        }
+
+
+        return maxBet;
+    }
 
     public static boolean checkBetsEqual(ArrayList[] playersList) {
 
@@ -112,7 +154,7 @@ public class PlayerUtils extends PokedgramBot {
             }
         }
 
-        System.out.println("foldCount: " + foldCount + "\nallinCount: " + allinCount + "\nmaxBet: " + maxBet + "\nmaxBetCount: " + maxBetCount);
+        System.out.println("checkBetsEqual - foldCount: " + foldCount + "\nallinCount: " + allinCount + "\nmaxBet: " + maxBet + "\nmaxBetCount: " + maxBetCount);
         if (maxBetCount+foldCount>= playersList.length || allinCount == ( maxBetCount + foldCount)  ||  allinCount + foldCount== playersList.length ) {
 
             return true;
@@ -189,6 +231,16 @@ public class PlayerUtils extends PokedgramBot {
         return -1;
     }
 
+    public static int checkFoldCount(ArrayList[] players) {
+        int c = 0;
+        for (int z = 0; z < players.length; z++) {
+
+            if (players[z].get(5).toString().equals("true")) { // && ) {
+                c++;
+            }
+        }
+        return c;
+    }
 
     public static int checkUserUnreg(ArrayList[] playersQueue) {
 
