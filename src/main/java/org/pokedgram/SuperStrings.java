@@ -40,9 +40,18 @@ public class SuperStrings extends PokedgramBot {
 
     public static final String ARGUMENT_REGEXP = "^.([a-zA-Z@_ ]*)(.*)$";
     public static final String COMMAND_REGEXP = "^(.[a-zA-Z@_]*) ([0-9]*)(.*)$";
-    public static final String BET_REGEXP = "^(number )([0-9]*)$";
-    public static final String AUTODELETE_REGEXP = "^(DELETE_ME.*)$";
+    public static final String BET_REGEXP = "^((allin|number|bet) )([0-9]*)$";
 
+    public static final String AUTODELETE_REGEXP = "^(DELETE_ME)$";
+    public static final String AUTODELETE_TEXT = "DELETE_ME";
+    public static final String FIND_FLASH_REGEXP = "((.*(♠).*){5}|(.*(♣).*){5}|(.*(♥).*){5}|(.*(♦).*){5})";
+    public static final String FIND_FLASH_TABLE_REGEXP = "((.*(♠).*){3}|(.*(♣).*){3}|(.*(♥).*){3}|(.*(♦).*){3})";
+
+
+    public static final String FIND_FLASH_DRAW_SPADES_REGEXP = "(.*(♠).*){3}";
+    public static final String FIND_FLASH_DRAW_CLUBS_REGEXP = "(.*(♣).*){3}";
+    public static final String FIND_FLASH_DRAW_HEARTS_REGEXP = "(.*(♥).*){3}";
+    public static final String FIND_FLASH_DRAW_DIAMONDS_REGEXP = "(.*(♦).*){3}";
 
     public static final String NEXT_LINE = "\n";
     public static final String DOUBLE_NEXTLINE = "\n" + "\n";
@@ -77,6 +86,7 @@ public class SuperStrings extends PokedgramBot {
     public static boolean isTradeFlopDone = false;
     public static boolean isTradeRiverDone = false;
 
+    public static boolean phaseStarted = true;
     @Override
     public String toString() {
         return title;

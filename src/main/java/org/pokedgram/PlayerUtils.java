@@ -3,9 +3,6 @@ package org.pokedgram;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.pokedgram.SuperStrings.*;
-import static org.pokedgram.SuperStrings.bigBlindId;
-
 public class PlayerUtils extends PokedgramBot {
     //TODO() create type "Player"
     public static ArrayList[] addPlayerToQueue(String userId, String userName, ArrayList[] playersQueue, String nickName, int registeredPlayers, int chips, boolean ifFull, int unregid) {
@@ -25,6 +22,7 @@ public class PlayerUtils extends PokedgramBot {
             playersQueue[updateId].set(9, 0); // currentRoundBet
             playersQueue[updateId].set(10, 0); // isAutoAllinOnBlind
             playersQueue[updateId].set(11, -1); // placeOnTableFinished, -1 = ingame
+            playersQueue[updateId].set(12, false); // placeOnTableFinished, -1 = ingame
         } else {
             if (!ifFull) {
                 playersQueue[registeredPlayers] = new ArrayList(12) {};
@@ -40,11 +38,91 @@ public class PlayerUtils extends PokedgramBot {
                 playersQueue[registeredPlayers].add(9, 0); // currentRoundBet
                 playersQueue[registeredPlayers].add(10, 0); // isAutoAllinOnBlind
                 playersQueue[registeredPlayers].add(11, -1); // placeOnTableFinished, -1 = ingame
+                playersQueue[registeredPlayers].add(12, false); // check this phase, true = active
             }
         }
 
         return playersQueue;
     }
+    public static void unsetAllPlayerBetFromPhaseToRound(ArrayList[] players) {
+        for (int i = 0; i <players.length; i++) {
+            players[i].set(9, 0);
+            players[i].set(8, 0);
+        }
+    }
+    public static void moveAllPlayerBetFromPhaseToRound(ArrayList[] players) {
+        for (int i = 0; i <players.length; i++) {
+            players[i].set(9, Integer.parseInt(players[i].get(9).toString()) + Integer.parseInt(players[i].get(8).toString()));
+            players[i].set(8, 0);
+        }
+    }
+
+    public static boolean setPlayerPhaseFlag(ArrayList[] players, Integer moveCount, String flag) {
+        if (flag.equals("check flag")) {
+            players[moveCount].set(12, true);
+            return true;
+        }
+
+        if (flag.equals("fold flag")) {
+            players[moveCount].set(5, true);
+            return true;
+        }
+
+        if (flag.equals("allin flag")) {
+            players[moveCount].set(6, true);
+            return true;
+        }
+
+        return false;
+    }
+
+    public static void unsetAllPlayerPhaseFlag(ArrayList[] players, String flag) {
+        for (int i = 0; i <players.length; i++) {
+            if (flag.equals("check flag")) {
+                players[ i ].set(12, false);
+            }
+
+            if (flag.equals("fold flag")) {
+                players[ i ].set(5, false);
+            }
+
+            if (flag.equals("allin flag")) {
+                players[ i ].set(6, false);
+            }
+
+            if (flag.equals("clean all")) {
+                players[ i ].set(6, false);
+                players[ i ].set(5, false);
+                players[ i ].set(12, false);
+            }
+        }
+    }
+
+    public static boolean unsetPlayerPhaseFlag(ArrayList[] players, Integer moveCount, String flag) {
+        if (flag.equals("check flag")) {
+            players[moveCount].set(12, false);
+            return true;
+        }
+
+        if (flag.equals("fold flag")) {
+            players[moveCount].set(5, false);
+            return true;
+        }
+
+        if (flag.equals("allin flag")) {
+            players[moveCount].set(6, false);
+            return true;
+        }
+
+        if (flag.equals("clean all")) {
+            players[moveCount].set(6, false);
+            players[moveCount].set(5, false);
+            players[moveCount].set(12, false);
+            return true;
+        }
+        return false;
+    }
+
 
     public static Integer checkFoldsQuantityThisRound(ArrayList[] playersList) {
         int foldCount = 0;
@@ -67,7 +145,7 @@ public class PlayerUtils extends PokedgramBot {
         return allinCount;
     }
 
-
+//get current bets
 /*    public static String getCurrentBets(ArrayList[] players) {
         String output = "";
 
