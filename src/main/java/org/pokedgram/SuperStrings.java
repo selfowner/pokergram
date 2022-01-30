@@ -1,16 +1,7 @@
 package org.pokedgram;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.text.MessageFormat;
+import javax.annotation.RegEx;
 import java.util.ArrayList;
-import java.util.List;
-
-import static ch.qos.logback.core.util.Loader.getResourceBySelfClassLoader;
 
 public class SuperStrings extends PokedgramBot {
 
@@ -47,6 +38,12 @@ public class SuperStrings extends PokedgramBot {
     public static final String FIND_FLASH_REGEXP = "((.*(♠).*){5}|(.*(♣).*){5}|(.*(♥).*){5}|(.*(♦).*){5})";
     public static final String FIND_FLASH_TABLE_REGEXP = "((.*(♠).*){3}|(.*(♣).*){3}|(.*(♥).*){3}|(.*(♦).*){3})";
 
+    public static final String DISCARD_SINGLE_CARDS_REGEXP = "^\\{.*([0-9]{1,2}=[1], ).*([0-9]{1,2}=[1], ).*([0-9]{1,2}=[1], ).*([0-9]{1,2}=[1], ).*([0-9]{1,2}=[1], ).*\\}$";
+
+    public static final String COLLECT_DISTINCT_VALUES_WO_BRACES_REGEXP = "^.*([0-9]{1,2}=[234]).*([0-9]{1,2}=[234]).*([0-9]{1,2}=[234]).*$"; // without { }
+    public static final String COLLECT_DISTINCT_VALUES_REGEXP = "^\\{.*([0-9]{1,2}=[234]).*\\}$"; //with {}
+
+    public static final String COUNT_VALUES_REGEXP = "^.*(=).*$";
 
     public static final String FIND_FLASH_DRAW_SPADES_REGEXP = "(.*(♠).*){3}";
     public static final String FIND_FLASH_DRAW_CLUBS_REGEXP = "(.*(♣).*){3}";
@@ -78,14 +75,6 @@ public class SuperStrings extends PokedgramBot {
     public static boolean registrationStarted = false;
     public static boolean preGameStarted = false;
     public static boolean gameStarted = false;
-    public static boolean tradePreflopDone = false;
-    public static boolean tradeFlopDone = false;
-    public static boolean tradeTurnDone = false;
-    public static boolean tradeRiverDone = false;
-    public static boolean isTradePreflopDone = false;
-    public static boolean isTradeFlopDone = false;
-    public static boolean isTradeRiverDone = false;
-
     public static boolean phaseStarted = true;
     @Override
     public String toString() {
