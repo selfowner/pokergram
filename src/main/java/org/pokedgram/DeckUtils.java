@@ -23,7 +23,7 @@ public class DeckUtils {
         }
         return cardDeck;
     }
-    public static List<?> shuffleDeck(List<?> currentDeck) {
+    public static List<String> shuffleDeck(List<String> currentDeck) {
         Collections.shuffle(currentDeck);
         //System.out.println("deck shuffled: " + currentDeck);
         System.out.println("deck shuffled.");
@@ -155,27 +155,32 @@ public class DeckUtils {
     }
 
     static Integer checkDistinct(ArrayList[][] playersCards, ArrayList[] players) {
-        System.out.println("checkDistinct start");
+        System.out.println("checkDistinct: start");
         Integer countCombo= 0;
 
         for (int i = 0; i < players.length; i++) {
+
             String[] playersDistinctCards = new String[3];
             Integer distinctQuantity = 0;
             //countCombo = 0;
             String excludeSingle = "";
-            System.out.println("player: " +i);
             ArrayList[] currentPlayerCards = getPlayerCardsWithTable(i, playersCards, players);
             List<Integer> cardValues = new ArrayList<Integer>();
+
             for (int b = 0; b < 7; b++) {
                 cardValues.add(Integer.parseInt(currentPlayerCards[ 3 ].get(b).toString()));
-                excludeSingle = cardValues.stream().sorted().collect(Collectors.groupingBy(Function.identity(),
-                        Collectors.counting())).toString().replaceAll(COLLECT_DISTINCT_VALUES_REGEXP,"$1 ");
-
-                distinctQuantity = excludeSingle.replaceAll(COUNT_VALUES_REGEXP, "$1").length();
-                System.out.println("rank = distinct: " + excludeSingle + "; distinctQuantity: " + distinctQuantity);//
-
-
             }
+
+
+            System.out.println("player: " +i);
+           // excludeSingle = cardValues.stream().sorted().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).toString().replaceAll(DISCARD_SINGLE_CARDS_REGEXP,"$1 $2 $3");
+
+            excludeSingle = cardValues.stream().sorted().collect(Collectors.groupingBy(Function.identity(),
+                    Collectors.counting())).toString().replaceAll(EXTRACT_DISTINCT_VALUES_REGEXP, "");
+
+            distinctQuantity = excludeSingle.replaceAll(EXTRACT_VALUES_DIRTY_REGEXP, "").length();
+            System.out.println("rank = distinct: " + excludeSingle + "; distinctQuantity: " + distinctQuantity);//
+
             try {
 
 
@@ -184,38 +189,55 @@ public class DeckUtils {
                 //distinctQuantity = excludeSingle.replaceAll(COUNT_VALUES_REGEXP, "$1").length();
                 //System.out.println("DISCARD_SINGLE_CARDS_REGEXP rank = distinct: " + excludeSingle.replaceAll(DISCARD_SINGLE_CARDS_REGEXP,"") + "; distinctQuantity: " + distinctQuantity);//
 
-                if (distinctQuantity!=null) {
-                    if(distinctQuantity==1) { //1 distinct value
-                        countCombo++;
-                        playersDistinctCards[0] = excludeSingle.replaceAll(COLLECT_DISTINCT_VALUES_WO_BRACES_REGEXP, "$1");
-                        System.out.println("playersDistinctCards:" + NEXT_LINE + playersDistinctCards[0]);
+                if (distinctQuantity>0) {
+                    countCombo++;
+                    playersDistinctCards[0] = excludeSingle.replaceAll(EXTRACT_DISTINCT_COUNT_REGEXP, "$1");
+
+                    if (playersDistinctCards[0].matches("^.*[4].*$")) {} else //4 of a kind
+                    if (playersDistinctCards[0].matches("^.*[3].*$") &&
+                        playersDistinctCards[0].matches("^.*[2].*$")) {} else//full house
+                    if (playersDistinctCards[0].matches("^.*[3].*$")) {} else
+                    if (playersDistinctCards[0].matches("^.*[2].*[2].*$")) {} else
+                    if (playersDistinctCards[0].matches("^.*[2].*$")) {} else
+
+
+
+
+
+                        //else if check kicker
+                    //if (distinctQuantity==4) {} else
+                    if (distinctQuantity==3) {
+                        //check 4x
+                        //check 3x+2x
+                        //check 2x + 2x
+                        //check 2x
+                        //
+                        System.out.println("distinctQuantity==3 " + NEXT_LINE + playersDistinctCards[0]);
                     } else
-                    if(distinctQuantity==2) { //2
-                        countCombo++;
-                        playersDistinctCards[0] = excludeSingle.replaceAll(COLLECT_DISTINCT_VALUES_WO_BRACES_REGEXP, "$1");
-                        playersDistinctCards[1] = excludeSingle.replaceAll(COLLECT_DISTINCT_VALUES_WO_BRACES_REGEXP, "$2");
-                        System.out.println("playersDistinctCards:" + NEXT_LINE + playersDistinctCards[0] + NEXT_LINE + playersDistinctCards[1]);
+                    if(distinctQuantity==2) {
+                        System.out.println("distinctQuantity==2 " + NEXT_LINE + playersDistinctCards[0]);
                     } else
-                    if(distinctQuantity==3) { //3
-                        countCombo++;
-                        playersDistinctCards[0] = excludeSingle.replaceAll(COLLECT_DISTINCT_VALUES_WO_BRACES_REGEXP, "$1");
-                        playersDistinctCards[1] = excludeSingle.replaceAll(COLLECT_DISTINCT_VALUES_WO_BRACES_REGEXP, "$2");
-                        playersDistinctCards[2] = excludeSingle.replaceAll(COLLECT_DISTINCT_VALUES_WO_BRACES_REGEXP, "$3");
-                        System.out.println("playersDistinctCards:" + NEXT_LINE + playersDistinctCards[0] + NEXT_LINE + playersDistinctCards[1] + NEXT_LINE + playersDistinctCards[2]);
+                    if(distinctQuantity==1) {
+                        System.out.println("distinctQuantity==1 " + NEXT_LINE + playersDistinctCards[0]);
                     }
-                } else { //0
-                    System.out.println("no combo found");
-                    countCombo = 0;
+
+
+
+                  } else { //0
+                    System.out.println("checkDistinct: no combo found");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            System.out.println("checkDistinct end");
+            System.out.println("checkDistinct: end");
         }
         return countCombo;
     }
 
+    // TODO() if kickers same - split reward
+
+    // kicker = card(s) in players hand to break ties between hands of the same rank
     static Integer checkKicker(ArrayList[] players, ArrayList[][] playersCards, ArrayList[] table) {
         return -1;
     }
@@ -245,6 +267,8 @@ public class DeckUtils {
         System.out.println("playersHandWithTable output " + playerCardsWithTable[3].toString());
         return playerCardsWithTable;
     }
+
+
     static int rankRoll(int playersQuantity, ArrayList<?>[][] cards) { //get highest card, if highest quantity > 1, return -1
         int handHighest = -1;
         int winnerCount = 0;
@@ -297,7 +321,7 @@ public class DeckUtils {
         tableArray[1].add(1, Arrays.stream(tableArray[0].get(0).toString().replaceAll("[♣♦♥♠]*", " ").split("( )")).toArray());
         System.out.println(tableArray[0].get(0));
         List tableValue = new ArrayList();
-        tableValue = Arrays.stream(tableArray[0].get(0).toString().replaceAll("[♣♦♥♠]*", " ").split("( )")).toList();
+        tableValue = Arrays.stream(tableArray[0].get(0).toString().replaceAll("[♣♦♥♠]*", " ").split("(,)")).toList();
 
         System.out.println("tableValue " + tableValue);
         return tableArray;

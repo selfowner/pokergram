@@ -3,6 +3,8 @@ package org.pokedgram;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.pokedgram.DeckUtils.*;
+
 public class PlayerUtils extends PokedgramBot {
     //TODO() create type "Player"
     public static ArrayList[] addPlayerToQueue(String userId, String userName, ArrayList[] playersQueue, String nickName, int registeredPlayers, int chips, boolean ifFull, int unregid) {
@@ -363,6 +365,87 @@ public class PlayerUtils extends PokedgramBot {
         }
         return users;
 
+    }
+
+    public static Integer getShowdownWinnerId(ArrayList[] players, ArrayList[][] playerCards, List<?> cardDeck) {
+        Integer winnerCount = -1;
+
+        ArrayList[] tableArray = drawTable(players.length, cardDeck);
+        if (false) {
+            //sidepot
+        }
+        boolean gotWinner = false;
+
+
+        while (!gotWinner) {
+
+
+
+            // if 1 player left, finish game
+            //find min stack
+
+            // players = PlayerUtils.checkLastChips(players, bigBlindSize); //playersCount;
+            // players = PlayerUtils.removeZeroBalance(players);
+            //players = new ArrayList[playersOld.length];
+
+            // add reward;
+            //messageSendToPlayingRoom("table: " + tableCards + NEXT_LINE + "hands: " + allHandsText);
+
+            System.out.println("findWinner start");
+
+            winnerCount = checkDistinct(playerCards, players);
+            System.out.println("checkDistinct winnerCount: " + winnerCount);
+            if (winnerCount > 1) {
+                //find kicker or split reward
+                gotWinner = true;
+                break;
+            } else if (winnerCount == 1) {
+                //winnerid takes pot
+                gotWinner = true;
+                break;
+            }
+
+            winnerCount = checkFlash(players, playerCards, tableArray);
+            System.out.println("checkFlash winnerCount: " + winnerCount);
+            if (winnerCount > 1) {
+                //find kicker or split reward
+                gotWinner = true;
+                break;
+            } else if (winnerCount == 1) {
+                //winnerid takes pot
+                gotWinner = true;
+                break;
+            }
+
+
+
+            winnerCount = checkStraight(playerCards);
+            System.out.println("checkStraight winnerCount: " + winnerCount);
+            if (winnerCount > 1) {
+                //find kicker or split reward
+                gotWinner = true;
+                break;
+            } else if (winnerCount == 1) {
+                //winnerid takes pot
+                gotWinner = true;
+                break;
+            }
+
+            winnerCount = checkKicker(players, playerCards, tableArray);
+            System.out.println("checkKicker winnerCount: " + winnerCount);
+            if (winnerCount > 1) {
+                //find kicker or split reward
+                gotWinner = true;
+                break;
+            } else if (winnerCount == 1) {
+                //winnerid takes pot
+                gotWinner = true;
+                break;
+            }
+            System.out.println("findWinner end");
+            break;
+        }
+        return winnerCount;
     }
 
     public static String getUserRegQueue(ArrayList[] playersList) {
