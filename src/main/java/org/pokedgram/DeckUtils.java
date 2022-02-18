@@ -7,7 +7,8 @@ import java.util.stream.Collectors;
 import static org.pokedgram.SuperStrings.*;
 
 
-public class DeckUtils {
+public class DeckUtils extends PokedgramBot {
+    String flopCards, turnCards, riverCards = "";
 
     public static List<String> initializeCardsDeck() {
 
@@ -29,8 +30,8 @@ public class DeckUtils {
 
     public static List<String> shuffleCardsDeck(List<String> currentDeck) {
         Collections.shuffle(currentDeck);
-        //System.out.println("deck shuffled: " + currentDeck);
-        System.out.println("deck shuffled.");
+        System.out.println("deck shuffled: " + currentDeck);
+        //System.out.println("deck shuffled.");
         return currentDeck;
     }
 
@@ -79,14 +80,14 @@ public class DeckUtils {
                     playersHand[ y ][ 4 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 2)).toString().replaceAll("[♠♣♦♥♤♡♢♧]", ""));
                     playersHand[ y ][ 4 ].add(3, cardValue(playersHand[ y ][ 4 ].get(2).toString()));
 
-                    playersHand[ y ][ 5 ].add(phaseTurn(2, 2, deck));
-                    playersHand[ y ][ 5 ].add(1, phaseTurn(2, 2, deck).replaceAll("[0-9JQKA]", ""));
-                    playersHand[ y ][ 5 ].add(2, phaseTurn(2, 2, deck).replaceAll("[♠♣♦♥♤♡♢♧]", ""));
+                    playersHand[ y ][ 5 ].add(stageTurn(2, 2, deck));
+                    playersHand[ y ][ 5 ].add(1, stageTurn(2, 2, deck).replaceAll("[0-9JQKA]", ""));
+                    playersHand[ y ][ 5 ].add(2, stageTurn(2, 2, deck).replaceAll("[♠♣♦♥♤♡♢♧]", ""));
                     playersHand[ y ][ 5 ].add(3, cardValue(playersHand[ y ][ 5 ].get(2).toString()));
 
-                    playersHand[ y ][ 6 ].add(phaseRiver(2, 2, deck));
-                    playersHand[ y ][ 6 ].add(1, phaseRiver(2, 2, deck).replaceAll("[0-9JQKA]", ""));
-                    playersHand[ y ][ 6 ].add(2, phaseRiver(2, 2, deck).replaceAll("[♠♣♦♥♤♡♢♧]", ""));
+                    playersHand[ y ][ 6 ].add(stageRiver(2, 2, deck));
+                    playersHand[ y ][ 6 ].add(1, stageRiver(2, 2, deck).replaceAll("[0-9JQKA]", ""));
+                    playersHand[ y ][ 6 ].add(2, stageRiver(2, 2, deck).replaceAll("[♠♣♦♥♤♡♢♧]", ""));
                     playersHand[ y ][ 6 ].add(3, cardValue(playersHand[ y ][ 6 ].get(2).toString()));
                 }
 
@@ -197,7 +198,7 @@ public class DeckUtils {
             ArrayList[] currentPlayerCards = getPlayerCardsWithTable(i, playersCards, players);
             List<Integer> cardValues = new ArrayList<Integer>();
 
-            System.out.println(NEXT_LINE);
+            System.out.println(NEXTLINE);
             System.out.println("player: " + i);
 
             for (int b = 0; b < playerAndTableCards; b++) {
@@ -217,32 +218,32 @@ public class DeckUtils {
                     countCombo++;
                     playersDistinctCards[ 0 ] = excludeSingle.replaceAll(EXTRACT_DISTINCT_COUNT_REGEXP, "$1");
 //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
-                    if (playersDistinctCards[ 0 ].matches("^.*[4].*$")) {
-                        System.out.println(".matches(\"^.*[4].*$\")");
+                    if (playersDistinctCards[ 0 ].matches(FIND_4X_REGEXP)) {
+                        System.out.println(".matches(\"^.*=[4].*$\")");
                         players[ i ].set(13, 7);
                         //playerComboGrade[playerid] = %regex to find combo value%
                         //playerKickerCards[playerid] = %check hand cards + different cases
                     } else //4 of a kind
-                        if (playersDistinctCards[ 0 ].matches("^.*[3].*$") &&      //full
-                            playersDistinctCards[ 0 ].matches("^.*[2].*$")) {
-                            System.out.println(".matches(\"^.*[3].*$\").matches(\"^.*[2].*$\")");
+                        if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP) &&      //full
+                            playersDistinctCards[ 0 ].matches(FIND_3X_REGEXP)) {
+                            System.out.println(".matches(\"^.*=[3].*$\").matches(\"^.*=[2].*$\")");
 
                             players[ i ].set(13, 6);
                         } else//house
 
-                            if (playersDistinctCards[ 0 ].matches("^.*[3].*$")) {
-                                System.out.println(".matches(\"^.*[3].*$\")");
+                            if (playersDistinctCards[ 0 ].matches(FIND_3X_REGEXP)) {
+                                System.out.println(".matches(\"^.*=[3].*$\")");
                                 players[ i ].set(13, 3);
                             } else//x3
 
-                                if (playersDistinctCards[ 0 ].matches("^.*[2].*[2].*$")) {
-                                    System.out.println(".matches(\"^.*[2].*[2].*$\")");
+                                if (playersDistinctCards[ 0 ].matches(FIND_2X2X_REGEXP)) {
+                                    System.out.println(".matches(\"FIND_2X2X_REGEXP\")");
 
                                     players[ i ].set(13, 2);
                                 } else//2x2
 
-                                    if (playersDistinctCards[ 0 ].matches("^.*[2].*$")) {
-                                        System.out.println(".matches(\"^.*[2].*$\")");
+                                    if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP)) {
+                                        System.out.println(".matches(\"^.*=[2].*$\")");
 
                                         players[ i ].set(13, 1);
                                     }  //x2
@@ -255,11 +256,11 @@ public class DeckUtils {
                         //check 2x + 2x
                         //check 2x
                         //
-                        System.out.println("distinctQuantity==3 " + NEXT_LINE + playersDistinctCards[ 0 ]);
+                        System.out.println("distinctQuantity==3 " + NEXTLINE + playersDistinctCards[ 0 ]);
                     } else if (distinctQuantity == 2) {
-                        System.out.println("distinctQuantity==2 " + NEXT_LINE + playersDistinctCards[ 0 ]);
+                        System.out.println("distinctQuantity==2 " + NEXTLINE + playersDistinctCards[ 0 ]);
                     } else if (distinctQuantity == 1) {
-                        System.out.println("distinctQuantity==1 " + NEXT_LINE + playersDistinctCards[ 0 ]);
+                        System.out.println("distinctQuantity==1 " + NEXTLINE + playersDistinctCards[ 0 ]);
                     }
 
 
@@ -345,7 +346,7 @@ public class DeckUtils {
         playerCardsWithTable[ 1 ] = new ArrayList<>();
         playerCardsWithTable[ 2 ] = new ArrayList<>();
         playerCardsWithTable[ 3 ] = new ArrayList<>();
-        List<ArrayList> playersHandWithTable = new ArrayList<>();
+        //List<ArrayList> playersHandWithTable = new ArrayList<>();
 
         List zxczxc;
         for (Integer z = 0; z < HAND_CARDS_COUNT + 5; z++) {
@@ -354,7 +355,7 @@ public class DeckUtils {
             playerCardsWithTable[ 2 ].add(playerCards[ moveCount % players.length ][ z ].get(2));
             playerCardsWithTable[ 3 ].add(playerCards[ moveCount % players.length ][ z ].get(3));
 
-            playersHandWithTable = List.of(playerCardsWithTable[ 0 ]);
+            //playersHandWithTable = List.of(playerCardsWithTable[ 0 ]);
             // 0 string;  1 suit; 2 rank; 3 value
 
         }
@@ -393,17 +394,17 @@ public class DeckUtils {
     }
 
     // TODO() check if card burning shifts order correctly
-    static String phaseFlop(int playersQuantity, int playersCardsCount, List<?> deck) {
+    static String stageFlop(int playersQuantity, int playersCardsCount, List<?> deck) {
         return deck.get((playersQuantity * playersCardsCount + 3)).toString() +
                deck.get((playersQuantity * playersCardsCount + 3 + 1)).toString() +
                deck.get((playersQuantity * playersCardsCount + 3 + 2)).toString();
     }
 
-    static String phaseTurn(int playersQuantity, int playersCardsCount, List<?> deck) {
+    static String stageTurn(int playersQuantity, int playersCardsCount, List<?> deck) {
         return deck.get((playersQuantity * playersCardsCount + 3 + 2 + 1 + 1)).toString();
     }
 
-    static String phaseRiver(int playersQuantity, int playersCardsCount, List<?> deck) {
+    static String stageRiver(int playersQuantity, int playersCardsCount, List<?> deck) {
         return deck.get((playersQuantity * playersCardsCount + 3 + 2 + 1 + 1 + 1 + 1)).toString();
     }
 
@@ -419,9 +420,9 @@ public class DeckUtils {
         tableArray[ 0 ] = new ArrayList(5);
         tableArray[ 1 ] = new ArrayList(5);
         //tableArray[2] = new ArrayList(5);
-        tableArray[ 0 ].add(0, ((phaseFlop(playersQuantity, 2, deck) +
-                                 phaseTurn(playersQuantity, 2, deck) +
-                                 phaseRiver(playersQuantity, 2, deck))));
+        tableArray[ 0 ].add(0, ((stageFlop(playersQuantity, 2, deck) +
+                                 stageTurn(playersQuantity, 2, deck) +
+                                 stageRiver(playersQuantity, 2, deck))));
         tableArray[ 1 ].add(0, tableArray[ 0 ].get(0).toString().replaceAll("[0-9JQKA]", ""));
         tableArray[ 1 ].add(1, Arrays.stream(tableArray[ 0 ].get(0).toString().replaceAll("[♣♦♥♠]*", " ").split("( )")).toArray());
         System.out.println(tableArray[ 0 ].get(0));
@@ -431,69 +432,47 @@ public class DeckUtils {
         System.out.println("tableValue " + tableValue);
         return tableArray;
     }
-}
 
-//TODO() decide drop this legacy
-    /*static void initializePlayers(int playersQuantity, int playerCardsCount, int playersStartingToken, List deck) {
 
-        Map<Integer, String> playersName = new HashMap<>();
-        Map<Integer, Integer> playersToken = new HashMap<>();
-        HashMap players = new HashMap(playersQuantity);
 
-        for (int i = 0; i < playersQuantity; i++) {
-            playersName.put(i, getUniqueName());
-            playersToken.put(i, playersStartingToken);
-            players.put(i, "Player " + (i + 1));
-            System.out.println("\"" + playersName.get(i) + "\" registered to the tournament! " + playersToken.get(i) + " tokens granted! gl hf :>");
+
+    static public  String dealCardsText(ArrayList[] players, ArrayList[][] playerCards, Integer HAND_CARDS_COUNT) {
+        text                  = "";
+        currentPlayerHandText = "";
+        allHandsText          = "";
+        for (int playerNumber = 0; playerNumber < players.length; playerNumber++) {
+
+            StringBuilder hand = new StringBuilder();
+            for (int playerCardNumber = 0; playerCardNumber < HAND_CARDS_COUNT; playerCardNumber++) {
+                hand.append(playerCards[ playerNumber ][ playerCardNumber ].get(0));
+            }
+
+            currentPlayerHandText = players[ playerNumber ].get(1) + " hand: " + hand + NEXTLINE;
+            //sendToPlayer(players[ y ].get(0).toString(), "dealNumber " + dealNumber + NEXT_LINE + "Your hand: " + currentPlayerHandText);
+//            sendToPlayer(players[ playerNumber ].get(0).toString(), "deal " + dealNumber + DOT + NEXT_LINE + hand +
+//                                                                    " your cards at dealNumber" + dealNumber + DOT + NEXT_LINE); // + currentPlayerHandText);
+            allHandsText = allHandsText + currentPlayerHandText;
 
         }
-        System.out.println("initializePlayers OK");
-
-    }*/
-
-//    public static int maxValue(int array[]) {
-//        List<Integer> list = new ArrayList<Integer>();
-//        for (int i = 0; i < array.length; i++) {
-//            list.add(array[i]);
-//        }
-//
-//        return Collections.max(list);
-//
-//
-//    }
-
-//        while (winnerCount > 1) {
-//            for (int y = 0; y < winnerCount; y++) {
-//                if (handHighest > playerHighest) {
-//                    playerHighest = handHighest;
-//                    winnerId = y;
-//                    winnerCount = 1 ;
-//                } else if (handHighest[y] == playerHighest) {
-//                    winnerCount++;
-//                    winnerId = -1;
-//                }
-//
-//            }
-//        }
-//int maxValue = Collections.max(numbers);
-// List<Integer> maxValues = numbers.stream().filter(number -> number == max).collect(Collectors.toList());
+        return allHandsText;
+    }
 
 
-//List<String> deckSuits = new ArrayList<>(4);
-//deckSuits.addAll(List.of(cardSuits));
-//deckRanks.addAll(List.of(cardRanks));
-//deckRanks.remove(13);
-//from initializeDeck method
-//--
-//class Table {
-//
-//    int bigBlindId;
-//    int potSize;
-//    int seats;
-//    private Boolean preflop = true;
-//    private Boolean flop, turn, river = false;
-//
-//    Boolean[] currentRound = new Boolean[]{preflop, flop, turn, river};
-//
-//
-//}
+
+
+    static public  String getRoundAnnounceText(ArrayList[] players) {
+        String roundAnnounceString = new String(
+                "1. @" + players[ 0 ].get(2) + " bet: " + players[ 0 ].get(9) + ". " +
+                "Balance " + players[ 0 ].get(3) + NEXTLINE +
+                "2. @" + players[ 1 ].get(2) + " bet: " + players[ 1 ].get(9) + ". " +
+                "Balance " + players[ 1 ].get(3));
+        return roundAnnounceString;
+    }
+
+
+
+
+
+
+}
+

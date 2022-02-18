@@ -2,10 +2,8 @@ package org.pokedgram;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import static org.pokedgram.DeckUtils.*;
-import static org.pokedgram.SuperStrings.NEXT_LINE;
 
 public class PlayerUtils extends PokedgramBot {
     //TODO() create type "Player"
@@ -22,7 +20,7 @@ public class PlayerUtils extends PokedgramBot {
             playersQueue[updateId].set(5, false); // FoldFlag
             playersQueue[updateId].set(6, false); // AllinFlag manual
             playersQueue[updateId].set(7, "false"); // isChipleader?
-            playersQueue[updateId].set(8, 0); // currentPhaseBet
+            playersQueue[updateId].set(8, 0); // currentStageBet
             playersQueue[updateId].set(9, 0); // currentRoundBet
             playersQueue[updateId].set(10, 0); // isAutoAllinOnBlind
             playersQueue[updateId].set(11, -1); // placeOnTableFinished, -1 = ingame
@@ -40,11 +38,11 @@ public class PlayerUtils extends PokedgramBot {
                 playersQueue[registeredPlayers].add(5, false); // FoldFlag
                 playersQueue[registeredPlayers].add(6, false); // AllinFlag manual
                 playersQueue[registeredPlayers].add(7, "false"); // isChipleader?
-                playersQueue[registeredPlayers].add(8, 0); // currentPhaseBet
+                playersQueue[registeredPlayers].add(8, 0); // currentStageBet
                 playersQueue[registeredPlayers].add(9, 0); // currentRoundBet
                 playersQueue[registeredPlayers].add(10, 0); // isAutoAllinOnBlind
                 playersQueue[registeredPlayers].add(11, -1); // placeOnTableFinished, -1 = ingame
-                playersQueue[registeredPlayers].add(12, false); // check this phase, true = active
+                playersQueue[registeredPlayers].add(12, false); // check this stage, true = active
                 playersQueue[registeredPlayers].add(13, -1); //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
 
 
@@ -55,20 +53,20 @@ public class PlayerUtils extends PokedgramBot {
 
         return playersQueue;
     }
-    public static void unsetAllPlayerBetFromPhaseToRound(ArrayList[] players) {
+    public static void unsetAllPlayerBetFromStageToRound(ArrayList[] players) {
         for (int i = 0; i <players.length; i++) {
             players[i].set(9, 0);
             players[i].set(8, 0);
         }
     }
-    public static void moveAllPlayerBetFromPhaseToRound(ArrayList[] players) {
+    public static void moveAllPlayerBetFromStageToRound(ArrayList[] players) {
         for (int i = 0; i <players.length; i++) {
             players[i].set(9, Integer.parseInt(players[i].get(9).toString()) + Integer.parseInt(players[i].get(8).toString()));
             players[i].set(8, 0);
         }
     }
 
-    public static boolean setPlayerPhaseFlag(ArrayList[] players, Integer moveCount, String flag) {
+    public static boolean setPlayerStageFlag(ArrayList[] players, Integer moveCount, String flag) {
         if (flag.equals("check flag")) {
             players[moveCount].set(12, true);
             return true;
@@ -87,7 +85,7 @@ public class PlayerUtils extends PokedgramBot {
         return false;
     }
 
-    public static void unsetAllPlayerPhaseFlag(ArrayList[] players, String flag) {
+    public static void unsetAllPlayerStageFlag(ArrayList[] players, String flag) {
         for (int i = 0; i <players.length; i++) {
             if (flag.equals("check flag")) {
                 players[ i ].set(12, false);
@@ -114,7 +112,7 @@ public class PlayerUtils extends PokedgramBot {
         }
     }
 
-    public static boolean unsetPlayerPhaseFlag(ArrayList[] players, Integer moveCount, String flag) {
+    public static boolean unsetPlayerStageFlag(ArrayList[] players, Integer moveCount, String flag) {
         if (flag.equals("check flag")) {
             players[moveCount].set(12, false);
             return true;
@@ -394,7 +392,7 @@ public class PlayerUtils extends PokedgramBot {
         //calculate winner and process chips
         while (!gotWinner) {
 
-        //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
+            //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
 
             //System.out.println("findWinner start");
 
@@ -457,6 +455,7 @@ public class PlayerUtils extends PokedgramBot {
 
         return players;
     }
+
 
     public static String getUserRegQueue(ArrayList[] playersList) {
         String users = "\n";
