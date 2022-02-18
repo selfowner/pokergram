@@ -45,7 +45,7 @@ public class SuperStrings extends PokedgramBot {
     //public static final String COUNT_VALUES_REGEXP = "^.*(=).*$";
     public static final String EXTRACT_DISTINCT_VALUES_REGEXP = "(?:(\\d+=[^234], |\\d+=[^234]))";
     public static final String EXTRACT_VALUES_DIRTY_REGEXP = "(?:([^=]|))";
-    public static final String EXTRACT_DISTINCT_COUNT_REGEXP = "\\d+=(?:(\\d|)),";
+    public static final String EXTRACT_DISTINCT_COUNT_REGEXP = "\\d+=(?:(\\d+|)),";
 
     public static final String FIND_FLASH_DRAW_SPADES_REGEXP = "(.*(♠).*){3}";
     public static final String FIND_FLASH_DRAW_CLUBS_REGEXP = "(.*(♣).*){3}";

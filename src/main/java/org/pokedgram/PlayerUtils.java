@@ -2,8 +2,10 @@ package org.pokedgram;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static org.pokedgram.DeckUtils.*;
+import static org.pokedgram.SuperStrings.NEXT_LINE;
 
 public class PlayerUtils extends PokedgramBot {
     //TODO() create type "Player"
@@ -25,9 +27,11 @@ public class PlayerUtils extends PokedgramBot {
             playersQueue[updateId].set(10, 0); // isAutoAllinOnBlind
             playersQueue[updateId].set(11, -1); // placeOnTableFinished, -1 = ingame
             playersQueue[updateId].set(12, false); // placeOnTableFinished, -1 = ingame
+            playersQueue[updateId].set(13, -1); //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
+
         } else {
             if (!ifFull) {
-                playersQueue[registeredPlayers] = new ArrayList(12) {};
+                playersQueue[registeredPlayers] = new ArrayList(13) {};
                 playersQueue[registeredPlayers].add(0, userId); // string userId
                 playersQueue[registeredPlayers].add(1, userName); // string user firstname + lastname
                 playersQueue[registeredPlayers].add(2, nickName);
@@ -41,6 +45,11 @@ public class PlayerUtils extends PokedgramBot {
                 playersQueue[registeredPlayers].add(10, 0); // isAutoAllinOnBlind
                 playersQueue[registeredPlayers].add(11, -1); // placeOnTableFinished, -1 = ingame
                 playersQueue[registeredPlayers].add(12, false); // check this phase, true = active
+                playersQueue[registeredPlayers].add(13, -1); //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
+
+
+
+
             }
         }
 
@@ -92,10 +101,15 @@ public class PlayerUtils extends PokedgramBot {
                 players[ i ].set(6, false);
             }
 
+            if (flag.equals("bets flag")) {
+                players[ i ].set(6, false);
+            }
+
             if (flag.equals("clean all")) {
                 players[ i ].set(6, false);
                 players[ i ].set(5, false);
                 players[ i ].set(12, false);
+                players[ i ].set(13, -1);
             }
         }
     }
@@ -367,7 +381,8 @@ public class PlayerUtils extends PokedgramBot {
 
     }
 
-    public static Integer getShowdownWinnerId(ArrayList[] players, ArrayList[][] playerCards, List<?> cardDeck) {
+    public static ArrayList[] getShowdownWinnerId(ArrayList[] players, ArrayList[][] playerCards, List<?> cardDeck) {
+        Integer winnerId =-1;
         Integer winnerCount = -1;
 
         ArrayList[] tableArray = drawTable(players.length, cardDeck);
@@ -376,76 +391,71 @@ public class PlayerUtils extends PokedgramBot {
         }
         boolean gotWinner = false;
 
-
+        //calculate winner and process chips
         while (!gotWinner) {
 
+        //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
+
+            //System.out.println("findWinner start");
 
 
-            // if 1 player left, finish game
-            //find min stack
+            // TODO count kickers on table for some cases
+            winnerCount += checkDistinct(playerCards, players);
+            winnerCount += checkFlash(players, playerCards, tableArray);
+            winnerCount += checkStraight(playerCards);
 
-            // players = PlayerUtils.checkLastChips(players, bigBlindSize); //playersCount;
-            // players = PlayerUtils.removeZeroBalance(players);
-            //players = new ArrayList[playersOld.length];
+            System.out.println("checkDistinct winnerCount after checkDistinct checkFlash checkStraight: " + winnerCount);
 
-            // add reward;
-            //messageSendToPlayingRoom("table: " + tableCards + NEXT_LINE + "hands: " + allHandsText);
+            if (Integer.parseInt(players[ 0 ].get(13).toString()) > Integer.parseInt(players[ 1 ].get(13).toString())) {
+                System.out.println("player 0 win");
+                winnerId = 0; //player 0 win
+            } else if (Integer.parseInt(players[ 1 ].get(13).toString()) > Integer.parseInt(players[ 0 ].get(13).toString())){
 
-            System.out.println("findWinner start");
-
-            winnerCount = checkDistinct(playerCards, players);
-            System.out.println("checkDistinct winnerCount: " + winnerCount);
-            if (winnerCount > 1) {
-                //find kicker or split reward
-                gotWinner = true;
-                break;
-            } else if (winnerCount == 1) {
-                //winnerid takes pot
-                gotWinner = true;
-                break;
+                System.out.println("player 1 win");
+                winnerId = 1; //player 1 win
+            } else if ( // comboValue ==
+                    Integer.parseInt(players[ 0 ].get(13).toString()) == Integer.parseInt(players[ 1 ].get(13).toString()) && (Integer.parseInt(players[ 0 ].get(13).toString()) > -1 && Integer.parseInt(players[ 1 ].get(13).toString()) > -1)
+            ) {
+                System.out.println("players tie, checking kicker:");
+                winnerCount = checkKicker(players, playerCards,0);
             }
 
-            winnerCount = checkFlash(players, playerCards, tableArray);
-            System.out.println("checkFlash winnerCount: " + winnerCount);
-            if (winnerCount > 1) {
-                //find kicker or split reward
-                gotWinner = true;
-                break;
-            } else if (winnerCount == 1) {
-                //winnerid takes pot
-                gotWinner = true;
-                break;
-            }
+            // winnerCount = checkKicker(players, playerCards, tableArray);
 
 
 
-            winnerCount = checkStraight(playerCards);
-            System.out.println("checkStraight winnerCount: " + winnerCount);
-            if (winnerCount > 1) {
-                //find kicker or split reward
-                gotWinner = true;
-                break;
-            } else if (winnerCount == 1) {
-                //winnerid takes pot
-                gotWinner = true;
-                break;
-            }
+//            if (winnerCount > 0) {
+//                System.out.println("checkDistinct winnerCount: " + winnerCount);
+//                //find kicker or split reward
+//                gotWinner = true;
+//                break;
+//            }
 
-            winnerCount = checkKicker(players, playerCards, tableArray);
-            System.out.println("checkKicker winnerCount: " + winnerCount);
-            if (winnerCount > 1) {
-                //find kicker or split reward
-                gotWinner = true;
-                break;
-            } else if (winnerCount == 1) {
-                //winnerid takes pot
-                gotWinner = true;
-                break;
-            }
-            System.out.println("findWinner end");
+            //System.out.println("findWinner end");
             break;
         }
-        return winnerCount;
+
+        Integer playerIncome = splitPot(currentPot,players);
+        if (winnerCount > 1) {
+            for (int i =0; i<players.length; i++) {
+                players[ i ].set(3, Integer.parseInt(players[ i ].get(3).toString()) + playerIncome);
+                currentPot = 0;
+            }
+            System.out.println("winnerCount > 1; income "  + playerIncome);
+            gotWinner = true;
+            // process chips
+        } else if (winnerCount == 0) {
+            System.out.println("winnerCount == 0; no combo found. Splitting pot, setting gotWinner true "  + playerIncome);
+            for (int i =0; i<players.length; i++) {
+                players[ i ].set(3, Integer.parseInt(players[ i ].get(3).toString()) + playerIncome);
+                currentPot = 0;
+                gotWinner = true;
+            }
+        } else if (winnerCount == 1) {
+            //get winnerId
+        }
+
+        return players;
     }
 
     public static String getUserRegQueue(ArrayList[] playersList) {
