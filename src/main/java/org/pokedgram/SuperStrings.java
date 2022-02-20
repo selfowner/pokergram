@@ -10,10 +10,15 @@ public class SuperStrings extends PokedgramBot {
     public static final String REG_FINISHED = "Players registered. Lets roll. ";
 
     public static final String DOT = ".";
+    public static final String COMMA = ",";
 
     public static final String NEXTLINE = "\n";
     public static final String DOUBLE_NEXTLINE = "\n\n";
-    public static final String TRIPLE_NEXT_LINE = "\n\n\n";
+    public static final String TRIPLE_NEXTLINE = "\n\n\n";
+
+    public static final String EMPTY_STRING = "";
+    public static final String FALSE_TEXT = "false";
+    public static final String TRUE_TEXT = "true";
 
     public static final String PHASE_RIVER_TEXT = "River stage: ";
     public static final String PHASE_FLOP_TEXT = "Flop stage: ";
@@ -36,6 +41,8 @@ public class SuperStrings extends PokedgramBot {
     public static final String EXTRACT_VALUES_DIRTY_REGEXP = "(?:([^=]|))";
     public static final String EXTRACT_DISTINCT_COUNT_REGEXP = "\\d+=(?:(\\d+|)),";
 
+    public static final String FIND_CARDS_RANK_REGEXP = "[0-9JQKA]";
+    public static final String FIND_CARDS_SUIT_REGEXP = "[♠♣♦♥♤♡♢♧]";
 
     public static final String FIND_2X_REGEXP = "^.*=[2].*$";
     public static final String FIND_2X2X_REGEXP = "^.*=[2].*=[2].*$";
@@ -56,7 +63,7 @@ public class SuperStrings extends PokedgramBot {
     public static final int SLEEP_MS = 2000;
     public static final int BLIND_INCREASE_RATE_DEALS = 5;
     public static final int START_SMALL_BLIND_SIZE = 250;
-    public static String text = "", currentPlayerHandText = "", allHandsText = "";
+    public static String currentPlayerHandText, allHandsText = "";
     public static ArrayList[] playersQueue;
     public static int buttonId = -1;
     public static int registeredPlayers = 0;

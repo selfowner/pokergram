@@ -8,11 +8,11 @@ import static org.pokedgram.SuperStrings.*;
 
 
 public class DeckUtils extends PokedgramBot {
-    String flopCards, turnCards, riverCards = "";
+    String flopCards, turnCards, riverCards = EMPTY_STRING;
 
     public static List<String> initializeCardsDeck() {
 
-        List<String> cardDeck = new ArrayList(52);
+        List<String> cardDeck = new ArrayList<>(52);
         String[] cardSuits = new String[]{"♣", "♦", "♥", "♠"}; //String[] cardSuits = new String[]{"♧", "♢", "♡", "♤"};
         String[] cardRanks = new String[]{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         //Integer[] cardRanksValue = new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}; //♠♥♦♣♤♡♢♧
@@ -35,60 +35,60 @@ public class DeckUtils extends PokedgramBot {
         return currentDeck;
     }
 
-    static ArrayList[][] dealCardsFromDeck(int playersQuantity, int playersCardsCount, List deck) {
+    static ArrayList<String>[][] dealCardsFromDeck(int playersQuantity, int playersCardsCount, List<String> deck) {
 
-        ArrayList[][] playersHand = new ArrayList[ playersQuantity ][ playersCardsCount + 5 ];
+        ArrayList<String>[][] playersHand = new ArrayList[ playersQuantity ][ playersCardsCount + 5 ];
 
         //deal cards to players
         for (int i = 0; i < playersCardsCount; i++) { // deal card loop
             for (int y = 0; y < playersQuantity; y++) { //select player to deal card
-                playersHand[ y ][ i ] = new ArrayList() {
+                playersHand[ y ][ i ] = new ArrayList<>() {
                 };
                 playersHand[ y ][ i ].add(0, deck.get((y + (i * playersQuantity)))); // 0 string
-                playersHand[ y ][ i ].add(1, playersHand[ y ][ i ].get(0).toString().replaceAll("[0-9JQKA]", "")); // 1 suit
-                playersHand[ y ][ i ].add(2, playersHand[ y ][ i ].get(0).toString().replaceAll("[♠♣♦♥♤♡♢♧]", "")); // 2 rank
-                playersHand[ y ][ i ].add(3, cardValue(playersHand[ y ][ i ].get(2).toString())); // 3 value
+                playersHand[ y ][ i ].add(1, playersHand[ y ][ i ].get(0).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING)); // 1 suit
+                playersHand[ y ][ i ].add(2, playersHand[ y ][ i ].get(0).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING)); // 2 rank
+                playersHand[ y ][ i ].add(3, String.valueOf(cardValue(playersHand[ y ][ i ].get(2)))); // 3 value
 
                 //System.out.println("Player " + (y) + " card: " + deck.get((y + (i * playersQuantity))));
 
                 if (i == 1) { //table cards for easier calculacting
                     // TODO ref-cktor
-                    playersHand[ y ][ 2 ] = new ArrayList() {
+                    playersHand[ y ][ 2 ] = new ArrayList<>() {
                     };
-                    playersHand[ y ][ 3 ] = new ArrayList() {
+                    playersHand[ y ][ 3 ] = new ArrayList<>() {
                     };
-                    playersHand[ y ][ 4 ] = new ArrayList() {
+                    playersHand[ y ][ 4 ] = new ArrayList<>() {
                     };
-                    playersHand[ y ][ 5 ] = new ArrayList() {
+                    playersHand[ y ][ 5 ] = new ArrayList<>() {
                     };
-                    playersHand[ y ][ 6 ] = new ArrayList() {
+                    playersHand[ y ][ 6 ] = new ArrayList<>() {
                     };
 
-                    playersHand[ y ][ 2 ].add(0, deck.get((playersQuantity * playersCardsCount + 3)).toString());
-                    playersHand[ y ][ 2 ].add(1, deck.get((playersQuantity * playersCardsCount + 3)).toString().replaceAll("[0-9JQKA]", ""));
-                    playersHand[ y ][ 2 ].add(2, deck.get((playersQuantity * playersCardsCount + 3)).toString().replaceAll("[♠♣♦♥♤♡♢♧]", ""));
-                    playersHand[ y ][ 2 ].add(3, cardValue(playersHand[ y ][ 2 ].get(2).toString()));
+                    playersHand[ y ][ 2 ].add(0, deck.get((playersQuantity * playersCardsCount + 3)));
+                    playersHand[ y ][ 2 ].add(1, deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 2 ].add(2, deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 2 ].add(3, String.valueOf(cardValue(playersHand[ y ][ 2 ].get(2))));
 
-                    playersHand[ y ][ 3 ].add(0, deck.get((playersQuantity * playersCardsCount + 3 + 1)).toString());
-                    playersHand[ y ][ 3 ].add(1, deck.get((playersQuantity * playersCardsCount + 3 + 1)).toString().replaceAll("[0-9JQKA]", ""));
-                    playersHand[ y ][ 3 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 1)).toString().replaceAll("[♠♣♦♥♤♡♢♧]", ""));
-                    playersHand[ y ][ 3 ].add(3, cardValue(playersHand[ y ][ 3 ].get(2).toString()));
+                    playersHand[ y ][ 3 ].add(0, deck.get((playersQuantity * playersCardsCount + 3 + 1)));
+                    playersHand[ y ][ 3 ].add(1, deck.get((playersQuantity * playersCardsCount + 3 + 1)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 3 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 1)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 3 ].add(3, String.valueOf(cardValue(playersHand[ y ][ 3 ].get(2))));
 
 
-                    playersHand[ y ][ 4 ].add(0, deck.get((playersQuantity * playersCardsCount + 3 + 2)).toString());
-                    playersHand[ y ][ 4 ].add(1, deck.get((playersQuantity * playersCardsCount + 3 + 2)).toString().replaceAll("[0-9JQKA]", ""));
-                    playersHand[ y ][ 4 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 2)).toString().replaceAll("[♠♣♦♥♤♡♢♧]", ""));
-                    playersHand[ y ][ 4 ].add(3, cardValue(playersHand[ y ][ 4 ].get(2).toString()));
+                    playersHand[ y ][ 4 ].add(0, deck.get((playersQuantity * playersCardsCount + 3 + 2)));
+                    playersHand[ y ][ 4 ].add(1, deck.get((playersQuantity * playersCardsCount + 3 + 2)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 4 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 2)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 4 ].add(3, String.valueOf(cardValue(playersHand[ y ][ 4 ].get(2))));
 
                     playersHand[ y ][ 5 ].add(stageTurn(2, 2, deck));
-                    playersHand[ y ][ 5 ].add(1, stageTurn(2, 2, deck).replaceAll("[0-9JQKA]", ""));
-                    playersHand[ y ][ 5 ].add(2, stageTurn(2, 2, deck).replaceAll("[♠♣♦♥♤♡♢♧]", ""));
-                    playersHand[ y ][ 5 ].add(3, cardValue(playersHand[ y ][ 5 ].get(2).toString()));
+                    playersHand[ y ][ 5 ].add(1, stageTurn(2, 2, deck).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 5 ].add(2, stageTurn(2, 2, deck).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 5 ].add(3, String.valueOf(cardValue(playersHand[ y ][ 5 ].get(2))));
 
                     playersHand[ y ][ 6 ].add(stageRiver(2, 2, deck));
-                    playersHand[ y ][ 6 ].add(1, stageRiver(2, 2, deck).replaceAll("[0-9JQKA]", ""));
-                    playersHand[ y ][ 6 ].add(2, stageRiver(2, 2, deck).replaceAll("[♠♣♦♥♤♡♢♧]", ""));
-                    playersHand[ y ][ 6 ].add(3, cardValue(playersHand[ y ][ 6 ].get(2).toString()));
+                    playersHand[ y ][ 6 ].add(1, stageRiver(2, 2, deck).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 6 ].add(2, stageRiver(2, 2, deck).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ y ][ 6 ].add(3, String.valueOf(cardValue(playersHand[ y ][ 6 ].get(2))));
                 }
 
             }
@@ -113,9 +113,9 @@ public class DeckUtils extends PokedgramBot {
         return cardValue;
     }
 
-    public static Integer splitPot(Integer potSize, ArrayList[] players) {
+    public static int splitPot(int potSize, ArrayList<?>[] players) {
         //int splitCount = 2;
-        Integer playerReward = -1;
+        int playerReward = -1;
         if (potSize % 2 != 0) {
             potSize = potSize - 1;
             System.out.println(" if (potSize % 2 != 0) { potSize = potSize-1;");
@@ -133,8 +133,8 @@ public class DeckUtils extends PokedgramBot {
 
 
     //ToDo() return Highest card with players id for counting winner
-    static Integer checkFlash(ArrayList[] players, ArrayList[][] playersCards, ArrayList[] table) {
-        ArrayList matchedPlayers[] = new ArrayList[]{};
+    static int checkFlash(ArrayList[] players, ArrayList<?>[][] playersCards, ArrayList<?>[] table) {
+        ArrayList[] matchedPlayers = new ArrayList<?>[]{};
         String playersHandWithTable;
         int checkFlashCount = 0;
         int checkFlashSuit = -1;
@@ -150,15 +150,15 @@ public class DeckUtils extends PokedgramBot {
         }
 
         if (checkFlashSuit >= 0) {
-            for (Integer y = 0; y < players.length; y++) {
+            for (int y = 0; y < players.length; y++) {
                 playersHandWithTable = playersCards[ y ][ 0 ].get(1).toString() + playersCards[ y ][ 1 ].get(1).toString() + table[ 1 ].get(0).toString();
                 // 0 string;  1 suit; 2 rank; 3 value
                 if (playersHandWithTable.matches(FIND_FLASH_REGEXP)) {
-                    matchedPlayers[ checkFlashCount ] = new ArrayList();
+                    matchedPlayers[ checkFlashCount ] = new ArrayList<String>();
                     matchedPlayers[ checkFlashCount ].add(y);
                     matchedPlayers[ checkFlashCount ].add(players[ y ].get(0));
                     matchedPlayers[ checkFlashCount ].add(playersHandWithTable);
-                    players[y].set(13, 5);
+                    players[ y ].set(13, 5);
                     checkFlashCount++;
                     System.out.println("checkFlash: " + y + ": " + ((playersCards[ y ][ 0 ].get(1).toString() + playersCards[ y ][ 1 ].get(1).toString() + table[ 1 ].get(0))));
                 }
@@ -166,7 +166,7 @@ public class DeckUtils extends PokedgramBot {
 
             if (checkFlashCount > 1) {
                 for (int z = 0; z <= checkFlashCount; z++) {
-
+                    z = z;
                     //playersCards[z][0].get(1) + playersCards[z][1].get(1);
                     //matchedPlayers[z].get(2);
 
@@ -178,25 +178,25 @@ public class DeckUtils extends PokedgramBot {
         return checkFlashCount;
     }
 
-    static Integer checkStraight(ArrayList[][] playersCards) {
+    static Integer checkStraight(ArrayList<?>[][] playersCards) {
         System.out.println("checkStraight not implemented");
         return -1;
 
     }
 
-    static Integer checkDistinct(ArrayList[][] playersCards, ArrayList[] players) {
+    static int checkDistinct(ArrayList<?>[][] playersCards, ArrayList<Integer>[] players) {
         System.out.println("checkDistinct: start");
-        Integer countCombo = 0;
-        Integer playerAndTableCards = 7;
+        int countCombo = 0;
+        int playerAndTableCards = 7;
 
         for (int i = 0; i < players.length; i++) {
 
             String[] playersDistinctCards = new String[ 3 ];
-            Integer distinctQuantity = 0;
+            int distinctQuantity = 0;
             //countCombo = 0;
-            String excludeSingle = "";
-            ArrayList[] currentPlayerCards = getPlayerCardsWithTable(i, playersCards, players);
-            List<Integer> cardValues = new ArrayList<Integer>();
+            String excludeSingle = EMPTY_STRING;
+            ArrayList<?>[] currentPlayerCards = getPlayerCardsWithTable(i, playersCards, players);
+            List<Integer> cardValues = new ArrayList<>();
 
             System.out.println(NEXTLINE);
             System.out.println("player: " + i);
@@ -207,9 +207,9 @@ public class DeckUtils extends PokedgramBot {
             }
 
             excludeSingle = cardValues.stream().sorted().collect(Collectors.groupingBy(Function.identity(),
-                    Collectors.counting())).toString().replaceAll(EXTRACT_DISTINCT_VALUES_REGEXP, "");
+                    Collectors.counting())).toString().replaceAll(EXTRACT_DISTINCT_VALUES_REGEXP, EMPTY_STRING);
 
-            distinctQuantity = excludeSingle.replaceAll(EXTRACT_VALUES_DIRTY_REGEXP, "").length();
+            distinctQuantity = excludeSingle.replaceAll(EXTRACT_VALUES_DIRTY_REGEXP, EMPTY_STRING).length();
             System.out.println("rank = distinct: " + excludeSingle + "; distinctQuantity: " + distinctQuantity);//
 
             try {
@@ -219,7 +219,7 @@ public class DeckUtils extends PokedgramBot {
                     playersDistinctCards[ 0 ] = excludeSingle.replaceAll(EXTRACT_DISTINCT_COUNT_REGEXP, "$1");
 //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
                     if (playersDistinctCards[ 0 ].matches(FIND_4X_REGEXP)) {
-                        System.out.println(".matches(\"^.*=[4].*$\")");
+                        System.out.println("matches " + FIND_4X_REGEXP);
                         players[ i ].set(13, 7);
                         //playerComboGrade[playerid] = %regex to find combo value%
                         //playerKickerCards[playerid] = %check hand cards + different cases
@@ -232,40 +232,40 @@ public class DeckUtils extends PokedgramBot {
                         } else//house
 
                             if (playersDistinctCards[ 0 ].matches(FIND_3X_REGEXP)) {
-                                System.out.println(".matches(\"^.*=[3].*$\")");
+                                System.out.println("matches " + FIND_3X_REGEXP);
                                 players[ i ].set(13, 3);
                             } else//x3
 
                                 if (playersDistinctCards[ 0 ].matches(FIND_2X2X_REGEXP)) {
-                                    System.out.println(".matches(\"FIND_2X2X_REGEXP\")");
+                                    System.out.println("matches " + FIND_2X2X_REGEXP);
 
                                     players[ i ].set(13, 2);
                                 } else//2x2
 
                                     if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP)) {
-                                        System.out.println(".matches(\"^.*=[2].*$\")");
+                                        System.out.println("matches " + FIND_2X_REGEXP);
 
                                         players[ i ].set(13, 1);
                                     }  //x2
 
                     //else if check kicker
                     //if (distinctQuantity==4) {} else
-                    if (distinctQuantity == 3) {
-                        //check 4x
-                        //check 3x+2x
-                        //check 2x + 2x
-                        //check 2x
-                        //
-                        System.out.println("distinctQuantity==3 " + NEXTLINE + playersDistinctCards[ 0 ]);
-                    } else if (distinctQuantity == 2) {
-                        System.out.println("distinctQuantity==2 " + NEXTLINE + playersDistinctCards[ 0 ]);
-                    } else if (distinctQuantity == 1) {
-                        System.out.println("distinctQuantity==1 " + NEXTLINE + playersDistinctCards[ 0 ]);
-                    }
-
-
-                } else { //0
-                    System.out.println("distinctQuantity==0 - no combo found");
+//                    if (distinctQuantity == 3) {
+//                        //check 4x
+//                        //check 3x+2x
+//                        //check 2x + 2x
+//                        //check 2x
+//                        //
+//                        System.out.println("distinctQuantity==3 " + NEXTLINE + playersDistinctCards[ 0 ]);
+//                    } else if (distinctQuantity == 2) {
+//                        System.out.println("distinctQuantity==2 " + NEXTLINE + playersDistinctCards[ 0 ]);
+//                    } else if (distinctQuantity == 1) {
+//                        System.out.println("distinctQuantity==1 " + NEXTLINE + playersDistinctCards[ 0 ]);
+//                    }
+//
+//
+//                } else { //0
+//                    System.out.println("distinctQuantity==0 - no combo found");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -279,7 +279,7 @@ public class DeckUtils extends PokedgramBot {
 
     // kicker = card(s) in players hand to break ties between hands of the same rank
 
-    static Integer checkKicker(ArrayList[] players, ArrayList<?>[][] cards, Integer comboRank) { //get highest card, if highest quantity > 1, return -1
+    static int checkKicker(ArrayList<?>[] players, ArrayList<?>[][] cards, int comboRank) { //get highest card, if highest quantity > 1, return -1
 
         int handHighest = -1;
         int winnerCount = 0;
@@ -308,7 +308,7 @@ public class DeckUtils extends PokedgramBot {
                         handHighest = Integer.parseInt(cards[ y ][ i ].get(3).toString());
                         winnerCount = 1;
                         winnerId    = y;
-                        Integer cardValue  = Integer.parseInt(cards[ y ][ i ].get(3).toString());
+                        Integer cardValue = Integer.parseInt(cards[ y ][ i ].get(3).toString());
                     } else if (handHighest == Integer.parseInt(cards[ y ][ i ].get(3).toString())) {
                         winnerCount++;
                         winnerId = -1;
@@ -338,29 +338,28 @@ public class DeckUtils extends PokedgramBot {
     }
 
 
-    static ArrayList[] getPlayerCardsWithTable(Integer moveCount, ArrayList[][] playerCards, ArrayList[] players) { //
-        //Integer.parseInt(String.valueOf(playerCards[1][].stream().distinct().count()));
-        //return 1;
-        ArrayList[] playerCardsWithTable = new ArrayList[ 4 ];
+    static ArrayList<?>[] getPlayerCardsWithTable(Integer moveCount, ArrayList<?>[][] playerCards, ArrayList<?>[] players) {
+
+        ArrayList<String>[] playerCardsWithTable = new ArrayList[ 4 ];
         playerCardsWithTable[ 0 ] = new ArrayList<>();
         playerCardsWithTable[ 1 ] = new ArrayList<>();
         playerCardsWithTable[ 2 ] = new ArrayList<>();
         playerCardsWithTable[ 3 ] = new ArrayList<>();
         //List<ArrayList> playersHandWithTable = new ArrayList<>();
 
-        List zxczxc;
-        for (Integer z = 0; z < HAND_CARDS_COUNT + 5; z++) {
-            playerCardsWithTable[ 0 ].add(playerCards[ moveCount % players.length ][ z ].get(0));
-            playerCardsWithTable[ 1 ].add(playerCards[ moveCount % players.length ][ z ].get(1));
-            playerCardsWithTable[ 2 ].add(playerCards[ moveCount % players.length ][ z ].get(2));
-            playerCardsWithTable[ 3 ].add(playerCards[ moveCount % players.length ][ z ].get(3));
+        List<?> playerCardsWithTableSorted;
+        for (int z = 0; z < HAND_CARDS_COUNT + 5; z++) {
+            playerCardsWithTable[ 0 ].add(playerCards[ moveCount % players.length ][ z ].get(0).toString());
+            playerCardsWithTable[ 1 ].add(playerCards[ moveCount % players.length ][ z ].get(1).toString());
+            playerCardsWithTable[ 2 ].add(playerCards[ moveCount % players.length ][ z ].get(2).toString());
+            playerCardsWithTable[ 3 ].add(playerCards[ moveCount % players.length ][ z ].get(3).toString());
 
             //playersHandWithTable = List.of(playerCardsWithTable[ 0 ]);
             // 0 string;  1 suit; 2 rank; 3 value
 
         }
-        zxczxc = playerCardsWithTable[ 3 ].stream().sorted().toList();
-        System.out.println("playersHandWithTable output sorted " +  zxczxc);
+        playerCardsWithTableSorted = playerCardsWithTable[ 3 ].stream().sorted().toList();
+        System.out.println("playersHandWithTable output sorted " + playerCardsWithTableSorted);
         //System.out.println("playersHandWithTable output" + NEXT_LINE + playersHandWithTable + NEXT_LINE + List.of(playerCardsWithTable[1]) + NEXT_LINE  + List.of(playerCardsWithTable[2]) + NEXT_LINE + List.of(playerCardsWithTable[3]) + NEXT_LINE + "playersHandWithTable end");
 
         //System.out.println("playersHandWithTable output " + playerCardsWithTable[3].toString());
@@ -413,33 +412,31 @@ public class DeckUtils extends PokedgramBot {
         return random.nextInt(high) + low + 1;
     }
 
-    static ArrayList[] drawTable(int playersQuantity, List deck) {
+    static ArrayList<String>[] drawTable(int playersQuantity, List<?> deck) {
 
 
-        ArrayList[] tableArray = new ArrayList[ playersQuantity ];
-        tableArray[ 0 ] = new ArrayList(5);
-        tableArray[ 1 ] = new ArrayList(5);
+        ArrayList<String>[] tableArray = new ArrayList[ playersQuantity ];//(playersQuantity);
+        tableArray[ 0 ] = new ArrayList<>(5);
+        tableArray[ 1 ] = new ArrayList<>(5);
         //tableArray[2] = new ArrayList(5);
         tableArray[ 0 ].add(0, ((stageFlop(playersQuantity, 2, deck) +
                                  stageTurn(playersQuantity, 2, deck) +
                                  stageRiver(playersQuantity, 2, deck))));
-        tableArray[ 1 ].add(0, tableArray[ 0 ].get(0).toString().replaceAll("[0-9JQKA]", ""));
-        tableArray[ 1 ].add(1, Arrays.stream(tableArray[ 0 ].get(0).toString().replaceAll("[♣♦♥♠]*", " ").split("( )")).toArray());
+        tableArray[ 1 ].add(0, tableArray[ 0 ].get(0).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+        tableArray[ 1 ].add(1, Arrays.toString(Arrays.stream(tableArray[ 0 ].get(0).replaceAll(FIND_CARDS_SUIT_REGEXP, " ").split("( )")).toArray()));
         System.out.println(tableArray[ 0 ].get(0));
-        List tableValue = new ArrayList();
-        tableValue = Arrays.stream(tableArray[ 0 ].get(0).toString().replaceAll("[♣♦♥♠]*", " ").split("(,)")).toList();
+        List<?> tableValue;// = new ArrayList<>();
+        tableValue = Arrays.stream(tableArray[ 0 ].get(0).replaceAll(FIND_CARDS_SUIT_REGEXP, " ").split(COMMA)).toList();
 
         System.out.println("tableValue " + tableValue);
         return tableArray;
     }
 
 
+    static public String dealCardsText(ArrayList<String>[] players, ArrayList<?>[][] playerCards, Integer HAND_CARDS_COUNT) {
+        String currentPlayerHandText;
+        StringBuilder allHandsText = new StringBuilder(EMPTY_STRING);
 
-
-    static public  String dealCardsText(ArrayList[] players, ArrayList[][] playerCards, Integer HAND_CARDS_COUNT) {
-        text                  = "";
-        currentPlayerHandText = "";
-        allHandsText          = "";
         for (int playerNumber = 0; playerNumber < players.length; playerNumber++) {
 
             StringBuilder hand = new StringBuilder();
@@ -448,30 +445,19 @@ public class DeckUtils extends PokedgramBot {
             }
 
             currentPlayerHandText = players[ playerNumber ].get(1) + " hand: " + hand + NEXTLINE;
-            //sendToPlayer(players[ y ].get(0).toString(), "dealNumber " + dealNumber + NEXT_LINE + "Your hand: " + currentPlayerHandText);
-//            sendToPlayer(players[ playerNumber ].get(0).toString(), "deal " + dealNumber + DOT + NEXT_LINE + hand +
-//                                                                    " your cards at dealNumber" + dealNumber + DOT + NEXT_LINE); // + currentPlayerHandText);
-            allHandsText = allHandsText + currentPlayerHandText;
+            allHandsText.append(currentPlayerHandText);
 
         }
-        return allHandsText;
+        return allHandsText.toString();
     }
 
 
-
-
-    static public  String getRoundAnnounceText(ArrayList[] players) {
-        String roundAnnounceString = new String(
-                "1. @" + players[ 0 ].get(2) + " bet: " + players[ 0 ].get(9) + ". " +
-                "Balance " + players[ 0 ].get(3) + NEXTLINE +
-                "2. @" + players[ 1 ].get(2) + " bet: " + players[ 1 ].get(9) + ". " +
-                "Balance " + players[ 1 ].get(3));
-        return roundAnnounceString;
+    static public String getRoundAnnounceText(ArrayList<String>[] players) {
+        return "1. @" + players[ 0 ].get(2) + " bet: " + players[ 0 ].get(9) + ". " +
+               "Balance " + players[ 0 ].get(3) + NEXTLINE +
+               "2. @" + players[ 1 ].get(2) + " bet: " + players[ 1 ].get(9) + ". " +
+               "Balance " + players[ 1 ].get(3);
     }
-
-
-
-
 
 
 }
