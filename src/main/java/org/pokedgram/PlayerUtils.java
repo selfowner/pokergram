@@ -58,9 +58,9 @@ public class PlayerUtils extends PokedgramBot {
     }
 
     public static void unsetAllPlayerBetFromStageToRound(ArrayList<Integer>[] players) {
-        for (int i = 0; i < players.length; i++) {
-            players[ i ].set(9, 0);
-            players[ i ].set(8, 0);
+        for (ArrayList<Integer> player : players) {
+            player.set(9, 0);
+            player.set(8, 0);
         }
     }
 
@@ -141,10 +141,10 @@ public class PlayerUtils extends PokedgramBot {
     }
 
 
-    public static int checkFoldsQuantityThisRound(ArrayList<String>[] playersList) {
+    public static int checkFoldsQuantityThisRound(ArrayList<?>[] playersList) {
         int foldCount = 0;
-        for (int i = playersList.length - 1; i >= 0; i--) {
-            if (!playersList[ i ].get(5).equals(FALSE_TEXT)) { // fold flag
+        for (int iteratePlayer = playersList.length - 1; iteratePlayer >= 0; iteratePlayer--) {
+            if (!playersList[ iteratePlayer ].get(5).equals(FALSE_TEXT)) { // fold flag
                 foldCount++;
             }
 
@@ -152,10 +152,10 @@ public class PlayerUtils extends PokedgramBot {
         return foldCount;
     }
 
-    public static int checkAllinsQuantityThisRound(ArrayList<String>[] playersList) {
+    public static int checkAllinsQuantityThisRound(ArrayList<?>[] playersList) {
         int allinCount = 0;
-        for (int i = playersList.length - 1; i >= 0; i--) {
-            if (!Objects.equals(playersList[ i ].get(5), FALSE_TEXT)) { // fold flag
+        for (int iteratePlayer = playersList.length - 1; iteratePlayer >= 0; iteratePlayer--) {
+            if (!Objects.equals(playersList[ iteratePlayer ].get(5), FALSE_TEXT)) { // fold flag
                 allinCount++;
             }
         }
@@ -190,14 +190,14 @@ public class PlayerUtils extends PokedgramBot {
     }*/
 
     public static ArrayList<?>[] checkLastChips(ArrayList<Integer>[] players, int bigBlindSize) {
-        for (int i = 0; i < players.length; i++) {
-            if (Integer.parseInt(players[ i ].get(3).toString()) < bigBlindSize) {
-                players[ i ].set(10, 1);
-                if (Integer.parseInt(players[ i ].get(3).toString()) < bigBlindSize / 2) {
-                    players[ i ].set(10, 2);
+        for (int iteratePlayer = 0; iteratePlayer < players.length; iteratePlayer++) {
+            if (Integer.parseInt(players[ iteratePlayer ].get(3).toString()) < bigBlindSize) {
+                players[ iteratePlayer ].set(10, 1);
+                if (Integer.parseInt(players[ iteratePlayer ].get(3).toString()) < bigBlindSize / 2) {
+                    players[ iteratePlayer ].set(10, 2);
                 }
-                if (Integer.parseInt(players[ i ].get(3).toString()) == 0) {
-                    players[ i ].set(10, i);
+                if (Integer.parseInt(players[ iteratePlayer ].get(3).toString()) == 0) {
+                    players[ iteratePlayer ].set(10, iteratePlayer);
                 }
             } else {
                 //all ok
@@ -234,7 +234,7 @@ public class PlayerUtils extends PokedgramBot {
         return maxBet;
     }
 
-    public static boolean checkBetsEqual(ArrayList<String>[] playersList) {
+    public static boolean checkBetsEqual(ArrayList<?>[] playersList) {
 
         int foldCount = checkFoldsQuantityThisRound(playersList);
         int allinCount = checkAllinsQuantityThisRound(playersList);
@@ -321,20 +321,20 @@ public class PlayerUtils extends PokedgramBot {
     }
 
 
-    public static int checkUserRegExistAndActive(String userId, ArrayList<String>[] playersQueue, int registeredPlayers) {
+    public static int checkUserRegExistAndActive(String userId, ArrayList<?>[] playersQueue, int registeredPlayers) {
 
-        for (int z = 0; z < registeredPlayers; z++) {
+        for (int iteratePlayer = 0; iteratePlayer < registeredPlayers; iteratePlayer++) {
 
-            if (playersQueue[ z ] != null && playersQueue[ z ].get(0).equals(userId) && playersQueue[ z ].get(4).equals(TRUE_TEXT)) { // && ) {
-                return z;
+            if (playersQueue[ iteratePlayer ] != null && playersQueue[ iteratePlayer ].get(0).equals(userId) && playersQueue[ iteratePlayer ].get(4).equals(TRUE_TEXT)) { // && ) {
+                return iteratePlayer;
             }
         }
         return -1;
     }
 
-    public static int checkFoldCount(ArrayList<String>[] players) {
+    public static int checkFoldCount(ArrayList<?>[] players) {
         int c = 0;
-        for (ArrayList<String> player : players) {
+        for (ArrayList<?> player : players) {
 
             if (player.get(5).equals(TRUE_TEXT)) { // && ) {
                 c++;
@@ -343,13 +343,13 @@ public class PlayerUtils extends PokedgramBot {
         return c;
     }
 
-    public static int checkUserUnReg(ArrayList<String>[] playersQueue) {
+    public static int checkUserUnReg(ArrayList<?>[] playersQueue) {
 
 
-        for (int z = 0; z < playersQueue.length - 1; z++) {
-            if (playersQueue[ z ] != null && Objects.equals(playersQueue[ z ].get(4), FALSE_TEXT)) {
+        for (int iteratePlayer = 0; iteratePlayer < playersQueue.length - 1; iteratePlayer++) {
+            if (playersQueue[ iteratePlayer ] != null && Objects.equals(playersQueue[ iteratePlayer ].get(4), FALSE_TEXT)) {
 
-                return z;
+                return iteratePlayer;
             }
         }
         return -1; //ok
@@ -376,11 +376,11 @@ public class PlayerUtils extends PokedgramBot {
         return false;
     }
 
-    public static String getUserReg(ArrayList<String>[] playersQueue, int registeredPlayers, String userId) {
+    public static String getUserReg(ArrayList<?>[] playersQueue, int registeredPlayers, String userId) {
         StringBuilder users = new StringBuilder(EMPTY_STRING);
-        for (int i = 0; i < registeredPlayers; i++) {
-            if (playersQueue[ i ].get(0) != null && Objects.equals(playersQueue[ i ].get(4), userId)) {
-                users.append("\n").append(playersQueue[ i ].get(1).toString());
+        for (int iteratePlayer = 0; iteratePlayer < registeredPlayers; iteratePlayer++) {
+            if (playersQueue[ iteratePlayer ].get(0) != null && Objects.equals(playersQueue[ iteratePlayer ].get(4), userId)) {
+                users.append("\n").append(playersQueue[ iteratePlayer ].get(1).toString());
             }
         }
         return users.toString();
@@ -388,8 +388,8 @@ public class PlayerUtils extends PokedgramBot {
     }
 
     public static ArrayList<?>[] getShowdownWinnerId(ArrayList<Integer>[] players, ArrayList<String>[][] playerCards, List<?> cardDeck) {
-        int winnerId = -1;
-        int winnerCount = -1;
+        int winnerId, winnerCount= -1;
+       // int winnerCount = -1;
 
         ArrayList<?>[] tableArray = drawTable(players.length, cardDeck);
         if (false) {
@@ -400,10 +400,7 @@ public class PlayerUtils extends PokedgramBot {
         //calculate winner and process chips
         while (!gotWinner) {
 
-            //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
-
             //System.out.println("findWinner start");
-
 
             // TODO count kickers on table for some cases
             winnerCount += checkDistinct(playerCards, players);
@@ -411,7 +408,7 @@ public class PlayerUtils extends PokedgramBot {
             winnerCount += checkStraight(playerCards);
 
             System.out.println("checkDistinct winnerCount after checkDistinct checkFlash checkStraight: " + winnerCount);
-
+            //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
             if (Integer.parseInt(players[ 0 ].get(13).toString()) > Integer.parseInt(players[ 1 ].get(13).toString())) {
                 System.out.println("player 0 win");
                 winnerId = 0; //player 0 win
@@ -465,9 +462,9 @@ public class PlayerUtils extends PokedgramBot {
     }
 
 
-    public static String getUserRegQueue(ArrayList<String>[] playersList) {
+    public static String getUserRegQueue(ArrayList<?>[] playersList) {
         StringBuilder users = new StringBuilder("\n");
-        for (ArrayList<String> strings : playersList) {
+        for (ArrayList<?> strings : playersList) {
             if (
                     strings != null &&
                     !strings.isEmpty() &&
