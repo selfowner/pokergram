@@ -37,13 +37,13 @@ import static org.pokedgram.SuperStrings.*;
 //TODO rename to PokedgramDealerBot
 public class PokedgramBot extends TelegramLongPollingBot {
 
-    Integer pokerMessageId;
+    int pokerMessageId;
     ArrayList[] players = new ArrayList[ 2 ];
 
 
     int checkSameStage = -2;
-    Boolean dealStarted = false;
-    Integer raiseCount;
+    boolean dealStarted = false;
+    int raiseCount;
 
     int minBetSize; // = smallBlindSize;
     int currentPlayerMoveChoice;
@@ -53,7 +53,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
     String nickName = EMPTY_STRING;
     String[] playerStages = new String[]{"preflop", "flop", "turn", "river", "showdown"};
     int currentPlayerStage = -2;
-    String flopCards = EMPTY_STRING, turnCards = EMPTY_STRING, riverCards = EMPTY_STRING;
+    String flopCards, turnCards, riverCards = EMPTY_STRING;
     Path PARAMS_PATH, STICKERS_PATH;
     List<String> PARAMS_LIST;
     List<String> STICKERS_LIST;
@@ -77,8 +77,8 @@ public class PokedgramBot extends TelegramLongPollingBot {
     final String PLAYING_ROOM_ID = PARAMS_LIST.get(1);
     final String PLAYING_ROOM_LINK = PARAMS_LIST.get(2);
 
-    static Integer currentPot = 0;
-    Integer moveCount = 0;
+    static int currentPot = 0;
+    int moveCount = 0;
 
     SendMessage message = new SendMessage();
     public final String COMMANDS_TEXT = MessageFormat.format("COMMANDS {0}   /about - about this bot  (alias command \"rules\"){1}   /commands - this list{2}   /poker <number> - start game registration with <number> of players{3}   /reg, /unreg - register to the game, or forfeit{4}   /invite <userId> - invite tg user to join game (success only if user communicated with bot in personal messages earlier){5}   /queue - get registered members list{6}   /test - run game mechanics tests{7}To be able to play with bot you need to write him any personal message (https://t.me/pokedgram_bot), then input commands in chat {8}. To set up in 1 step input command about. ", DOUBLE_NEXTLINE, NEXTLINE, NEXTLINE, NEXTLINE, NEXTLINE, NEXTLINE, NEXTLINE, DOUBLE_NEXTLINE, BOT_NAME);
@@ -86,7 +86,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
 
     String tableCards;
 
-    ArrayList[][] playerCards = new ArrayList[ players.length ][ HAND_CARDS_COUNT ];
+    ArrayList<String>[][] playerCards = new ArrayList[ players.length ][ HAND_CARDS_COUNT ];
 
     List<String> cardDeck;
     Integer dealOrderMsg = 0;
@@ -96,13 +96,15 @@ public class PokedgramBot extends TelegramLongPollingBot {
 
 
 
-    public ArrayList<?>[] getShowdownWinnerIdTest(ArrayList<?>[] players, ArrayList[][] playerCards, List<?> cardDeck) {
-        int winnerId, winnerCount= -1;
+    private ArrayList<?>[] getShowdownWinnerIdTest(ArrayList<?>[] players, ArrayList[][] playerCards, List<?> cardDeck) {
+        int winnerPlayerNumber, winnerCount= -1;
 
         //ArrayList[] tableArray = drawTable(players.length, cardDeck);
-        if (false) {
-            //sidepot
-        }
+
+
+        //if (false) {
+            //sidepot (need >2 players)
+        //}
         boolean gotWinner = false;
 
         //calculate winner and process chips
@@ -123,35 +125,39 @@ public class PokedgramBot extends TelegramLongPollingBot {
 
             if (Integer.parseInt(players[ 0 ].get(13).toString()) > Integer.parseInt(players[ 1 ].get(13).toString())) {
                 System.out.println("player 0 win");
-                winnerId = 0; //player 0 win
+                winnerPlayerNumber = 0;
             } else if (Integer.parseInt(players[ 1 ].get(13).toString()) > Integer.parseInt(players[ 0 ].get(13).toString())){
 
                 System.out.println("player 1 win");
-                winnerId = 1; //player 1 win
+                winnerPlayerNumber = 1;
             } else if ( // comboValue ==
                     Integer.parseInt(players[ 0 ].get(13).toString()) == Integer.parseInt(players[ 1 ].get(13).toString()) && (Integer.parseInt(players[ 0 ].get(13).toString()) > -1 && Integer.parseInt(players[ 1 ].get(13).toString()) > -1)
             ) {
                 System.out.println("players tie, checking kicker:");
-                winnerCount = checkKicker(players, playerCards,0);
+                try {
+                    winnerCount = checkKicker(players, playerCards,0);
+                } catch (Exception e) {
+                    winnerCount = 0;
+                    e.printStackTrace();
+                    System.out.println("kickers tie! pot split between players ");
+                }
             }
 
-            // winnerCount = checkKicker(players, playerCards, tableArray);
-
-
-
-//            if (winnerCount > 0) {
+//            if (winnerCount == 0) {
 //                System.out.println("checkDistinct winnerCount: " + winnerCount);
-//                //find kicker or split reward
+//
 //                gotWinner = true;
-//                break;
 //            }
 
             //System.out.println("findWinner end");
             break;
         }
 
-        int playerIncome = splitPot(currentPot,players);
-        if (winnerCount > 1) {
+        int playerIncome = getSplitRewardSize(currentPot,players);
+        //find kicker or split reward
+        if (winnerCount == 1) {
+            //get winnerId
+        } else if (winnerCount > 1) {
             for (ArrayList player : players) {
                 player.set(3, Integer.parseInt(player.get(3).toString()) + playerIncome);
                 currentPot = 0;
@@ -160,18 +166,20 @@ public class PokedgramBot extends TelegramLongPollingBot {
             gotWinner = true;
             // process chips
         } else if (winnerCount == 0) {
+
             System.out.println("winnerCount == 0; no combo found. Splitting pot, setting gotWinner true "  + playerIncome);
+
             for (ArrayList player : players) {
                 player.set(3, Integer.parseInt(player.get(3).toString()) + playerIncome);
                 currentPot = 0;
                 gotWinner  = true;
+                break;
             }
-        } else if (winnerCount == 1) {
-            //get winnerId
         }
         //messageSendToPlayingRoom(outputTest);
         return players;
     }
+
 
     int checkDistinctTest(ArrayList<String>[][] playersCards, ArrayList[] players) {
         //messageSendToPlayingRoom("checkDistinct: start");
@@ -202,7 +210,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
                 if (distinctQuantity > 0) {
                     countCombo++;
                     playersDistinctCards[ 0 ] = excludeSingle.replaceAll(EXTRACT_DISTINCT_COUNT_REGEXP, "$1");
-//str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
+                    //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
                     if (playersDistinctCards[ 0 ].matches(FIND_4X_REGEXP)) {
                         System.out.println("matches " + FIND_4X_REGEXP);
                         players[ iteratePlayer ].set(13, 7);
@@ -266,7 +274,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
 //
 //    }
     
-    public void switchPregame(String extractCommand, Integer extractNumber, Update update) {
+    private void switchPregame(String extractCommand, Integer extractNumber, Update update) {
 
 
         userName      = update.getMessage().getFrom().getFirstName() + " " + update.getMessage().getFrom().getLastName() + " " + "(" + update.getMessage().getFrom().getUserName() + ")";
@@ -378,9 +386,9 @@ public class PokedgramBot extends TelegramLongPollingBot {
                 ArrayList<String>[] players = prepareTestDataPlayers();
 
                 //TODO make test more fair
-                messageSendToPlayingRoom("Deck test: " + DOUBLE_NEXTLINE +
-                                         "New deck: " + initializeCardsDeck() + NEXTLINE +
-                                         "Shuffled deck: " + shuffleCardsDeck(initializeCardsDeck()) + NEXTLINE +
+                messageSendToPlayingRoom("Deck test: " + TRIPLE_NEXTLINE +
+                                         "New deck: " + initializeCardsDeck() + DOUBLE_NEXTLINE +
+                                         "Shuffled deck: " + shuffleCardsDeck(initializeCardsDeck()) + DOUBLE_NEXTLINE +
                                          "Shuffled again: " + shuffleCardsDeck(initializeCardsDeck()).toString().strip());
 
                 //TODO add tests for gui, chips processing, kickers, playerstate cleanup, name generator, ...
@@ -415,7 +423,12 @@ public class PokedgramBot extends TelegramLongPollingBot {
 
                 registrationStarted = true;
                 playersQueue = new ArrayList[ maxPlayers ];
-                TOURNAMENT_INFO = new String("Tournament initiated! Registration free and open. Game Texas NL Holdem." + DOUBLE_NEXTLINE + "playersCount: " + maxPlayers + NEXTLINE + "Heads-up (1x1)" + NEXTLINE + "smallBlind " + START_SMALL_BLIND_SIZE + NEXTLINE + "startChips " + START_CHIPS + NEXTLINE + "blindIncrease x2 every 5 rounds");
+                TOURNAMENT_INFO = "Tournament initiated! Registration free and open. Game Texas NL Holdem." + DOUBLE_NEXTLINE +
+                                  "playersCount: " + maxPlayers + NEXTLINE +
+                                  "Heads-up (1x1) " + NEXTLINE +
+                                  "smallBlind " + START_SMALL_BLIND_SIZE + NEXTLINE +
+                                  "startChips " + START_CHIPS + NEXTLINE +
+                                  "blindIncrease x2 every 5 rounds";
 
                 pokerMessageId = messageSendToPlayingRoomAndGetMessageId(TOURNAMENT_INFO);
                 break;
@@ -521,22 +534,26 @@ public class PokedgramBot extends TelegramLongPollingBot {
 
 
         minBetSize = bigBlindSize;
+
         buttonCheckCall.setText("check/call");
         buttonFoldPass.setText("fold/pass");
-        buttonCheckCall.setCallbackData("checkcall");
-        buttonFoldPass.setCallbackData("fold");
         buttonBetX1.setText("bet " + minBetSize);
         buttonBetX2.setText("bet " + minBetSize * 2);
         buttonBetX3.setText("bet " + minBetSize * 3);
         buttonBetX4.setText("bet " + minBetSize * 4);
         buttonBetAllin.setText("\uD83D\uDD34 all-in");
+
+        buttonCheckCall.setCallbackData("checkcall");
+        buttonFoldPass.setCallbackData("fold");
         buttonBetX1.setCallbackData("bet " + minBetSize);
         buttonBetX2.setCallbackData("bet " + minBetSize * 2);
         buttonBetX3.setCallbackData("bet " + minBetSize * 3);
         buttonBetX4.setCallbackData("bet " + minBetSize * 4);
         buttonBetAllin.setCallbackData("allin " + players[ moveCount % players.length ].get(3));
+
         List<InlineKeyboardButton> keyboardButtonsRow1 = new ArrayList<>();
         List<InlineKeyboardButton> keyboardButtonsRow2 = new ArrayList<>();
+
         keyboardButtonsRow1.add(buttonFoldPass);
         keyboardButtonsRow1.add(buttonCheckCall);
         keyboardButtonsRow2.add(buttonBetX1);
@@ -544,7 +561,9 @@ public class PokedgramBot extends TelegramLongPollingBot {
         keyboardButtonsRow2.add(buttonBetX3);
         keyboardButtonsRow2.add(buttonBetX4);
         keyboardButtonsRow2.add(buttonBetAllin);
+
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+
         rowList.add(keyboardButtonsRow1);
         rowList.add(keyboardButtonsRow2);
 
@@ -552,7 +571,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         return inlineKeyboardMarkup;
     }
 
-    public void messageSendStickerToPlayingRoom() {
+    private void messageSendStickerToPlayingRoom() {
         try {
             String currentId = message.getChatId();
             message.setChatId(PLAYING_ROOM_ID);
@@ -571,7 +590,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         }
     }
 
-    public void messageSendToPlayingRoom(String text) {
+    private void messageSendToPlayingRoom(String text) {
         try {
             message = new SendMessage();
             message.setChatId(PLAYING_ROOM_ID);
@@ -585,7 +604,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         }
     }
 
-    public Integer messageSendToPlayingRoomAndGetMessageId(String text) {
+    private Integer messageSendToPlayingRoomAndGetMessageId(String text) {
         message = new SendMessage();
         int messageId = -1;
         try {
@@ -600,7 +619,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         return messageId;
     }
 
-    public Integer messageSendToPlayingRoomWithButtonsAndGetMessageId(String text) {
+    private Integer messageSendToPlayingRoomWithButtonsAndGetMessageId(String text) {
         int messageId = -1;
         try {
             message.setChatId(PLAYING_ROOM_ID);
@@ -617,7 +636,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         return messageId;
     }
 
-    public boolean messageSendToPlayer(String userId, String text) {
+    private boolean messageSendToPlayer(String userId, String text) {
         try {
             message = new SendMessage();
             message.setChatId(userId);
@@ -633,7 +652,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         }
     }
 
-    public void messageSendToPlayerBack(String userId, String text) {
+    private void messageSendToPlayerBack(String userId, String text) {
         message = new SendMessage();
         try {
             message.setChatId(userId);
@@ -649,7 +668,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
 
     }
 
-    public void messageDelete(Integer messageId) {
+    private void messageDelete(Integer messageId) {
         DeleteMessage deleteMessage = new DeleteMessage();
         try {
             deleteMessage.setChatId(PLAYING_ROOM_ID);
@@ -667,7 +686,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         }
     }
 
-    public void messageEdit(String newText, Integer messageId) {
+    private void messageEdit(String newText, Integer messageId) {
         EditMessageText msg = new EditMessageText();
         msg.setChatId(PLAYING_ROOM_ID);
         msg.setMessageId(messageId);
@@ -691,7 +710,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         System.out.println("editMessage msg.getText(); == null");
     }
 
-    public void messageEditInc(String newText, Integer messageId) {
+    private void messageEditInc(String newText, Integer messageId) {
         EditMessageText msg = new EditMessageText();
         msg.setChatId(PLAYING_ROOM_ID);
         msg.setMessageId(messageId);
@@ -717,7 +736,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
     }
 
 
-    public void messageEditIncWithButtons(String text, Integer messageId) {
+    private void messageEditIncWithButtons(String text, Integer messageId) {
         EditMessageText msg = new EditMessageText();
 
         msg.setMessageId(messageId);
@@ -735,12 +754,12 @@ public class PokedgramBot extends TelegramLongPollingBot {
         }
     }
 
-    public void messageEditWithInterface(String newText, Integer messageId) {
+    private void messageEditWithInterface(String newText, Integer messageId) {
         EditMessageText msg = new EditMessageText();
         msg.setChatId(PLAYING_ROOM_ID);
         msg.setMessageId(messageId);
                 try {
-                    msg.setText(newText);
+                    msg.setText(newText+msg.getMessageId());
                     msg.setReplyMarkup(makeButtons());
                     execute(msg);
                     Thread.sleep(SLEEP_MS);
@@ -754,7 +773,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
 
 
 
-    public Integer iterateMove(ArrayList<String>[] players, Integer moveCount) {
+    private Integer iterateMove(ArrayList<String>[] players, Integer moveCount) {
         System.out.println(NEXTLINE + players[ moveCount % players.length ].get(2) + " made bet");
         moveCount = moveCount + 1;
         return moveCount;
@@ -967,7 +986,7 @@ public class PokedgramBot extends TelegramLongPollingBot {
         if (switchStage(moveCount, players)) {
 
             currentPlayerStage++;
-            moveAllPlayerBetFromStageToRound(players);
+            processPlayerBetsFromStageToRound(players);
             unsetAllPlayerStageFlag(players, "check flag");
             tableCards = getCurrentStageTableCardsText(currentPlayerStage, cardDeck);
             stageStarted = true;
@@ -1272,25 +1291,31 @@ public class PokedgramBot extends TelegramLongPollingBot {
                 if (currentPlayerStage == 4) {
 //                String resultCards = EMPTY_STRING;
 //                String resultCombo = EMPTY_STRING;
-                String res = EMPTY_STRING;
+                StringBuilder res = new StringBuilder(EMPTY_STRING);
                     System.out.println("currentPlayerStage 4 - showdown");
 
 
                     getShowdownWinnerId(players, playerCards, cardDeck);
 
-
+                    ArrayList<?>[] playerCardsWithTable = new ArrayList<?>[]{};
                     System.out.println("final results: (//str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0)");
                     for (int iteratePlayer = 0; iteratePlayer < players.length; iteratePlayer++) {
-                        System.out.println("player " +iteratePlayer + ": " + players[iteratePlayer].get(13));
+                        System.out.println("player " +iteratePlayer + ": " + players[iteratePlayer].get(13).toString());
                         //resultCombo += "player" +y + ": " + players[y].get(13) + NEXT_LINE;
-                        ArrayList[] currentPlayerCards = getPlayerCardsWithTable(moveCount,playerCards,players);
-                        //resultCards += String.valueOf(Arrays.stream(currentPlayerCards).toList()) + NEXT_LINE;
-                        res += "player " + iteratePlayer + ": " + players[iteratePlayer].get(13) + currentPlayerCards[0].stream().toString() + currentPlayerCards[1].stream().toString() + NEXTLINE;
+                        playerCardsWithTable = getPlayerCardsWithTable(moveCount+iteratePlayer,playerCards,players);
+                        //resultCards += String.valueOf(Arrays.stream(playerCardsWithTable).toList()) + NEXT_LINE;
+                        res
+                                .append("player ")
+                                .append(iteratePlayer)
+                                .append(": ")
+                                .append(players[ iteratePlayer ].get(13))
+                                .append(playerCardsWithTable[0].toString())
+                                .append(NEXTLINE);
                     }
 
                     //messageSendToPlayingRoom(resultCards + NEXT_LINE + resultCombo);
 
-                    messageSendToPlayingRoom(res);
+                    messageSendToPlayingRoom(res.toString());
 
                     //userIdMessage = "0";
                     currentPlayerMoveChoice = -1;
@@ -1298,8 +1323,9 @@ public class PokedgramBot extends TelegramLongPollingBot {
                     currentPot              = 0;
                     smallBlindSize          = 0;
                     bigBlindSize            = 0;
-                    unsetAllPlayerBetFromStageToRound(players);
+                    clearPlayerBets(players);
                     unsetAllPlayerStageFlag(players, "clean all");
+                    unsetRoundResult(players);
                     }
 
                 }

@@ -51,18 +51,14 @@ public class DeckUtils extends PokedgramBot {
 
                 //System.out.println("Player " + (y) + " card: " + deck.get((y + (i * playersQuantity))));
 
-                if (iterateCard == 1) { //table cards for easier calculacting
-                    // TODO ref-cktor
-                    playersHand[ iteratePlayer ][ 2 ] = new ArrayList<>() {
-                    };
-                    playersHand[ iteratePlayer ][ 3 ] = new ArrayList<>() {
-                    };
-                    playersHand[ iteratePlayer ][ 4 ] = new ArrayList<>() {
-                    };
-                    playersHand[ iteratePlayer ][ 5 ] = new ArrayList<>() {
-                    };
-                    playersHand[ iteratePlayer ][ 6 ] = new ArrayList<>() {
-                    };
+                //put table cards after players cards for easier calculacting
+                // TODO ref-cktor
+                if (iterateCard == 1) {
+                    playersHand[ iteratePlayer ][ 2 ] = new ArrayList<>() {};
+                    playersHand[ iteratePlayer ][ 3 ] = new ArrayList<>() {};
+                    playersHand[ iteratePlayer ][ 4 ] = new ArrayList<>() {};
+                    playersHand[ iteratePlayer ][ 5 ] = new ArrayList<>() {};
+                    playersHand[ iteratePlayer ][ 6 ] = new ArrayList<>() {};
 
                     playersHand[ iteratePlayer ][ 2 ].add(0, deck.get((playersQuantity * playersCardsCount + 3)));
                     playersHand[ iteratePlayer ][ 2 ].add(1, deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
@@ -113,12 +109,13 @@ public class DeckUtils extends PokedgramBot {
         return cardValue;
     }
 
-    public static int splitPot(int potSize, ArrayList<?>[] players) {
+    public static int getSplitRewardSize(int potSize, ArrayList<?>[] players) {
+        System.out.println("getSplitRewardSize start");
         //int splitCount = 2;
         int playerReward = -1;
         if (potSize % 2 != 0) {
             potSize = potSize - 1;
-            System.out.println(" if (potSize % 2 != 0) { potSize = potSize-1;");
+            System.out.println("!!! if (potSize % 2 != 0) { potSize = potSize-1;");
         }
         if (potSize == 0) {
             playerReward = 0;
@@ -128,6 +125,8 @@ public class DeckUtils extends PokedgramBot {
 
         System.out.println("potSize = " + potSize);
         System.out.println("playerReward = " + playerReward);
+
+        System.out.println("getSplitRewardSize finish");
         return playerReward;
     }
 
@@ -217,55 +216,38 @@ public class DeckUtils extends PokedgramBot {
                 if (distinctQuantity > 0) {
                     countCombo++;
                     playersDistinctCards[ 0 ] = excludeSingle.replaceAll(EXTRACT_DISTINCT_COUNT_REGEXP, "$1");
-//str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4 //triple 3 //two pair 2 //pair 1 //high card 0
                     if (playersDistinctCards[ 0 ].matches(FIND_4X_REGEXP)) {
+
                         System.out.println("matches " + FIND_4X_REGEXP);
                         players[ iteratePlayer ].set(13, 7);
+
+                        //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4
+                        // triple 3 //two pair 2 //pair 1 //high card 0
+
                         //playerComboGrade[playerid] = %regex to find combo value%
                         //playerKickerCards[playerid] = %check hand cards + different cases
-                    } else //4 of a kind
-                        if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP) &&      //full
+                    } else if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP) &&      //full
+
                             playersDistinctCards[ 0 ].matches(FIND_3X_REGEXP)) {
                             System.out.println(".matches(\"^.*=[3].*$\").matches(\"^.*=[2].*$\")");
-
                             players[ iteratePlayer ].set(13, 6);
-                        } else//house
+                        } else if (playersDistinctCards[ 0 ].matches(FIND_3X_REGEXP)) {
 
-                            if (playersDistinctCards[ 0 ].matches(FIND_3X_REGEXP)) {
                                 System.out.println("matches " + FIND_3X_REGEXP);
                                 players[ iteratePlayer ].set(13, 3);
-                            } else//x3
+                            } else if (playersDistinctCards[ 0 ].matches(FIND_2X2X_REGEXP)) {
 
-                                if (playersDistinctCards[ 0 ].matches(FIND_2X2X_REGEXP)) {
                                     System.out.println("matches " + FIND_2X2X_REGEXP);
-
                                     players[ iteratePlayer ].set(13, 2);
-                                } else//2x2
-
-                                    if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP)) {
+                                } else if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP)) {
                                         System.out.println("matches " + FIND_2X_REGEXP);
 
                                         players[ iteratePlayer ].set(13, 1);
-                                    }  //x2
+                                    }
 
-                    //else if check kicker
-                    //if (distinctQuantity==4) {} else
-//                    if (distinctQuantity == 3) {
-//                        //check 4x
-//                        //check 3x+2x
-//                        //check 2x + 2x
-//                        //check 2x
-//                        //
-//                        System.out.println("distinctQuantity==3 " + NEXTLINE + playersDistinctCards[ 0 ]);
-//                    } else if (distinctQuantity == 2) {
-//                        System.out.println("distinctQuantity==2 " + NEXTLINE + playersDistinctCards[ 0 ]);
-//                    } else if (distinctQuantity == 1) {
-//                        System.out.println("distinctQuantity==1 " + NEXTLINE + playersDistinctCards[ 0 ]);
-//                    }
-//
-//
-//                } else { //0
-//                    System.out.println("distinctQuantity==0 - no combo found");
+                } else if (distinctQuantity == 0) {
+
+                    System.out.println("distinctQuantity==0 - no combo found");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -274,12 +256,23 @@ public class DeckUtils extends PokedgramBot {
             System.out.println("checkDistinct: end");
         }
         return countCombo;
+
     }
 
+        //if (distinctQuantity==4) {} else
+        //                        System.out.println("distinctQuantity==3 " + NEXTLINE + playersDistinctCards[ 0 ]);
+        //                    } else if (distinctQuantity == 2) {
+        //                        System.out.println("distinctQuantity==2 " + NEXTLINE + playersDistinctCards[ 0 ]);
+        //                    } else if (distinctQuantity == 1) {
+        //                        System.out.println("distinctQuantity==1 " + NEXTLINE + playersDistinctCards[ 0 ]);
+        //                    }
 
+
+
+    // else if check kicker
     // kicker = card(s) in players hand to break ties between hands of the same rank
 
-    static int checkKicker(ArrayList<?>[] players, ArrayList<?>[][] cards, int comboRank) { //get highest card, if highest quantity > 1, return -1
+    static int checkKicker(ArrayList<?>[] players, ArrayList<?>[][] cards, int comboRank) throws Exception { //get highest card, if highest quantity > 1, return -1
 
         int handHighest = -1;
         int winnerCount = 0;
@@ -300,6 +293,9 @@ public class DeckUtils extends PokedgramBot {
             // ...
         }
 
+        //str fl 8+ //quad 7 //fullhouse 6 //flash 5 //straight 4+ //triple 3 //two pair 2 //pair 1 //high card 0
+        //TODO if kickers same - split reward
+        //TODO copypaste from coinflip, here need set stats in players[].(13,
         if (comboRank == 0) { // if highest card equal  compare second
             handHighest = -1;
             for (int iteratePlayer = 0; iteratePlayer < players.length; iteratePlayer++) {
@@ -308,7 +304,7 @@ public class DeckUtils extends PokedgramBot {
                         handHighest = Integer.parseInt(cards[ iteratePlayer ][ iterateCard ].get(3).toString());
                         winnerCount = 1;
                         winnerId    = iteratePlayer;
-                        Integer cardValue = Integer.parseInt(cards[ iteratePlayer ][ iterateCard ].get(3).toString());
+                        int cardValue = Integer.parseInt(cards[ iteratePlayer ][ iterateCard ].get(3).toString());
                     } else if (handHighest == Integer.parseInt(cards[ iteratePlayer ][ iterateCard ].get(3).toString())) {
                         winnerCount++;
                         winnerId = -1;
@@ -316,23 +312,26 @@ public class DeckUtils extends PokedgramBot {
                 }
             }
 
-            if (winnerCount == 2) {
 
-            }
 
         }
 
-//str fl 8+ //quad 7 //fullhouse 6 //flash 5 //straight 4+ //triple 3 //two pair 2 //pair 1 //high card 0
+        if (winnerId > -1) {
+            if (winnerCount == 1) {
+                return winnerId;
+            }
+
+            if (winnerCount == 2) {
+                Exception E = new Exception("no kicker found, ");
+                throw E;
+                //return winnerId;
+            }
+        } else {
+            return -1;
+        }
 
 
-        // TODO() if kickers same - split reward
-//TODO copypaste from coinflip, here need set stats in players[].(13,
 
-//        if (winnerCount == 1 && winnerId > -1) {
-//            return winnerId;
-//        } else {
-//            return -1;
-//        }
 
         return winnerId;
     }

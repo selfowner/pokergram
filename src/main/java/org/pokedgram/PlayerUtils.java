@@ -33,8 +33,7 @@ public class PlayerUtils extends PokedgramBot {
 
         } else {
             if (!ifFull) {
-                playersQueue[ registeredPlayers ] = new ArrayList<>(13) {
-                };
+                playersQueue[ registeredPlayers ] = new ArrayList<>(13) {};
                 playersQueue[ registeredPlayers ].add(0, userId); // string userId
                 playersQueue[ registeredPlayers ].add(1, userName); // string user firstname + lastname
                 playersQueue[ registeredPlayers ].add(2, nickName);
@@ -57,14 +56,14 @@ public class PlayerUtils extends PokedgramBot {
         return playersQueue;
     }
 
-    public static void unsetAllPlayerBetFromStageToRound(ArrayList<Integer>[] players) {
+    public static void clearPlayerBets(ArrayList<Integer>[] players) {
         for (ArrayList<Integer> player : players) {
             player.set(9, 0);
             player.set(8, 0);
         }
     }
 
-    public static void moveAllPlayerBetFromStageToRound(ArrayList<Integer>[] players) {
+    public static void processPlayerBetsFromStageToRound(ArrayList<Integer>[] players) {
         for (ArrayList<Integer> player : players) {
             player.set(9, player.get(9) + player.get(8));
             player.set(8, 0);
@@ -88,28 +87,53 @@ public class PlayerUtils extends PokedgramBot {
 
     }
 
+
+
+    public static void unsetRoundResult(ArrayList<Integer>[] players) {
+        //for (ArrayList player : players) {
+        for (int playerNumber = 0; playerNumber < players.length; playerNumber++) {
+            players[playerNumber].set(13, -1);
+            System.out.println("unsetRoundResult: " + playerNumber + NEXTLINE + players[playerNumber].get(13));
+        }
+    }
+
+
+
     public static void unsetAllPlayerStageFlag(ArrayList<Boolean>[] players, String flag) {
-        for (ArrayList<Boolean> player : players) {
+
+        System.out.println("unsetAllPlayerStageFlag: ");
+        //for (ArrayList player : players) {
+        for (int playerNumber = 0; playerNumber < players.length; playerNumber++) {
             if (flag.equals("check flag")) {
-                player.set(12, false);
+                players[playerNumber].set(12, false);
+                System.out.println("unset check flag (12): player " + playerNumber + NEXTLINE + players[playerNumber].get(12));
             }
 
             if (flag.equals("fold flag")) {
-                player.set(5, false);
+                players[playerNumber].set(5, false);
+                System.out.println("unset fold flag (5): player " + playerNumber + NEXTLINE + players[playerNumber].get(5));
             }
 
             if (flag.equals("allin flag")) {
-                player.set(6, false);
+                players[playerNumber].set(6, false);
+                System.out.println("unset allin flag (6): player " + playerNumber + NEXTLINE + players[playerNumber].get(6));
             }
 
             if (flag.equals("bets flag")) {
-                player.set(6, false);
+                players[playerNumber].set(6, false);
+                System.out.println("unset bets flag (6): player " + playerNumber + NEXTLINE + players[playerNumber].get(6));
             }
 
             if (flag.equals("clean all")) {
-                player.set(6, false);
-                player.set(5, false);
-                player.set(12, false);
+                players[playerNumber].set(6, false);
+                players[playerNumber].set(5, false);
+                players[playerNumber].set(12, false);
+                System.out.println(
+                        "unset clean all (6 5 12): player " + playerNumber + NEXTLINE +
+                        players[playerNumber].get(6) + NEXTLINE +
+                        players[playerNumber].get(5) + NEXTLINE +
+                        players[playerNumber].get(12)
+                );
                 //players[ i ].set(13, -1);
             }
         }
@@ -370,10 +394,7 @@ public class PlayerUtils extends PokedgramBot {
 
     public static boolean checkUserLimit(int maxPlayers, int registeredPlayers) {
 
-        if (registeredPlayers >= maxPlayers) {
-            return true;
-        }
-        return false;
+        return registeredPlayers >= maxPlayers;
     }
 
     public static String getUserReg(ArrayList<?>[] playersQueue, int registeredPlayers, String userId) {
@@ -421,7 +442,11 @@ public class PlayerUtils extends PokedgramBot {
                     Integer.parseInt(players[ 0 ].get(13).toString()) == Integer.parseInt(players[ 1 ].get(13).toString()) && (Integer.parseInt(players[ 0 ].get(13).toString()) > -1 && Integer.parseInt(players[ 1 ].get(13).toString()) > -1)
             ) {
                 System.out.println("players tie, checking kicker:");
-                winnerCount = checkKicker(players, playerCards, 0);
+                try {
+                    winnerCount = checkKicker(players, playerCards, 0);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
             // winnerCount = checkKicker(players, playerCards, tableArray);
@@ -438,7 +463,7 @@ public class PlayerUtils extends PokedgramBot {
             break;
         }
 
-        int playerIncome = splitPot(currentPot, players);
+        int playerIncome = getSplitRewardSize(currentPot, players);
         if (winnerCount > 1) {
             for (ArrayList<Integer> player : players) {
                 player.set(3, Integer.parseInt(player.get(3).toString()) + playerIncome);
@@ -455,6 +480,7 @@ public class PlayerUtils extends PokedgramBot {
                 gotWinner  = true;
             }
         } else if (winnerCount == 1) {
+            System.out.println("winnerCount == 1; we have winner");
             //get winnerId
         }
 
