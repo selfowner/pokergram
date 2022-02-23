@@ -35,63 +35,121 @@ public class DeckUtils extends PokedgramBot {
         return currentDeck;
     }
 
-    static ArrayList<String>[][] dealCardsFromDeck(int playersQuantity, int playersCardsCount, List<String> deck) {
+    //static HashMap<String, String>[][] dealCardsFromDeck(int playersQuantity, int playersCardsCount, List<String> deck) {
+        static ArrayList<String>[][] dealCardsFromDeck(int playersQuantity, int playersCardsCount, List<String> deck) {
 
-        ArrayList<String>[][] playersHand = new ArrayList[ playersQuantity ][ playersCardsCount + 5 ];
+            ArrayList<String>[][] playersHand = new ArrayList[ playersQuantity ][ playersCardsCount + 5 ];
+
+            //deal cards to players
+            for (int iterateCard = 0; iterateCard < playersCardsCount; iterateCard++) { // deal card loop
+                for (int iteratePlayer = 0; iteratePlayer < playersQuantity; iteratePlayer++) { //select player to deal card
+                    playersHand[ iteratePlayer ][ iterateCard ] = new ArrayList<>() {
+                    };
+                    playersHand[ iteratePlayer ][ iterateCard ].add(0, deck.get((iteratePlayer + (iterateCard * playersQuantity)))); // 0 string
+                    playersHand[ iteratePlayer ][ iterateCard ].add(1, playersHand[ iteratePlayer ][ iterateCard ].get(0).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING)); // 1 suit
+                    playersHand[ iteratePlayer ][ iterateCard ].add(2, playersHand[ iteratePlayer ][ iterateCard ].get(0).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING)); // 2 rank
+                    playersHand[ iteratePlayer ][ iterateCard ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ iterateCard ].get(2)))); // 3 value
+
+                    //System.out.println("Player " + (y) + " card: " + deck.get((y + (i * playersQuantity))));
+
+                    //put table cards after players cards for easier calculacting
+                    // TODO ref-cktor
+                    if (iterateCard == 1) {
+                        playersHand[ iteratePlayer ][ 2 ] = new ArrayList<>() {};
+                        playersHand[ iteratePlayer ][ 3 ] = new ArrayList<>() {};
+                        playersHand[ iteratePlayer ][ 4 ] = new ArrayList<>() {};
+                        playersHand[ iteratePlayer ][ 5 ] = new ArrayList<>() {};
+                        playersHand[ iteratePlayer ][ 6 ] = new ArrayList<>() {};
+
+                        playersHand[ iteratePlayer ][ 2 ].add(0, deck.get((playersQuantity * playersCardsCount + 3)));
+                        playersHand[ iteratePlayer ][ 2 ].add(1, deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 2 ].add(2, deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 2 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 2 ].get(2))));
+
+                        playersHand[ iteratePlayer ][ 3 ].add(0, deck.get((playersQuantity * playersCardsCount + 3 + 1)));
+                        playersHand[ iteratePlayer ][ 3 ].add(1, deck.get((playersQuantity * playersCardsCount + 3 + 1)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 3 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 1)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 3 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 3 ].get(2))));
+
+
+                        playersHand[ iteratePlayer ][ 4 ].add(0, deck.get((playersQuantity * playersCardsCount + 3 + 2)));
+                        playersHand[ iteratePlayer ][ 4 ].add(1, deck.get((playersQuantity * playersCardsCount + 3 + 2)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 4 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 2)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 4 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 4 ].get(2))));
+
+                        playersHand[ iteratePlayer ][ 5 ].add(stageTurn(2, 2, deck));
+                        playersHand[ iteratePlayer ][ 5 ].add(1, stageTurn(2, 2, deck).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 5 ].add(2, stageTurn(2, 2, deck).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 5 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 5 ].get(2))));
+
+                        playersHand[ iteratePlayer ][ 6 ].add(stageRiver(2, 2, deck));
+                        playersHand[ iteratePlayer ][ 6 ].add(1, stageRiver(2, 2, deck).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 6 ].add(2, stageRiver(2, 2, deck).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                        playersHand[ iteratePlayer ][ 6 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 6 ].get(2))));
+                    }
+
+                }
+            }
+
+            return playersHand;
+        }
+
+
+        /*
+        HashMap<String, String>[][] playersHand = new HashMap[ playersQuantity ][ playersCardsCount + 5 ];
 
         //deal cards to players
         for (int iterateCard = 0; iterateCard < playersCardsCount; iterateCard++) { // deal card loop
             for (int iteratePlayer = 0; iteratePlayer < playersQuantity; iteratePlayer++) { //select player to deal card
-                playersHand[ iteratePlayer ][ iterateCard ] = new ArrayList<>() {
-                };
-                playersHand[ iteratePlayer ][ iterateCard ].add(0, deck.get((iteratePlayer + (iterateCard * playersQuantity)))); // 0 string
-                playersHand[ iteratePlayer ][ iterateCard ].add(1, playersHand[ iteratePlayer ][ iterateCard ].get(0).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING)); // 1 suit
-                playersHand[ iteratePlayer ][ iterateCard ].add(2, playersHand[ iteratePlayer ][ iterateCard ].get(0).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING)); // 2 rank
-                playersHand[ iteratePlayer ][ iterateCard ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ iterateCard ].get(2)))); // 3 value
+                playersHand[ iteratePlayer ][ iterateCard ] = new HashMap<String, String>() {};
+                playersHand[ iteratePlayer ][ iterateCard ].put("card text", deck.get((iteratePlayer + (iterateCard * playersQuantity)))); // 0 string
+                playersHand[ iteratePlayer ][ iterateCard ].put("card suit", playersHand[ iteratePlayer ][ iterateCard ].get("card text").toString().replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING)); // 1 suit
+                playersHand[ iteratePlayer ][ iterateCard ].put("card rank", playersHand[ iteratePlayer ][ iterateCard ].get("card text").toString().replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING)); // 2 rank
+                playersHand[ iteratePlayer ][ iterateCard ].put("card value", String.valueOf(cardValue(playersHand[ iteratePlayer ][ iterateCard ].get("card rank").toString()))); // 3 value
 
                 //System.out.println("Player " + (y) + " card: " + deck.get((y + (i * playersQuantity))));
 
                 //put table cards after players cards for easier calculacting
                 // TODO ref-cktor
                 if (iterateCard == 1) {
-                    playersHand[ iteratePlayer ][ 2 ] = new ArrayList<>() {};
-                    playersHand[ iteratePlayer ][ 3 ] = new ArrayList<>() {};
-                    playersHand[ iteratePlayer ][ 4 ] = new ArrayList<>() {};
-                    playersHand[ iteratePlayer ][ 5 ] = new ArrayList<>() {};
-                    playersHand[ iteratePlayer ][ 6 ] = new ArrayList<>() {};
+                    playersHand[ iteratePlayer ][ 2 ] = new HashMap<String, String>() {};
+                    playersHand[ iteratePlayer ][ 3 ] = new HashMap<String, String>() {};
+                    playersHand[ iteratePlayer ][ 4 ] = new HashMap<String, String>() {};
+                    playersHand[ iteratePlayer ][ 5 ] = new HashMap<String, String>() {};
+                    playersHand[ iteratePlayer ][ 6 ] = new HashMap<String, String>() {};
 
-                    playersHand[ iteratePlayer ][ 2 ].add(0, deck.get((playersQuantity * playersCardsCount + 3)));
-                    playersHand[ iteratePlayer ][ 2 ].add(1, deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 2 ].add(2, deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 2 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 2 ].get(2))));
+                    playersHand[ iteratePlayer ][ 2 ].put("card text", deck.get((playersQuantity * playersCardsCount + 3)));
+                    playersHand[ iteratePlayer ][ 2 ].put("card suit", deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 2 ].put("card rank", deck.get((playersQuantity * playersCardsCount + 3)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 2 ].put("card value", String.valueOf(cardValue(playersHand[ iteratePlayer ][ 2 ].get("card rank").toString())));
 
-                    playersHand[ iteratePlayer ][ 3 ].add(0, deck.get((playersQuantity * playersCardsCount + 3 + 1)));
-                    playersHand[ iteratePlayer ][ 3 ].add(1, deck.get((playersQuantity * playersCardsCount + 3 + 1)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 3 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 1)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 3 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 3 ].get(2))));
+                    playersHand[ iteratePlayer ][ 3 ].put("card text", deck.get((playersQuantity * playersCardsCount + 3 + 1)));
+                    playersHand[ iteratePlayer ][ 3 ].put("card suit", deck.get((playersQuantity * playersCardsCount + 3 + 1)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 3 ].put("card rank", deck.get((playersQuantity * playersCardsCount + 3 + 1)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 3 ].put("card value", String.valueOf(cardValue(playersHand[ iteratePlayer ][ 3 ].get("card rank").toString())));
 
 
-                    playersHand[ iteratePlayer ][ 4 ].add(0, deck.get((playersQuantity * playersCardsCount + 3 + 2)));
-                    playersHand[ iteratePlayer ][ 4 ].add(1, deck.get((playersQuantity * playersCardsCount + 3 + 2)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 4 ].add(2, deck.get((playersQuantity * playersCardsCount + 3 + 2)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 4 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 4 ].get(2))));
+                    playersHand[ iteratePlayer ][ 4 ].put("card text", deck.get((playersQuantity * playersCardsCount + 3 + 2)));
+                    playersHand[ iteratePlayer ][ 4 ].put("card suit", deck.get((playersQuantity * playersCardsCount + 3 + 2)).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 4 ].put("card rank", deck.get((playersQuantity * playersCardsCount + 3 + 2)).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 4 ].put("card value", String.valueOf(cardValue(playersHand[ iteratePlayer ][ 4 ].get("card rank").toString())));
 
-                    playersHand[ iteratePlayer ][ 5 ].add(stageTurn(2, 2, deck));
-                    playersHand[ iteratePlayer ][ 5 ].add(1, stageTurn(2, 2, deck).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 5 ].add(2, stageTurn(2, 2, deck).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 5 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 5 ].get(2))));
+                    playersHand[ iteratePlayer ][ 5 ].put("card text", stageTurn(2, 2, deck).toString());
+                    playersHand[ iteratePlayer ][ 5 ].put("card suit", stageTurn(2, 2, deck).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 5 ].put("card rank", stageTurn(2, 2, deck).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 5 ].put("card value", String.valueOf(cardValue(playersHand[ iteratePlayer ][ 5 ].get("card rank").toString())));
 
-                    playersHand[ iteratePlayer ][ 6 ].add(stageRiver(2, 2, deck));
-                    playersHand[ iteratePlayer ][ 6 ].add(1, stageRiver(2, 2, deck).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 6 ].add(2, stageRiver(2, 2, deck).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
-                    playersHand[ iteratePlayer ][ 6 ].add(3, String.valueOf(cardValue(playersHand[ iteratePlayer ][ 6 ].get(2))));
+                    playersHand[ iteratePlayer ][ 6 ].put("card text", stageRiver(2, 2, deck));
+                    playersHand[ iteratePlayer ][ 6 ].put("card suit", stageRiver(2, 2, deck).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 6 ].put("card rank", stageRiver(2, 2, deck).replaceAll(FIND_CARDS_SUIT_REGEXP, EMPTY_STRING));
+                    playersHand[ iteratePlayer ][ 6 ].put("card value", String.valueOf(cardValue(playersHand[ iteratePlayer ][ 6 ].get("card rank").toString())));
                 }
 
             }
         }
 
         return playersHand;
-    }
+    }*/
 
     public static int cardValue(String card) {
         int cardValue;
@@ -109,7 +167,7 @@ public class DeckUtils extends PokedgramBot {
         return cardValue;
     }
 
-    public static int getSplitRewardSize(int potSize, ArrayList<?>[] players) {
+    public static int getSplitRewardSize(int potSize, HashMap[] players) {
         System.out.println("getSplitRewardSize start");
         //int splitCount = 2;
         int playerReward = -1;
@@ -132,8 +190,8 @@ public class DeckUtils extends PokedgramBot {
 
 
     //ToDo() return Highest card with players id for counting winner
-    static int checkFlash(ArrayList<Integer>[] players, ArrayList<?>[][] playersCards, ArrayList<?>[] table) {
-        ArrayList[] matchedPlayers = new ArrayList<?>[players.length];//{};
+    static int checkFlash(HashMap[] players, ArrayList<String>[][] playersCards, ArrayList[] table) {
+        ArrayList<Integer>[] matchedPlayers = new ArrayList[players.length];//{};
         String playersHandWithTable;
         int checkFlashCount = 0;
         int checkFlashSuit = -1;
@@ -153,11 +211,11 @@ public class DeckUtils extends PokedgramBot {
                 playersHandWithTable = playersCards[ iteratePlayer ][ 0 ].get(1).toString() + playersCards[ iteratePlayer ][ 1 ].get(1).toString() + table[ 1 ].get(0).toString();
                 // 0 string;  1 suit; 2 rank; 3 value
                 if (playersHandWithTable.matches(FIND_FLASH_REGEXP)) {
-                    matchedPlayers[ checkFlashCount ] = new ArrayList<String>();
+                    matchedPlayers[ checkFlashCount ] = new ArrayList();
                     matchedPlayers[ checkFlashCount ].add(iteratePlayer);
-                    matchedPlayers[ checkFlashCount ].add(players[ iteratePlayer ].get(0));
-                    matchedPlayers[ checkFlashCount ].add(playersHandWithTable);
-                    players[ iteratePlayer ].set(13, 5);
+                    matchedPlayers[ checkFlashCount ].add(Integer.valueOf(players[ iteratePlayer ].get(0).toString()));
+                    matchedPlayers[ checkFlashCount ].add(Integer.valueOf(playersHandWithTable));
+                    players[ iteratePlayer ].put(COMBOPOWER_VALUE, 5);
                     checkFlashCount++;
                     System.out.println("checkFlash: " + iteratePlayer + ": " + ((playersCards[ iteratePlayer ][ 0 ].get(1).toString() + playersCards[ iteratePlayer ][ 1 ].get(1).toString() + table[ 1 ].get(0))));
                 }
@@ -177,13 +235,13 @@ public class DeckUtils extends PokedgramBot {
         return checkFlashCount;
     }
 
-    static Integer checkStraight(ArrayList<?>[][] playersCards) {
+    static Integer checkStraight(ArrayList<String>[][] playersCards) {
         System.out.println("checkStraight not implemented");
         return -1;
 
     }
 
-    static int checkDistinct(ArrayList<?>[][] playersCards, ArrayList<Integer>[] players) {
+    static int checkDistinct(ArrayList<String>[][] playersCards, HashMap[] players) {
         System.out.println("checkDistinct: start");
         int countCombo = 0;
         int playerAndTableCards = 7;
@@ -219,7 +277,7 @@ public class DeckUtils extends PokedgramBot {
                     if (playersDistinctCards[ 0 ].matches(FIND_4X_REGEXP)) {
 
                         System.out.println("matches " + FIND_4X_REGEXP);
-                        players[ iteratePlayer ].set(13, 7);
+                        players[ iteratePlayer ].put(COMBOPOWER_VALUE, 7);
 
                         //str fl 8 //quad 7 //fullhouse 6 //flash 5 //straight 4
                         // triple 3 //two pair 2 //pair 1 //high card 0
@@ -227,22 +285,21 @@ public class DeckUtils extends PokedgramBot {
                         //playerComboGrade[playerid] = %regex to find combo value%
                         //playerKickerCards[playerid] = %check hand cards + different cases
                     } else if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP) &&      //full
-
                             playersDistinctCards[ 0 ].matches(FIND_3X_REGEXP)) {
-                            System.out.println(".matches(\"^.*=[3].*$\").matches(\"^.*=[2].*$\")");
-                            players[ iteratePlayer ].set(13, 6);
+                            System.out.println(".matches(FIND_2X_REGEXP).matches(FIND_3X_REGEXP)");
+                            players[ iteratePlayer ].put(COMBOPOWER_VALUE, 6);
                         } else if (playersDistinctCards[ 0 ].matches(FIND_3X_REGEXP)) {
 
                                 System.out.println("matches " + FIND_3X_REGEXP);
-                                players[ iteratePlayer ].set(13, 3);
+                                players[ iteratePlayer ].put(COMBOPOWER_VALUE, 3);
                             } else if (playersDistinctCards[ 0 ].matches(FIND_2X2X_REGEXP)) {
 
                                     System.out.println("matches " + FIND_2X2X_REGEXP);
-                                    players[ iteratePlayer ].set(13, 2);
+                                    players[ iteratePlayer ].put(COMBOPOWER_VALUE, 2);
                                 } else if (playersDistinctCards[ 0 ].matches(FIND_2X_REGEXP)) {
                                         System.out.println("matches " + FIND_2X_REGEXP);
 
-                                        players[ iteratePlayer ].set(13, 1);
+                                        players[ iteratePlayer ].put(COMBOPOWER_VALUE, 1);
                                     }
 
                 } else if (distinctQuantity == 0) {
@@ -272,7 +329,7 @@ public class DeckUtils extends PokedgramBot {
     // else if check kicker
     // kicker = card(s) in players hand to break ties between hands of the same rank
 
-    static int checkKicker(ArrayList<?>[] players, ArrayList<?>[][] cards, int comboRank) throws Exception { //get highest card, if highest quantity > 1, return -1
+    static int checkKicker(HashMap[] players, ArrayList<String>[][] playerCards, int comboRank) throws Exception { //get highest card, if highest quantity > 1, return -1
 
         int handHighest = -1;
         int winnerCount = 0;
@@ -300,12 +357,12 @@ public class DeckUtils extends PokedgramBot {
             handHighest = -1;
             for (int iteratePlayer = 0; iteratePlayer < players.length; iteratePlayer++) {
                 for (int iterateCard = 0; iterateCard < HAND_CARDS_COUNT; iterateCard++) {
-                    if (handHighest < Integer.parseInt(cards[ iteratePlayer ][ iterateCard ].get(3).toString())) {
-                        handHighest = Integer.parseInt(cards[ iteratePlayer ][ iterateCard ].get(3).toString());
+                    if (handHighest < Integer.parseInt(playerCards[ iteratePlayer ][ iterateCard ].get(3))) {
+                        handHighest = Integer.parseInt(playerCards[ iteratePlayer ][ iterateCard ].get(3));
                         winnerCount = 1;
                         winnerId    = iteratePlayer;
-                        int cardValue = Integer.parseInt(cards[ iteratePlayer ][ iterateCard ].get(3).toString());
-                    } else if (handHighest == Integer.parseInt(cards[ iteratePlayer ][ iterateCard ].get(3).toString())) {
+                        int cardValue = Integer.parseInt(playerCards[ iteratePlayer ][ iterateCard ].get(3));
+                    } else if (handHighest == Integer.parseInt(playerCards[ iteratePlayer ][ iterateCard ].get(3))) {
                         winnerCount++;
                         winnerId = -1;
                     }
@@ -337,21 +394,50 @@ public class DeckUtils extends PokedgramBot {
     }
 
 
-    static ArrayList<?>[] getPlayerCardsWithTable(Integer moveCount, ArrayList<?>[][] playerCards, ArrayList<?>[] players) {
+    /*static HashMap<String,String>[] getPlayerCardsWithTable(Integer moveCount, ArrayList<String>[][] playerCards, HashMap[] players) {
 
-        ArrayList<String>[] playerCardsWithTable = new ArrayList[ 4 ];
-        playerCardsWithTable[ 0 ] = new ArrayList<>();
-        playerCardsWithTable[ 1 ] = new ArrayList<>();
-        playerCardsWithTable[ 2 ] = new ArrayList<>();
-        playerCardsWithTable[ 3 ] = new ArrayList<>();
-        //List<ArrayList> playersHandWithTable = new ArrayList<>();
+        HashMap<String,String>[] playerCardsWithTable = new HashMap[ 4 ];
+        playerCardsWithTable[ 0 ] = new HashMap();
+        playerCardsWithTable[ 1 ] = new HashMap();
+        playerCardsWithTable[ 2 ] = new HashMap();
+        playerCardsWithTable[ 3 ] = new HashMap();
+        //List<HashMap> playersHandWithTable = new HashMap();
 
         List<?> playerCardsWithTableSorted;
         for (int iterateAvailableCards = 0; iterateAvailableCards < HAND_CARDS_COUNT + 5; iterateAvailableCards++) {
-            playerCardsWithTable[ 0 ].add(playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(0).toString());
-            playerCardsWithTable[ 1 ].add(playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(1).toString());
-            playerCardsWithTable[ 2 ].add(playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(2).toString());
-            playerCardsWithTable[ 3 ].add(playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(3).toString());
+            playerCardsWithTable[ 0 ].put("card text", playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(0));
+            playerCardsWithTable[ 1 ].put("card suit", playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(1));
+            playerCardsWithTable[ 2 ].put("card rank", playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(2));
+            playerCardsWithTable[ 3 ].put("card value", playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(3));
+
+            //playersHandWithTable = List.of(playerCardsWithTable[ 0 ]);
+            // 0 string;  1 suit; 2 rank; 3 value
+
+        }
+        playerCardsWithTableSorted = playerCardsWithTable[ 3 ].values().stream().sorted().toList();
+        System.out.println("playersHandWithTable output sorted " + playerCardsWithTableSorted);
+        //System.out.println("playersHandWithTable output" + NEXT_LINE + playersHandWithTable + NEXT_LINE + List.of(playerCardsWithTable[1]) + NEXT_LINE  + List.of(playerCardsWithTable[2]) + NEXT_LINE + List.of(playerCardsWithTable[3]) + NEXT_LINE + "playersHandWithTable end");
+
+        //System.out.println("playersHandWithTable output " + playerCardsWithTable[3].toString());
+
+
+        return playerCardsWithTable;
+    }*/
+    static ArrayList<?>[] getPlayerCardsWithTable(Integer moveCount, ArrayList<String>[][] playerCards, HashMap[] players) {
+
+        ArrayList<String>[] playerCardsWithTable = new ArrayList[ 4 ];
+        playerCardsWithTable[ 0 ] = new ArrayList();
+        playerCardsWithTable[ 1 ] = new ArrayList();
+        playerCardsWithTable[ 2 ] = new ArrayList();
+        playerCardsWithTable[ 3 ] = new ArrayList();
+        //List<HashMap> playersHandWithTable = new HashMap();
+
+        List<?> playerCardsWithTableSorted;
+        for (int iterateAvailableCards = 0; iterateAvailableCards < HAND_CARDS_COUNT + 5; iterateAvailableCards++) {
+            playerCardsWithTable[ 0 ].add(playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(0));
+            playerCardsWithTable[ 1 ].add(playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(1));
+            playerCardsWithTable[ 2 ].add(playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(2));
+            playerCardsWithTable[ 3 ].add(playerCards[ moveCount % players.length ][ iterateAvailableCards ].get(3));
 
             //playersHandWithTable = List.of(playerCardsWithTable[ 0 ]);
             // 0 string;  1 suit; 2 rank; 3 value
@@ -367,19 +453,18 @@ public class DeckUtils extends PokedgramBot {
         return playerCardsWithTable;
     }
 
-
-    static int rankRoll(int playersQuantity, ArrayList<?>[][] cards) { //get highest card, if highest quantity > 1, return -1
+    static int rankRoll(int playersQuantity, ArrayList<String>[][] playerCards) { //get highest card, if highest quantity > 1, return -1
         int handHighest = -1;
         int winnerCount = 0;
         int winnerId = -1;
         for (int iteratePlayer = 0; iteratePlayer < playersQuantity; iteratePlayer++) {
             //     for (int i = 0; i < playersCardsCount; i++) {
-            if (handHighest < Integer.parseInt(cards[ iteratePlayer ][ 0 ].get(3).toString())) {
-                handHighest = Integer.parseInt(cards[ iteratePlayer ][ 0 ].get(3).toString());
+            if (handHighest < Integer.parseInt(playerCards[ iteratePlayer ][ 0 ].get(3))) {
+                handHighest = Integer.parseInt(playerCards[ iteratePlayer ][ 0 ].get(3));
                 winnerCount = 1;
                 winnerId    = iteratePlayer;
                 //      }
-            } else if (handHighest == Integer.parseInt(cards[ iteratePlayer ][ 0 ].get(3).toString())) {
+            } else if (handHighest == Integer.parseInt(playerCards[ iteratePlayer ][ 0 ].get(3).toString())) {
                 winnerCount++;
                 winnerId = -1;
             }
@@ -411,28 +496,28 @@ public class DeckUtils extends PokedgramBot {
         return random.nextInt(high) + low + 1;
     }
 
-    static ArrayList<String>[] drawTable(int playersQuantity, List<?> deck) {
+    static ArrayList[] drawTable(int playersQuantity, List<?> deck) {
 
 
-        ArrayList<String>[] tableArray = new ArrayList[ playersQuantity ];//(playersQuantity);
+        ArrayList[] tableArray = new ArrayList[ playersQuantity ];//(playersQuantity);
         tableArray[ 0 ] = new ArrayList<>(5);
         tableArray[ 1 ] = new ArrayList<>(5);
-        //tableArray[2] = new ArrayList(5);
-        tableArray[ 0 ].add(0, ((stageFlop(playersQuantity, 2, deck) +
+        //tableArray[2] = new HashMap(5);
+        tableArray[ 0 ].add((stageFlop(playersQuantity, 2, deck) +
                                  stageTurn(playersQuantity, 2, deck) +
-                                 stageRiver(playersQuantity, 2, deck))));
-        tableArray[ 1 ].add(0, tableArray[ 0 ].get(0).replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
-        tableArray[ 1 ].add(1, Arrays.toString(Arrays.stream(tableArray[ 0 ].get(0).replaceAll(FIND_CARDS_SUIT_REGEXP, " ").split("( )")).toArray()));
+                                 stageRiver(playersQuantity, 2, deck)));
+        tableArray[ 1 ].add(tableArray[ 0 ].get(0).toString().replaceAll(FIND_CARDS_RANK_REGEXP, EMPTY_STRING));
+        tableArray[ 1 ].add(Arrays.toString(Arrays.stream(tableArray[ 0 ].get(0).toString().replaceAll(FIND_CARDS_SUIT_REGEXP, " ").split("( )")).toArray()));
         System.out.println(tableArray[ 0 ].get(0));
-        List<?> tableValue;// = new ArrayList<>();
-        tableValue = Arrays.stream(tableArray[ 0 ].get(0).replaceAll(FIND_CARDS_SUIT_REGEXP, " ").split(COMMA)).toList();
+        List<?> tableValue;// = new HashMap();
+        tableValue = Arrays.stream(tableArray[ 0 ].get(0).toString().replaceAll(FIND_CARDS_SUIT_REGEXP, " ").split(COMMA)).toList();
 
         System.out.println("tableValue " + tableValue);
         return tableArray;
     }
 
 
-    static public String dealCardsText(ArrayList<String>[] players, ArrayList<?>[][] playerCards, Integer HAND_CARDS_COUNT) {
+    static public String dealCardsText(HashMap[] players, ArrayList<String>[][] playerCards, Integer HAND_CARDS_COUNT) {
         String currentPlayerHandText;
         StringBuilder allHandsText = new StringBuilder(EMPTY_STRING);
 
@@ -443,7 +528,7 @@ public class DeckUtils extends PokedgramBot {
                 hand.append(playerCards[ playerNumber ][ playerCardNumber ].get(0));
             }
 
-            currentPlayerHandText = players[ playerNumber ].get(1) + " hand: " + hand + NEXTLINE;
+            currentPlayerHandText = players[ playerNumber ].get("userName") + " hand: " + hand + NEXTLINE;
             allHandsText.append(currentPlayerHandText);
 
         }
@@ -451,11 +536,11 @@ public class DeckUtils extends PokedgramBot {
     }
 
 
-    static public String getRoundAnnounceText(ArrayList<?>[] players) {
-        return "1. @" + players[ 0 ].get(2).toString() + " bet: " + players[ 0 ].get(9).toString() + ". " +
-               "Balance " + players[ 0 ].get(3).toString() + NEXTLINE +
-               "2. @" + players[ 1 ].get(2).toString() + " bet: " + players[ 1 ].get(9).toString() + ". " +
-               "Balance " + players[ 1 ].get(3).toString();
+    static public String getRoundAnnounceText(HashMap[] players) {
+        return "1. @" + players[ 0 ].get("nickName").toString() + " bet: " + players[ 0 ].get("currentRoundBet").toString() + ". " +
+               "Balance " + players[ 0 ].get("chips").toString() + NEXTLINE +
+               "2. @" + players[ 1 ].get("nickName").toString() + " bet: " + players[ 1 ].get("currentRoundBet").toString() + ". " +
+               "Balance " + players[ 1 ].get("chips").toString();
     }
 
 
